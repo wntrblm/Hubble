@@ -14,26 +14,15 @@ Comment3 ""
 Comment4 ""
 $EndDescr
 $Comp
-L winterbloom:Eurorack_Power J1
+L testkit-rescue:Eurorack_Power-winterbloom J1
 U 1 1 60711509
 P 2250 1850
 F 0 "J1" H 2250 2275 50  0000 C CNN
-F 1 "Eurorack_Power" H 2250 2184 50  0000 C CNN
-F 2 "winterbloom:Eurorack_Power" H 2250 2300 50  0001 C CNN
+F 1 "Power" H 2250 2184 50  0000 C CNN
+F 2 "Connector_PinHeader_2.54mm:PinHeader_2x05_P2.54mm_Horizontal" H 2250 2300 50  0001 C CNN
 F 3 "https://static6.arrow.com/aropdfconversion/1507f1621f4e67855dd466ebb3ac550d52564a9d/32302-sxx1.pdf" H 2150 1850 50  0001 C CNN
 F 4 "302-S101" H 2250 2400 50  0001 C CNN "mpn"
 	1    2250 1850
-	1    0    0    -1  
-$EndComp
-$Comp
-L Connector_Generic:Conn_02x08_Odd_Even J2
-U 1 1 60711FE2
-P 3000 4150
-F 0 "J2" H 3050 4667 50  0000 C CNN
-F 1 "Downstream" H 3050 4576 50  0000 C CNN
-F 2 "" H 3000 4150 50  0001 C CNN
-F 3 "~" H 3000 4150 50  0001 C CNN
-	1    3000 4150
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
@@ -137,12 +126,12 @@ Wire Wire Line
 $Comp
 L power:+12V #PWR05
 U 1 1 6071F0F9
-P 3975 1650
-F 0 "#PWR05" H 3975 1500 50  0001 C CNN
-F 1 "+12V" V 3975 1750 50  0000 L CNN
-F 2 "" H 3975 1650 50  0001 C CNN
-F 3 "" H 3975 1650 50  0001 C CNN
-	1    3975 1650
+P 3975 2050
+F 0 "#PWR05" H 3975 1900 50  0001 C CNN
+F 1 "+12V" V 3975 2150 50  0000 L CNN
+F 2 "" H 3975 2050 50  0001 C CNN
+F 3 "" H 3975 2050 50  0001 C CNN
+	1    3975 2050
 	0    1    1    0   
 $EndComp
 Wire Wire Line
@@ -150,12 +139,12 @@ Wire Wire Line
 $Comp
 L power:-12V #PWR06
 U 1 1 6071FE21
-P 3975 2050
-F 0 "#PWR06" H 3975 2150 50  0001 C CNN
-F 1 "-12V" V 3975 2150 50  0000 L CNN
-F 2 "" H 3975 2050 50  0001 C CNN
-F 3 "" H 3975 2050 50  0001 C CNN
-	1    3975 2050
+P 3975 1650
+F 0 "#PWR06" H 3975 1750 50  0001 C CNN
+F 1 "-12V" V 3975 1750 50  0000 L CNN
+F 2 "" H 3975 1650 50  0001 C CNN
+F 3 "" H 3975 1650 50  0001 C CNN
+	1    3975 1650
 	0    1    1    0   
 $EndComp
 Wire Wire Line
@@ -164,75 +153,10 @@ Text GLabel 2900 1650 1    50   Input ~ 0
 -12VRAW
 Text GLabel 2900 2050 3    50   Input ~ 0
 +12VRAW
-$Comp
-L Switch:SW_DPST SW1
-U 1 1 60721796
-P 2325 3450
-F 0 "SW1" H 2325 3775 50  0000 C CNN
-F 1 "POWER" H 2325 3684 50  0000 C CNN
-F 2 "" H 2325 3450 50  0001 C CNN
-F 3 "~" H 2325 3450 50  0001 C CNN
-	1    2325 3450
-	1    0    0    -1  
-$EndComp
 Wire Wire Line
 	1975 3550 2125 3550
 Wire Wire Line
 	1975 3350 2125 3350
-Wire Wire Line
-	2525 3350 2800 3350
-Wire Wire Line
-	2800 3350 2800 3850
-Wire Wire Line
-	2800 3350 3300 3350
-Wire Wire Line
-	3300 3350 3300 3850
-Connection ~ 2800 3350
-Wire Wire Line
-	2525 3550 2525 4250
-Wire Wire Line
-	2525 4250 2800 4250
-Wire Wire Line
-	3300 4250 3475 4250
-Wire Wire Line
-	3475 4250 3475 4725
-Wire Wire Line
-	3475 4725 2525 4725
-Wire Wire Line
-	2525 4725 2525 4250
-Connection ~ 2525 4250
-$Comp
-L power:GND #PWR03
-U 1 1 6072862D
-P 2800 4050
-F 0 "#PWR03" H 2800 3800 50  0001 C CNN
-F 1 "GND" V 2800 3950 50  0000 R CNN
-F 2 "" H 2800 4050 50  0001 C CNN
-F 3 "" H 2800 4050 50  0001 C CNN
-	1    2800 4050
-	0    1    1    0   
-$EndComp
-Wire Wire Line
-	3300 4050 3300 4150
-Wire Wire Line
-	2800 3950 2800 4050
-Connection ~ 2800 4050
-Wire Wire Line
-	2800 4050 2800 4150
-Wire Wire Line
-	3300 3950 3300 4050
-Connection ~ 3300 4050
-$Comp
-L power:GND #PWR04
-U 1 1 6072BC1B
-P 3300 4050
-F 0 "#PWR04" H 3300 3800 50  0001 C CNN
-F 1 "GND" V 3300 3950 50  0000 R CNN
-F 2 "" H 3300 4050 50  0001 C CNN
-F 3 "" H 3300 4050 50  0001 C CNN
-	1    3300 4050
-	0    -1   -1   0   
-$EndComp
 $Comp
 L Analog_ADC:INA219BxDCN U1
 U 1 1 6072D6ED
@@ -272,8 +196,9 @@ U 1 1 6073059F
 P 4425 3475
 F 0 "R1" H 4493 3521 50  0000 L CNN
 F 1 "1R" H 4493 3430 50  0000 L CNN
-F 2 "Resistor_SMD:R_0603_1608Metric_Pad1.05x0.95mm_HandSolder" V 4465 3465 50  0001 C CNN
+F 2 "Resistor_SMD:R_1210_3225Metric_Pad1.30x2.65mm_HandSolder" V 4465 3465 50  0001 C CNN
 F 3 "~" H 4425 3475 50  0001 C CNN
+F 4 "RC2010FK-071RL" H 4425 3475 50  0001 C CNN "mpn"
 	1    4425 3475
 	1    0    0    -1  
 $EndComp
@@ -297,8 +222,9 @@ U 1 1 6073316B
 P 4425 4825
 F 0 "R2" H 4493 4871 50  0000 L CNN
 F 1 "1R" H 4493 4780 50  0000 L CNN
-F 2 "Resistor_SMD:R_0603_1608Metric_Pad1.05x0.95mm_HandSolder" V 4465 4815 50  0001 C CNN
+F 2 "Resistor_SMD:R_1210_3225Metric_Pad1.30x2.65mm_HandSolder" V 4465 4815 50  0001 C CNN
 F 3 "~" H 4425 4825 50  0001 C CNN
+F 4 "RC2010FK-071RL" H 4425 4825 50  0001 C CNN "mpn"
 	1    4425 4825
 	1    0    0    -1  
 $EndComp
@@ -317,13 +243,13 @@ Wire Wire Line
 Text GLabel 1975 3550 0    50   Input ~ 0
 -12VMONITORED
 Text GLabel 5750 3275 2    50   Input ~ 0
-CURRENT_SDA
+I2C_SDA
 Text GLabel 5750 3375 2    50   Input ~ 0
-CURRENT_SCL
+I2C_SCL
 Text GLabel 5750 4625 2    50   Input ~ 0
-CURRENT_SDA
+I2C_SDA
 Text GLabel 5750 4725 2    50   Input ~ 0
-CURRENT_SCL
+I2C_SCL
 $Comp
 L power:GND #PWR010
 U 1 1 6073567E
@@ -407,7 +333,7 @@ U 1 1 60739EBF
 P 6600 1750
 F 0 "U3" H 6300 2050 39  0000 C CNN
 F 1 "TLV76733" H 6800 1450 39  0000 C CNN
-F 2 "Package_SO:VSSOP-8_3.0x3.0mm_P0.65mm" H 6600 2200 39  0001 C CNN
+F 2 "winterbloom:TI-DGN-HVSSOP-8_3.0x3.0mm_P0.65mm" H 6600 2200 39  0001 C CNN
 F 3 "https://www.ti.com/lit/ds/symlink/tlv767.pdf" H 7700 2550 39  0001 C CNN
 F 4 "TLV76733DGNR" H 6600 2300 39  0001 C CNN "mpn"
 	1    6600 1750
@@ -419,7 +345,7 @@ U 1 1 6073AA76
 P 5625 1700
 F 0 "C1" H 5717 1746 50  0000 L CNN
 F 1 "4.7uF" H 5717 1655 50  0000 L CNN
-F 2 "Capacitor_SMD:C_0603_1608Metric_Pad1.05x0.95mm_HandSolder" H 5625 1700 50  0001 C CNN
+F 2 "Capacitor_SMD:C_0805_2012Metric_Pad1.18x1.45mm_HandSolder" H 5625 1700 50  0001 C CNN
 F 3 "~" H 5625 1700 50  0001 C CNN
 	1    5625 1700
 	1    0    0    -1  
@@ -430,7 +356,7 @@ U 1 1 6073B39D
 P 7425 1700
 F 0 "C4" H 7517 1746 50  0000 L CNN
 F 1 "4.7uF" H 7517 1655 50  0000 L CNN
-F 2 "Capacitor_SMD:C_0603_1608Metric_Pad1.05x0.95mm_HandSolder" H 7425 1700 50  0001 C CNN
+F 2 "Capacitor_SMD:C_0805_2012Metric_Pad1.18x1.45mm_HandSolder" H 7425 1700 50  0001 C CNN
 F 3 "~" H 7425 1700 50  0001 C CNN
 	1    7425 1700
 	1    0    0    -1  
@@ -508,7 +434,7 @@ U 1 1 6074C1F4
 P 8875 2200
 F 0 "R3" H 8943 2246 50  0000 L CNN
 F 1 "270" H 8943 2155 50  0000 L CNN
-F 2 "Resistor_SMD:R_0603_1608Metric_Pad1.05x0.95mm_HandSolder" V 8915 2190 50  0001 C CNN
+F 2 "Resistor_SMD:R_0603_1608Metric_Pad0.98x0.95mm_HandSolder" V 8915 2190 50  0001 C CNN
 F 3 "~" H 8875 2200 50  0001 C CNN
 	1    8875 2200
 	1    0    0    -1  
@@ -555,7 +481,7 @@ U 1 1 6074E5DC
 P 8625 2500
 F 0 "C5" H 8800 2475 50  0000 R CNN
 F 1 "0.1uF" H 8925 2550 50  0000 R CNN
-F 2 "Capacitor_SMD:C_0603_1608Metric_Pad1.05x0.95mm_HandSolder" H 8625 2500 50  0001 C CNN
+F 2 "Capacitor_SMD:C_0603_1608Metric_Pad1.08x0.95mm_HandSolder" H 8625 2500 50  0001 C CNN
 F 3 "~" H 8625 2500 50  0001 C CNN
 	1    8625 2500
 	-1   0    0    1   
@@ -576,7 +502,7 @@ U 1 1 6075134F
 P 6875 4250
 F 0 "C2" H 7050 4225 50  0000 R CNN
 F 1 "0.1uF" H 7175 4300 50  0000 R CNN
-F 2 "Capacitor_SMD:C_0603_1608Metric_Pad1.05x0.95mm_HandSolder" H 6875 4250 50  0001 C CNN
+F 2 "Capacitor_SMD:C_0603_1608Metric_Pad1.08x0.95mm_HandSolder" H 6875 4250 50  0001 C CNN
 F 3 "~" H 6875 4250 50  0001 C CNN
 	1    6875 4250
 	-1   0    0    1   
@@ -609,7 +535,7 @@ U 1 1 60753B66
 P 7325 4250
 F 0 "C3" H 7500 4225 50  0000 R CNN
 F 1 "0.1uF" H 7625 4300 50  0000 R CNN
-F 2 "Capacitor_SMD:C_0603_1608Metric_Pad1.05x0.95mm_HandSolder" H 7325 4250 50  0001 C CNN
+F 2 "Capacitor_SMD:C_0603_1608Metric_Pad1.08x0.95mm_HandSolder" H 7325 4250 50  0001 C CNN
 F 3 "~" H 7325 4250 50  0001 C CNN
 	1    7325 4250
 	-1   0    0    1   
@@ -636,10 +562,38 @@ F 3 "" H 7325 4350 50  0001 C CNN
 	1    7325 4350
 	1    0    0    -1  
 $EndComp
-Text Notes 1275 3925 0    50   ~ 0
-TI doesn't have power switches\nthat can do negative rails.\nUse a big toggle switch
-Text Notes 9175 2325 0    50   ~ 0
+Text Notes 9250 2125 0    50   ~ 0
 TODO: Calculate current requirements
 Text Notes 3250 1275 0    50   ~ 0
 Maybe raise to 2A?
+$Comp
+L Switch:SW_DPST SW1
+U 1 1 60721796
+P 2325 3450
+F 0 "SW1" H 2325 3775 50  0000 C CNN
+F 1 "POWER" H 2325 3684 50  0000 C CNN
+F 2 "Connector_PinSocket_2.54mm:PinSocket_2x02_P2.54mm_Vertical" H 2325 3450 50  0001 C CNN
+F 3 "~" H 2325 3450 50  0001 C CNN
+	1    2325 3450
+	1    0    0    -1  
+$EndComp
+Text GLabel 2700 3350 2    50   Input ~ 0
++12VDOWNSTREAM
+Text GLabel 2700 3550 2    50   Input ~ 0
+-12VDOWNSTREAM
+Wire Wire Line
+	2700 3350 2525 3350
+Wire Wire Line
+	2525 3550 2700 3550
+$Comp
+L power:-10V #PWR0135
+U 1 1 6144EE95
+P 8875 2350
+F 0 "#PWR0135" H 8875 2450 50  0001 C CNN
+F 1 "-10V" V 8875 2575 50  0000 C CNN
+F 2 "" H 8875 2350 50  0001 C CNN
+F 3 "" H 8875 2350 50  0001 C CNN
+	1    8875 2350
+	0    1    1    0   
+$EndComp
 $EndSCHEMATC

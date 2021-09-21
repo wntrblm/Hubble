@@ -118,7 +118,7 @@ VDDANA
 Text Label 4000 2300 1    50   ~ 0
 VDDCORE
 NoConn ~ 3800 2300
-Text Label 4100 2275 1    50   ~ 0
+Text Label 4100 2300 1    50   ~ 0
 RESET
 Wire Wire Line
 	3900 1925 3900 2300
@@ -179,7 +179,7 @@ U 1 1 608C5AF8
 P 1300 6275
 F 0 "C6" H 1392 6321 50  0000 L CNN
 F 1 "0.1uF" H 1392 6230 50  0000 L CNN
-F 2 "Capacitor_SMD:C_0603_1608Metric_Pad1.05x0.95mm_HandSolder" H 1300 6275 50  0001 C CNN
+F 2 "Capacitor_SMD:C_0603_1608Metric_Pad1.08x0.95mm_HandSolder" H 1300 6275 50  0001 C CNN
 F 3 "~" H 1300 6275 50  0001 C CNN
 	1    1300 6275
 	1    0    0    -1  
@@ -286,7 +286,7 @@ U 1 1 608CE58D
 P 3100 7425
 F 0 "R4" V 3305 7425 50  0000 C CNN
 F 1 "10k" V 3214 7425 50  0000 C CNN
-F 2 "Resistor_SMD:R_0603_1608Metric_Pad1.05x0.95mm_HandSolder" V 3140 7415 50  0001 C CNN
+F 2 "Resistor_SMD:R_0603_1608Metric_Pad0.98x0.95mm_HandSolder" V 3140 7415 50  0001 C CNN
 F 3 "~" H 3100 7425 50  0001 C CNN
 	1    3100 7425
 	0    -1   -1   0   
@@ -312,7 +312,7 @@ U 1 1 608D0C73
 P 2650 6075
 F 0 "Y1" H 2650 6300 50  0000 C CNN
 F 1 "32.768 kHz" H 2650 6209 50  0000 C CNN
-F 2 "Crystal:Crystal_SMD_Abracon_ABM3-2Pin_5.0x3.2mm_HandSoldering" H 2650 6075 50  0001 C CNN
+F 2 "Crystal:Crystal_SMD_2012-2Pin_2.0x1.2mm_HandSoldering" H 2650 6075 50  0001 C CNN
 F 3 "~" H 2650 6075 50  0001 C CNN
 	1    2650 6075
 	1    0    0    -1  
@@ -323,7 +323,7 @@ U 1 1 608D1AF3
 P 2750 6300
 F 0 "C8" H 2725 6225 50  0000 R CNN
 F 1 "22pF" H 2725 6375 50  0000 R CNN
-F 2 "Capacitor_SMD:C_0603_1608Metric_Pad1.05x0.95mm_HandSolder" H 2750 6300 50  0001 C CNN
+F 2 "Capacitor_SMD:C_0603_1608Metric_Pad1.08x0.95mm_HandSolder" H 2750 6300 50  0001 C CNN
 F 3 "~" H 2750 6300 50  0001 C CNN
 	1    2750 6300
 	-1   0    0    1   
@@ -334,7 +334,7 @@ U 1 1 608D2C85
 P 2550 6300
 F 0 "C7" H 2675 6225 50  0000 R CNN
 F 1 "22pF" H 2775 6375 50  0000 R CNN
-F 2 "Capacitor_SMD:C_0603_1608Metric_Pad1.05x0.95mm_HandSolder" H 2550 6300 50  0001 C CNN
+F 2 "Capacitor_SMD:C_0603_1608Metric_Pad1.08x0.95mm_HandSolder" H 2550 6300 50  0001 C CNN
 F 3 "~" H 2550 6300 50  0001 C CNN
 	1    2550 6300
 	-1   0    0    1   
@@ -369,7 +369,7 @@ U 1 1 608D818B
 P 4350 7325
 F 0 "C9" H 4300 7500 50  0000 L CNN
 F 1 "0.1uF" H 4225 7150 50  0000 L CNN
-F 2 "Capacitor_SMD:C_0603_1608Metric_Pad1.05x0.95mm_HandSolder" H 4350 7325 50  0001 C CNN
+F 2 "Capacitor_SMD:C_0603_1608Metric_Pad1.08x0.95mm_HandSolder" H 4350 7325 50  0001 C CNN
 F 3 "~" H 4350 7325 50  0001 C CNN
 	1    4350 7325
 	1    0    0    -1  
@@ -380,7 +380,7 @@ U 1 1 608D8AE0
 P 4550 7325
 F 0 "C10" H 4500 7500 50  0000 L CNN
 F 1 "4.7uF" H 4475 7150 50  0000 L CNN
-F 2 "Capacitor_SMD:C_0603_1608Metric_Pad1.05x0.95mm_HandSolder" H 4550 7325 50  0001 C CNN
+F 2 "Capacitor_SMD:C_0603_1608Metric_Pad1.08x0.95mm_HandSolder" H 4550 7325 50  0001 C CNN
 F 3 "~" H 4550 7325 50  0001 C CNN
 	1    4550 7325
 	1    0    0    -1  
@@ -418,7 +418,7 @@ U 1 1 608DB936
 P 5075 7350
 F 0 "C11" H 5025 7525 50  0000 L CNN
 F 1 "0.1uF" H 4950 7175 50  0001 L CNN
-F 2 "Capacitor_SMD:C_0603_1608Metric_Pad1.05x0.95mm_HandSolder" H 5075 7350 50  0001 C CNN
+F 2 "Capacitor_SMD:C_0603_1608Metric_Pad1.08x0.95mm_HandSolder" H 5075 7350 50  0001 C CNN
 F 3 "~" H 5075 7350 50  0001 C CNN
 	1    5075 7350
 	1    0    0    -1  
@@ -429,7 +429,7 @@ U 1 1 608DBFE2
 P 5250 7350
 F 0 "C12" H 5200 7525 50  0000 L CNN
 F 1 "0.1uF" H 5125 7175 50  0001 L CNN
-F 2 "Capacitor_SMD:C_0603_1608Metric_Pad1.05x0.95mm_HandSolder" H 5250 7350 50  0001 C CNN
+F 2 "Capacitor_SMD:C_0603_1608Metric_Pad1.08x0.95mm_HandSolder" H 5250 7350 50  0001 C CNN
 F 3 "~" H 5250 7350 50  0001 C CNN
 	1    5250 7350
 	1    0    0    -1  
@@ -440,7 +440,7 @@ U 1 1 608DC843
 P 5425 7350
 F 0 "C13" H 5375 7525 50  0000 L CNN
 F 1 "0.1uF" H 5700 7350 50  0000 L CNN
-F 2 "Capacitor_SMD:C_0603_1608Metric_Pad1.05x0.95mm_HandSolder" H 5425 7350 50  0001 C CNN
+F 2 "Capacitor_SMD:C_0603_1608Metric_Pad1.08x0.95mm_HandSolder" H 5425 7350 50  0001 C CNN
 F 3 "~" H 5425 7350 50  0001 C CNN
 	1    5425 7350
 	1    0    0    -1  
@@ -451,7 +451,7 @@ U 1 1 608DCFEC
 P 5600 7350
 F 0 "C14" H 5550 7525 50  0000 L CNN
 F 1 "0.1uF" H 5475 7175 50  0001 L CNN
-F 2 "Capacitor_SMD:C_0603_1608Metric_Pad1.05x0.95mm_HandSolder" H 5600 7350 50  0001 C CNN
+F 2 "Capacitor_SMD:C_0603_1608Metric_Pad1.08x0.95mm_HandSolder" H 5600 7350 50  0001 C CNN
 F 3 "~" H 5600 7350 50  0001 C CNN
 	1    5600 7350
 	1    0    0    -1  
@@ -507,179 +507,153 @@ Wire Wire Line
 $Comp
 L winterbloom:Dotstar D3
 U 1 1 608E58EC
-P 10500 5800
-F 0 "D3" H 10350 6050 50  0000 C CNN
-F 1 "Dotstar" H 10700 5550 50  0000 C CNN
-F 2 "winterbloom:Dotstar_5050" H 10550 5500 50  0001 L TNN
-F 3 "https://www.alibaba.com/product-detail/High-Efficiency-SK9822-Similar-APA102-5050_62326807400.html" H 10600 5425 50  0001 L TNN
-F 4 "SK9822" H 10700 5400 50  0001 C CNN "mpn"
-	1    10500 5800
+P 7375 3500
+F 0 "D3" H 7225 3750 50  0000 C CNN
+F 1 "Dotstar" H 7575 3250 50  0000 C CNN
+F 2 "winterbloom:Dotstar_5050" H 7425 3200 50  0001 L TNN
+F 3 "https://www.alibaba.com/product-detail/High-Efficiency-SK9822-Similar-APA102-5050_62326807400.html" H 7475 3125 50  0001 L TNN
+F 4 "SK9822" H 7575 3100 50  0001 C CNN "mpn"
+	1    7375 3500
 	1    0    0    -1  
 $EndComp
-Text Label 10200 5700 2    39   ~ 0
+Text Label 7075 3400 2    39   ~ 0
 DOTSTAR_DI
-Text Label 10200 5800 2    39   ~ 0
+Text Label 7075 3500 2    39   ~ 0
 DOTSTAR_CI
 $Comp
 L power:GND #PWR053
 U 1 1 608E7853
-P 10500 6100
-F 0 "#PWR053" H 10500 5850 50  0001 C CNN
-F 1 "GND" H 10500 5950 50  0000 C CNN
-F 2 "" H 10500 6100 50  0001 C CNN
-F 3 "" H 10500 6100 50  0001 C CNN
-	1    10500 6100
+P 7375 3800
+F 0 "#PWR053" H 7375 3550 50  0001 C CNN
+F 1 "GND" H 7375 3650 50  0000 C CNN
+F 2 "" H 7375 3800 50  0001 C CNN
+F 3 "" H 7375 3800 50  0001 C CNN
+	1    7375 3800
 	1    0    0    -1  
 $EndComp
 $Comp
 L power:+3V3 #PWR052
 U 1 1 608E8308
-P 10500 5500
-F 0 "#PWR052" H 10500 5350 50  0001 C CNN
-F 1 "+3V3" H 10500 5650 50  0000 C CNN
-F 2 "" H 10500 5500 50  0001 C CNN
-F 3 "" H 10500 5500 50  0001 C CNN
-	1    10500 5500
+P 7375 3200
+F 0 "#PWR052" H 7375 3050 50  0001 C CNN
+F 1 "+3V3" H 7375 3350 50  0000 C CNN
+F 2 "" H 7375 3200 50  0001 C CNN
+F 3 "" H 7375 3200 50  0001 C CNN
+	1    7375 3200
 	1    0    0    -1  
 $EndComp
-NoConn ~ 10800 5800
-NoConn ~ 10800 5700
-Text Notes 6825 1500 0    39   ~ 0
-TODO
+NoConn ~ 7675 3500
+NoConn ~ 7675 3400
 $Comp
 L winterbloom:AD5685R?RUZ U6
 U 1 1 608EA70E
-P 10075 4225
-F 0 "U6" H 9575 4775 50  0000 C CNN
-F 1 "AD5685R?RUZ" H 10525 3675 50  0000 C CNN
-F 2 "Package_SO:TSSOP-16_4.4x5mm_P0.65mm" H 10075 5575 50  0001 C CNN
-F 3 "https://www.analog.com/media/en/technical-documentation/data-sheets/ad5686r_5685r_5684r.pdf" H 10125 4225 50  0001 C CNN
-F 4 "AD5685ARUZ, AD5685BRUZ" H 10075 5475 39  0001 C CNN "mpn"
-	1    10075 4225
+P 7450 2075
+F 0 "U6" H 6950 2625 50  0000 C CNN
+F 1 "AD5685R?RUZ" H 7900 1525 50  0000 C CNN
+F 2 "Package_SO:TSSOP-16_4.4x5mm_P0.65mm" H 7450 3425 50  0001 C CNN
+F 3 "https://www.analog.com/media/en/technical-documentation/data-sheets/ad5686r_5685r_5684r.pdf" H 7500 2075 50  0001 C CNN
+F 4 "AD5685ARUZ, AD5685BRUZ" H 7450 3325 39  0001 C CNN "mpn"
+	1    7450 2075
 	1    0    0    -1  
 $EndComp
 $Comp
 L power:+3V3 #PWR049
 U 1 1 608ECB22
-P 10025 3625
-F 0 "#PWR049" H 10025 3475 50  0001 C CNN
-F 1 "+3V3" V 10025 3825 50  0000 C CNN
-F 2 "" H 10025 3625 50  0001 C CNN
-F 3 "" H 10025 3625 50  0001 C CNN
-	1    10025 3625
+P 7400 1475
+F 0 "#PWR049" H 7400 1325 50  0001 C CNN
+F 1 "+3V3" H 7375 1625 50  0000 C CNN
+F 2 "" H 7400 1475 50  0001 C CNN
+F 3 "" H 7400 1475 50  0001 C CNN
+	1    7400 1475
 	1    0    0    -1  
 $EndComp
 $Comp
 L power:+3V3 #PWR051
 U 1 1 608ED688
-P 10425 3550
-F 0 "#PWR051" H 10425 3400 50  0001 C CNN
-F 1 "+3V3" V 10425 3750 50  0000 C CNN
-F 2 "" H 10425 3550 50  0001 C CNN
-F 3 "" H 10425 3550 50  0001 C CNN
-	1    10425 3550
-	0    1    1    0   
+P 7500 900
+F 0 "#PWR051" H 7500 750 50  0001 C CNN
+F 1 "+3V3" H 7500 1050 50  0000 C CNN
+F 2 "" H 7500 900 50  0001 C CNN
+F 3 "" H 7500 900 50  0001 C CNN
+	1    7500 900 
+	1    0    0    -1  
 $EndComp
-Text Label 9425 3825 2    39   ~ 0
-DAC_SCLK
-Text Label 9425 3925 2    39   ~ 0
-DAC_SDIN
-Text Label 9425 4025 2    39   ~ 0
+Text Label 6800 1875 2    39   ~ 0
 DAC_CS
-NoConn ~ 9425 4125
-NoConn ~ 10675 4425
+NoConn ~ 6800 1975
+NoConn ~ 8050 2275
 $Comp
 L power:GND #PWR045
 U 1 1 608EF560
-P 9425 4275
-F 0 "#PWR045" H 9425 4025 50  0001 C CNN
-F 1 "GND" V 9425 4075 50  0000 C CNN
-F 2 "" H 9425 4275 50  0001 C CNN
-F 3 "" H 9425 4275 50  0001 C CNN
-	1    9425 4275
+P 6800 2125
+F 0 "#PWR045" H 6800 1875 50  0001 C CNN
+F 1 "GND" V 6800 1925 50  0000 C CNN
+F 2 "" H 6800 2125 50  0001 C CNN
+F 3 "" H 6800 2125 50  0001 C CNN
+	1    6800 2125
 	0    1    1    0   
 $EndComp
 $Comp
 L power:+3V3 #PWR046
 U 1 1 608EFEC0
-P 9425 4375
-F 0 "#PWR046" H 9425 4225 50  0001 C CNN
-F 1 "+3V3" V 9425 4600 50  0000 C CNN
-F 2 "" H 9425 4375 50  0001 C CNN
-F 3 "" H 9425 4375 50  0001 C CNN
-	1    9425 4375
+P 6800 2225
+F 0 "#PWR046" H 6800 2075 50  0001 C CNN
+F 1 "+3V3" V 6800 2450 50  0000 C CNN
+F 2 "" H 6800 2225 50  0001 C CNN
+F 3 "" H 6800 2225 50  0001 C CNN
+	1    6800 2225
 	0    -1   -1   0   
 $EndComp
 $Comp
 L power:GND #PWR047
 U 1 1 608F0A20
-P 9425 4525
-F 0 "#PWR047" H 9425 4275 50  0001 C CNN
-F 1 "GND" V 9425 4325 50  0000 C CNN
-F 2 "" H 9425 4525 50  0001 C CNN
-F 3 "" H 9425 4525 50  0001 C CNN
-	1    9425 4525
+P 6800 2375
+F 0 "#PWR047" H 6800 2125 50  0001 C CNN
+F 1 "GND" V 6800 2175 50  0000 C CNN
+F 2 "" H 6800 2375 50  0001 C CNN
+F 3 "" H 6800 2375 50  0001 C CNN
+	1    6800 2375
 	0    1    1    0   
 $EndComp
 $Comp
 L power:+3V3 #PWR048
 U 1 1 608F0D5C
-P 9425 4625
-F 0 "#PWR048" H 9425 4475 50  0001 C CNN
-F 1 "+3V3" V 9425 4850 50  0000 C CNN
-F 2 "" H 9425 4625 50  0001 C CNN
-F 3 "" H 9425 4625 50  0001 C CNN
-	1    9425 4625
+P 6800 2475
+F 0 "#PWR048" H 6800 2325 50  0001 C CNN
+F 1 "+3V3" V 6800 2700 50  0000 C CNN
+F 2 "" H 6800 2475 50  0001 C CNN
+F 3 "" H 6800 2475 50  0001 C CNN
+	1    6800 2475
 	0    -1   -1   0   
 $EndComp
 $Comp
-L Device:Ferrite_Bead_Small FB4
-U 1 1 608F21A5
-P 10325 3550
-F 0 "FB4" V 10088 3550 50  0000 C CNN
-F 1 "300mA" V 10179 3550 50  0000 C CNN
-F 2 "Inductor_SMD:L_0603_1608Metric_Pad1.05x0.95mm_HandSolder" V 10255 3550 50  0001 C CNN
-F 3 "~" H 10325 3550 50  0001 C CNN
-	1    10325 3550
-	0    1    1    0   
-$EndComp
-Wire Wire Line
-	10225 3550 10125 3550
-Wire Wire Line
-	10125 3550 10125 3625
-$Comp
 L power:GND #PWR050
 U 1 1 608F4500
-P 10075 4825
-F 0 "#PWR050" H 10075 4575 50  0001 C CNN
-F 1 "GND" H 10075 4675 50  0000 C CNN
-F 2 "" H 10075 4825 50  0001 C CNN
-F 3 "" H 10075 4825 50  0001 C CNN
-	1    10075 4825
+P 7450 2675
+F 0 "#PWR050" H 7450 2425 50  0001 C CNN
+F 1 "GND" H 7450 2525 50  0000 C CNN
+F 2 "" H 7450 2675 50  0001 C CNN
+F 3 "" H 7450 2675 50  0001 C CNN
+	1    7450 2675
 	1    0    0    -1  
 $EndComp
 Text GLabel 4950 3100 2    39   Input ~ 0
 D+
 Text GLabel 4950 3200 2    39   Input ~ 0
 D-
-Text Label 6700 1625 0    39   ~ 0
+Text Label 10475 1425 0    39   ~ 0
 DAC_CS
-Text Label 6700 1725 0    39   ~ 0
-DAC_SDIN
-Text Label 6700 1825 0    39   ~ 0
-DAC_SCLK
-Text Label 6700 1925 0    39   ~ 0
+Text Label 10475 1725 0    39   ~ 0
 DOTSTAR_CI
-Text Label 6700 2025 0    39   ~ 0
+Text Label 10475 1825 0    39   ~ 0
 DOTSTAR_DI
-Text Notes 9075 3575 0    50   ~ 0
-Needs bypass caps
 $Comp
-L Connector:USB_B J?
+L testkit-rescue:USB_B-Connector J?
 U 1 1 60F60EC4
 P 975 1100
 AR Path="/6091A4E3/60F60EC4" Ref="J?"  Part="1" 
 AR Path="/608B4064/60F60EC4" Ref="J3"  Part="1" 
+AR Path="/60F60EC4" Ref="J3"  Part="1" 
 F 0 "J3" H 1032 1567 50  0000 C CNN
 F 1 "USB_B" H 1032 1476 50  0000 C CNN
 F 2 "Connector_USB:USB_B_OST_USB-B1HSxx_Horizontal" H 1125 1050 50  0001 C CNN
@@ -709,99 +683,495 @@ Wire Wire Line
 Connection ~ 975  1500
 Text Notes 1100 1550 0    50   ~ 0
 Check datasheet for proper shield connection
-Text HLabel 10675 4025 2    50   Input ~ 0
+Text GLabel 8050 1875 2    50   Input ~ 0
 DAC_1
-Text HLabel 10675 4125 2    50   Input ~ 0
+Text GLabel 8050 1975 2    50   Input ~ 0
 DAC_2
-Text HLabel 10675 4225 2    50   Input ~ 0
+Text GLabel 8050 2075 2    50   Input ~ 0
 DAC_3
-Text HLabel 10675 4325 2    50   Input ~ 0
+Text GLabel 8050 2175 2    50   Input ~ 0
 DAC_4
-Text HLabel 6700 2100 2    50   Input ~ 0
-ADC_1
-Text HLabel 6700 2200 2    50   Input ~ 0
-ADC_2
-Text HLabel 6700 2300 2    50   Input ~ 0
-ADC_3
-Text HLabel 6700 2400 2    50   Input ~ 0
-ADC_4
-Text Label 2900 4900 3    50   ~ 0
-I2S_MCLK0
-Text Label 3000 4900 3    50   ~ 0
-I2S_FS0
-Text Label 3100 4900 3    50   ~ 0
-I2S_SCK0
-Text Label 3200 4900 3    50   ~ 0
-I2S_SDO
-Text Label 3500 4900 3    50   ~ 0
-I2S_SDI
-Text Label 3600 4900 3    50   ~ 0
-I2S_FS1
+Text GLabel 10475 1925 2    50   Input ~ 0
+A1
+Text GLabel 10475 2025 2    50   Input ~ 0
+A2
+Text GLabel 10475 2125 2    50   Input ~ 0
+A3
+Text GLabel 10475 2225 2    50   Input ~ 0
+A4
+Text Label 2350 3100 2    50   ~ 0
+DAC.VOUT0
+Text Label 2350 3200 2    50   ~ 0
+ADC0.AIN1+ANAREF.VREF0
+Text Label 2350 4100 2    50   ~ 0
+ADC0.AIN4+ANAREF.VREF1
+Text Label 2350 4200 2    50   ~ 0
+DAC.VOUT1
+Text Label 2350 4300 2    50   ~ 0
+ADC0.AIN6+ANAREF.VREF2
+Text Label 2350 4400 2    50   ~ 0
+ADC0.AIN7
 Text Label 3700 4900 3    50   ~ 0
-I2S_SCK1
+SERCOM4.0
 Text Label 3800 4900 3    50   ~ 0
-I2S_MCK1
-Text HLabel 10450 825  2    50   Input ~ 0
-I2S_MCLK
-Text HLabel 10450 925  2    50   Input ~ 0
-I2S_SCK
-Text HLabel 10450 1025 2    50   Input ~ 0
-I2S_OUT_WS
-Text HLabel 10450 1225 2    50   Input ~ 0
-I2S_IN_WS
-Text HLabel 10450 1325 2    50   Input ~ 0
-I2S_IN_SD
-Text HLabel 10450 1125 2    50   Input ~ 0
-I2S_OUT_SD
-Text Label 10275 825  2    50   ~ 0
-I2S_MCLK0
+SERCOM4.1
+Text Label 3900 4900 3    50   ~ 0
+SERCOM4.2
+Text Label 4000 4900 3    50   ~ 0
+SERCOM4.3
+Text Label 4400 2300 1    50   ~ 0
+PB22
+Text Label 4300 2300 1    50   ~ 0
+PB23
+Text Label 2900 4900 3    50   ~ 0
+ADC0.AIN8+ADC1.AIN2
+Text Label 3000 4900 3    50   ~ 0
+ADC0.AIN9+ADC1.AIN3
+Text Label 3100 4900 3    50   ~ 0
+ADC0.AIN10
+Text Label 3200 4900 3    50   ~ 0
+ADC0.AIN11
+Text Label 3200 2300 1    50   ~ 0
+ADC0.AIN12
+Text Label 3100 2300 1    50   ~ 0
+ADC0.AIN13
+Text Label 3000 2300 1    50   ~ 0
+ADC0.AIN14
+Text Label 2900 2300 1    50   ~ 0
+ADC0.AIN15
+Text Label 2350 3300 2    50   ~ 0
+ADC1.AIN6
+Text Label 2350 3400 2    50   ~ 0
+ADC1.AIN7
+Text Label 2350 3700 2    50   ~ 0
+ADC1.AIN8
+Text Label 2350 3800 2    50   ~ 0
+ADC1.AIN9
+Text Label 2350 3900 2    50   ~ 0
+ADC0.AIN2+ADC1.AIN0
+Text Label 2350 4000 2    50   ~ 0
+ADC0.AIN3+ADC1.AIN1
+Text Label 4950 4200 0    50   ~ 0
+SERCOM1.0
+Text Label 4950 4100 0    50   ~ 0
+SERCOM1.1
+Text Label 4950 4000 0    50   ~ 0
+SERCOM1.2
+Text Label 4950 3900 0    50   ~ 0
+SERCOM1.3
+Text Label 4100 4900 3    50   ~ 0
+SERCOM2.0
+Text Label 4200 4900 3    50   ~ 0
+SERCOM2.1
+Text Label 4300 4900 3    50   ~ 0
+SERCOM2.2
+Text Label 4400 4900 3    50   ~ 0
+SERCOM2.3
+Text Label 4950 3300 0    50   ~ 0
+SERCOM3.1
+Text Label 4950 3400 0    50   ~ 0
+SERCOM3.0
+Text Label 3500 4900 3    50   ~ 0
+PB10
+Text Label 3600 4900 3    50   ~ 0
+PB11
+Text Label 4950 3800 0    50   ~ 0
+PB16
+Text Label 4950 3700 0    50   ~ 0
+PB17
+Text Label 4200 2300 1    50   ~ 0
+PA27
+Text Label 3400 2300 1    50   ~ 0
+SERCOM5.1
+Text Label 3300 2300 1    50   ~ 0
+SERCOM5.0
+Text Label 10300 1825 2    50   ~ 0
+SERCOM3.0
 Wire Wire Line
-	10275 825  10450 825 
-Text Label 10150 1025 2    50   ~ 0
-I2S_FS0
-Text Label 10150 925  2    50   ~ 0
-I2S_SCK0
-Text Label 10175 1125 2    50   ~ 0
-I2S_SDO
-Text Label 10150 1325 2    50   ~ 0
-I2S_SDI
-Text Label 9350 1600 2    50   ~ 0
-I2S_FS1
+	10300 1725 10475 1725
 Wire Wire Line
-	10175 1125 10450 1125
+	10300 1825 10475 1825
+Text Label 10300 1725 2    50   ~ 0
+SERCOM3.1
+Text Label 10300 1625 2    50   ~ 0
+SERCOM2.1
 Wire Wire Line
-	10150 1325 10450 1325
+	10300 1625 10475 1625
+Text Label 10300 1525 2    50   ~ 0
+SERCOM2.3
 Wire Wire Line
-	10150 1025 10450 1025
+	10300 1525 10475 1525
+Text Label 10300 1425 2    50   ~ 0
+SERCOM2.2
 Wire Wire Line
-	10150 925  10450 925 
+	10300 1425 10475 1425
+Text GLabel 10475 2425 2    50   Input ~ 0
+A6
+Text GLabel 10475 2525 2    50   Input ~ 0
+A7
+Text GLabel 10475 2625 2    50   Input ~ 0
+A8
+Text GLabel 10475 2725 2    50   Input ~ 0
+A9
+Text GLabel 10475 2825 2    50   Input ~ 0
+A10
+Text GLabel 10475 2925 2    50   Input ~ 0
+A11
+Text GLabel 10475 3025 2    50   Input ~ 0
+A12
+Text GLabel 10475 3125 2    50   Input ~ 0
+A13
+Text GLabel 10475 3325 2    50   Input ~ 0
+A15
+Text GLabel 10475 3425 2    50   Input ~ 0
+A16
+Text GLabel 10475 3525 2    50   Input ~ 0
+A17
+Text GLabel 10475 3625 2    50   Input ~ 0
+A18
+Text Label 10275 2425 2    50   ~ 0
+ADC0.AIN1+ANAREF.VREF0
+Text Label 10275 2525 2    50   ~ 0
+ADC1.AIN6
+Text Label 10275 2625 2    50   ~ 0
+ADC1.AIN7
+Text Label 10275 2725 2    50   ~ 0
+ADC1.AIN8
+Text Label 10275 2825 2    50   ~ 0
+ADC1.AIN9
+Text Label 10275 2925 2    50   ~ 0
+ADC0.AIN2+ADC1.AIN0
+Text Label 10275 3025 2    50   ~ 0
+ADC0.AIN3+ADC1.AIN1
+Text Label 10275 3125 2    50   ~ 0
+ADC0.AIN4+ANAREF.VREF1
+Text Label 10275 3325 2    50   ~ 0
+ADC0.AIN6+ANAREF.VREF2
+Text Label 10275 3425 2    50   ~ 0
+ADC0.AIN7
+Text Label 10275 3625 2    50   ~ 0
+ADC0.AIN8+ADC1.AIN2
+Text Label 10275 3525 2    50   ~ 0
+ADC0.AIN9+ADC1.AIN3
+Text Label 10275 3825 2    50   ~ 0
+ADC0.AIN10
+Text Label 10275 3725 2    50   ~ 0
+ADC0.AIN11
+Text Label 10275 2225 2    50   ~ 0
+ADC0.AIN15
+Text Label 10275 2125 2    50   ~ 0
+ADC0.AIN14
+Text Label 10275 2025 2    50   ~ 0
+ADC0.AIN13
+Text Label 10275 1925 2    50   ~ 0
+ADC0.AIN12
+Text GLabel 10475 3725 2    50   Input ~ 0
+A19
+Text GLabel 10475 3825 2    50   Input ~ 0
+A20
+Wire Wire Line
+	10275 1925 10475 1925
+Wire Wire Line
+	10275 2025 10475 2025
+Wire Wire Line
+	10275 2125 10475 2125
+Wire Wire Line
+	10475 2225 10275 2225
+Wire Wire Line
+	10275 2425 10475 2425
+Wire Wire Line
+	10475 2525 10275 2525
+Wire Wire Line
+	10275 2625 10475 2625
+Wire Wire Line
+	10475 2725 10275 2725
+Wire Wire Line
+	10275 2825 10475 2825
+Wire Wire Line
+	10475 2925 10275 2925
+Wire Wire Line
+	10275 3025 10475 3025
+Wire Wire Line
+	10475 3125 10275 3125
+Wire Wire Line
+	10275 3325 10475 3325
+Wire Wire Line
+	10475 3425 10275 3425
+Wire Wire Line
+	10275 3525 10475 3525
+Wire Wire Line
+	10275 3625 10475 3625
+Wire Wire Line
+	10475 3725 10275 3725
+Wire Wire Line
+	10275 3825 10475 3825
+Text Notes 5450 3350 0    50   ~ 0
+3.0, 3.1 used by dotstar
+Text Notes 4100 5500 0    50   ~ 0
+2.1, 2.2, 2.3 used by DAC
+Text Label 10275 4100 2    50   ~ 0
+SERCOM1.3
+Text GLabel 10475 4100 2    50   Input ~ 0
+SERIAL1.3
+Wire Wire Line
+	10275 4100 10475 4100
+Text Label 10275 4200 2    50   ~ 0
+SERCOM1.2
+Text GLabel 10475 4200 2    50   Input ~ 0
+SERIAL1.2
+Wire Wire Line
+	10275 4200 10475 4200
+Text Label 10275 4300 2    50   ~ 0
+SERCOM1.1
+Text GLabel 10475 4300 2    50   Input ~ 0
+SERIAL1.1
+Wire Wire Line
+	10275 4300 10475 4300
+Text Label 10275 4400 2    50   ~ 0
+SERCOM1.0
+Text GLabel 10475 4400 2    50   Input ~ 0
+SERIAL1.0
+Wire Wire Line
+	10275 4400 10475 4400
+Text Label 9300 6125 2    50   ~ 0
+SERCOM5.0
+Text GLabel 9500 6125 2    50   Input ~ 0
+I2C_SCL
+Wire Wire Line
+	9300 6125 9425 6125
+Text Label 9300 6225 2    50   ~ 0
+SERCOM5.1
+Text GLabel 9500 6225 2    50   Input ~ 0
+I2C_SDA
+Wire Wire Line
+	9300 6225 9350 6225
+Text Notes 2775 1800 0    50   ~ 0
+5.0, 5.1 used by I2C
+Text GLabel 10475 4975 2    50   Input ~ 0
+DR1
+Wire Wire Line
+	10275 4975 10475 4975
+Text GLabel 10475 5075 2    50   Input ~ 0
+DR2
+Wire Wire Line
+	10275 5075 10475 5075
+Text GLabel 10475 5175 2    50   Input ~ 0
+DR3
+Wire Wire Line
+	10275 5175 10475 5175
+Text GLabel 10475 5275 2    50   Input ~ 0
+DR4
+Wire Wire Line
+	10275 5275 10475 5275
+Text Label 10275 5175 2    50   ~ 0
+PB17
+Text Label 10275 5275 2    50   ~ 0
+PB16
+Text GLabel 10475 5500 2    50   Input ~ 0
+DB0
+Wire Wire Line
+	10275 5500 10475 5500
+Text GLabel 10475 5600 2    50   Input ~ 0
+DB1
+Wire Wire Line
+	10275 5600 10475 5600
+Text GLabel 10475 5700 2    50   Input ~ 0
+DB2
+Wire Wire Line
+	10275 5700 10475 5700
+Text Label 10275 5600 2    50   ~ 0
+PB10
+Text Label 10275 5700 2    50   ~ 0
+PB11
+Text Label 9075 4200 2    50   ~ 0
+SERCOM4.2
+Text Label 9075 4100 2    50   ~ 0
+SERCOM4.3
+Text Label 10275 5500 2    50   ~ 0
+SERCOM2.0
+Text Label 10275 2325 2    50   ~ 0
+DAC.VOUT0
+Text Label 10275 3225 2    50   ~ 0
+DAC.VOUT1
+Text GLabel 10475 2325 2    50   Input ~ 0
+A5
+Text GLabel 10475 3225 2    50   Input ~ 0
+A14
+Wire Wire Line
+	10475 3225 10275 3225
+Wire Wire Line
+	10275 2325 10475 2325
 $Comp
-L Jumper:SolderJumper_2_Bridged JP1
-U 1 1 61318219
-P 9500 1225
-F 0 "JP1" H 9500 1430 50  0000 C CNN
-F 1 "FS0" H 9500 1339 50  0000 C CNN
-F 2 "Jumper:SolderJumper-2_P1.3mm_Bridged_RoundedPad1.0x1.5mm" H 9500 1225 50  0001 C CNN
-F 3 "~" H 9500 1225 50  0001 C CNN
-	1    9500 1225
+L Device:C_Small C15
+U 1 1 61798B2C
+P 6025 1950
+F 0 "C15" H 6050 2025 50  0000 L CNN
+F 1 "0.1uF" H 6050 1875 50  0000 L CNN
+F 2 "Capacitor_SMD:C_0603_1608Metric_Pad1.08x0.95mm_HandSolder" H 6025 1950 50  0001 C CNN
+F 3 "~" H 6025 1950 50  0001 C CNN
+	1    6025 1950
 	1    0    0    -1  
 $EndComp
 $Comp
-L Jumper:SolderJumper_2_Open JP2
-U 1 1 61318F1D
-P 9500 1600
-F 0 "JP2" H 9500 1805 50  0000 C CNN
-F 1 "FS1" H 9500 1714 50  0000 C CNN
-F 2 "Jumper:SolderJumper-2_P1.3mm_Open_RoundedPad1.0x1.5mm" H 9500 1600 50  0001 C CNN
-F 3 "~" H 9500 1600 50  0001 C CNN
-	1    9500 1600
+L power:GND #PWR0136
+U 1 1 61798B40
+P 6025 2050
+F 0 "#PWR0136" H 6025 1800 50  0001 C CNN
+F 1 "GND" H 6025 1900 50  0000 C CNN
+F 2 "" H 6025 2050 50  0001 C CNN
+F 3 "" H 6025 2050 50  0001 C CNN
+	1    6025 2050
 	1    0    0    -1  
 $EndComp
-Text Label 9350 1225 2    50   ~ 0
-I2S_FS0
+$Comp
+L power:+3V3 #PWR0137
+U 1 1 61798B4D
+P 6025 1850
+F 0 "#PWR0137" H 6025 1700 50  0001 C CNN
+F 1 "+3V3" H 6025 2000 50  0000 C CNN
+F 2 "" H 6025 1850 50  0001 C CNN
+F 3 "" H 6025 1850 50  0001 C CNN
+	1    6025 1850
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:Ferrite_Bead_Small FB4
+U 1 1 608F21A5
+P 7500 1000
+F 0 "FB4" H 7325 1050 50  0000 C CNN
+F 1 "300mA" H 7275 975 50  0000 C CNN
+F 2 "Inductor_SMD:L_0603_1608Metric_Pad1.05x0.95mm_HandSolder" V 7430 1000 50  0001 C CNN
+F 3 "~" H 7500 1000 50  0001 C CNN
+	1    7500 1000
+	-1   0    0    1   
+$EndComp
 Wire Wire Line
-	9650 1225 10450 1225
+	7500 1500 7500 1475
+Connection ~ 7500 1475
 Wire Wire Line
-	9650 1600 9650 1225
-Connection ~ 9650 1225
+	7500 1475 7500 1150
+$Comp
+L Device:C_Small C16
+U 1 1 617B46FD
+P 7675 1250
+F 0 "C16" H 7750 1250 50  0000 L CNN
+F 1 "0.1uF" H 7600 1100 50  0000 L CNN
+F 2 "Capacitor_SMD:C_0603_1608Metric_Pad1.08x0.95mm_HandSolder" H 7675 1250 50  0001 C CNN
+F 3 "~" H 7675 1250 50  0001 C CNN
+	1    7675 1250
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:C_Small C17
+U 1 1 617B4F5A
+P 7975 1250
+F 0 "C17" H 8050 1250 50  0000 L CNN
+F 1 "1uF" H 8050 1175 50  0000 L CNN
+F 2 "Capacitor_SMD:C_0603_1608Metric_Pad1.08x0.95mm_HandSolder" H 7975 1250 50  0001 C CNN
+F 3 "~" H 7975 1250 50  0001 C CNN
+	1    7975 1250
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	7500 1150 7675 1150
+Connection ~ 7500 1150
+Wire Wire Line
+	7500 1150 7500 1100
+Wire Wire Line
+	7675 1150 7975 1150
+Connection ~ 7675 1150
+Wire Wire Line
+	7675 1350 7975 1350
+$Comp
+L power:GND #PWR0138
+U 1 1 617BB73B
+P 7975 1350
+F 0 "#PWR0138" H 7975 1100 50  0001 C CNN
+F 1 "GND" H 7975 1200 50  0000 C CNN
+F 2 "" H 7975 1350 50  0001 C CNN
+F 3 "" H 7975 1350 50  0001 C CNN
+	1    7975 1350
+	1    0    0    -1  
+$EndComp
+Connection ~ 7975 1350
+Text GLabel 10475 1525 2    50   Input ~ 0
+SPI_COPI
+Text GLabel 10475 1625 2    50   Input ~ 0
+SPI_SCLK
+Text GLabel 6800 1775 0    50   Input ~ 0
+SPI_COPI
+Text GLabel 6800 1675 0    50   Input ~ 0
+SPI_SCLK
+Text Label 4950 3500 0    50   ~ 0
+PA21
+Text Label 4950 3600 0    50   ~ 0
+PA20
+Text Label 9075 4400 2    50   ~ 0
+SERCOM4.0
+Text Label 9075 4300 2    50   ~ 0
+SERCOM4.1
+Text GLabel 9275 4100 2    50   Input ~ 0
+SERIAL4.3
+Wire Wire Line
+	9075 4100 9275 4100
+Text GLabel 9275 4200 2    50   Input ~ 0
+SERIAL4.2
+Wire Wire Line
+	9075 4200 9275 4200
+Text GLabel 9275 4300 2    50   Input ~ 0
+SERIAL4.1
+Wire Wire Line
+	9075 4300 9275 4300
+Text GLabel 9275 4400 2    50   Input ~ 0
+SERIAL4.0
+Wire Wire Line
+	9075 4400 9275 4400
+Text Label 10275 4975 2    50   ~ 0
+PA21
+Text Label 10275 5075 2    50   ~ 0
+PA20
+$Comp
+L Device:R_US R60
+U 1 1 616A597E
+P 9425 5975
+F 0 "R60" V 9630 5975 50  0001 C CNN
+F 1 "1k" V 9539 5975 50  0001 C CNN
+F 2 "Resistor_SMD:R_0603_1608Metric_Pad0.98x0.95mm_HandSolder" V 9465 5965 50  0001 C CNN
+F 3 "~" H 9425 5975 50  0001 C CNN
+	1    9425 5975
+	1    0    0    -1  
+$EndComp
+Connection ~ 9425 6125
+Wire Wire Line
+	9425 6125 9500 6125
+$Comp
+L Device:R_US R59
+U 1 1 616AB93C
+P 9350 6075
+F 0 "R59" V 9555 6075 50  0001 C CNN
+F 1 "1k" V 9464 6075 50  0001 C CNN
+F 2 "Resistor_SMD:R_0603_1608Metric_Pad0.98x0.95mm_HandSolder" V 9390 6065 50  0001 C CNN
+F 3 "~" H 9350 6075 50  0001 C CNN
+	1    9350 6075
+	1    0    0    -1  
+$EndComp
+Connection ~ 9350 6225
+Wire Wire Line
+	9350 6225 9500 6225
+$Comp
+L power:+3V3 #PWR090
+U 1 1 616ABDBB
+P 9425 5825
+F 0 "#PWR090" H 9425 5675 50  0001 C CNN
+F 1 "+3V3" H 9425 5975 50  0000 C CNN
+F 2 "" H 9425 5825 50  0001 C CNN
+F 3 "" H 9425 5825 50  0001 C CNN
+	1    9425 5825
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	9425 5825 9350 5825
+Wire Wire Line
+	9350 5825 9350 5925
+Connection ~ 9425 5825
 $EndSCHEMATC

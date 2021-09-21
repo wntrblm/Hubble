@@ -156,42 +156,6 @@ F 3 "" H 8050 2950 50  0001 C CNN
 	1    8050 2950
 	1    0    0    -1  
 $EndComp
-Text HLabel 8750 2150 2    50   Input ~ 0
-ADC_2D
-Text HLabel 8750 2050 2    50   Input ~ 0
-ADC_2C
-Text HLabel 8750 1950 2    50   Input ~ 0
-ADC_2B
-Text HLabel 8750 1850 2    50   Input ~ 0
-ADC_2A
-Text HLabel 8750 1750 2    50   Input ~ 0
-ADC_1D
-Text HLabel 8750 1650 2    50   Input ~ 0
-ADC_1C
-Text HLabel 8750 1550 2    50   Input ~ 0
-ADC_1B
-Text HLabel 8750 1450 2    50   Input ~ 0
-ADC_1A
-Connection ~ 7150 2050
-Wire Wire Line
-	7150 2050 7150 2150
-Connection ~ 7150 1950
-Wire Wire Line
-	7150 1950 7150 2050
-Wire Wire Line
-	7150 1850 7150 1950
-Text HLabel 7150 1850 0    50   Input ~ 0
-ADC_2
-Connection ~ 7150 1650
-Wire Wire Line
-	7150 1650 7150 1750
-Connection ~ 7150 1550
-Wire Wire Line
-	7150 1550 7150 1650
-Wire Wire Line
-	7150 1450 7150 1550
-Text HLabel 7150 1450 0    50   Input ~ 0
-ADC_1
 Text Notes 7400 850  0    50   ~ 0
 Analog in 2:8 multiplexer
 $Comp
@@ -254,39 +218,29 @@ F 3 "" H 5075 2975 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 Text HLabel 5775 2175 2    50   Input ~ 0
-DAC_4B
+DAC_2D
 Text HLabel 5775 2075 2    50   Input ~ 0
-DAC_4A
+DAC_2C
 Text HLabel 5775 1975 2    50   Input ~ 0
-DAC_3B
-Text HLabel 5775 1875 2    50   Input ~ 0
-DAC_3A
-Text HLabel 5775 1775 2    50   Input ~ 0
 DAC_2B
-Text HLabel 5775 1675 2    50   Input ~ 0
+Text HLabel 5775 1875 2    50   Input ~ 0
 DAC_2A
+Text HLabel 5775 1775 2    50   Input ~ 0
+DAC_1D
+Text HLabel 5775 1675 2    50   Input ~ 0
+DAC_1C
 Text HLabel 5775 1575 2    50   Input ~ 0
 DAC_1B
 Text HLabel 5775 1475 2    50   Input ~ 0
 DAC_1A
-Wire Wire Line
-	4175 2075 4175 2175
-Wire Wire Line
-	4175 1875 4175 1975
-Wire Wire Line
-	4175 1675 4175 1775
-Text HLabel 4175 2075 0    50   Input ~ 0
-DAC_4
 Text HLabel 4175 1875 0    50   Input ~ 0
-DAC_3
-Text HLabel 4175 1675 0    50   Input ~ 0
 DAC_2
 Wire Wire Line
 	4175 1475 4175 1575
 Text HLabel 4175 1475 0    50   Input ~ 0
 DAC_1
 Text Notes 4425 850  0    50   ~ 0
-Analog out 4:8 multiplexer
+Analog out 2:8 multiplexer
 $Comp
 L Analog_Switch:ADG1414BRU U?
 U 1 1 60F7CFC6
@@ -318,7 +272,7 @@ U 1 1 61013D0D
 P 3625 2325
 F 0 "R5" H 3693 2371 50  0000 L CNN
 F 1 "1k" H 3693 2280 50  0000 L CNN
-F 2 "Resistor_SMD:R_0603_1608Metric_Pad1.05x0.95mm_HandSolder" V 3665 2315 50  0001 C CNN
+F 2 "Resistor_SMD:R_0603_1608Metric_Pad0.98x0.95mm_HandSolder" V 3665 2315 50  0001 C CNN
 F 3 "~" H 3625 2325 50  0001 C CNN
 	1    3625 2325
 	1    0    0    -1  
@@ -345,7 +299,7 @@ U 1 1 6101B7BB
 P 6600 2300
 F 0 "R6" H 6668 2346 50  0000 L CNN
 F 1 "1k" H 6668 2255 50  0000 L CNN
-F 2 "Resistor_SMD:R_0603_1608Metric_Pad1.05x0.95mm_HandSolder" V 6640 2290 50  0001 C CNN
+F 2 "Resistor_SMD:R_0603_1608Metric_Pad0.98x0.95mm_HandSolder" V 6640 2290 50  0001 C CNN
 F 3 "~" H 6600 2300 50  0001 C CNN
 	1    6600 2300
 	1    0    0    -1  
@@ -370,4 +324,57 @@ Wire Wire Line
 	6600 3350 4175 3350
 Wire Wire Line
 	4175 3350 4175 2775
+Wire Wire Line
+	4175 1575 4175 1675
+Connection ~ 4175 1575
+Wire Wire Line
+	4175 1675 4175 1775
+Connection ~ 4175 1675
+Wire Wire Line
+	4175 1875 4175 1975
+Wire Wire Line
+	4175 1975 4175 2075
+Connection ~ 4175 1975
+Wire Wire Line
+	4175 2075 4175 2175
+Connection ~ 4175 2075
+Text HLabel 7150 1450 0    50   Input ~ 0
+DAC_3
+Text HLabel 7150 1850 0    50   Input ~ 0
+DAC_4
+Wire Wire Line
+	7150 1450 7150 1550
+Wire Wire Line
+	7150 1550 7150 1650
+Connection ~ 7150 1550
+Wire Wire Line
+	7150 1650 7150 1750
+Connection ~ 7150 1650
+Wire Wire Line
+	7150 1850 7150 1950
+Wire Wire Line
+	7150 1950 7150 2050
+Connection ~ 7150 1950
+Wire Wire Line
+	7150 2050 7150 2150
+Connection ~ 7150 2050
+Text HLabel 8750 2150 2    50   Input ~ 0
+DAC_4D
+Text HLabel 8750 2050 2    50   Input ~ 0
+DAC_4C
+Text HLabel 8750 1950 2    50   Input ~ 0
+DAC_4B
+Text HLabel 8750 1850 2    50   Input ~ 0
+DAC_4A
+Text HLabel 8750 1750 2    50   Input ~ 0
+DAC_3D
+Text HLabel 8750 1650 2    50   Input ~ 0
+DAC_3C
+Text HLabel 8750 1550 2    50   Input ~ 0
+DAC_3B
+Text HLabel 8750 1450 2    50   Input ~ 0
+DAC_3A
+Text Notes 6050 950  0    50   ~ 0
+bypass caps?
+NoConn ~ 7150 2750
 $EndSCHEMATC
