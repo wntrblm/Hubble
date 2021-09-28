@@ -50,6 +50,10 @@ void stel_adc_init() {
     biasrefbuf = (*((uint32_t*)ADC1_FUSES_BIASREFBUF_ADDR) & ADC1_FUSES_BIASREFBUF_Msk) >> ADC1_FUSES_BIASREFBUF_Pos;
 
     ADC1->CALIB.reg = ADC_CALIB_BIASREFBUF(biasrefbuf) | ADC_CALIB_BIASR2R(biasr2r) | ADC_CALIB_BIASCOMP(biascomp);
+
+    /* Enable the ADC. */
+    ADC1->CTRLA.bit.ENABLE = 1;
+    while (ADC1->SYNCBUSY.bit.ENABLE) {};
 #endif
 
     /*

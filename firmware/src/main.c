@@ -17,32 +17,11 @@
 
 /* Macros */
 
-#define OUTPUT_1_CHANNEL AD5685_CHANNEL_D
-#define OUTPUT_2_CHANNEL AD5685_CHANNEL_A
-#define OUTPUT_3_CHANNEL AD5685_CHANNEL_B
-#define OUTPUT_4_CHANNEL AD5685_CHANNEL_B
-#define OUTPUT_DELTA_CHANNEL DAC_CHANNEL_B
-#define OUTPUT_GAMMA_CHANNEL DAC_CHANNEL_A
-
 #define ADC_12_BIT_TO_FLOAT(val) (u12_invert(map_rangef(val, 0.0f, 4096.0f, -5.0f, 5.0f)))
 #define FLOAT_TO_16_BIT_DAC(val) (u16_invert(float_to_u16(map_rangef(val, -5.f, 8.f, 0.f, 1.0f))))
 #define FLOAT_TO_12_BIT_DAC(val) (u12_invert(float_to_u12(map_rangef(val, -5.f, 5.f, 0.f, 1.0f))))
 
 /* Static variables */
-
-static struct StelADCInput input_a = {
-    .adc = ADC0,
-    .port = WNTR_PORT_B,
-    .pin = 8,
-    .ain = ADC_INPUTCTRL_MUXPOS_AIN2,
-};
-
-static struct StelADCInput input_b = {
-    .adc = ADC0,
-    .port = WNTR_PORT_A,
-    .pin = 7,
-    .ain = ADC_INPUTCTRL_MUXPOS_AIN7,
-};
 
 /* Forward declarations */
 
@@ -77,9 +56,25 @@ static void init() {
 
     // stel_dac_init();
 
-    // stel_adc_init();
-    // stel_adc_init_input(&input_a);
-    // stel_adc_init_input(&input_b);
+    stel_adc_init();
+    stel_adc_init_input(A1);
+    stel_adc_init_input(A2);
+    stel_adc_init_input(A3);
+    stel_adc_init_input(A4);
+    stel_adc_init_input(A6);
+    stel_adc_init_input(A7);
+    stel_adc_init_input(A8);
+    stel_adc_init_input(A9);
+    stel_adc_init_input(A10);
+    stel_adc_init_input(A11);
+    stel_adc_init_input(A12);
+    stel_adc_init_input(A13);
+    stel_adc_init_input(A15);
+    stel_adc_init_input(A16);
+    stel_adc_init_input(A17);
+    stel_adc_init_input(A18);
+    stel_adc_init_input(A19);
+    stel_adc_init_input(A20);
 
     // stel_ad5685_init();
     // stel_ad5685_soft_reset();
@@ -106,8 +101,45 @@ static void loop() {
 
     /* ADC update */
     /* TODO: This should happen automatically via DMA */
-    // in.a = ADC_12_BIT_TO_FLOAT(stel_adc_read_sync(&input_a));
-    // in.b = ADC_12_BIT_TO_FLOAT(stel_adc_read_sync(&input_b));
+    const uint16_t a1 = stel_adc_read_sync(A1);
+    const uint16_t a2 = stel_adc_read_sync(A2);
+    const uint16_t a3 = stel_adc_read_sync(A3);
+    const uint16_t a4 = stel_adc_read_sync(A4);
+    const uint16_t a6 = stel_adc_read_sync(A6);
+    const uint16_t a7 = stel_adc_read_sync(A7);
+    const uint16_t a8 = stel_adc_read_sync(A8);
+    const uint16_t a9 = stel_adc_read_sync(A9);
+    const uint16_t a10 = stel_adc_read_sync(A10);
+    const uint16_t a11 = stel_adc_read_sync(A11);
+    const uint16_t a12 = stel_adc_read_sync(A12);
+    const uint16_t a13 = stel_adc_read_sync(A13);
+    const uint16_t a15 = stel_adc_read_sync(A15);
+    const uint16_t a16 = stel_adc_read_sync(A16);
+    const uint16_t a17 = stel_adc_read_sync(A17);
+    const uint16_t a18 = stel_adc_read_sync(A18);
+    const uint16_t a19 = stel_adc_read_sync(A19);
+    const uint16_t a20 = stel_adc_read_sync(A20);
+
+    printf(
+        "ADC: %04u %04u %04u %04u %04u %04u %04u %04u %04u %04u %04u %04u %04u %04u %04u %04u %04u %04u\n",
+        a1,
+        a2,
+        a3,
+        a4,
+        a6,
+        a7,
+        a8,
+        a9,
+        a10,
+        a11,
+        a12,
+        a13,
+        a15,
+        a16,
+        a17,
+        a18,
+        a19,
+        a20);
 
     /* Update DAC outputs. */
     /* TODO: DMA? */
