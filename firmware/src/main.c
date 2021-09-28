@@ -4,7 +4,6 @@
     Full text available at: https://opensource.org/licenses/MIT
 */
 
-#include "flow_runner.h"
 #include "printf.h"
 #include "sam.h"
 #include "stel.h"
@@ -76,26 +75,20 @@ static void init() {
     /* Configure peripherals */
     stel_dotstar_init(64);
 
-    stel_dac_init();
+    // stel_dac_init();
 
-    stel_adc_init();
-    stel_adc_init_input(&input_a);
-    stel_adc_init_input(&input_b);
+    // stel_adc_init();
+    // stel_adc_init_input(&input_a);
+    // stel_adc_init_input(&input_b);
 
-    stel_ad5685_init();
-    stel_ad5685_soft_reset();
-    wntr_delay_ms(1);
-
-    /* Setup the flow program. */
-    flow_runner_init();
+    // stel_ad5685_init();
+    // stel_ad5685_soft_reset();
+    // wntr_delay_ms(1);
 }
 
 /* Private functions */
 
 static void loop() {
-    static struct FlowOutputs outs = {};
-    struct FlowInputs in;
-
     /* Dotstar update */
     static uint16_t hue = 0;
     stel_dotstar_set32(0, wntr_colorspace_hsv_to_rgb(hue, 200, 255));
@@ -103,29 +96,26 @@ static void loop() {
     hue += 5;
 
     /* MIDI I/O update */
-    struct WntrMIDIMessage midi_msg = {};
+    // struct WntrMIDIMessage midi_msg = {};
 
-    if (wntr_midi_receive(&midi_msg)) {
-        in.midi_msg = &midi_msg;
-    } else {
-        in.midi_msg = NULL;
-    }
+    // if (wntr_midi_receive(&midi_msg)) {
+    //     in.midi_msg = &midi_msg;
+    // } else {
+    //     in.midi_msg = NULL;
+    // }
 
     /* ADC update */
     /* TODO: This should happen automatically via DMA */
-    in.a = ADC_12_BIT_TO_FLOAT(stel_adc_read_sync(&input_a));
-    in.b = ADC_12_BIT_TO_FLOAT(stel_adc_read_sync(&input_b));
-
-    /* Advance the flow runner one step. */
-    flow_runner_step(&in, &outs);
+    // in.a = ADC_12_BIT_TO_FLOAT(stel_adc_read_sync(&input_a));
+    // in.b = ADC_12_BIT_TO_FLOAT(stel_adc_read_sync(&input_b));
 
     /* Update DAC outputs. */
     /* TODO: DMA? */
 
-    stel_ad5685_write_channel(OUTPUT_1_CHANNEL, FLOAT_TO_16_BIT_DAC(outs.one), true);
-    stel_ad5685_write_channel(OUTPUT_2_CHANNEL, FLOAT_TO_16_BIT_DAC(outs.two), true);
-    stel_ad5685_write_channel(OUTPUT_3_CHANNEL, FLOAT_TO_16_BIT_DAC(outs.three), true);
-    stel_ad5685_write_channel(OUTPUT_4_CHANNEL, FLOAT_TO_16_BIT_DAC(outs.four), true);
-    stel_dac_set(OUTPUT_DELTA_CHANNEL, FLOAT_TO_12_BIT_DAC(outs.delta));
-    stel_dac_set(OUTPUT_GAMMA_CHANNEL, FLOAT_TO_12_BIT_DAC(outs.gamma));
+    // stel_ad5685_write_channel(OUTPUT_1_CHANNEL, FLOAT_TO_16_BIT_DAC(outs.one), true);
+    // stel_ad5685_write_channel(OUTPUT_2_CHANNEL, FLOAT_TO_16_BIT_DAC(outs.two), true);
+    // stel_ad5685_write_channel(OUTPUT_3_CHANNEL, FLOAT_TO_16_BIT_DAC(outs.three), true);
+    // stel_ad5685_write_channel(OUTPUT_4_CHANNEL, FLOAT_TO_16_BIT_DAC(outs.four), true);
+    // stel_dac_set(OUTPUT_DELTA_CHANNEL, FLOAT_TO_12_BIT_DAC(outs.delta));
+    // stel_dac_set(OUTPUT_GAMMA_CHANNEL, FLOAT_TO_12_BIT_DAC(outs.gamma));
 }

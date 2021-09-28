@@ -1,0 +1,38 @@
+{
+    "configurations": [
+        {
+            "name": "ARM Cortex M",
+            "includePath": [
+                "${workspaceRoot}/firmware/src",
+                "${workspaceRoot}/firmware/src/hw",
+                "${workspaceRoot}/firmware/src/drivers",
+                "${workspaceRoot}/firmware/third_party/cmsis/include",
+                "${workspaceRoot}/firmware/third_party/rtt",
+                "${workspaceRoot}/firmware/third_party/samd51a/include",
+                "${workspaceFolder}/firmware/third_party/tinyusb/src",
+                "${workspaceFolder}/firmware/third_party/printf",
+                "${workspaceFolder}/firmware/src/lib",
+                "${workspaceFolder}/firmware/third_party/libwinter",
+                "${workspaceFolder}/firmware/third_party/libwinter/samd"
+            ],
+            "defines": [
+                "DEBUG=1",
+                "SAMD51",
+                "__SAMD51_FAMILY",
+                "__SAM_D51_SUBFAMILY",
+                "__SAMD51P20A__",
+                "F_CPU = 120000000",
+                "TUSB_OPT_DEVICE_ENABLED"
+            ],
+            "intelliSenseMode": "gcc-arm",
+            "compilerPath": "/Users/stargirl/.local/gcc-arm-none-eabi-10.3-2021.07/bin/arm-none-eabi-gcc",
+            "compilerArgs": [
+                "-mcpu=cortex-m4",
+                "-mthumb"
+            ],
+            "cStandard": "gnu11",
+            "cppStandard": "c++17"
+        }
+    ],
+    "version": 4
+}

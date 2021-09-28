@@ -15,8 +15,8 @@ static const uint8_t start_frame_[4] = {0x00, 0x00, 0x00, 0x00};
 
 /* Use bitband SPI for the dotstar since it's not connected to a real SERCOM. */
 static struct WntrBitBangSPI spi_ = {
-    .sdo = WNTR_GPIO_PIN(WNTR_PORT_B, 30),
-    .sck = WNTR_GPIO_PIN(WNTR_PORT_B, 31),
+    .sdo = WNTR_GPIO_PIN(WNTR_PORT_A, 23),
+    .sck = WNTR_GPIO_PIN(WNTR_PORT_A, 22),
     .clock_polarity = 0,
     .clock_phase = 0,
 };

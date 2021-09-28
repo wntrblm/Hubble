@@ -1,0 +1,36 @@
+{
+    "cortex-debug.enableTelemetry": false,
+    "C_Cpp.default.cStandard": "gnu11",
+    "cSpell.words": [
+        "DACs",
+        "GCLK",
+        "gpio",
+        "stel",
+        "sysex",
+        "vref"
+    ],
+    "cSpell.enableFiletypes": [
+        "!c",
+        "!cpp",
+        "markdown"
+    ],
+    "cSpell.enabled": true,
+    "C_Cpp.clang_format_fallbackStyle": "LLVM",
+    "files.associations": {
+        "*.h": "c",
+        "*.structy": "python",
+        "type_traits": "c",
+        "cmath": "cpp",
+        "cstdlib": "c",
+        "locale": "c",
+        "string": "c",
+        "tuple": "c",
+        "algorithm": "c",
+        "random": "c",
+        "__locale": "c",
+        "bitset": "c"
+    },
+    "python.linting.pylintEnabled": false,
+    "python.linting.flake8Enabled": true,
+    "python.linting.enabled": true
+}
