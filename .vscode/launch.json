@@ -6,13 +6,13 @@
     "configurations": [
         {
             "name": "Cortex Debug",
-            "cwd": "${workspaceRoot}",
+            "cwd": "${workspaceRoot}/firmware",
             "executable": "./build/stellar-firmware.elf",
             "request": "launch",
             "type": "cortex-debug",
             "servertype": "jlink",
             "device": "ATSAMD51J20A",
-            "svdFile": "${workspaceRoot}/third_party/samd51a/svd/ATSAMD51J20A.svd",
+            "svdFile": "${workspaceRoot}/firmware/third_party/samd51a/svd/ATSAMD51J20A.svd",
             "preLaunchTask": "build project",
             "gdbPath": "arm-none-eabi-gdb-py"
         }
