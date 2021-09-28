@@ -12,13 +12,13 @@ c_flags = -std=gnu17 -x c
 cxx_flags = -std=gnu++17 -x c++
 
 cc_includes = -Ithird_party/samd51a/include -Ithird_party/cmsis/include $
-    -Ithird_party/wren/include -Ithird_party/libwinter -Isrc/hw $
+    -Ithird_party/wren/include $
+    -Ithird_party/tinyusb/src/portable/microchip/samd -Ithird_party/rtt $
+    -Ithird_party/tinyusb/src -Ibuild -Ithird_party/libwinter $
+    -Ithird_party/tinyusb/src/common -Isrc $
     -Ithird_party/tinyusb/src/class/midi -Ithird_party/libwinter/samd $
-    -Ithird_party/rtt -Ibuild -Isrc/lib -Ithird_party/tinyusb/src/device $
-    -Ithird_party/samd51a/gcc $
-    -Ithird_party/tinyusb/src/portable/microchip/samd -Isrc -Isrc/drivers $
-    -Ithird_party/tinyusb/src -Ithird_party/tinyusb/src/common $
-    -Ithird_party/printf
+    -Ithird_party/printf -Isrc/lib -Ithird_party/samd51a/gcc -Isrc/hw $
+    -Isrc/drivers -Ithird_party/tinyusb/src/device
 
 cc_defines = -D__SAMD51J20A__=1 -DSAMD51=1 -DARM_MATH_CM4=1 $
     -DCFG_TUSB_MCU=OPT_MCU_SAMD51 -DDEBUG=1
@@ -226,6 +226,8 @@ build build_info_always.phony: phony
 
 build $builddir/format/src/stel.h: clang_format src/stel.h
 
+build $builddir/format/src/stel_config.h: clang_format src/stel_config.h
+
 build $builddir/format/src/main.c: clang_format src/main.c
 
 build $builddir/format/src/tusb_config.h: clang_format src/tusb_config.h
@@ -285,7 +287,8 @@ build $builddir/format/src/lib/stel_math_utils.h: clang_format $
     src/lib/stel_math_utils.h
 
 build format: phony | $builddir/format/src/stel.h $
-    $builddir/format/src/main.c $builddir/format/src/tusb_config.h $
+    $builddir/format/src/stel_config.h $builddir/format/src/main.c $
+    $builddir/format/src/tusb_config.h $
     $builddir/format/src/stel_usb_descriptors.c $
     $builddir/format/src/drivers/stel_dotstar.h $
     $builddir/format/src/drivers/stel_ad5685.h $

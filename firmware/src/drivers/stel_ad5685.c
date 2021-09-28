@@ -5,6 +5,7 @@
 */
 
 #include "stel_ad5685.h"
+#include "stel_config.h"
 #include "stel_sercom_spi.h"
 #include "wntr_delay.h"
 
@@ -22,28 +23,25 @@
 
 /* Static variables. */
 static struct StelSERCOMSPI spi_ = {
-    .sercom = &SERCOM4->SPI,
-    .dopo = SERCOM_SPI_DOPO_SDO_0_SCK_1_CS_2,
-    .sdo = WNTR_GPIO_PIN(WNTR_PORT_A, 13),
-    .sdo_alt = WNTR_PMUX_D,
-    .sck = WNTR_GPIO_PIN(WNTR_PORT_A, 12),
-    .sck_alt = WNTR_PMUX_D,
-    .cs = WNTR_GPIO_PIN(WNTR_PORT_A, 14),
+    .sercom = &STEL_AD5685_SERCOM->SPI,
+    .dopo = STEL_AD5685_SERCOM_DOPO,
+    .sdo = STEL_AD5685_SDO,
+    .sdo_alt = STEL_AD5685_SDO_ALT,
+    .sck = STEL_AD5685_SCK,
+    .sck_alt = STEL_AD5685_SCK_ALT,
+    .cs = STEL_AD5685_CS,
     // Don't use hardware CS, since the AD5685 expects 24 bits instead of just 8.
     .cs_alt = 0,
     .polarity = 0,
     .phase = 1,
 };
 
-/* Private function */
+/* Private functions */
 
 inline static void send_command(uint8_t command, uint8_t data1, uint8_t data2) {
     WntrGPIOPin_set(spi_.cs, false);
-    // wntr_delay_us(1);
     stel_sercom_spi_write(&spi_, (const uint8_t[]){command, data1, data2}, 3);
-    // wntr_delay_us(10);
     WntrGPIOPin_set(spi_.cs, true);
-    // wntr_delay_us(10);
 }
 
 /* Public functions */

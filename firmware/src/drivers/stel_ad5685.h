@@ -27,5 +27,4 @@ void stel_ad5685_soft_reset();
 
 void stel_ad5685_write_channel(enum StelAD5685Channel channel, uint16_t val, bool update);
 void stel_ad5685_update_channel(enum StelAD5685Channel channel);
-
 void stel_ad5685_update_all_channels();

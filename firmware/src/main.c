@@ -54,7 +54,9 @@ static void init() {
     /* Configure peripherals */
     stel_dotstar_init(64);
 
-    // stel_dac_init();
+    stel_dac_init();
+    stel_dac_init_output(A5);
+    stel_dac_init_output(A14);
 
     stel_adc_init();
     stel_adc_init_input(A1);
@@ -76,9 +78,8 @@ static void init() {
     stel_adc_init_input(A19);
     stel_adc_init_input(A20);
 
-    // stel_ad5685_init();
-    // stel_ad5685_soft_reset();
-    // wntr_delay_ms(1);
+    stel_ad5685_init();
+    stel_ad5685_soft_reset();
 }
 
 /* Private functions */
@@ -100,7 +101,6 @@ static void loop() {
     // }
 
     /* ADC update */
-    /* TODO: This should happen automatically via DMA */
     const uint16_t a1 = stel_adc_read_sync(A1);
     const uint16_t a2 = stel_adc_read_sync(A2);
     const uint16_t a3 = stel_adc_read_sync(A3);
@@ -142,12 +142,12 @@ static void loop() {
         a20);
 
     /* Update DAC outputs. */
-    /* TODO: DMA? */
 
-    // stel_ad5685_write_channel(OUTPUT_1_CHANNEL, FLOAT_TO_16_BIT_DAC(outs.one), true);
-    // stel_ad5685_write_channel(OUTPUT_2_CHANNEL, FLOAT_TO_16_BIT_DAC(outs.two), true);
-    // stel_ad5685_write_channel(OUTPUT_3_CHANNEL, FLOAT_TO_16_BIT_DAC(outs.three), true);
-    // stel_ad5685_write_channel(OUTPUT_4_CHANNEL, FLOAT_TO_16_BIT_DAC(outs.four), true);
-    // stel_dac_set(OUTPUT_DELTA_CHANNEL, FLOAT_TO_12_BIT_DAC(outs.delta));
-    // stel_dac_set(OUTPUT_GAMMA_CHANNEL, FLOAT_TO_12_BIT_DAC(outs.gamma));
+    stel_dac_set(A5, a1);
+    stel_dac_set(A14, a2);
+
+    stel_ad5685_write_channel(AD5685_CHANNEL_A, a17 << 4, true);
+    stel_ad5685_write_channel(AD5685_CHANNEL_B, a18 << 4, true);
+    stel_ad5685_write_channel(AD5685_CHANNEL_C, a19 << 4, true);
+    stel_ad5685_write_channel(AD5685_CHANNEL_D, a20 << 4, true);
 }

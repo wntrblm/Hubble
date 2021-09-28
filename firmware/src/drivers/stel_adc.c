@@ -125,6 +125,4 @@ static void adc_inst_configure(Adc* inst) {
     while (inst->SYNCBUSY.bit.REFCTRL) {};
     inst->INPUTCTRL.reg = ADC_INPUTCTRL_MUXNEG_GND;
     while (inst->SYNCBUSY.bit.INPUTCTRL) {};
-
-    /* TODO: Enable rail to rail? */
 }
