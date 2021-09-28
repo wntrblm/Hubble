@@ -1,0 +1,6 @@
+n0 = input(which="a")
+n1 = mult(multiplier=-1.0)
+n2 = output(which="one")
+
+n0[0] > n1[0]
+n1[1] > n2[0]

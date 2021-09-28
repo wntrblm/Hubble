@@ -1,0 +1,45 @@
+# Listen on channel one
+midi_in = midi_in(channel=1)
+
+# Convert notes to pitch CV and send to output 1.
+pitch_cv = midi_to_cv()
+midi_in[0] > pitch_cv[0]
+
+out1 = output_one()
+pitch_cv[0] > out1[0]
+
+# Convert notes to gate and send to output 2.
+gate = midi_to_gate()
+midi_in[0] > gate[0]
+
+out2 = output_two()
+gate[0] > out2[0]
+
+# Convert note velocity to a CV signal from
+# 0 to 8 volts and send it to output 3
+velocity_scaler = multiply(by=8.0)
+pitch_cv[1] > velocity_scaler[0]
+
+out3 = output_three()
+velocity_scaler[0] > out3[0]
+
+# Similarly, convert CC 1 (mod wheel) to
+# a CV signal that 0 to 8 volts and send
+# it to output 4.
+mod_wheel = midi_cc(number=1)
+midi_in[0] > mod_wheel[0]
+
+mod_wheel_scaler = multiply(by=8.0)
+mod_wheel[0] > mod_wheel_scaler[0]
+
+out4 = output_four()
+mod_wheel_scaler[0] > out4[0]
+
+# Take whatever is coming into input A,
+# invert it, and send it to output D.
+in1 = input_a()
+in1_inverter = multiply(by=-1.0)
+in1[0] > in1_inverter[0]
+
+outd = output_delta()
+in1_inverter[0] > outd[0]
