@@ -5,34 +5,9 @@
 */
 
 #include "stel_adc.h"
+#include "stel_config.h"
 #include "wntr_assert.h"
 #include "wntr_gpio.h"
-
-/* Stellar only uses ADC0, so there's no need to configure ADC1. */
-#define ADC0_ENABLED 1
-#define ADC1_ENABLED 0
-
-/* 48 MHz clock divided down to 12 MHz, or around 750 KSPS. */
-#define ADC_GCLK GCLK_PCHCTRL_GEN_GCLK1
-#define ADC_PRESCALER ADC_CTRLA_PRESCALER_DIV4
-/*
-    The ADC inputs are driven by low impedence op-amps (let's assume 1 kOhms),
-    so the sample time doesn't need to be very high. (Datasheet Figure 54-4)
-
-    sample_time >= (2 kOhms + 1 kOhms) * 3 pF * 9.7
-    sample_time >= 87.3 ns
-
-    With the clock at 12 MHz (83 ns period), 2 clock cycles should be
-    sufficient.
-*/
-#define ADC_SAMPLE_TIME 2
-/*
-    Averaging reduces the througput by 1 / SAMPLENUM, so with 750 KSPS
-    we'll end up with 46 KSPS, which is nice and close to standard audio rate
-    (44.1 kHz). See Datasheet table 45-3.
-*/
-#define ADC_AVERAGE_SAMPLENUM ADC_AVGCTRL_SAMPLENUM_16
-#define ADC_AVERAGE_ADJRES 0x4
 
 /* Forward declarations. */
 
@@ -45,9 +20,9 @@ void stel_adc_init() {
     uint32_t biasr2r;
     uint32_t biasrefbuf;
 
-#if ADC0_ENABLED == 1
+#if STEL_ADC0_ENABLED == 1
     MCLK->APBDMASK.reg |= MCLK_APBDMASK_ADC0;
-    GCLK->PCHCTRL[ADC0_GCLK_ID].reg = GCLK_PCHCTRL_CHEN | ADC_GCLK;
+    GCLK->PCHCTRL[ADC0_GCLK_ID].reg = GCLK_PCHCTRL_CHEN | STEL_ADC_GCLK;
     while (!GCLK->PCHCTRL[ADC0_GCLK_ID].bit.CHEN) {};
 
     adc_inst_configure(ADC0);
@@ -63,9 +38,9 @@ void stel_adc_init() {
     while (ADC0->SYNCBUSY.bit.ENABLE) {};
 #endif
 
-#if ADC1_ENABLED == 1
+#if STEL_ADC1_ENABLED == 1
     MCLK->APBDMASK.reg |= MCLK_APBDMASK_ADC1;
-    GCLK->PCHCTRL[ADC1_GCLK_ID].reg = GCLK_PCHCTRL_CHEN | ADC_GCLK;
+    GCLK->PCHCTRL[ADC1_GCLK_ID].reg = GCLK_PCHCTRL_CHEN | STEL_ADC_GCLK;
     while (!GCLK->PCHCTRL[ADC1_GCLK_ID].bit.CHEN) {};
 
     adc_inst_configure(ADC1);
@@ -131,14 +106,14 @@ static void adc_inst_configure(Adc* inst) {
         Configure prescaler, resolution, sample time, and averaging. All of
         these impact the overall conversion throughput.
     */
-    inst->CTRLA.reg = ADC_PRESCALER;
+    inst->CTRLA.reg = STEL_ADC_PRESCALER;
     inst->CTRLB.reg |= ADC_CTRLB_RESSEL_16BIT;
     while (inst->SYNCBUSY.bit.CTRLB) {};
 
-    inst->SAMPCTRL.reg = ADC_SAMPCTRL_SAMPLEN(ADC_SAMPLE_TIME);
+    inst->SAMPCTRL.reg = ADC_SAMPCTRL_SAMPLEN(STEL_ADC_SAMPLE_TIME);
     while (inst->SYNCBUSY.bit.SAMPCTRL) {};
 
-    inst->AVGCTRL.reg = ADC_AVERAGE_SAMPLENUM | ADC_AVGCTRL_ADJRES(ADC_AVERAGE_ADJRES);
+    inst->AVGCTRL.reg = STEL_ADC_AVERAGE_SAMPLENUM | ADC_AVGCTRL_ADJRES(STEL_ADC_AVERAGE_ADJRES);
     while (inst->SYNCBUSY.bit.AVGCTRL) {};
 
     /* Configure the voltage references. */

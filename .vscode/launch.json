@@ -14,7 +14,18 @@
             "device": "ATSAMD51J20A",
             "svdFile": "${workspaceRoot}/firmware/third_party/samd51a/svd/ATSAMD51J20A.svd",
             "preLaunchTask": "build project",
-            "gdbPath": "arm-none-eabi-gdb-py"
+            "gdbPath": "arm-none-eabi-gdb-py",
+            "runToMain": true,
+            "preRestartCommands": [
+                "-exec-interrupt",
+            ],
+            "postRestartCommands": [
+                "monitor halt",
+                "-target-download",
+                "monitor reset",
+                "-break-insert -t --function main",
+                "-exec-continue",
+            ],
         }
     ]
 }
