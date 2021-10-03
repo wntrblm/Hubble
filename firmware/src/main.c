@@ -22,6 +22,7 @@
 #define FLOAT_TO_12_BIT_DAC(val) (u12_invert(float_to_u12(map_rangef(val, -5.f, 5.f, 0.f, 1.0f))))
 
 /* Static variables */
+static uint8_t switches[NUM_SWITCHES];
 
 /* Forward declarations */
 
@@ -52,17 +53,14 @@ static void init() {
     stel_usb_init();
 
     /* Configure peripherals */
-    stel_dotstar_init(64);
-
-    stel_dac_init();
-    stel_dac_init_output(A5);
-    stel_dac_init_output(A14);
+    stel_dotstar_init(20);
 
     stel_adc_init();
     stel_adc_init_input(A1);
     stel_adc_init_input(A2);
     stel_adc_init_input(A3);
     stel_adc_init_input(A4);
+    stel_adc_init_input(A5);
     stel_adc_init_input(A6);
     stel_adc_init_input(A7);
     stel_adc_init_input(A8);
@@ -71,6 +69,7 @@ static void init() {
     stel_adc_init_input(A11);
     stel_adc_init_input(A12);
     stel_adc_init_input(A13);
+    stel_adc_init_input(A14);
     stel_adc_init_input(A15);
     stel_adc_init_input(A16);
     stel_adc_init_input(A17);
@@ -78,8 +77,20 @@ static void init() {
     stel_adc_init_input(A19);
     stel_adc_init_input(A20);
 
-    stel_ad5685_init();
+    /* SPI bus & external DAC + Switches */
+    stel_sercom_spi_init(&SPI);
+    stel_ad5685_init(&SPI);
     stel_ad5685_soft_reset();
+    stel_adg1414_init(&SPI);
+
+    switches[SWITCH_DAC_1A] = true;
+    switches[SWITCH_DAC_2A] = true;
+    switches[SWITCH_DAC_3A] = true;
+    switches[SWITCH_DAC_4A] = true;
+    switches[SWITCH_AUDIO_IN_1A] = true;
+    switches[SWITCH_AUDIO_IN_2A] = true;
+
+    stel_adg1414_write_switches(switches, NUM_SWITCHES);
 }
 
 /* Private functions */
@@ -89,7 +100,7 @@ static void loop() {
     static uint16_t hue = 0;
     stel_dotstar_set32(0, wntr_colorspace_hsv_to_rgb(hue, 200, 255));
     stel_dotstar_update();
-    hue += 5;
+    hue += 10;
 
     /* MIDI I/O update */
     // struct WntrMIDIMessage midi_msg = {};
@@ -143,11 +154,8 @@ static void loop() {
 
     /* Update DAC outputs. */
 
-    stel_dac_set(A5, a1);
-    stel_dac_set(A14, a2);
-
-    stel_ad5685_write_channel(AD5685_CHANNEL_A, a17 << 4, true);
-    stel_ad5685_write_channel(AD5685_CHANNEL_B, a18 << 4, true);
-    stel_ad5685_write_channel(AD5685_CHANNEL_C, a19 << 4, true);
-    stel_ad5685_write_channel(AD5685_CHANNEL_D, a20 << 4, true);
+    // stel_ad5685_write_channel(AD5685_CHANNEL_A, a17 << 4, true);
+    // stel_ad5685_write_channel(AD5685_CHANNEL_B, a18 << 4, true);
+    // stel_ad5685_write_channel(AD5685_CHANNEL_C, a19 << 4, true);
+    // stel_ad5685_write_channel(AD5685_CHANNEL_D, a20 << 4, true);
 }

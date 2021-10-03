@@ -8,10 +8,12 @@
 
 #include "stel_ad5685.h"
 #include "stel_adc.h"
+#include "stel_adg1414.h"
 #include "stel_clocks.h"
 #include "stel_config.h"
 #include "stel_dac.h"
 #include "stel_dotstar.h"
 #include "stel_math_utils.h"
+#include "stel_sercom_spi.h"
 #include "stel_usb.h"
 #include "wntr_midi.h"
