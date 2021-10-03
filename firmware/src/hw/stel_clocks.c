@@ -6,6 +6,7 @@
 
 #include "stel_clocks.h"
 #include "sam.h"
+#include "stel_config.h"
 
 /* Stellar's clock configuration after stel_clocks_init() is:
 
@@ -14,17 +15,20 @@
 - GCLK2: Unused
 - GCLK3: 32.768 kHz from XOSC32K (used as reference clock)
 - GCLK4: 12 MHz from DFLL48M (used by the DAC & SPI)
-- GCLK5: 1 MHz from DFLL48m
+- GCLK5: 1 MHz from DFLL48M
 
 */
 
 /* Forward declarations */
 
-static void init_xosc32k();
+static void init_osc32k() __attribute__((unused));
+static void init_xosc32k() __attribute__((unused));
 static void init_dfll48m_open_loop() __attribute__((unused));
 static void init_dfll48m_closed_loop() __attribute__((unused));
 static void init_dfll48m_gclks();
 static void init_dpll0();
+static void setup_cpu_osc32k();
+static void setup_cpu_dpll0();
 
 /* Public functions */
 
@@ -36,37 +40,46 @@ void stel_clocks_init() {
     GCLK->CTRLA.bit.SWRST = 1;
     while (GCLK->SYNCBUSY.reg & GCLK_SYNCBUSY_SWRST) {}
 
-    /* Temporarily switch CPU to the internal 32kHz osc while configuring the clocks. */
-    GCLK->GENCTRL[0].reg = GCLK_GENCTRL_SRC(GCLK_GENCTRL_SRC_OSCULP32K) | GCLK_GENCTRL_GENEN;
-    while (GCLK->SYNCBUSY.reg & GCLK_SYNCBUSY_GENCTRL0) {}
-
-    /* Configure clocks. */
+/* Configure 32kHz Oscillator */
+#ifdef STEL_HAS_CRYSTAL
     init_xosc32k();
+#else
+    init_osc32k();
+#endif
+
+    /* Temporarily switch CPU to the internal 32kHz osc while
+       configuring the clocks. */
+    setup_cpu_osc32k();
+
+/* Configure DFLL (48Mhz) & DPLL (120Mhz) */
+#ifdef STEL_HAS_CRYSTAL
     init_dfll48m_closed_loop();
-    // init_dfll48m_open_loop();
+#else
+    init_dfll48m_open_loop();
+#endif
     init_dfll48m_gclks();
     init_dpll0();
 
     /* Switch CPU to DPLL0 (120MHz) */
-    GCLK->GENCTRL[0].reg = GCLK_GENCTRL_SRC_DPLL0 | GCLK_GENCTRL_IDC | GCLK_GENCTRL_OE | GCLK_GENCTRL_GENEN;
-    while (GCLK->SYNCBUSY.reg & GCLK_SYNCBUSY_GENCTRL0) {}
-
-    MCLK->CPUDIV.reg = MCLK_CPUDIV_DIV_DIV1;
-
-    /* Update SystemCoreClock */
-    SystemCoreClock = 120000000;
+    setup_cpu_dpll0();
 }
 
 /* Private functions */
 
+static void init_osc32k() {
+    /* OSCULP32K to GCLK3 */
+    GCLK->GENCTRL[3].reg = GCLK_GENCTRL_SRC_OSCULP32K | GCLK_GENCTRL_IDC | GCLK_GENCTRL_GENEN;
+    while (GCLK->SYNCBUSY.reg & GCLK_SYNCBUSY_GENCTRL3) {}
+}
+
 static void init_xosc32k() {
     /* Configure XOSC32K: 32kHz output enabled, standard speed, using a crystal. */
-    OSC32KCTRL->XOSC32K.reg = OSC32KCTRL_XOSC32K_ENABLE | OSC32KCTRL_XOSC32K_EN32K | OSC32KCTRL_XOSC32K_CGM_XT |
-                              OSC32KCTRL_XOSC32K_XTALEN | OSC32KCTRL_XOSC32K_STARTUP(0x04);
+    OSC32KCTRL->XOSC32K.reg =
+        OSC32KCTRL_XOSC32K_ENABLE | OSC32KCTRL_XOSC32K_EN32K | OSC32KCTRL_XOSC32K_CGM_XT | OSC32KCTRL_XOSC32K_XTALEN;
     while (!(OSC32KCTRL->STATUS.reg & OSC32KCTRL_STATUS_XOSC32KRDY)) {}
 
     /* XOSC32K to GCLK3 */
-    GCLK->GENCTRL[3].reg = GCLK_GENCTRL_SRC_XOSC32K | GCLK_GENCTRL_IDC | GCLK_GENCTRL_GENEN;
+    GCLK->GENCTRL[3].reg = GCLK_GENCTRL_SRC_XOSC32K | GCLK_GENCTRL_IDC | GCLK_GENCTRL_OE | GCLK_GENCTRL_GENEN;
     while (GCLK->SYNCBUSY.reg & GCLK_SYNCBUSY_GENCTRL3) {}
 }
 
@@ -133,7 +146,8 @@ static void init_dfll48m_gclks() {
     while (GCLK->SYNCBUSY.reg & GCLK_SYNCBUSY_GENCTRL1) {}
 
     /* GCLK4: 12 MHz */
-    GCLK->GENCTRL[4].reg = GCLK_GENCTRL_SRC_DFLL | GCLK_GENCTRL_DIV(4) | GCLK_GENCTRL_IDC | GCLK_GENCTRL_GENEN;
+    GCLK->GENCTRL[4].reg =
+        GCLK_GENCTRL_SRC_DFLL | GCLK_GENCTRL_DIV(4) | GCLK_GENCTRL_IDC | GCLK_GENCTRL_OE | GCLK_GENCTRL_GENEN;
     while (GCLK->SYNCBUSY.reg & GCLK_SYNCBUSY_GENCTRL4) {}
 
     /* GCLK5: 1 MHz */
@@ -168,4 +182,18 @@ static void init_dpll0() {
     /* Enable and wait for lock */
     OSCCTRL->Dpll[0].DPLLCTRLA.reg = OSCCTRL_DPLLCTRLA_ENABLE;
     while (OSCCTRL->Dpll[0].DPLLSTATUS.bit.CLKRDY == 0 || OSCCTRL->Dpll[0].DPLLSTATUS.bit.LOCK == 0) {};
+}
+
+static void setup_cpu_osc32k() {
+    MCLK->CPUDIV.reg = MCLK_CPUDIV_DIV_DIV1;
+    GCLK->GENCTRL[0].reg = GCLK_GENCTRL_SRC_OSCULP32K | GCLK_GENCTRL_GENEN;
+    while (GCLK->SYNCBUSY.reg & GCLK_SYNCBUSY_GENCTRL0) {}
+    SystemCoreClock = 32768;
+}
+
+static void setup_cpu_dpll0() {
+    setup_cpu_dpll0();
+    GCLK->GENCTRL[0].reg = GCLK_GENCTRL_SRC_DPLL0 | GCLK_GENCTRL_IDC | GCLK_GENCTRL_OE | GCLK_GENCTRL_GENEN;
+    while (GCLK->SYNCBUSY.reg & GCLK_SYNCBUSY_GENCTRL0) {}
+    SystemCoreClock = 120000000;
 }
