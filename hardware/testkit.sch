@@ -760,4 +760,6 @@ F 3 "" H 1100 6000 50  0001 C CNN
 	1    1100 6000
 	0    1    1    0   
 $EndComp
+Text Notes 6050 4075 0    50   ~ 0
+TODO: Wire up CS :(
 $EndSCHEMATC
