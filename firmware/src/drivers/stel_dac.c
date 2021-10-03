@@ -23,12 +23,13 @@ void stel_dac_init() {
 
     /* Select the VREF - See errata CHIP003-161 - must be set to unbuffered
        external reference.  */
-    DAC->CTRLB.reg |= DAC_CTRLB_REFSEL_VREFPU;
+    /* Since I'm dumb and didn't connect VREFA to 3.3v and failed to even
+       make that possible, this is the internal bandgap. */
+    DAC->CTRLB.reg = DAC_CTRLB_REFSEL_INTREF;
 
-    /* Enable channels and set the refresh rate to every 60uS, needed
-       because we're outputing DC. */
-    DAC->DACCTRL[0].reg |= (DAC_DACCTRL_ENABLE | DAC_DACCTRL_REFRESH(2));
-    DAC->DACCTRL[1].reg |= (DAC_DACCTRL_ENABLE | DAC_DACCTRL_REFRESH(2));
+    /* Enable channels */
+    DAC->DACCTRL[0].reg = DAC_DACCTRL_ENABLE | DAC_DACCTRL_LEFTADJ;
+    DAC->DACCTRL[1].reg = DAC_DACCTRL_ENABLE | DAC_DACCTRL_LEFTADJ;
 
     /* TODO: Dithering? */
 
@@ -42,17 +43,17 @@ void stel_dac_init() {
 }
 
 void stel_dac_init_output(const struct StelDACOutput* output) {
-    wntr_gpio_configure_alt(output->port, output->pin, WNTR_PMUX_A);
+    wntr_gpio_configure_alt(output->port, output->pin, WNTR_PMUX_B);
 }
 
 void stel_dac_set(const struct StelDACOutput* output, uint16_t val) {
     if (output->channel == 0) {
         while (DAC->SYNCBUSY.bit.DATA0) {};
-        DAC->DATA[0].reg = val;
+        DAC->DATA[0].bit.DATA = val;
         while (DAC->STATUS.bit.EOC0) {};
     } else if (output->channel == 1) {
         while (DAC->SYNCBUSY.bit.DATA1) {};
-        DAC->DATA[1].reg = val;
+        DAC->DATA[1].bit.DATA = val;
         while (DAC->STATUS.bit.EOC1) {};
     }
 }
