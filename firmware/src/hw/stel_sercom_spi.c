@@ -10,7 +10,7 @@
 /* 12 MHz clock for SPI */
 #define SERCOM_SPI_GCLK GCLK_PCHCTRL_GEN_GCLK4;
 
-void stel_sercom_spi_init(struct StelSERCOMSPI* inst) {
+void stel_sercom_spi_init(const struct StelSERCOMSPI* inst) {
     /* Enable clocks */
     stel_sercom_clock_init((Sercom*)inst->sercom, GCLK_PCHCTRL_GEN_GCLK4);
 
@@ -55,7 +55,7 @@ void stel_sercom_spi_init(struct StelSERCOMSPI* inst) {
     while (inst->sercom->SYNCBUSY.bit.ENABLE) {};
 }
 
-void stel_sercom_spi_write(struct StelSERCOMSPI* inst, const uint8_t* data, size_t len) {
+void stel_sercom_spi_write(const struct StelSERCOMSPI* inst, const uint8_t* data, size_t len) {
     for (size_t i = 0; i < len; i++) {
         while (!inst->sercom->INTFLAG.bit.DRE) {}
         inst->sercom->DATA.bit.DATA = data[i];

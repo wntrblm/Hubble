@@ -27,5 +27,5 @@ struct StelSERCOMSPI {
     uint8_t cs_alt;
 };
 
-void stel_sercom_spi_init(struct StelSERCOMSPI* inst);
-void stel_sercom_spi_write(struct StelSERCOMSPI* inst, const uint8_t* data, size_t len);
+void stel_sercom_spi_init(const struct StelSERCOMSPI* inst);
+void stel_sercom_spi_write(const struct StelSERCOMSPI* inst, const uint8_t* data, size_t len);
