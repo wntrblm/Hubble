@@ -38,7 +38,6 @@ MEMORY
   rom      (rx)  : ORIGIN = 0x00000000, LENGTH = 0x00100000
   ram      (rwx) : ORIGIN = 0x20000000, LENGTH = 0x00040000
   bkupram  (rwx) : ORIGIN = 0x47000000, LENGTH = 0x00002000
-  qspi     (rwx) : ORIGIN = 0x04000000, LENGTH = 0x01000000
 }
 
 /* The stack size used by the application. NOTE: you need to adjust according to your application. */
@@ -125,15 +124,6 @@ SECTIONS
         . = ALIGN(8);
         _ebkupram = .;
     } > bkupram
-
-    .qspi (NOLOAD):
-    {
-        . = ALIGN(8);
-        _sqspi = .;
-        *(.qspi .qspi.*);
-        . = ALIGN(8);
-        _eqspi = .;
-    } > qspi
 
     /* .bss section which is used for uninitialized data */
     .bss (NOLOAD) :
