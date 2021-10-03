@@ -11,6 +11,7 @@
     converter.
 */
 
+#include "stel_sercom_spi.h"
 #include <stdbool.h>
 #include <stdint.h>
 
@@ -21,7 +22,7 @@ enum StelAD5685Channel {
     AD5685_CHANNEL_D = 3,
 };
 
-void stel_ad5685_init();
+void stel_ad5685_init(const struct StelSERCOMSPI* spi);
 
 void stel_ad5685_soft_reset();
 
