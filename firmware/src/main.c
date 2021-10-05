@@ -22,7 +22,7 @@
 #define FLOAT_TO_12_BIT_DAC(val) (u12_invert(float_to_u12(map_rangef(val, -5.f, 5.f, 0.f, 1.0f))))
 
 /* Static variables */
-static uint8_t switches[NUM_SWITCHES];
+static bool switches[NUM_SWITCHES] = {false};
 
 /* Forward declarations */
 
@@ -84,6 +84,9 @@ static void init() {
     stel_adg1414_init(&SPI);
 
     switches[SWITCH_DAC_1A] = true;
+    switches[SWITCH_DAC_1B] = true;
+    switches[SWITCH_DAC_1C] = true;
+    switches[SWITCH_DAC_1D] = true;
     switches[SWITCH_DAC_2A] = true;
     switches[SWITCH_DAC_3A] = true;
     switches[SWITCH_DAC_4A] = true;
@@ -154,8 +157,10 @@ static void loop() {
 
     /* Update DAC outputs. */
 
-    // stel_ad5685_write_channel(AD5685_CHANNEL_A, a17 << 4, true);
-    // stel_ad5685_write_channel(AD5685_CHANNEL_B, a18 << 4, true);
-    // stel_ad5685_write_channel(AD5685_CHANNEL_C, a19 << 4, true);
-    // stel_ad5685_write_channel(AD5685_CHANNEL_D, a20 << 4, true);
+    stel_ad5685_write_channel(AD5685_CHANNEL_A, 65535, true);
+    stel_ad5685_write_channel(AD5685_CHANNEL_B, 0, true);
+    stel_ad5685_write_channel(AD5685_CHANNEL_C, 65535, true);
+    stel_ad5685_write_channel(AD5685_CHANNEL_D, 0, true);
+
+    stel_adg1414_write_switches(switches, NUM_SWITCHES);
 }

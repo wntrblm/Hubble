@@ -192,7 +192,6 @@ static void setup_cpu_osc32k() {
 }
 
 static void setup_cpu_dpll0() {
-    setup_cpu_dpll0();
     GCLK->GENCTRL[0].reg = GCLK_GENCTRL_SRC_DPLL0 | GCLK_GENCTRL_IDC | GCLK_GENCTRL_OE | GCLK_GENCTRL_GENEN;
     while (GCLK->SYNCBUSY.reg & GCLK_SYNCBUSY_GENCTRL0) {}
     SystemCoreClock = 120000000;

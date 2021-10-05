@@ -32,7 +32,10 @@ inline static void send_command(uint8_t command, uint8_t data1, uint8_t data2) {
 
 /* Public functions */
 
-void stel_ad5685_init(const struct StelSERCOMSPI* spi) { spi_ = spi; }
+void stel_ad5685_init(const struct StelSERCOMSPI* spi) {
+    spi_ = spi;
+    WntrGPIOPin_set_as_output(STEL_AD5685_CS);
+}
 
 void stel_ad5685_soft_reset() { send_command(CMD_SOFT_RESET, 0x0, 0x0); }
 

@@ -13,7 +13,10 @@ static const struct StelSERCOMSPI* spi_;
 
 /* Public functions */
 
-void stel_adg1414_init(const struct StelSERCOMSPI* spi) { spi_ = spi; }
+void stel_adg1414_init(const struct StelSERCOMSPI* spi) {
+    spi_ = spi;
+    WntrGPIOPin_set_as_output(STEL_ADG1414_CS);
+}
 
 void stel_adg1414_write(const uint8_t data[], size_t count) {
     WntrGPIOPin_set(STEL_ADG1414_CS, false);
@@ -21,7 +24,7 @@ void stel_adg1414_write(const uint8_t data[], size_t count) {
     WntrGPIOPin_set(STEL_ADG1414_CS, true);
 }
 
-void stel_adg1414_write_switches(const uint8_t data[], const size_t count) {
+void stel_adg1414_write_switches(const bool data[], const size_t count) {
     WNTR_ASSERT_DEBUG(count % 8 == 0);
     WntrGPIOPin_set(STEL_ADG1414_CS, false);
     for (size_t i = 0; i < count; i += 8) {

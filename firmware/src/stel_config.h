@@ -107,21 +107,14 @@ static const struct StelADCInput stel_adc1_inputs[] = {
     analog switches (ADG1414)
 */
 
-#define STEL_SPI_SERCOM (SERCOM2)
-#define STEL_SPI_SERCOM_DOPO (SERCOM_SPI_DOPO_SDO_3_SCK_1_CS_2)
-#define STEL_SPI_SDO (
-#define STEL_SPI_SDO_ALT ()
-#define STEL_SPI_SCK ()
-#define STEL_SPI_SCK_ALT (WNTR_PMUX_D)
-
 /* Static variables. */
 static const struct StelSERCOMSPI SPI = {
     .sercom = &SERCOM2->SPI,
     .dopo = SERCOM_SPI_DOPO_SDO_3_SCK_1_CS_2,
-    .sdo = WNTR_GPIO_PIN(WNTR_PORT_A, 13),
-    .sdo_alt = WNTR_PMUX_D,
-    .sck = WNTR_GPIO_PIN(WNTR_PORT_A, 12),
-    .sck_alt = WNTR_PMUX_D,
+    .sdo = WNTR_GPIO_PIN(WNTR_PORT_A, 15),
+    .sdo_alt = WNTR_PMUX_C_SERCOM,
+    .sck = WNTR_GPIO_PIN(WNTR_PORT_A, 13),
+    .sck_alt = WNTR_PMUX_C_SERCOM,
     .cs = WNTR_GPIO_PIN(WNTR_PORT_A, 14),
     // Don't use hardware CS, since the AD5685 expects 24 bits instead of just 8.
     .cs_alt = 0,
@@ -132,7 +125,7 @@ static const struct StelSERCOMSPI SPI = {
 #define STEL_AD5685_CS (WNTR_GPIO_PIN(WNTR_PORT_A, 14))
 // NOTE: This was not actually wired up on Rev1, so this
 // has to be bodged in before it'll work.
-#define STEL_ADG1414_CS (WNTR_GPIO_PIN(WNTR_PORT_A, 12))
+#define STEL_ADG1414_CS (WNTR_GPIO_PIN(WNTR_PORT_B, 22))
 
 /* Aliases for the analog switches */
 
