@@ -1,0 +1,706 @@
+EESchema Schematic File Version 4
+EELAYER 30 0
+EELAYER END
+$Descr USLetter 11000 8500
+encoding utf-8
+Sheet 1 1
+Title "Analog In Buffers"
+Date "2021-09-17"
+Rev "v0"
+Comp "Winterbloom"
+Comment1 "CERN OHL-P V2"
+Comment2 "testkit.wntr.dev"
+Comment3 ""
+Comment4 ""
+$EndDescr
+$Comp
+L winterbloom:MCP6004 U2
+U 1 1 615BBBCA
+P 4000 2575
+F 0 "U2" H 4000 2942 50  0000 C CNN
+F 1 "MCP6004" H 4000 2851 50  0000 C CNN
+F 2 "Package_SO:TSSOP-14_4.4x5mm_P0.65mm" H 3950 2675 50  0001 C CNN
+F 3 "http://datasheet.octopart.com/MCP6001T-I/OT-Microchip-datasheet-8823409.pdf" H 4050 2775 50  0001 C CNN
+F 4 "MCP6004T-I/ST, MCP6004T-E/ST" H 4000 2575 50  0001 C CNN "mpn"
+	1    4000 2575
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR0101
+U 1 1 615BD49E
+P 3700 2475
+F 0 "#PWR0101" H 3700 2225 50  0001 C CNN
+F 1 "GND" V 3705 2347 50  0001 R CNN
+F 2 "" H 3700 2475 50  0001 C CNN
+F 3 "" H 3700 2475 50  0001 C CNN
+	1    3700 2475
+	0    1    1    0   
+$EndComp
+$Comp
+L Device:R_US R1
+U 1 1 615BE00A
+P 3175 2675
+F 0 "R1" V 2970 2675 50  0000 C CNN
+F 1 "100k" V 3061 2675 50  0000 C CNN
+F 2 "Resistor_SMD:R_0603_1608Metric_Pad0.98x0.95mm_HandSolder" V 3215 2665 50  0001 C CNN
+F 3 "~" H 3175 2675 50  0001 C CNN
+	1    3175 2675
+	0    1    1    0   
+$EndComp
+$Comp
+L Device:R_US R2
+U 1 1 615BEE55
+P 3175 3000
+F 0 "R2" V 2970 3000 50  0000 C CNN
+F 1 "121k" V 3061 3000 50  0000 C CNN
+F 2 "Resistor_SMD:R_0603_1608Metric_Pad0.98x0.95mm_HandSolder" V 3215 2990 50  0001 C CNN
+F 3 "~" H 3175 3000 50  0001 C CNN
+	1    3175 3000
+	0    1    1    0   
+$EndComp
+$Comp
+L Device:R_US R6
+U 1 1 615BF2D5
+P 4000 3000
+F 0 "R6" V 3795 3000 50  0000 C CNN
+F 1 "18.7k" V 3886 3000 50  0000 C CNN
+F 2 "Resistor_SMD:R_0603_1608Metric_Pad0.98x0.95mm_HandSolder" V 4040 2990 50  0001 C CNN
+F 3 "~" H 4000 3000 50  0001 C CNN
+	1    4000 3000
+	0    1    1    0   
+$EndComp
+$Comp
+L Device:C_Small C2
+U 1 1 615C02E3
+P 4000 3350
+F 0 "C2" V 4229 3350 50  0000 C CNN
+F 1 "22pF" V 4138 3350 50  0000 C CNN
+F 2 "Capacitor_SMD:C_0603_1608Metric_Pad1.08x0.95mm_HandSolder" H 4000 3350 50  0001 C CNN
+F 3 "~" H 4000 3350 50  0001 C CNN
+	1    4000 3350
+	0    -1   -1   0   
+$EndComp
+$Comp
+L power:-10V #PWR0102
+U 1 1 615C15C8
+P 3025 3000
+F 0 "#PWR0102" H 3025 3100 50  0001 C CNN
+F 1 "-10V" V 3025 3125 50  0000 L CNN
+F 2 "" H 3025 3000 50  0001 C CNN
+F 3 "" H 3025 3000 50  0001 C CNN
+	1    3025 3000
+	0    -1   -1   0   
+$EndComp
+Text Label 2925 2675 2    50   ~ 0
+IN_A
+Wire Wire Line
+	2925 2675 3025 2675
+Text Label 4600 2575 0    50   ~ 0
+OUT_A
+Wire Wire Line
+	3325 3000 3500 3000
+Wire Wire Line
+	3500 3000 3500 2675
+Wire Wire Line
+	3500 2675 3325 2675
+Wire Wire Line
+	3500 2675 3700 2675
+Connection ~ 3500 2675
+Wire Wire Line
+	3700 2675 3700 3000
+Wire Wire Line
+	3700 3000 3850 3000
+Connection ~ 3700 2675
+Wire Wire Line
+	4150 3000 4300 3000
+Wire Wire Line
+	4300 3000 4300 2575
+Wire Wire Line
+	3900 3350 3700 3350
+Wire Wire Line
+	3700 3350 3700 3000
+Connection ~ 3700 3000
+Wire Wire Line
+	4300 3000 4300 3350
+Wire Wire Line
+	4300 3350 4100 3350
+Connection ~ 4300 3000
+Wire Wire Line
+	4300 2575 4600 2575
+Connection ~ 4300 2575
+Text Notes 675  900  0    50   ~ 0
+Inputs: -8V to +8V\nOutputs: 0v to 3.3V\nLPF Fc @ ???
+$Comp
+L winterbloom:MCP6004 U2
+U 2 1 615C32E7
+P 4025 4100
+F 0 "U2" H 4025 4467 50  0000 C CNN
+F 1 "MCP6004" H 4025 4376 50  0000 C CNN
+F 2 "Package_SO:TSSOP-14_4.4x5mm_P0.65mm" H 3975 4200 50  0001 C CNN
+F 3 "http://datasheet.octopart.com/MCP6001T-I/OT-Microchip-datasheet-8823409.pdf" H 4075 4300 50  0001 C CNN
+F 4 "MCP6004T-I/ST, MCP6004T-E/ST" H 4025 4100 50  0001 C CNN "mpn"
+	2    4025 4100
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR0103
+U 1 1 615C32F1
+P 3725 4000
+F 0 "#PWR0103" H 3725 3750 50  0001 C CNN
+F 1 "GND" V 3730 3872 50  0001 R CNN
+F 2 "" H 3725 4000 50  0001 C CNN
+F 3 "" H 3725 4000 50  0001 C CNN
+	1    3725 4000
+	0    1    1    0   
+$EndComp
+$Comp
+L Device:R_US R3
+U 1 1 615C32FB
+P 3200 4200
+F 0 "R3" V 2995 4200 50  0000 C CNN
+F 1 "100k" V 3086 4200 50  0000 C CNN
+F 2 "Resistor_SMD:R_0603_1608Metric_Pad0.98x0.95mm_HandSolder" V 3240 4190 50  0001 C CNN
+F 3 "~" H 3200 4200 50  0001 C CNN
+	1    3200 4200
+	0    1    1    0   
+$EndComp
+$Comp
+L Device:R_US R4
+U 1 1 615C3305
+P 3200 4525
+F 0 "R4" V 2995 4525 50  0000 C CNN
+F 1 "121k" V 3086 4525 50  0000 C CNN
+F 2 "Resistor_SMD:R_0603_1608Metric_Pad0.98x0.95mm_HandSolder" V 3240 4515 50  0001 C CNN
+F 3 "~" H 3200 4525 50  0001 C CNN
+	1    3200 4525
+	0    1    1    0   
+$EndComp
+$Comp
+L Device:R_US R7
+U 1 1 615C330F
+P 4025 4525
+F 0 "R7" V 3820 4525 50  0000 C CNN
+F 1 "18.7k" V 3911 4525 50  0000 C CNN
+F 2 "Resistor_SMD:R_0603_1608Metric_Pad0.98x0.95mm_HandSolder" V 4065 4515 50  0001 C CNN
+F 3 "~" H 4025 4525 50  0001 C CNN
+	1    4025 4525
+	0    1    1    0   
+$EndComp
+$Comp
+L Device:C_Small C3
+U 1 1 615C3319
+P 4025 4875
+F 0 "C3" V 4254 4875 50  0000 C CNN
+F 1 "22pF" V 4163 4875 50  0000 C CNN
+F 2 "Capacitor_SMD:C_0603_1608Metric_Pad1.08x0.95mm_HandSolder" H 4025 4875 50  0001 C CNN
+F 3 "~" H 4025 4875 50  0001 C CNN
+	1    4025 4875
+	0    -1   -1   0   
+$EndComp
+$Comp
+L power:-10V #PWR0104
+U 1 1 615C3323
+P 3050 4525
+F 0 "#PWR0104" H 3050 4625 50  0001 C CNN
+F 1 "-10V" V 3050 4650 50  0000 L CNN
+F 2 "" H 3050 4525 50  0001 C CNN
+F 3 "" H 3050 4525 50  0001 C CNN
+	1    3050 4525
+	0    -1   -1   0   
+$EndComp
+Text Label 2950 4200 2    50   ~ 0
+IN_B
+Wire Wire Line
+	2950 4200 3050 4200
+Text Label 4625 4100 0    50   ~ 0
+OUT_B
+Wire Wire Line
+	3350 4525 3525 4525
+Wire Wire Line
+	3525 4525 3525 4200
+Wire Wire Line
+	3525 4200 3350 4200
+Wire Wire Line
+	3525 4200 3725 4200
+Connection ~ 3525 4200
+Wire Wire Line
+	3725 4200 3725 4525
+Wire Wire Line
+	3725 4525 3875 4525
+Connection ~ 3725 4200
+Wire Wire Line
+	4175 4525 4325 4525
+Wire Wire Line
+	4325 4525 4325 4100
+Wire Wire Line
+	3925 4875 3725 4875
+Wire Wire Line
+	3725 4875 3725 4525
+Connection ~ 3725 4525
+Wire Wire Line
+	4325 4525 4325 4875
+Wire Wire Line
+	4325 4875 4125 4875
+Connection ~ 4325 4525
+Wire Wire Line
+	4325 4100 4625 4100
+Connection ~ 4325 4100
+$Comp
+L winterbloom:MCP6004 U2
+U 3 1 615C8A72
+P 6625 2575
+F 0 "U2" H 6625 2942 50  0000 C CNN
+F 1 "MCP6004" H 6625 2851 50  0000 C CNN
+F 2 "Package_SO:TSSOP-14_4.4x5mm_P0.65mm" H 6575 2675 50  0001 C CNN
+F 3 "http://datasheet.octopart.com/MCP6001T-I/OT-Microchip-datasheet-8823409.pdf" H 6675 2775 50  0001 C CNN
+F 4 "MCP6004T-I/ST, MCP6004T-E/ST" H 6625 2575 50  0001 C CNN "mpn"
+	3    6625 2575
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR0105
+U 1 1 615C8A7C
+P 6325 2475
+F 0 "#PWR0105" H 6325 2225 50  0001 C CNN
+F 1 "GND" V 6330 2347 50  0001 R CNN
+F 2 "" H 6325 2475 50  0001 C CNN
+F 3 "" H 6325 2475 50  0001 C CNN
+	1    6325 2475
+	0    1    1    0   
+$EndComp
+$Comp
+L Device:R_US R8
+U 1 1 615C8A86
+P 5800 2675
+F 0 "R8" V 5595 2675 50  0000 C CNN
+F 1 "100k" V 5686 2675 50  0000 C CNN
+F 2 "Resistor_SMD:R_0603_1608Metric_Pad0.98x0.95mm_HandSolder" V 5840 2665 50  0001 C CNN
+F 3 "~" H 5800 2675 50  0001 C CNN
+	1    5800 2675
+	0    1    1    0   
+$EndComp
+$Comp
+L Device:R_US R9
+U 1 1 615C8A90
+P 5800 3000
+F 0 "R9" V 5595 3000 50  0000 C CNN
+F 1 "121k" V 5686 3000 50  0000 C CNN
+F 2 "Resistor_SMD:R_0603_1608Metric_Pad0.98x0.95mm_HandSolder" V 5840 2990 50  0001 C CNN
+F 3 "~" H 5800 3000 50  0001 C CNN
+	1    5800 3000
+	0    1    1    0   
+$EndComp
+$Comp
+L Device:R_US R12
+U 1 1 615C8A9A
+P 6625 3000
+F 0 "R12" V 6420 3000 50  0000 C CNN
+F 1 "18.7k" V 6511 3000 50  0000 C CNN
+F 2 "Resistor_SMD:R_0603_1608Metric_Pad0.98x0.95mm_HandSolder" V 6665 2990 50  0001 C CNN
+F 3 "~" H 6625 3000 50  0001 C CNN
+	1    6625 3000
+	0    1    1    0   
+$EndComp
+$Comp
+L Device:C_Small C5
+U 1 1 615C8AA4
+P 6625 3350
+F 0 "C5" V 6854 3350 50  0000 C CNN
+F 1 "22pF" V 6763 3350 50  0000 C CNN
+F 2 "Capacitor_SMD:C_0603_1608Metric_Pad1.08x0.95mm_HandSolder" H 6625 3350 50  0001 C CNN
+F 3 "~" H 6625 3350 50  0001 C CNN
+	1    6625 3350
+	0    -1   -1   0   
+$EndComp
+$Comp
+L power:-10V #PWR0106
+U 1 1 615C8AAE
+P 5650 3000
+F 0 "#PWR0106" H 5650 3100 50  0001 C CNN
+F 1 "-10V" V 5650 3125 50  0000 L CNN
+F 2 "" H 5650 3000 50  0001 C CNN
+F 3 "" H 5650 3000 50  0001 C CNN
+	1    5650 3000
+	0    -1   -1   0   
+$EndComp
+Text Label 5575 4200 2    50   ~ 0
+IN_C
+Wire Wire Line
+	5550 2675 5650 2675
+Text Label 7250 4100 0    50   ~ 0
+OUT_C
+Wire Wire Line
+	5950 3000 6125 3000
+Wire Wire Line
+	6125 3000 6125 2675
+Wire Wire Line
+	6125 2675 5950 2675
+Wire Wire Line
+	6125 2675 6325 2675
+Connection ~ 6125 2675
+Wire Wire Line
+	6325 2675 6325 3000
+Wire Wire Line
+	6325 3000 6475 3000
+Connection ~ 6325 2675
+Wire Wire Line
+	6775 3000 6925 3000
+Wire Wire Line
+	6925 3000 6925 2575
+Wire Wire Line
+	6525 3350 6325 3350
+Wire Wire Line
+	6325 3350 6325 3000
+Connection ~ 6325 3000
+Wire Wire Line
+	6925 3000 6925 3350
+Wire Wire Line
+	6925 3350 6725 3350
+Connection ~ 6925 3000
+Wire Wire Line
+	6925 2575 7225 2575
+Connection ~ 6925 2575
+$Comp
+L winterbloom:MCP6004 U2
+U 4 1 615C8ACE
+P 6650 4100
+F 0 "U2" H 6650 4467 50  0000 C CNN
+F 1 "MCP6004" H 6650 4376 50  0000 C CNN
+F 2 "Package_SO:TSSOP-14_4.4x5mm_P0.65mm" H 6600 4200 50  0001 C CNN
+F 3 "http://datasheet.octopart.com/MCP6001T-I/OT-Microchip-datasheet-8823409.pdf" H 6700 4300 50  0001 C CNN
+F 4 "MCP6004T-I/ST, MCP6004T-E/ST" H 6650 4100 50  0001 C CNN "mpn"
+	4    6650 4100
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR0107
+U 1 1 615C8AD8
+P 6350 4000
+F 0 "#PWR0107" H 6350 3750 50  0001 C CNN
+F 1 "GND" V 6355 3872 50  0001 R CNN
+F 2 "" H 6350 4000 50  0001 C CNN
+F 3 "" H 6350 4000 50  0001 C CNN
+	1    6350 4000
+	0    1    1    0   
+$EndComp
+$Comp
+L Device:R_US R10
+U 1 1 615C8AE2
+P 5825 4200
+F 0 "R10" V 5620 4200 50  0000 C CNN
+F 1 "100k" V 5711 4200 50  0000 C CNN
+F 2 "Resistor_SMD:R_0603_1608Metric_Pad0.98x0.95mm_HandSolder" V 5865 4190 50  0001 C CNN
+F 3 "~" H 5825 4200 50  0001 C CNN
+	1    5825 4200
+	0    1    1    0   
+$EndComp
+$Comp
+L Device:R_US R11
+U 1 1 615C8AEC
+P 5825 4525
+F 0 "R11" V 5620 4525 50  0000 C CNN
+F 1 "121k" V 5711 4525 50  0000 C CNN
+F 2 "Resistor_SMD:R_0603_1608Metric_Pad0.98x0.95mm_HandSolder" V 5865 4515 50  0001 C CNN
+F 3 "~" H 5825 4525 50  0001 C CNN
+	1    5825 4525
+	0    1    1    0   
+$EndComp
+$Comp
+L Device:R_US R13
+U 1 1 615C8AF6
+P 6650 4525
+F 0 "R13" V 6445 4525 50  0000 C CNN
+F 1 "18.7k" V 6536 4525 50  0000 C CNN
+F 2 "Resistor_SMD:R_0603_1608Metric_Pad0.98x0.95mm_HandSolder" V 6690 4515 50  0001 C CNN
+F 3 "~" H 6650 4525 50  0001 C CNN
+	1    6650 4525
+	0    1    1    0   
+$EndComp
+$Comp
+L Device:C_Small C6
+U 1 1 615C8B00
+P 6650 4875
+F 0 "C6" V 6879 4875 50  0000 C CNN
+F 1 "22pF" V 6788 4875 50  0000 C CNN
+F 2 "Capacitor_SMD:C_0603_1608Metric_Pad1.08x0.95mm_HandSolder" H 6650 4875 50  0001 C CNN
+F 3 "~" H 6650 4875 50  0001 C CNN
+	1    6650 4875
+	0    -1   -1   0   
+$EndComp
+$Comp
+L power:-10V #PWR0108
+U 1 1 615C8B0A
+P 5675 4525
+F 0 "#PWR0108" H 5675 4625 50  0001 C CNN
+F 1 "-10V" V 5675 4650 50  0000 L CNN
+F 2 "" H 5675 4525 50  0001 C CNN
+F 3 "" H 5675 4525 50  0001 C CNN
+	1    5675 4525
+	0    -1   -1   0   
+$EndComp
+Text Label 5550 2675 2    50   ~ 0
+IN_D
+Wire Wire Line
+	5575 4200 5675 4200
+Text Label 7225 2575 0    50   ~ 0
+OUT_D
+Wire Wire Line
+	5975 4525 6150 4525
+Wire Wire Line
+	6150 4525 6150 4200
+Wire Wire Line
+	6150 4200 5975 4200
+Wire Wire Line
+	6150 4200 6350 4200
+Connection ~ 6150 4200
+Wire Wire Line
+	6350 4200 6350 4525
+Wire Wire Line
+	6350 4525 6500 4525
+Connection ~ 6350 4200
+Wire Wire Line
+	6800 4525 6950 4525
+Wire Wire Line
+	6950 4525 6950 4100
+Wire Wire Line
+	6550 4875 6350 4875
+Wire Wire Line
+	6350 4875 6350 4525
+Connection ~ 6350 4525
+Wire Wire Line
+	6950 4525 6950 4875
+Wire Wire Line
+	6950 4875 6750 4875
+Connection ~ 6950 4525
+Wire Wire Line
+	6950 4100 7250 4100
+Connection ~ 6950 4100
+$Comp
+L winterbloom:MCP6004 U2
+U 5 1 615E2DB1
+P 5500 7350
+F 0 "U2" H 5730 7396 50  0000 L CNN
+F 1 "MCP6004" H 5730 7305 50  0000 L CNN
+F 2 "Package_SO:TSSOP-14_4.4x5mm_P0.65mm" H 5450 7450 50  0001 C CNN
+F 3 "http://datasheet.octopart.com/MCP6001T-I/OT-Microchip-datasheet-8823409.pdf" H 5550 7550 50  0001 C CNN
+F 4 "MCP6004T-I/ST, MCP6004T-E/ST" H 5500 7350 50  0001 C CNN "mpn"
+	5    5500 7350
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR0109
+U 1 1 615E5CBC
+P 5400 7650
+F 0 "#PWR0109" H 5400 7400 50  0001 C CNN
+F 1 "GND" H 5405 7477 50  0000 C CNN
+F 2 "" H 5400 7650 50  0001 C CNN
+F 3 "" H 5400 7650 50  0001 C CNN
+	1    5400 7650
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:+3.3V #PWR0110
+U 1 1 615E66F1
+P 5400 7050
+F 0 "#PWR0110" H 5400 6900 50  0001 C CNN
+F 1 "+3.3V" H 5415 7223 50  0000 C CNN
+F 2 "" H 5400 7050 50  0001 C CNN
+F 3 "" H 5400 7050 50  0001 C CNN
+	1    5400 7050
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:C_Small C4
+U 1 1 615E6E8A
+P 4850 7350
+F 0 "C4" H 4942 7396 50  0000 L CNN
+F 1 "0.1uF" H 4942 7305 50  0000 L CNN
+F 2 "Capacitor_SMD:C_0603_1608Metric_Pad1.08x0.95mm_HandSolder" H 4850 7350 50  0001 C CNN
+F 3 "~" H 4850 7350 50  0001 C CNN
+	1    4850 7350
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:+3.3V #PWR0111
+U 1 1 615E763F
+P 4850 7250
+F 0 "#PWR0111" H 4850 7100 50  0001 C CNN
+F 1 "+3.3V" H 4865 7423 50  0000 C CNN
+F 2 "" H 4850 7250 50  0001 C CNN
+F 3 "" H 4850 7250 50  0001 C CNN
+	1    4850 7250
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR0112
+U 1 1 615E7E05
+P 4850 7450
+F 0 "#PWR0112" H 4850 7200 50  0001 C CNN
+F 1 "GND" H 4855 7277 50  0000 C CNN
+F 2 "" H 4850 7450 50  0001 C CNN
+F 3 "" H 4850 7450 50  0001 C CNN
+	1    4850 7450
+	1    0    0    -1  
+$EndComp
+$Comp
+L Connector_Generic:Conn_01x06 J1
+U 1 1 615E99F9
+P 8725 3375
+F 0 "J1" H 8825 3475 50  0000 L CNN
+F 1 "INPUT" H 8825 3375 50  0000 L CNN
+F 2 "Connector_PinHeader_2.54mm:PinHeader_1x06_P2.54mm_Vertical" H 8725 3375 50  0001 C CNN
+F 3 "~" H 8725 3375 50  0001 C CNN
+	1    8725 3375
+	1    0    0    -1  
+$EndComp
+$Comp
+L Connector_Generic:Conn_01x06 J2
+U 1 1 615EA28E
+P 9450 3375
+F 0 "J2" H 9550 3475 50  0000 C CNN
+F 1 "OUTPUT" H 9650 3375 50  0000 C CNN
+F 2 "Connector_PinHeader_2.54mm:PinHeader_1x06_P2.54mm_Vertical" H 9450 3375 50  0001 C CNN
+F 3 "~" H 9450 3375 50  0001 C CNN
+	1    9450 3375
+	-1   0    0    -1  
+$EndComp
+Text Label 8525 3275 2    50   ~ 0
+IN_A
+Text Label 8525 3375 2    50   ~ 0
+IN_B
+Text Label 8525 3475 2    50   ~ 0
+IN_C
+Text Label 8525 3575 2    50   ~ 0
+IN_D
+Text Label 9650 3575 0    50   ~ 0
+OUT_D
+Text Label 9650 3475 0    50   ~ 0
+OUT_C
+Text Label 9650 3375 0    50   ~ 0
+OUT_B
+Text Label 9650 3275 0    50   ~ 0
+OUT_A
+$Comp
+L power:GND #PWR0113
+U 1 1 615EC348
+P 8525 3675
+F 0 "#PWR0113" H 8525 3425 50  0001 C CNN
+F 1 "GND" H 8530 3502 50  0000 C CNN
+F 2 "" H 8525 3675 50  0001 C CNN
+F 3 "" H 8525 3675 50  0001 C CNN
+	1    8525 3675
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR0114
+U 1 1 615EC853
+P 9650 3675
+F 0 "#PWR0114" H 9650 3425 50  0001 C CNN
+F 1 "GND" H 9655 3502 50  0000 C CNN
+F 2 "" H 9650 3675 50  0001 C CNN
+F 3 "" H 9650 3675 50  0001 C CNN
+	1    9650 3675
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:+3.3V #PWR0115
+U 1 1 615ECCEF
+P 9650 3175
+F 0 "#PWR0115" H 9650 3025 50  0001 C CNN
+F 1 "+3.3V" H 9665 3348 50  0000 C CNN
+F 2 "" H 9650 3175 50  0001 C CNN
+F 3 "" H 9650 3175 50  0001 C CNN
+	1    9650 3175
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:-12V #PWR0116
+U 1 1 615EE940
+P 8525 3175
+F 0 "#PWR0116" H 8525 3275 50  0001 C CNN
+F 1 "-12V" H 8540 3348 50  0000 C CNN
+F 2 "" H 8525 3175 50  0001 C CNN
+F 3 "" H 8525 3175 50  0001 C CNN
+	1    8525 3175
+	1    0    0    -1  
+$EndComp
+$Comp
+L winterbloom:LM4040-10 U1
+U 1 1 615EF7B9
+P 3425 7425
+F 0 "U1" V 3379 7504 50  0000 L CNN
+F 1 "LM4040-10" V 3470 7504 50  0000 L CNN
+F 2 "Package_TO_SOT_SMD:SOT-23" H 3425 7225 50  0001 C CIN
+F 3 "http://www.ti.com/lit/ds/symlink/lm4040-n.pdf" H 3425 7425 50  0001 C CIN
+F 4 "LM4040DIM3-10.0/NOPB" H 3425 7625 50  0001 C CNN "mpn"
+	1    3425 7425
+	0    1    1    0   
+$EndComp
+$Comp
+L power:GND #PWR0117
+U 1 1 615F2288
+P 3425 7575
+F 0 "#PWR0117" H 3425 7325 50  0001 C CNN
+F 1 "GND" H 3430 7402 50  0000 C CNN
+F 2 "" H 3425 7575 50  0001 C CNN
+F 3 "" H 3425 7575 50  0001 C CNN
+	1    3425 7575
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:R_US R5
+U 1 1 615F279F
+P 3425 7125
+F 0 "R5" H 3357 7079 50  0000 R CNN
+F 1 "1k" H 3357 7170 50  0000 R CNN
+F 2 "Resistor_SMD:R_0603_1608Metric_Pad0.98x0.95mm_HandSolder" V 3465 7115 50  0001 C CNN
+F 3 "~" H 3425 7125 50  0001 C CNN
+	1    3425 7125
+	-1   0    0    1   
+$EndComp
+$Comp
+L Device:C_Small C1
+U 1 1 615F321B
+P 3175 7400
+F 0 "C1" H 3350 7350 50  0000 R CNN
+F 1 "0.1uF" H 3450 7450 50  0000 R CNN
+F 2 "Capacitor_SMD:C_0603_1608Metric_Pad1.08x0.95mm_HandSolder" H 3175 7400 50  0001 C CNN
+F 3 "~" H 3175 7400 50  0001 C CNN
+	1    3175 7400
+	-1   0    0    1   
+$EndComp
+Wire Wire Line
+	3425 7575 3175 7575
+Wire Wire Line
+	3175 7575 3175 7500
+Connection ~ 3425 7575
+Wire Wire Line
+	3175 7300 3175 7275
+Wire Wire Line
+	3175 7275 3425 7275
+Connection ~ 3425 7275
+$Comp
+L power:-12V #PWR0118
+U 1 1 615F70E8
+P 3425 6975
+F 0 "#PWR0118" H 3425 7075 50  0001 C CNN
+F 1 "-12V" H 3440 7148 50  0000 C CNN
+F 2 "" H 3425 6975 50  0001 C CNN
+F 3 "" H 3425 6975 50  0001 C CNN
+	1    3425 6975
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	3425 7275 3800 7275
+$Comp
+L power:-10V #PWR0119
+U 1 1 61645FAC
+P 3800 7275
+F 0 "#PWR0119" H 3800 7375 50  0001 C CNN
+F 1 "-10V" V 3800 7400 50  0000 L CNN
+F 2 "" H 3800 7275 50  0001 C CNN
+F 3 "" H 3800 7275 50  0001 C CNN
+	1    3800 7275
+	0    1    1    0   
+$EndComp
+$EndSCHEMATC
