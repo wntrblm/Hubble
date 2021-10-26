@@ -893,7 +893,7 @@ F 4 "MCP4728A0T-E/UN, MCP4728A0T-I/UN" H 3865 3105 50  0001 C CNN "mpn"
 	1    0    0    -1  
 $EndComp
 Text Notes 7150 1425 0    50   ~ 0
-TODO: Calculate resistors
+TODO: Re-calculate resistors, these values are for 0-2.5v input\n
 Text Label 3850 5725 2    50   ~ 0
 ~LDAC
 Text Label 3850 5625 2    50   ~ 0
