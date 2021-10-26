@@ -1,4 +1,4 @@
-update=Sunday, October 03, 2021 at 12:00:02 AM
+update=Friday, October 22, 2021 at 05:21:37 PM
 version=1
 last_client=kicad
 [general]
@@ -12,6 +12,16 @@ NetIExt=net
 version=1
 LibDir=
 [eeschema/libraries]
+[schematic_editor]
+version=1
+PageLayoutDescrFile=
+PlotDirectoryName=
+SubpartIdSeparator=0
+SubpartFirstId=65
+NetFmtName=
+SpiceAjustPassiveValues=0
+LabSize=50
+ERC_TestSimilarLabels=1
 [pcbnew]
 version=1
 PageLayoutDescrFile=
@@ -36,8 +46,8 @@ TrackWidth5=0.4
 TrackWidth6=0.5
 ViaDiameter1=0.7
 ViaDrill1=0.3
-dPairWidth1=0.17
-dPairGap1=0.17
+dPairWidth1=0.2
+dPairGap1=0.2
 dPairViaGap1=0.25
 SilkLineWidth=0.12
 SilkTextSizeV=0.7
@@ -238,8 +248,8 @@ ViaDiameter=0.7
 ViaDrill=0.3
 uViaDiameter=0.7
 uViaDrill=0.3
-dPairWidth=0.17
-dPairGap=0.17
+dPairWidth=0.2
+dPairGap=0.2
 dPairViaGap=0.25
 [pcbnew/Netclasses/1]
 Name=12V
@@ -285,13 +295,3 @@ uViaDrill=0.3
 dPairWidth=0.17
 dPairGap=0.17
 dPairViaGap=0.25
-[schematic_editor]
-version=1
-PageLayoutDescrFile=
-PlotDirectoryName=
-SubpartIdSeparator=0
-SubpartFirstId=65
-NetFmtName=
-SpiceAjustPassiveValues=0
-LabSize=50
-ERC_TestSimilarLabels=1

@@ -3,13 +3,13 @@ EELAYER 30 0
 EELAYER END
 $Descr A4 11693 8268
 encoding utf-8
-Sheet 5 7
-Title ""
-Date ""
-Rev ""
-Comp ""
-Comment1 ""
-Comment2 ""
+Sheet 4 7
+Title "TestKit Motherboard"
+Date "2021-10-22"
+Rev "v1"
+Comp "Winterbloom"
+Comment1 "Alethea Flowers"
+Comment2 "CERN-OHL-P V2"
 Comment3 ""
 Comment4 ""
 $EndDescr
@@ -92,17 +92,6 @@ F 3 "" H 1625 1400 50  0001 C CNN
 $EndComp
 Wire Wire Line
 	1625 1400 1675 1400
-$Comp
-L power:-10V #PWR068
-U 1 1 60917606
-P 1150 1950
-F 0 "#PWR068" H 1150 2050 50  0001 C CNN
-F 1 "-10V" V 1150 2175 50  0000 C CNN
-F 2 "" H 1150 1950 50  0001 C CNN
-F 3 "" H 1150 1950 50  0001 C CNN
-	1    1150 1950
-	0    -1   -1   0   
-$EndComp
 Wire Wire Line
 	2575 1500 2575 1950
 Wire Wire Line
@@ -190,17 +179,6 @@ F 3 "" H 1650 2400 50  0001 C CNN
 $EndComp
 Wire Wire Line
 	1650 2400 1700 2400
-$Comp
-L power:-10V #PWR069
-U 1 1 60917658
-P 1175 2950
-F 0 "#PWR069" H 1175 3050 50  0001 C CNN
-F 1 "-10V" V 1175 3175 50  0000 C CNN
-F 2 "" H 1175 2950 50  0001 C CNN
-F 3 "" H 1175 2950 50  0001 C CNN
-	1    1175 2950
-	0    -1   -1   0   
-$EndComp
 Wire Wire Line
 	2600 2500 2600 2950
 Wire Wire Line
@@ -286,17 +264,6 @@ F 3 "" H 1650 3375 50  0001 C CNN
 $EndComp
 Wire Wire Line
 	1650 3375 1700 3375
-$Comp
-L power:-10V #PWR070
-U 1 1 60917690
-P 1175 3925
-F 0 "#PWR070" H 1175 4025 50  0001 C CNN
-F 1 "-10V" V 1175 4150 50  0000 C CNN
-F 2 "" H 1175 3925 50  0001 C CNN
-F 3 "" H 1175 3925 50  0001 C CNN
-	1    1175 3925
-	0    -1   -1   0   
-$EndComp
 Wire Wire Line
 	2600 3475 2600 3925
 Wire Wire Line
@@ -382,17 +349,6 @@ F 3 "" H 1650 4350 50  0001 C CNN
 $EndComp
 Wire Wire Line
 	1650 4350 1700 4350
-$Comp
-L power:-10V #PWR071
-U 1 1 609176C8
-P 1175 4900
-F 0 "#PWR071" H 1175 5000 50  0001 C CNN
-F 1 "-10V" V 1175 5125 50  0000 C CNN
-F 2 "" H 1175 4900 50  0001 C CNN
-F 3 "" H 1175 4900 50  0001 C CNN
-	1    1175 4900
-	0    -1   -1   0   
-$EndComp
 Wire Wire Line
 	2600 4450 2600 4900
 Wire Wire Line
@@ -400,17 +356,17 @@ Wire Wire Line
 Text Notes 825  4475 0    50   ~ 0
 0 - 2.5v
 Text HLabel 1175 2600 0    50   Input ~ 0
-DAC_IN_2
+DAC_2_PRE
 Text HLabel 1175 3575 0    50   Input ~ 0
-DAC_IN_3
+DAC_3_PRE
 Text HLabel 2600 3475 2    50   Input ~ 0
-DAC_OUT_1
+DAC_3_POST
 Text HLabel 2600 4450 2    50   Input ~ 0
-DAC_OUT_2
+DAC_4_POST
 Text HLabel 2575 1500 2    50   Input ~ 0
-DAC_OUT_3
+DAC_1_POST
 Text HLabel 2600 2500 2    50   Input ~ 0
-DAC_OUT_4
+DAC_2_POST
 $Comp
 L winterbloom:OPA4197 U10
 U 5 1 61594009
@@ -512,7 +468,100 @@ F 3 "" H 5875 2275 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 Text HLabel 1175 4550 0    50   Input ~ 0
-DAC_IN_4
+DAC_4_PRE
 Text HLabel 1150 1600 0    50   Input ~ 0
-DAC_IN_1
+DAC_1_PRE
+$Comp
+L winterbloom:LM4040-10 U?
+U 1 1 617993BE
+P 5075 3375
+AR Path="/60711259/617993BE" Ref="U?"  Part="1" 
+AR Path="/61059808/617993BE" Ref="U?"  Part="1" 
+AR Path="/608FFE97/617993BE" Ref="U2"  Part="1" 
+F 0 "U2" V 5029 3454 50  0000 L CNN
+F 1 "LM4040-10" V 5120 3454 50  0000 L CNN
+F 2 "Package_TO_SOT_SMD:SOT-23" H 5075 3175 50  0001 C CIN
+F 3 "http://www.ti.com/lit/ds/symlink/lm4040-n.pdf" H 5075 3375 50  0001 C CIN
+F 4 "LM4040DIM3-10.0/NOPB" H 5075 3575 50  0001 C CNN "mpn"
+	1    5075 3375
+	0    1    1    0   
+$EndComp
+$Comp
+L Device:R_US R?
+U 1 1 617993C4
+P 5075 3075
+AR Path="/60711259/617993C4" Ref="R?"  Part="1" 
+AR Path="/61059808/617993C4" Ref="R?"  Part="1" 
+AR Path="/608FFE97/617993C4" Ref="R36"  Part="1" 
+F 0 "R36" H 5143 3121 50  0000 L CNN
+F 1 "1k" H 5143 3030 50  0000 L CNN
+F 2 "Resistor_SMD:R_0603_1608Metric_Pad0.98x0.95mm_HandSolder" V 5115 3065 50  0001 C CNN
+F 3 "~" H 5075 3075 50  0001 C CNN
+	1    5075 3075
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR?
+U 1 1 617993CA
+P 5075 3525
+AR Path="/60711259/617993CA" Ref="#PWR?"  Part="1" 
+AR Path="/61059808/617993CA" Ref="#PWR?"  Part="1" 
+AR Path="/608FFE97/617993CA" Ref="#PWR0159"  Part="1" 
+F 0 "#PWR0159" H 5075 3275 50  0001 C CNN
+F 1 "GND" H 5150 3375 50  0000 R CNN
+F 2 "" H 5075 3525 50  0001 C CNN
+F 3 "" H 5075 3525 50  0001 C CNN
+	1    5075 3525
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:-12V #PWR?
+U 1 1 617993D0
+P 5075 2925
+AR Path="/60711259/617993D0" Ref="#PWR?"  Part="1" 
+AR Path="/61059808/617993D0" Ref="#PWR?"  Part="1" 
+AR Path="/608FFE97/617993D0" Ref="#PWR0160"  Part="1" 
+F 0 "#PWR0160" H 5075 3025 50  0001 C CNN
+F 1 "-12V" H 4975 3075 50  0000 L CNN
+F 2 "" H 5075 2925 50  0001 C CNN
+F 3 "" H 5075 2925 50  0001 C CNN
+	1    5075 2925
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:C_Small C?
+U 1 1 617993D6
+P 4825 3375
+AR Path="/60711259/617993D6" Ref="C?"  Part="1" 
+AR Path="/61059808/617993D6" Ref="C?"  Part="1" 
+AR Path="/608FFE97/617993D6" Ref="C15"  Part="1" 
+F 0 "C15" H 5000 3350 50  0000 R CNN
+F 1 "0.1uF" H 5125 3425 50  0000 R CNN
+F 2 "Capacitor_SMD:C_0603_1608Metric_Pad1.08x0.95mm_HandSolder" H 4825 3375 50  0001 C CNN
+F 3 "~" H 4825 3375 50  0001 C CNN
+	1    4825 3375
+	-1   0    0    1   
+$EndComp
+Wire Wire Line
+	4825 3275 4825 3225
+Wire Wire Line
+	4825 3225 5075 3225
+Connection ~ 5075 3225
+Wire Wire Line
+	4825 3475 4825 3525
+Wire Wire Line
+	4825 3525 5075 3525
+Connection ~ 5075 3525
+Text Label 5275 3225 0    50   ~ 0
+-10v_DAC
+Wire Wire Line
+	5275 3225 5075 3225
+Text Label 1150 1950 2    50   ~ 0
+-10v_DAC
+Text Label 1175 2950 2    50   ~ 0
+-10v_DAC
+Text Label 1175 3925 2    50   ~ 0
+-10v_DAC
+Text Label 1175 4900 2    50   ~ 0
+-10v_DAC
 $EndSCHEMATC
