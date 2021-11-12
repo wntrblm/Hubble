@@ -12,12 +12,13 @@ c_flags = -std=gnu17 -x c
 cxx_flags = -std=gnu++17 -x c++
 
 cc_includes = -Ithird_party/samd51a/include -Ithird_party/cmsis/include $
-    -Ithird_party/wren/include -Ithird_party/libwinter/samd $
+    -Ithird_party/wren/include -Isrc -Ithird_party/libwinter/samd $
+    -Ithird_party/libwinter -Ithird_party/tinyusb/src/class/midi $
+    -Isrc/drivers -Ithird_party/samd51a/gcc -Ithird_party/rtt $
+    -Ithird_party/tinyusb/src -Ibuild -Ithird_party/printf $
     -Ithird_party/tinyusb/src/portable/microchip/samd $
-    -Ithird_party/samd51a/gcc -Ithird_party/libwinter -Isrc/hw -Isrc $
-    -Ithird_party/printf -Ithird_party/tinyusb/src/common -Ithird_party/rtt $
-    -Ithird_party/tinyusb/src/device -Isrc/drivers -Ibuild -Isrc/lib $
-    -Ithird_party/tinyusb/src -Ithird_party/tinyusb/src/class/midi
+    -Ithird_party/tinyusb/src/common -Isrc/lib -Isrc/hw $
+    -Ithird_party/tinyusb/src/device
 
 cc_defines = -D__SAMD51J20A__=1 -DSAMD51=1 -DARM_MATH_CM4=1 $
     -DCFG_TUSB_MCU=OPT_MCU_SAMD51 -DDEBUG=1
@@ -89,8 +90,6 @@ build $builddir/src/drivers/stel_adc.o: cc src/drivers/stel_adc.c
 
 build $builddir/src/drivers/stel_dac.o: cc src/drivers/stel_dac.c
 
-build $builddir/src/drivers/stel_adg1414.o: cc src/drivers/stel_adg1414.c
-
 build $builddir/src/drivers/stel_dotstar.o: cc src/drivers/stel_dotstar.c
 
 build $builddir/src/drivers/stel_ad5685.o: cc src/drivers/stel_ad5685.c
@@ -100,6 +99,8 @@ build $builddir/src/hw/system_samd51.o: cc src/hw/system_samd51.c
 build $builddir/src/hw/stel_sercom_spi.o: cc src/hw/stel_sercom_spi.c
 
 build $builddir/src/hw/stel_clocks.o: cc src/hw/stel_clocks.c
+
+build $builddir/src/hw/stel_bod.o: cc src/hw/stel_bod.c
 
 build $builddir/src/hw/stel_usb.o: cc src/hw/stel_usb.c
 
@@ -178,12 +179,11 @@ build $builddir/third_party/tinyusb/src/portable/microchip/samd/dcd_samd.o: $
 
 build build/stellar-firmware.elf: ld $builddir/src/main.o $
     $builddir/src/stel_usb_descriptors.o $builddir/src/drivers/stel_adc.o $
-    $builddir/src/drivers/stel_dac.o $builddir/src/drivers/stel_adg1414.o $
-    $builddir/src/drivers/stel_dotstar.o $
+    $builddir/src/drivers/stel_dac.o $builddir/src/drivers/stel_dotstar.o $
     $builddir/src/drivers/stel_ad5685.o $builddir/src/hw/system_samd51.o $
     $builddir/src/hw/stel_sercom_spi.o $builddir/src/hw/stel_clocks.o $
-    $builddir/src/hw/stel_usb.o $builddir/src/hw/stel_sercom.o $
-    $builddir/src/lib/stel_syscalls.o $
+    $builddir/src/hw/stel_bod.o $builddir/src/hw/stel_usb.o $
+    $builddir/src/hw/stel_sercom.o $builddir/src/lib/stel_syscalls.o $
     $builddir/build/generated_build_info.o $
     $builddir/third_party/libwinter/wntr_assert.o $
     $builddir/third_party/libwinter/wntr_bitbang_spi.o $
@@ -240,9 +240,6 @@ build $builddir/format/src/stel_usb_descriptors.c: clang_format $
 build $builddir/format/src/drivers/stel_dotstar.h: clang_format $
     src/drivers/stel_dotstar.h
 
-build $builddir/format/src/drivers/stel_adg1414.h: clang_format $
-    src/drivers/stel_adg1414.h
-
 build $builddir/format/src/drivers/stel_ad5685.h: clang_format $
     src/drivers/stel_ad5685.h
 
@@ -251,9 +248,6 @@ build $builddir/format/src/drivers/stel_adc.c: clang_format $
 
 build $builddir/format/src/drivers/stel_dac.c: clang_format $
     src/drivers/stel_dac.c
-
-build $builddir/format/src/drivers/stel_adg1414.c: clang_format $
-    src/drivers/stel_adg1414.c
 
 build $builddir/format/src/drivers/stel_dotstar.c: clang_format $
     src/drivers/stel_dotstar.c
@@ -277,12 +271,16 @@ build $builddir/format/src/hw/stel_clocks.c: clang_format src/hw/stel_clocks.c
 
 build $builddir/format/src/hw/stel_usb.h: clang_format src/hw/stel_usb.h
 
+build $builddir/format/src/hw/stel_bod.c: clang_format src/hw/stel_bod.c
+
 build $builddir/format/src/hw/stel_sercom.h: clang_format src/hw/stel_sercom.h
 
 build $builddir/format/src/hw/stel_sercom_spi.h: clang_format $
     src/hw/stel_sercom_spi.h
 
 build $builddir/format/src/hw/stel_clocks.h: clang_format src/hw/stel_clocks.h
+
+build $builddir/format/src/hw/stel_bod.h: clang_format src/hw/stel_bod.h
 
 build $builddir/format/src/hw/stel_usb.c: clang_format src/hw/stel_usb.c
 
@@ -299,11 +297,9 @@ build format: phony | $builddir/format/src/stel.h $
     $builddir/format/src/tusb_config.h $
     $builddir/format/src/stel_usb_descriptors.c $
     $builddir/format/src/drivers/stel_dotstar.h $
-    $builddir/format/src/drivers/stel_adg1414.h $
     $builddir/format/src/drivers/stel_ad5685.h $
     $builddir/format/src/drivers/stel_adc.c $
     $builddir/format/src/drivers/stel_dac.c $
-    $builddir/format/src/drivers/stel_adg1414.c $
     $builddir/format/src/drivers/stel_dotstar.c $
     $builddir/format/src/drivers/stel_dac.h $
     $builddir/format/src/drivers/stel_adc.h $
@@ -311,18 +307,18 @@ build format: phony | $builddir/format/src/stel.h $
     $builddir/format/src/hw/system_samd51.c $
     $builddir/format/src/hw/stel_sercom_spi.c $
     $builddir/format/src/hw/stel_clocks.c $
-    $builddir/format/src/hw/stel_usb.h $
+    $builddir/format/src/hw/stel_usb.h $builddir/format/src/hw/stel_bod.c $
     $builddir/format/src/hw/stel_sercom.h $
     $builddir/format/src/hw/stel_sercom_spi.h $
     $builddir/format/src/hw/stel_clocks.h $
-    $builddir/format/src/hw/stel_usb.c $
+    $builddir/format/src/hw/stel_bod.h $builddir/format/src/hw/stel_usb.c $
     $builddir/format/src/hw/stel_sercom.c $
     $builddir/format/src/lib/stel_syscalls.c $
     $builddir/format/src/lib/stel_math_utils.h
 configure_args = --config debug
 
 rule configure
-  command = /Users/stargirl/.pyenv/versions/3.9.7/bin/python3 configure.py $
+  command = /Users/stargirl/.pyenv/versions/3.10.0/bin/python3 configure.py $
       $configure_args
   description = Reconfigure with configure.py $configure_args
   generator = 1
