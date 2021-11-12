@@ -5,6 +5,9 @@
 */
 
 #include "samd51.h"
+#include "stel_bod.h"
+#include "stel_clocks.h"
+#include "wntr_ticks.h"
 
 /*
     Initial clock frequency on the SAMD51 is 48 MHz.
@@ -25,6 +28,13 @@ void SystemInit(void) {
     /* Enable debug and trace unit. */
     CoreDebug->DEMCR |= CoreDebug_DEMCR_TRCENA_Msk;
     DWT->CTRL |= DWT_CTRL_CYCCNTENA_Msk;
+
+    /* Wait for brown-out detector */
+    stel_wait_for_stable_voltage();
+
+    /* Configure clocks */
+    stel_clocks_init();
+    wntr_ticks_init();
 
     return;
 }
