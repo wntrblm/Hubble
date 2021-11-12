@@ -23,9 +23,8 @@ void stel_dac_init() {
 
     /* Select the VREF - See errata CHIP003-161 - must be set to unbuffered
        external reference.  */
-    /* Since I'm dumb and didn't connect VREFA to 3.3v and failed to even
-       make that possible, this is the internal bandgap. */
-    DAC->CTRLB.reg = DAC_CTRLB_REFSEL_INTREF;
+    wntr_gpio_configure_alt(WNTR_PORT_A, 3, WNTR_PMUX_B_ANALOG);
+    DAC->CTRLB.reg = DAC_CTRLB_REFSEL_VREFPU;
 
     /* Enable channels */
     DAC->DACCTRL[0].reg = DAC_DACCTRL_ENABLE | DAC_DACCTRL_LEFTADJ;
