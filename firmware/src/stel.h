@@ -8,7 +8,7 @@
 
 #include "stel_ad5685.h"
 #include "stel_adc.h"
-#include "stel_adg1414.h"
+#include "stel_bod.h"
 #include "stel_clocks.h"
 #include "stel_config.h"
 #include "stel_dac.h"

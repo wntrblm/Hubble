@@ -12,6 +12,7 @@
 #include "stel_adc.h"
 #include "stel_dac.h"
 #include "stel_sercom_spi.h"
+#include "wntr_bitbang_spi.h"
 #include "wntr_gpio.h"
 #include <stdint.h>
 
@@ -52,62 +53,82 @@
 #define STEL_ADC_AVERAGE_ADJRES 0x4
 
 /*
-    A list of physical input pins for the ADC to measure during each
-    scan.
+    Pin assignments
 */
-static const struct StelADCInput stel_adc0_inputs[] = {
-    {ADC0, WNTR_PORT_B, 0, ADC_INPUTCTRL_MUXPOS_AIN12},   // A1
-    {ADC0, WNTR_PORT_B, 1, ADC_INPUTCTRL_MUXPOS_AIN13},   // A2
-    {ADC0, WNTR_PORT_B, 2, ADC_INPUTCTRL_MUXPOS_AIN14},   // A3
-    {ADC0, WNTR_PORT_B, 3, ADC_INPUTCTRL_MUXPOS_AIN15},   // A4
-    {ADC0, WNTR_PORT_A, 2, ADC_INPUTCTRL_MUXPOS_AIN0},    // A5
-    {ADC0, WNTR_PORT_A, 3, ADC_INPUTCTRL_MUXPOS_AIN1},    // A6
-    {ADC0, WNTR_PORT_A, 4, ADC_INPUTCTRL_MUXPOS_AIN4},    // A13
-    {ADC0, WNTR_PORT_A, 5, ADC_INPUTCTRL_MUXPOS_AIN5},    // A13
-    {ADC0, WNTR_PORT_A, 6, ADC_INPUTCTRL_MUXPOS_AIN6},    // A15
-    {ADC0, WNTR_PORT_A, 7, ADC_INPUTCTRL_MUXPOS_AIN7},    // A16
-    {ADC0, WNTR_PORT_A, 11, ADC_INPUTCTRL_MUXPOS_AIN11},  // A19
-    {ADC0, WNTR_PORT_A, 10, ADC_INPUTCTRL_MUXPOS_AIN10},  // A20
-};
-
-static const struct StelADCInput stel_adc1_inputs[] = {
-    {ADC1, WNTR_PORT_B, 4, ADC_INPUTCTRL_MUXPOS_AIN6},  // A7
-    {ADC1, WNTR_PORT_B, 5, ADC_INPUTCTRL_MUXPOS_AIN7},  // A8
-    {ADC1, WNTR_PORT_B, 6, ADC_INPUTCTRL_MUXPOS_AIN8},  // A9
-    {ADC1, WNTR_PORT_B, 7, ADC_INPUTCTRL_MUXPOS_AIN9},  // A10
-    {ADC1, WNTR_PORT_B, 8, ADC_INPUTCTRL_MUXPOS_AIN0},  // A11
-    {ADC1, WNTR_PORT_B, 9, ADC_INPUTCTRL_MUXPOS_AIN1},  // A12
-    {ADC1, WNTR_PORT_A, 9, ADC_INPUTCTRL_MUXPOS_AIN3},  // A17
-    {ADC1, WNTR_PORT_A, 8, ADC_INPUTCTRL_MUXPOS_AIN2},  // A18
-};
-
-#define A1 (&stel_adc0_inputs[0])
-#define A2 (&stel_adc0_inputs[1])
-#define A3 (&stel_adc0_inputs[2])
-#define A4 (&stel_adc0_inputs[3])
-#define A5 (&stel_adc0_inputs[4])
-#define A6 (&stel_adc0_inputs[5])
-#define A7 (&stel_adc1_inputs[0])
-#define A8 (&stel_adc1_inputs[1])
-#define A9 (&stel_adc1_inputs[2])
-#define A10 (&stel_adc1_inputs[3])
-#define A11 (&stel_adc1_inputs[4])
-#define A12 (&stel_adc1_inputs[5])
-#define A13 (&stel_adc0_inputs[6])
-#define A14 (&stel_adc0_inputs[7])
-#define A15 (&stel_adc0_inputs[8])
-#define A16 (&stel_adc0_inputs[9])
-#define A17 (&stel_adc1_inputs[6])
-#define A18 (&stel_adc1_inputs[7])
-#define A19 (&stel_adc0_inputs[10])
-#define A20 (&stel_adc0_inputs[11])
+#define GPIO_1 (WNTR_GPIO_PIN(WNTR_PORT_A, 27))
+#define GPIO_2 (WNTR_GPIO_PIN(WNTR_PORT_B, 23))
+#define GPIO_3 (WNTR_GPIO_PIN(WNTR_PORT_B, 22))
+#define GPIO_4 (WNTR_GPIO_PIN(WNTR_PORT_A, 21))
+#define GPIO_5 (WNTR_GPIO_PIN(WNTR_PORT_A, 20))
+#define GPIO_6 (WNTR_GPIO_PIN(WNTR_PORT_A, 12))
+#define GPIO_7 (WNTR_GPIO_PIN(WNTR_PORT_B, 11))
+#define GPIO_8 (WNTR_GPIO_PIN(WNTR_PORT_B, 10))
+#define GPIO_9 (WNTR_GPIO_PIN(WNTR_PORT_A, 11))
+#define GPIO_9_ADC_0_11 ((const struct StelADCInput){ADC0, WNTR_PORT_A, 11, ADC_INPUTCTRL_MUXPOS_AIN11})
+#define GPIO_10 (WNTR_GPIO_PIN(WNTR_PORT_A, 10))
+#define GPIO_10_ADC_0_10 ((const struct StelADCInput){ADC0, WNTR_PORT_A, 10, ADC_INPUTCTRL_MUXPOS_AIN10})
+#define GPIO_11 (WNTR_GPIO_PIN(WNTR_PORT_A, 9))
+#define GPIO_11_ADC_0_9 ((const struct StelADCInput){ADC0, WNTR_PORT_A, 9, ADC_INPUTCTRL_MUXPOS_AIN9})
+#define GPIO_11_ADC_1_3 ((const struct StelADCInput){ADC1, WNTR_PORT_A, 9, ADC_INPUTCTRL_MUXPOS_AIN3})
+#define GPIO_12 (WNTR_GPIO_PIN(WNTR_PORT_A, 8))
+#define GPIO_12_ADC_0_8 ((const struct StelADCInput){ADC0, WNTR_PORT_A, 8, ADC_INPUTCTRL_MUXPOS_AIN8})
+#define GPIO_12_ADC_1_2 ((const struct StelADCInput){ADC1, WNTR_PORT_A, 8, ADC_INPUTCTRL_MUXPOS_AIN2})
+#define GPIO_13 (WNTR_GPIO_PIN(WNTR_PORT_A, 7))
+#define GPIO_13_ADC_0_7 ((const struct StelADCInput){ADC0, WNTR_PORT_A, 7, ADC_INPUTCTRL_MUXPOS_AIN7})
+#define GPIO_14 (WNTR_GPIO_PIN(WNTR_PORT_A, 6))
+#define GPIO_14_ADC_0_6 ((const struct StelADCInput){ADC0, WNTR_PORT_A, 6, ADC_INPUTCTRL_MUXPOS_AIN6})
+#define GPIO_15 (WNTR_GPIO_PIN(WNTR_PORT_A, 5))
+#define GPIO_15_ADC_0_5_DAC_1 ((const struct StelADCInput){ADC0, WNTR_PORT_A, 5, ADC_INPUTCTRL_MUXPOS_AIN5})
+#define GPIO_16 (WNTR_GPIO_PIN(WNTR_PORT_A, 4))
+#define GPIO_16_ADC_0_4 ((const struct StelADCInput){ADC0, WNTR_PORT_A, 4, ADC_INPUTCTRL_MUXPOS_AIN4})
+#define GPIO_17 (WNTR_GPIO_PIN(WNTR_PORT_B, 7))
+#define GPIO_17_ADC_1_9 ((const struct StelADCInput){ADC1, WNTR_PORT_B, 7, ADC_INPUTCTRL_MUXPOS_AIN9})
+#define GPIO_18 (WNTR_GPIO_PIN(WNTR_PORT_B, 6))
+#define GPIO_18_ADC_1_8 ((const struct StelADCInput){ADC1, WNTR_PORT_B, 8, ADC_INPUTCTRL_MUXPOS_AIN8})
+#define GPIO_19 (WNTR_GPIO_PIN(WNTR_PORT_A, 2))
+#define GPIO_19_ADC_0_0 ((const struct StelADCInput){ADC0, WNTR_PORT_A, 2, ADC_INPUTCTRL_MUXPOS_AIN0})
+#define GPIO_20 (WNTR_GPIO_PIN(WNTR_PORT_B, 1))
+#define GPIO_20_ADC_0_13 ((const struct StelADCInput){ADC0, WNTR_PORT_B, 1, ADC_INPUTCTRL_MUXPOS_AIN13})
+#define GPIO_21 (WNTR_GPIO_PIN(WNTR_PORT_B, 0))
+#define GPIO_21_ADC_0_12 ((const struct StelADCInput){ADC0, WNTR_PORT_B, 0, ADC_INPUTCTRL_MUXPOS_AIN12})
+#define GPIO_22 (WNTR_GPIO_PIN(WNTR_PORT_B, 31))
+#define GPIO_23 (WNTR_GPIO_PIN(WNTR_PORT_B, 30))
+#define GPIO_23_LED (WNTR_GPIO_PIN(WNTR_PORT_B, 30))
 
 /*
-    SPI configuration for the external DAC (AD5685) and
-    analog switches (ADG1414)
+    Array of all GPIO pin defs above (not including analog aliases)
+*/
+static const struct WntrGPIOPin GPIO[] = {
+    GPIO_1,  GPIO_2,  GPIO_3,  GPIO_4,  GPIO_5,  GPIO_6,  GPIO_7,  GPIO_8,  GPIO_9,  GPIO_10, GPIO_11, GPIO_12,
+    GPIO_13, GPIO_14, GPIO_15, GPIO_16, GPIO_17, GPIO_18, GPIO_19, GPIO_20, GPIO_21, GPIO_22, GPIO_23,
+};
+
+/*
+    Pins specifically for the multiplexers
 */
 
-/* Static variables. */
+#define GPIO_DAC_MUX_A0 (WNTR_GPIO_PIN(WNTR_PORT_B, 16))
+#define GPIO_DAC_MUX_A1 (WNTR_GPIO_PIN(WNTR_PORT_B, 17))
+#define GPIO_ADC_MUX_A0 (WNTR_GPIO_PIN(WNTR_PORT_B, 2))
+#define GPIO_ADC_MUX_A1 (WNTR_GPIO_PIN(WNTR_PORT_B, 3))
+
+/*
+    Exclusive ADC pins (w/ buffers)
+*/
+#define GPIO_AREF0 (WNTR_GPIO_PIN(WNTR_PORT_A, 3))
+#define GPIO_A1 (WNTR_GPIO_PIN(WNTR_PORT_B, 5))
+#define ADC_A1 ((const struct StelADCInput){ADC1, WNTR_PORT_B, 5, ADC_INPUTCTRL_MUXPOS_AIN6})
+#define GPIO_A2 (WNTR_GPIO_PIN(WNTR_PORT_B, 9))
+#define ADC_A2 ((const struct StelADCInput){ADC1, WNTR_PORT_B, 9, ADC_INPUTCTRL_MUXPOS_AIN1})
+#define GPIO_A3 (WNTR_GPIO_PIN(WNTR_PORT_B, 8))
+#define ADC_A3 ((const struct StelADCInput){ADC1, WNTR_PORT_B, 8, ADC_INPUTCTRL_MUXPOS_AIN0})
+#define GPIO_A4 (WNTR_GPIO_PIN(WNTR_PORT_B, 4))
+#define ADC_A4 ((const struct StelADCInput){ADC1, WNTR_PORT_B, 4, ADC_INPUTCTRL_MUXPOS_AIN7})
+
+/*
+    SPI configuration for the external DAC (AD5685)
+*/
+
 static const struct StelSERCOMSPI SPI = {
     .sercom = &SERCOM2->SPI,
     .dopo = SERCOM_SPI_DOPO_SDO_3_SCK_1_CS_2,
@@ -123,35 +144,3 @@ static const struct StelSERCOMSPI SPI = {
 };
 
 #define STEL_AD5685_CS (WNTR_GPIO_PIN(WNTR_PORT_A, 14))
-// NOTE: This was not actually wired up on Rev1, so this
-// has to be bodged in before it'll work.
-#define STEL_ADG1414_CS (WNTR_GPIO_PIN(WNTR_PORT_B, 22))
-
-/* Aliases for the analog switches */
-
-#define SWITCH_DAC_3A (0)
-#define SWITCH_DAC_3B (1)
-#define SWITCH_DAC_3C (2)
-#define SWITCH_DAC_3D (3)
-#define SWITCH_DAC_4A (4)
-#define SWITCH_DAC_4B (5)
-#define SWITCH_DAC_4C (6)
-#define SWITCH_DAC_4D (7)
-#define SWITCH_DAC_1A (8)
-#define SWITCH_DAC_1B (9)
-#define SWITCH_DAC_1C (10)
-#define SWITCH_DAC_1D (11)
-#define SWITCH_DAC_2A (12)
-#define SWITCH_DAC_2B (13)
-#define SWITCH_DAC_2C (14)
-#define SWITCH_DAC_2D (15)
-#define SWITCH_AUDIO_IN_1A (16)
-#define SWITCH_AUDIO_IN_1B (17)
-#define SWITCH_AUDIO_IN_1C (18)
-#define SWITCH_AUDIO_IN_1D (19)
-#define SWITCH_AUDIO_IN_2A (20)
-#define SWITCH_AUDIO_IN_2B (21)
-#define SWITCH_AUDIO_IN_2C (22)
-#define SWITCH_AUDIO_IN_2D (23)
-
-#define NUM_SWITCHES (SWITCH_AUDIO_IN_2D + 1)

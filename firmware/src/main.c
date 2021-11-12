@@ -21,14 +21,14 @@
 #define FLOAT_TO_16_BIT_DAC(val) (u16_invert(float_to_u16(map_rangef(val, -5.f, 8.f, 0.f, 1.0f))))
 #define FLOAT_TO_12_BIT_DAC(val) (u12_invert(float_to_u12(map_rangef(val, -5.f, 5.f, 0.f, 1.0f))))
 
-/* Static variables */
-static bool switches[NUM_SWITCHES] = {false};
-
 /* Forward declarations */
 
 int main(void);
 static void init();
 static void loop();
+static void loop_test_adc();
+static void loop_test_dac();
+static void loop_test_gpio();
 
 /* Public functions */
 
@@ -45,9 +45,11 @@ int main(void) {
 }
 
 static void init() {
-    /* Configure clocks. */
-    stel_clocks_init();
-    wntr_ticks_init();
+    SystemInit();
+
+    /* Turn on the "alive" LED */
+    WntrGPIOPin_set_as_output(GPIO_23_LED);
+    WntrGPIOPin_set(GPIO_23_LED, true);
 
     /* Setup USB as soon as possible */
     stel_usb_init();
@@ -56,49 +58,38 @@ static void init() {
     stel_dotstar_init(20);
 
     stel_adc_init();
-    stel_adc_init_input(A1);
-    stel_adc_init_input(A2);
-    stel_adc_init_input(A3);
-    stel_adc_init_input(A4);
-    stel_adc_init_input(A5);
-    stel_adc_init_input(A6);
-    stel_adc_init_input(A7);
-    stel_adc_init_input(A8);
-    stel_adc_init_input(A9);
-    stel_adc_init_input(A10);
-    stel_adc_init_input(A11);
-    stel_adc_init_input(A12);
-    stel_adc_init_input(A13);
-    stel_adc_init_input(A14);
-    stel_adc_init_input(A15);
-    stel_adc_init_input(A16);
-    stel_adc_init_input(A17);
-    stel_adc_init_input(A18);
-    stel_adc_init_input(A19);
-    stel_adc_init_input(A20);
+    stel_adc_init_input(&ADC_A1);
+    stel_adc_init_input(&ADC_A2);
+    stel_adc_init_input(&ADC_A3);
+    stel_adc_init_input(&ADC_A4);
 
-    /* SPI bus & external DAC + Switches */
+    /* SPI bus & external DAC */
     stel_sercom_spi_init(&SPI);
     stel_ad5685_init(&SPI);
     stel_ad5685_soft_reset();
-    stel_adg1414_init(&SPI);
 
-    switches[SWITCH_DAC_1A] = true;
-    switches[SWITCH_DAC_1B] = true;
-    switches[SWITCH_DAC_1C] = true;
-    switches[SWITCH_DAC_1D] = true;
-    switches[SWITCH_DAC_2A] = true;
-    switches[SWITCH_DAC_3A] = true;
-    switches[SWITCH_DAC_4A] = true;
-    switches[SWITCH_AUDIO_IN_1A] = true;
-    switches[SWITCH_AUDIO_IN_2A] = true;
+    /* Multiplexer address lines */
+    WntrGPIOPin_set_as_output(GPIO_DAC_MUX_A0);
+    WntrGPIOPin_set_as_output(GPIO_DAC_MUX_A1);
+    WntrGPIOPin_set_as_output(GPIO_ADC_MUX_A0);
+    WntrGPIOPin_set_as_output(GPIO_ADC_MUX_A1);
 
-    stel_adg1414_write_switches(switches, NUM_SWITCHES);
+    WntrGPIOPin_set(GPIO_DAC_MUX_A0, false);
+    WntrGPIOPin_set(GPIO_DAC_MUX_A1, false);
+    WntrGPIOPin_set(GPIO_ADC_MUX_A0, false);
+    WntrGPIOPin_set(GPIO_ADC_MUX_A1, false);
 }
 
 /* Private functions */
 
 static void loop() {
+    /* Blink the LED */
+    if ((wntr_ticks() / 100) % 2 == 0) {
+        WntrGPIOPin_set(GPIO_23_LED, true);
+    } else {
+        WntrGPIOPin_set(GPIO_23_LED, false);
+    }
+
     /* Dotstar update */
     static uint16_t hue = 0;
     stel_dotstar_set32(0, wntr_colorspace_hsv_to_rgb(hue, 200, 255));
@@ -114,53 +105,60 @@ static void loop() {
     //     in.midi_msg = NULL;
     // }
 
-    /* ADC update */
-    const uint16_t a1 = stel_adc_read_sync(A1);
-    const uint16_t a2 = stel_adc_read_sync(A2);
-    const uint16_t a3 = stel_adc_read_sync(A3);
-    const uint16_t a4 = stel_adc_read_sync(A4);
-    const uint16_t a6 = stel_adc_read_sync(A6);
-    const uint16_t a7 = stel_adc_read_sync(A7);
-    const uint16_t a8 = stel_adc_read_sync(A8);
-    const uint16_t a9 = stel_adc_read_sync(A9);
-    const uint16_t a10 = stel_adc_read_sync(A10);
-    const uint16_t a11 = stel_adc_read_sync(A11);
-    const uint16_t a12 = stel_adc_read_sync(A12);
-    const uint16_t a13 = stel_adc_read_sync(A13);
-    const uint16_t a15 = stel_adc_read_sync(A15);
-    const uint16_t a16 = stel_adc_read_sync(A16);
-    const uint16_t a17 = stel_adc_read_sync(A17);
-    const uint16_t a18 = stel_adc_read_sync(A18);
-    const uint16_t a19 = stel_adc_read_sync(A19);
-    const uint16_t a20 = stel_adc_read_sync(A20);
+    loop_test_adc();
+    loop_test_dac();
+    loop_test_gpio();
+}
 
-    printf(
-        "ADC: %04u %04u %04u %04u %04u %04u %04u %04u %04u %04u %04u %04u %04u %04u %04u %04u %04u %04u\n",
-        a1,
-        a2,
-        a3,
-        a4,
-        a6,
-        a7,
-        a8,
-        a9,
-        a10,
-        a11,
-        a12,
-        a13,
-        a15,
-        a16,
-        a17,
-        a18,
-        a19,
-        a20);
+static void loop_test_adc() {
+    for (uint8_t mux_addr = 0; mux_addr < 4; mux_addr++) {
+        WntrGPIOPin_set(GPIO_ADC_MUX_A0, (mux_addr & 0x1));
+        WntrGPIOPin_set(GPIO_ADC_MUX_A1, (mux_addr & 0x2) >> 1);
 
-    /* Update DAC outputs. */
+        wntr_delay_ms(5);
 
-    stel_ad5685_write_channel(AD5685_CHANNEL_A, 65535, true);
-    stel_ad5685_write_channel(AD5685_CHANNEL_B, 0, true);
-    stel_ad5685_write_channel(AD5685_CHANNEL_C, 65535, true);
-    stel_ad5685_write_channel(AD5685_CHANNEL_D, 0, true);
+        const uint16_t a1 = stel_adc_read_sync(&ADC_A1);
+        const uint16_t a2 = stel_adc_read_sync(&ADC_A2);
+        const uint16_t a3 = stel_adc_read_sync(&ADC_A3);
+        const uint16_t a4 = stel_adc_read_sync(&ADC_A4);
 
-    stel_adg1414_write_switches(switches, NUM_SWITCHES);
+        printf("ADC %u: %04u %04u %04u %04u    ", mux_addr, a1, a2, a3, a4);
+    }
+    printf("\n");
+}
+
+static void loop_test_dac() {
+    static uint8_t mux_addr = 0;
+    static uint32_t last_update = 0;
+
+    uint32_t now = wntr_ticks();
+    if (last_update + 500 < now) {
+        mux_addr = (mux_addr + 1) % 4;
+    }
+
+    // WntrGPIOPin_set(GPIO_DAC_MUX_A0, (mux_addr & 0x1));
+    // WntrGPIOPin_set(GPIO_DAC_MUX_A1, (mux_addr & 0x2) >> 1);
+
+    stel_ad5685_write_channel(AD5685_CHANNEL_A, (wntr_ticks() * 100) % 65355, true);
+    stel_ad5685_write_channel(AD5685_CHANNEL_B, 65535 - ((wntr_ticks() * 100) % 65355), true);
+    stel_ad5685_write_channel(AD5685_CHANNEL_C, 65535 - ((wntr_ticks() * 10) % 65355), true);
+    stel_ad5685_write_channel(AD5685_CHANNEL_D, (wntr_ticks() * 10) % 65355, true);
+}
+
+/*
+    Steps through each GPIO pin and turns it on and off
+*/
+static void loop_test_gpio() {
+    static size_t gpio_idx = 0;
+    static uint32_t last_update = 0;
+
+    uint32_t now = wntr_ticks();
+    if (last_update + 100 < now) {
+        last_update = now;
+        WntrGPIOPin_set(GPIO[gpio_idx], false);
+
+        gpio_idx = (gpio_idx + 1) % 23;
+        WntrGPIOPin_set_as_output(GPIO[gpio_idx]);
+        WntrGPIOPin_set(GPIO[gpio_idx], true);
+    }
 }
