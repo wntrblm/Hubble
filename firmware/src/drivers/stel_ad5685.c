@@ -35,13 +35,14 @@ inline static void send_command(uint8_t command, uint8_t data1, uint8_t data2) {
 void stel_ad5685_init(const struct StelSERCOMSPI* spi) {
     spi_ = spi;
     WntrGPIOPin_set_as_output(STEL_AD5685_CS);
+    WntrGPIOPin_set(STEL_AD5685_CS, true);
 }
 
 void stel_ad5685_soft_reset() { send_command(CMD_SOFT_RESET, 0x0, 0x0); }
 
 void stel_ad5685_write_channel(enum StelAD5685Channel channel, uint16_t val, bool update) {
     const uint8_t cmd = update ? CMD_WRITE_AND_UPDATE : CMD_WRITE;
-    send_command(cmd | (1 << channel), val >> 8 & 0xFF, val & 0xFF);
+    send_command(cmd | (1 << channel), (val >> 8) & 0xFF, val & 0xFF);
 }
 
 void stel_ad5685_update_channel(enum StelAD5685Channel channel) { send_command(CMD_UPDATE | (1 << channel), 0x0, 0x0); }
