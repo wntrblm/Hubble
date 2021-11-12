@@ -27,3 +27,5 @@ fp-info-cache
 
 .svg2shenzhen-cache
 gerbers/
+
+.vscode/.cortex-debug.peripherals.state.json
