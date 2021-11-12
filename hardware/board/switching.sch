@@ -5,8 +5,8 @@ $Descr A4 11693 8268
 encoding utf-8
 Sheet 7 7
 Title "TestKit Motherboard"
-Date "2021-10-22"
-Rev "v1"
+Date "2021-11-12"
+Rev "v2"
 Comp "Winterbloom"
 Comment1 "Alethea Flowers"
 Comment2 "CERN-OHL-P V2"

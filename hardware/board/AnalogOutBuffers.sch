@@ -5,8 +5,8 @@ $Descr A4 11693 8268
 encoding utf-8
 Sheet 4 7
 Title "TestKit Motherboard"
-Date "2021-10-22"
-Rev "v1"
+Date "2021-11-12"
+Rev "v2"
 Comp "Winterbloom"
 Comment1 "Alethea Flowers"
 Comment2 "CERN-OHL-P V2"
@@ -359,13 +359,13 @@ Text HLabel 1175 2600 0    50   Input ~ 0
 DAC_2_PRE
 Text HLabel 1175 3575 0    50   Input ~ 0
 DAC_3_PRE
-Text HLabel 2600 3475 2    50   Input ~ 0
+Text HLabel 3050 3475 2    50   Input ~ 0
 DAC_3_POST
-Text HLabel 2600 4450 2    50   Input ~ 0
+Text HLabel 3050 4450 2    50   Input ~ 0
 DAC_4_POST
-Text HLabel 2575 1500 2    50   Input ~ 0
+Text HLabel 3025 1500 2    50   Input ~ 0
 DAC_1_POST
-Text HLabel 2600 2500 2    50   Input ~ 0
+Text HLabel 3050 2500 2    50   Input ~ 0
 DAC_2_POST
 $Comp
 L winterbloom:OPA4197 U10
@@ -494,7 +494,7 @@ AR Path="/60711259/617993C4" Ref="R?"  Part="1"
 AR Path="/61059808/617993C4" Ref="R?"  Part="1" 
 AR Path="/608FFE97/617993C4" Ref="R36"  Part="1" 
 F 0 "R36" H 5143 3121 50  0000 L CNN
-F 1 "1k" H 5143 3030 50  0000 L CNN
+F 1 "270" H 5143 3030 50  0000 L CNN
 F 2 "Resistor_SMD:R_0603_1608Metric_Pad0.98x0.95mm_HandSolder" V 5115 3065 50  0001 C CNN
 F 3 "~" H 5075 3075 50  0001 C CNN
 	1    5075 3075
@@ -564,4 +564,77 @@ Text Label 1175 3925 2    50   ~ 0
 -10v_DAC
 Text Label 1175 4900 2    50   ~ 0
 -10v_DAC
+$Comp
+L Connector:TestPoint_Small TP?
+U 1 1 618195C6
+P 2800 1500
+AR Path="/617FCAA5/618195C6" Ref="TP?"  Part="1" 
+AR Path="/608FFE97/618195C6" Ref="TP3"  Part="1" 
+F 0 "TP3" V 2600 1575 50  0000 R CNN
+F 1 "1" V 2675 1525 50  0000 R CNN
+F 2 "TestPoint:TestPoint_Pad_D1.0mm" H 3000 1500 50  0001 C CNN
+F 3 "~" H 3000 1500 50  0001 C CNN
+	1    2800 1500
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	2575 1500 2800 1500
+Connection ~ 2575 1500
+Wire Wire Line
+	2800 1500 3025 1500
+Connection ~ 2800 1500
+$Comp
+L Connector:TestPoint_Small TP?
+U 1 1 6181CE72
+P 2825 2500
+AR Path="/617FCAA5/6181CE72" Ref="TP?"  Part="1" 
+AR Path="/608FFE97/6181CE72" Ref="TP4"  Part="1" 
+F 0 "TP4" V 2625 2575 50  0000 R CNN
+F 1 "2" V 2700 2525 50  0000 R CNN
+F 2 "TestPoint:TestPoint_Pad_D1.0mm" H 3025 2500 50  0001 C CNN
+F 3 "~" H 3025 2500 50  0001 C CNN
+	1    2825 2500
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	2600 2500 2825 2500
+Wire Wire Line
+	2825 2500 3050 2500
+Connection ~ 2825 2500
+$Comp
+L Connector:TestPoint_Small TP?
+U 1 1 6181D989
+P 2825 3475
+AR Path="/617FCAA5/6181D989" Ref="TP?"  Part="1" 
+AR Path="/608FFE97/6181D989" Ref="TP5"  Part="1" 
+F 0 "TP5" V 2625 3550 50  0000 R CNN
+F 1 "3" V 2700 3500 50  0000 R CNN
+F 2 "TestPoint:TestPoint_Pad_D1.0mm" H 3025 3475 50  0001 C CNN
+F 3 "~" H 3025 3475 50  0001 C CNN
+	1    2825 3475
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	2600 3475 2825 3475
+Wire Wire Line
+	2825 3475 3050 3475
+Connection ~ 2825 3475
+$Comp
+L Connector:TestPoint_Small TP?
+U 1 1 6181E6EB
+P 2825 4450
+AR Path="/617FCAA5/6181E6EB" Ref="TP?"  Part="1" 
+AR Path="/608FFE97/6181E6EB" Ref="TP6"  Part="1" 
+F 0 "TP6" V 2625 4525 50  0000 R CNN
+F 1 "4" V 2700 4475 50  0000 R CNN
+F 2 "TestPoint:TestPoint_Pad_D1.0mm" H 3025 4450 50  0001 C CNN
+F 3 "~" H 3025 4450 50  0001 C CNN
+	1    2825 4450
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	2600 4450 2825 4450
+Wire Wire Line
+	2825 4450 3050 4450
+Connection ~ 2825 4450
 $EndSCHEMATC

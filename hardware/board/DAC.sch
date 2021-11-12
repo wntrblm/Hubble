@@ -5,8 +5,8 @@ $Descr A4 11693 8268
 encoding utf-8
 Sheet 6 7
 Title "TestKit Motherboard"
-Date "2021-10-22"
-Rev "v1"
+Date "2021-11-12"
+Rev "v2"
 Comp "Winterbloom"
 Comment1 "Alethea Flowers"
 Comment2 "CERN-OHL-P V2"
@@ -53,7 +53,6 @@ F 3 "" H 4125 2025 50  0001 C CNN
 	1    4125 2025
 	1    0    0    -1  
 $EndComp
-NoConn ~ 1850 2675
 $Comp
 L power:GND #PWR?
 U 1 1 6180A7E1
@@ -227,8 +226,6 @@ Text Label 4600 2275 0    50   ~ 0
 VDD_DAC
 Text Label 2550 2175 0    50   ~ 0
 VDD_DAC
-Text Label 3100 2975 0    50   ~ 0
-DAC_VREF
 Text HLabel 3100 2575 2    50   Input ~ 0
 DAC_1
 Text HLabel 3100 2875 2    50   Input ~ 0
@@ -245,4 +242,30 @@ Text HLabel 1850 2575 0    50   Input ~ 0
 SPI_CS
 Text Notes 1175 3500 0    50   ~ 0
 Gain: 1 (2.5V)\nReset: Mid-scale (1.25V)
+$Comp
+L Connector:TestPoint_Small TP1
+U 1 1 618096C4
+P 1350 2675
+F 0 "TP1" H 1525 2625 50  0000 R CNN
+F 1 "SDO" H 1550 2725 50  0000 R CNN
+F 2 "TestPoint:TestPoint_Pad_D1.0mm" H 1550 2675 50  0001 C CNN
+F 3 "~" H 1550 2675 50  0001 C CNN
+	1    1350 2675
+	-1   0    0    1   
+$EndComp
+Wire Wire Line
+	1850 2675 1350 2675
+$Comp
+L Connector:TestPoint_Small TP2
+U 1 1 6180BA3F
+P 3450 2975
+F 0 "TP2" H 3650 2925 50  0000 R CNN
+F 1 "VREF" H 3700 3025 50  0000 R CNN
+F 2 "TestPoint:TestPoint_Pad_D1.0mm" H 3650 2975 50  0001 C CNN
+F 3 "~" H 3650 2975 50  0001 C CNN
+	1    3450 2975
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	3450 2975 3100 2975
 $EndSCHEMATC
