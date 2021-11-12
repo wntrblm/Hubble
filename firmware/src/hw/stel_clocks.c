@@ -13,9 +13,9 @@
 - GCLK0: 120 MHz from DPLL0 (used by CPU)
 - GCLK1: 48 MHz from DFLL48M (used by USB, ADC)
 - GCLK2: Unused
-- GCLK3: 32.768 kHz from XOSC32K (used as reference clock)
+- GCLK3: 32.768 kHz from XOSC32K (used as ref. clock for DFLL48M)
 - GCLK4: 12 MHz from DFLL48M (used by the DAC & SPI)
-- GCLK5: 1 MHz from DFLL48M
+- GCLK5: 1 MHz from DFLL48M (used as ref. clock for DPLL0)
 
 */
 
@@ -41,7 +41,7 @@ void stel_clocks_init() {
     while (GCLK->SYNCBUSY.reg & GCLK_SYNCBUSY_SWRST) {}
 
 /* Configure 32kHz Oscillator */
-#ifdef STEL_HAS_CRYSTAL
+#if STEL_HAS_CRYSTAL
     init_xosc32k();
 #else
     init_osc32k();
@@ -156,13 +156,13 @@ static void init_dfll48m_gclks() {
 }
 
 static void init_dpll0() {
-    /* DPLL0 @ 120MHz for GCLK0 */
+    /* configures DPLL0 @ 120MHz for GCLK0 */
 
-    /*
-        Use external 32 kHz crystal as the reference.
-        LBYPASS has to be used as per the errata.
-    */
-    OSCCTRL->Dpll[0].DPLLCTRLB.reg = OSCCTRL_DPLLCTRLB_REFCLK_XOSC32 | OSCCTRL_DPLLCTRLB_LBYPASS;
+    /* Reference clock is GCLK5 (1MHz) */
+    GCLK->PCHCTRL[OSCCTRL_GCLK_ID_FDPLL0].reg = GCLK_PCHCTRL_CHEN | GCLK_PCHCTRL_GEN_GCLK5;
+
+    /* Note: must use LBYPASS as per errata */
+    OSCCTRL->Dpll[0].DPLLCTRLB.reg = OSCCTRL_DPLLCTRLB_REFCLK_GCLK | OSCCTRL_DPLLCTRLB_LBYPASS;
 
     /*
         Output frequency formula (datasheet section 28.6.5):
@@ -173,15 +173,27 @@ static void init_dpll0() {
 
             LDR = (DPLL_freq / REF_freq) - 1
 
-        So for 120 MHz from 32.768 kHz LDR needs to be 3661.
-        Setting the LDRFRAC to 3/32 gets us 119.999 MHz.
+        So for 120 MHz from 1 MHz LDR should be 120, set to 119 here to prevent
+        overclocking.
     */
-    OSCCTRL->Dpll[0].DPLLRATIO.reg = OSCCTRL_DPLLRATIO_LDRFRAC(3) | OSCCTRL_DPLLRATIO_LDR(3661);
+    OSCCTRL->Dpll[0].DPLLRATIO.reg = OSCCTRL_DPLLRATIO_LDRFRAC(0) | OSCCTRL_DPLLRATIO_LDR(119);
     while (OSCCTRL->Dpll[0].DPLLSYNCBUSY.bit.DPLLRATIO) {}
 
-    /* Enable and wait for lock */
+    /* Enable and wait for clock ready */
     OSCCTRL->Dpll[0].DPLLCTRLA.reg = OSCCTRL_DPLLCTRLA_ENABLE;
     while (OSCCTRL->Dpll[0].DPLLSTATUS.bit.CLKRDY == 0 || OSCCTRL->Dpll[0].DPLLSTATUS.bit.LOCK == 0) {};
+
+    /*
+        Delay 10ms as per errata 2.13.1. May not be needed now that a higher
+        frequency reference clock is being used.
+
+        CPU clock is (currently) at 32kHz, so at least 320 cycles using the cycle
+        counter.
+    */
+    CoreDebug->DEMCR |= CoreDebug_DEMCR_TRCENA_Msk;
+    DWT->CTRL |= DWT_CTRL_CYCCNTENA_Msk;
+    DWT->CYCCNT = 0;
+    while (DWT->CYCCNT < 320) {};
 }
 
 static void setup_cpu_osc32k() {
