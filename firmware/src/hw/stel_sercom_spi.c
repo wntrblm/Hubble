@@ -32,7 +32,7 @@ void stel_sercom_spi_init(const struct StelSERCOMSPI* inst) {
     }
 
     /* Set baud to max (GCLK / 2) 6 MHz */
-    inst->sercom->BAUD.reg = SERCOM_SPI_BAUD_BAUD(0);
+    inst->sercom->BAUD.reg = SERCOM_SPI_BAUD_BAUD(16);
 
     /* Configure pins for the correct function. */
     WntrGPIOPin_set_as_output(inst->sdo);
