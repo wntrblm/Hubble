@@ -12,13 +12,13 @@ c_flags = -std=gnu17 -x c
 cxx_flags = -std=gnu++17 -x c++
 
 cc_includes = -Ithird_party/samd51a/include -Ithird_party/cmsis/include $
-    -Ithird_party/wren/include -Isrc -Ithird_party/libwinter/samd $
-    -Ithird_party/libwinter -Ithird_party/tinyusb/src/class/midi $
-    -Isrc/drivers -Ithird_party/samd51a/gcc -Ithird_party/rtt $
-    -Ithird_party/tinyusb/src -Ibuild -Ithird_party/printf $
-    -Ithird_party/tinyusb/src/portable/microchip/samd $
-    -Ithird_party/tinyusb/src/common -Isrc/lib -Isrc/hw $
-    -Ithird_party/tinyusb/src/device
+    -Ithird_party/wren/include -Ithird_party/printf -Isrc $
+    -Ithird_party/samd51a/gcc $
+    -Ithird_party/tinyusb/src/portable/microchip/samd -Isrc/drivers $
+    -Ithird_party/tinyusb/src/class/midi -Isrc/lib -Ithird_party/libwinter $
+    -Isrc/hw -Ithird_party/tinyusb/src/device $
+    -Ithird_party/tinyusb/src/common -Ithird_party/tinyusb/src -Ibuild $
+    -Ithird_party/rtt -Ithird_party/libwinter/samd
 
 cc_defines = -D__SAMD51J20A__=1 -DSAMD51=1 -DARM_MATH_CM4=1 $
     -DCFG_TUSB_MCU=OPT_MCU_SAMD51 -DDEBUG=1
