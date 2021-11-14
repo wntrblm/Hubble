@@ -220,6 +220,8 @@ SYSEX_COMMAND_DECL(0x07, set_dac) {
     hubble_ad5685_write_channel(channel, value, true);
 
     SYSEX_RESPONSE_NULLARY();
+
+    printf("SysEx 0x07: Set DAC %u:%u to %u\n", mux, channel, value);
 }
 
 SYSEX_COMMAND_DECL(0x08, set_dac_voltage) {}
