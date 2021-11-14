@@ -15,6 +15,6 @@
     These are thin wrappers over tinyUSB.
 */
 
-void stel_usb_init();
+void hubble_usb_init();
 
-void stel_usb_task();
+void hubble_usb_task();

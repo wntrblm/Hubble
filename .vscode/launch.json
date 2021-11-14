@@ -7,7 +7,7 @@
         {
             "name": "Cortex Debug",
             "cwd": "${workspaceRoot}/firmware",
-            "executable": "./build/stellar-firmware.elf",
+            "executable": "./build/hubble-firmware.elf",
             "request": "launch",
             "type": "cortex-debug",
             "servertype": "jlink",

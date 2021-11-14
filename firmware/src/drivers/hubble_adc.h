@@ -17,7 +17,7 @@
     Input channel descriptor. These settings should be derived from the
     pin multiplexing table in the datasheet.
 */
-struct StelADCInput {
+struct HubbleADCInput {
     /* Which ADC this pin uses. */
     Adc* adc;
     /* IO port for the input */
@@ -28,12 +28,12 @@ struct StelADCInput {
     uint32_t ain;
 };
 
-void stel_adc_init();
+void hubble_adc_init();
 
 /* Configure hardware error correction. */
-void stel_adc_enable_error_correction(uint16_t gain, uint16_t offset);
+void hubble_adc_enable_error_correction(uint16_t gain, uint16_t offset);
 
 /* Configure a given input channel for ADC reading. */
-void stel_adc_init_input(const struct StelADCInput* const input);
+void hubble_adc_init_input(const struct HubbleADCInput* const input);
 
-uint16_t stel_adc_read_sync(const struct StelADCInput* input);
+uint16_t hubble_adc_read_sync(const struct HubbleADCInput* input);

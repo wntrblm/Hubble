@@ -12,13 +12,13 @@ c_flags = -std=gnu17 -x c
 cxx_flags = -std=gnu++17 -x c++
 
 cc_includes = -Ithird_party/samd51a/include -Ithird_party/cmsis/include $
-    -Ithird_party/wren/include -Ithird_party/printf -Isrc $
-    -Ithird_party/samd51a/gcc $
-    -Ithird_party/tinyusb/src/portable/microchip/samd -Isrc/drivers $
-    -Ithird_party/tinyusb/src/class/midi -Isrc/lib -Ithird_party/libwinter $
-    -Isrc/hw -Ithird_party/tinyusb/src/device $
-    -Ithird_party/tinyusb/src/common -Ithird_party/tinyusb/src -Ibuild $
-    -Ithird_party/rtt -Ithird_party/libwinter/samd
+    -Ithird_party/wren/include -Ithird_party/libwinter/samd $
+    -Ithird_party/tinyusb/src/device -Ithird_party/rtt -Ibuild $
+    -Ithird_party/tinyusb/src/portable/microchip/samd -Isrc $
+    -Ithird_party/tinyusb/src/common -Ithird_party/tinyusb/src/class/midi $
+    -Ithird_party/samd51a/gcc -Ithird_party/tinyusb/src $
+    -Ithird_party/printf -Isrc/drivers -Isrc/lib -Isrc/hw $
+    -Ithird_party/libwinter
 
 cc_defines = -D__SAMD51J20A__=1 -DSAMD51=1 -DARM_MATH_CM4=1 $
     -DCFG_TUSB_MCU=OPT_MCU_SAMD51 -DDEBUG=1
@@ -82,31 +82,31 @@ rule clang_tidy
   command = clang-tidy $srcs $args -- $cc_includes $cc_defines
   description = Tidy
 
+build $builddir/src/hubble_usb_descriptors.o: cc src/hubble_usb_descriptors.c
+
 build $builddir/src/main.o: cc src/main.c
 
-build $builddir/src/stel_usb_descriptors.o: cc src/stel_usb_descriptors.c
+build $builddir/src/drivers/hubble_ad5685.o: cc src/drivers/hubble_ad5685.c
 
-build $builddir/src/drivers/stel_adc.o: cc src/drivers/stel_adc.c
+build $builddir/src/drivers/hubble_dac.o: cc src/drivers/hubble_dac.c
 
-build $builddir/src/drivers/stel_dac.o: cc src/drivers/stel_dac.c
+build $builddir/src/drivers/hubble_adc.o: cc src/drivers/hubble_adc.c
 
-build $builddir/src/drivers/stel_dotstar.o: cc src/drivers/stel_dotstar.c
-
-build $builddir/src/drivers/stel_ad5685.o: cc src/drivers/stel_ad5685.c
+build $builddir/src/drivers/hubble_dotstar.o: cc src/drivers/hubble_dotstar.c
 
 build $builddir/src/hw/system_samd51.o: cc src/hw/system_samd51.c
 
-build $builddir/src/hw/stel_sercom_spi.o: cc src/hw/stel_sercom_spi.c
+build $builddir/src/hw/hubble_sercom_spi.o: cc src/hw/hubble_sercom_spi.c
 
-build $builddir/src/hw/stel_clocks.o: cc src/hw/stel_clocks.c
+build $builddir/src/hw/hubble_usb.o: cc src/hw/hubble_usb.c
 
-build $builddir/src/hw/stel_bod.o: cc src/hw/stel_bod.c
+build $builddir/src/hw/hubble_clocks.o: cc src/hw/hubble_clocks.c
 
-build $builddir/src/hw/stel_usb.o: cc src/hw/stel_usb.c
+build $builddir/src/hw/hubble_sercom.o: cc src/hw/hubble_sercom.c
 
-build $builddir/src/hw/stel_sercom.o: cc src/hw/stel_sercom.c
+build $builddir/src/hw/hubble_bod.o: cc src/hw/hubble_bod.c
 
-build $builddir/src/lib/stel_syscalls.o: cc src/lib/stel_syscalls.c
+build $builddir/src/lib/hubble_syscalls.o: cc src/lib/hubble_syscalls.c
 
 build $builddir/build/generated_build_info.o: cc build/generated_build_info.c
 
@@ -177,13 +177,13 @@ build $builddir/third_party/tinyusb/src/device/usbd_control.o: cc $
 build $builddir/third_party/tinyusb/src/portable/microchip/samd/dcd_samd.o: $
     cc third_party/tinyusb/src/portable/microchip/samd/dcd_samd.c
 
-build build/stellar-firmware.elf: ld $builddir/src/main.o $
-    $builddir/src/stel_usb_descriptors.o $builddir/src/drivers/stel_adc.o $
-    $builddir/src/drivers/stel_dac.o $builddir/src/drivers/stel_dotstar.o $
-    $builddir/src/drivers/stel_ad5685.o $builddir/src/hw/system_samd51.o $
-    $builddir/src/hw/stel_sercom_spi.o $builddir/src/hw/stel_clocks.o $
-    $builddir/src/hw/stel_bod.o $builddir/src/hw/stel_usb.o $
-    $builddir/src/hw/stel_sercom.o $builddir/src/lib/stel_syscalls.o $
+build build/hubble-firmware.elf: ld $builddir/src/hubble_usb_descriptors.o $
+    $builddir/src/main.o $builddir/src/drivers/hubble_ad5685.o $
+    $builddir/src/drivers/hubble_dac.o $builddir/src/drivers/hubble_adc.o $
+    $builddir/src/drivers/hubble_dotstar.o $builddir/src/hw/system_samd51.o $
+    $builddir/src/hw/hubble_sercom_spi.o $builddir/src/hw/hubble_usb.o $
+    $builddir/src/hw/hubble_clocks.o $builddir/src/hw/hubble_sercom.o $
+    $builddir/src/hw/hubble_bod.o $builddir/src/lib/hubble_syscalls.o $
     $builddir/build/generated_build_info.o $
     $builddir/third_party/libwinter/wntr_assert.o $
     $builddir/third_party/libwinter/wntr_bitbang_spi.o $
@@ -209,11 +209,11 @@ build build/stellar-firmware.elf: ld $builddir/src/main.o $
     $builddir/third_party/tinyusb/src/device/usbd_control.o $
     $builddir/third_party/tinyusb/src/portable/microchip/samd/dcd_samd.o
 
-build build/stellar-firmware.bin: elf_to_bin build/stellar-firmware.elf
+build build/hubble-firmware.bin: elf_to_bin build/hubble-firmware.elf
 
-build build/stellar-firmware.uf2: bin_to_uf2 build/stellar-firmware.bin
+build build/hubble-firmware.uf2: bin_to_uf2 build/hubble-firmware.bin
 
-build size.phony: runcmd_arg_in $builddir/stellar-firmware.elf
+build size.phony: runcmd_arg_in $builddir/hubble-firmware.elf
   cmd = python3 -m wintertools.fw_size --flash-size 1048576 --ram-size 262144
   desc = Size
 
@@ -226,95 +226,105 @@ build $builddir/generated_build_info.c: runcmd_arg_out  | $
 
 build build_info_always.phony: phony
 
-build $builddir/format/src/stel.h: clang_format src/stel.h
+build $builddir/format/src/hubble.h: clang_format src/hubble.h
 
-build $builddir/format/src/stel_config.h: clang_format src/stel_config.h
+build $builddir/format/src/hubble_usb_descriptors.c: clang_format $
+    src/hubble_usb_descriptors.c
 
 build $builddir/format/src/main.c: clang_format src/main.c
 
+build $builddir/format/src/hubble_config.h: clang_format src/hubble_config.h
+
 build $builddir/format/src/tusb_config.h: clang_format src/tusb_config.h
 
-build $builddir/format/src/stel_usb_descriptors.c: clang_format $
-    src/stel_usb_descriptors.c
+build $builddir/format/src/drivers/hubble_ad5685.h: clang_format $
+    src/drivers/hubble_ad5685.h
 
-build $builddir/format/src/drivers/stel_dotstar.h: clang_format $
-    src/drivers/stel_dotstar.h
+build $builddir/format/src/drivers/hubble_mux50x.h: clang_format $
+    src/drivers/hubble_mux50x.h
 
-build $builddir/format/src/drivers/stel_ad5685.h: clang_format $
-    src/drivers/stel_ad5685.h
+build $builddir/format/src/drivers/hubble_dotstar.h: clang_format $
+    src/drivers/hubble_dotstar.h
 
-build $builddir/format/src/drivers/stel_adc.c: clang_format $
-    src/drivers/stel_adc.c
+build $builddir/format/src/drivers/hubble_adc.h: clang_format $
+    src/drivers/hubble_adc.h
 
-build $builddir/format/src/drivers/stel_dac.c: clang_format $
-    src/drivers/stel_dac.c
+build $builddir/format/src/drivers/hubble_dac.h: clang_format $
+    src/drivers/hubble_dac.h
 
-build $builddir/format/src/drivers/stel_dotstar.c: clang_format $
-    src/drivers/stel_dotstar.c
+build $builddir/format/src/drivers/hubble_ad5685.c: clang_format $
+    src/drivers/hubble_ad5685.c
 
-build $builddir/format/src/drivers/stel_dac.h: clang_format $
-    src/drivers/stel_dac.h
+build $builddir/format/src/drivers/hubble_dac.c: clang_format $
+    src/drivers/hubble_dac.c
 
-build $builddir/format/src/drivers/stel_adc.h: clang_format $
-    src/drivers/stel_adc.h
+build $builddir/format/src/drivers/hubble_adc.c: clang_format $
+    src/drivers/hubble_adc.c
 
-build $builddir/format/src/drivers/stel_ad5685.c: clang_format $
-    src/drivers/stel_ad5685.c
+build $builddir/format/src/drivers/hubble_dotstar.c: clang_format $
+    src/drivers/hubble_dotstar.c
 
 build $builddir/format/src/hw/system_samd51.c: clang_format $
     src/hw/system_samd51.c
 
-build $builddir/format/src/hw/stel_sercom_spi.c: clang_format $
-    src/hw/stel_sercom_spi.c
+build $builddir/format/src/hw/hubble_sercom.h: clang_format $
+    src/hw/hubble_sercom.h
 
-build $builddir/format/src/hw/stel_clocks.c: clang_format src/hw/stel_clocks.c
+build $builddir/format/src/hw/hubble_sercom_spi.c: clang_format $
+    src/hw/hubble_sercom_spi.c
 
-build $builddir/format/src/hw/stel_usb.h: clang_format src/hw/stel_usb.h
+build $builddir/format/src/hw/hubble_usb.c: clang_format src/hw/hubble_usb.c
 
-build $builddir/format/src/hw/stel_bod.c: clang_format src/hw/stel_bod.c
+build $builddir/format/src/hw/hubble_bod.h: clang_format src/hw/hubble_bod.h
 
-build $builddir/format/src/hw/stel_sercom.h: clang_format src/hw/stel_sercom.h
+build $builddir/format/src/hw/hubble_clocks.c: clang_format $
+    src/hw/hubble_clocks.c
 
-build $builddir/format/src/hw/stel_sercom_spi.h: clang_format $
-    src/hw/stel_sercom_spi.h
+build $builddir/format/src/hw/hubble_sercom.c: clang_format $
+    src/hw/hubble_sercom.c
 
-build $builddir/format/src/hw/stel_clocks.h: clang_format src/hw/stel_clocks.h
+build $builddir/format/src/hw/hubble_bod.c: clang_format src/hw/hubble_bod.c
 
-build $builddir/format/src/hw/stel_bod.h: clang_format src/hw/stel_bod.h
+build $builddir/format/src/hw/hubble_usb.h: clang_format src/hw/hubble_usb.h
 
-build $builddir/format/src/hw/stel_usb.c: clang_format src/hw/stel_usb.c
+build $builddir/format/src/hw/hubble_sercom_spi.h: clang_format $
+    src/hw/hubble_sercom_spi.h
 
-build $builddir/format/src/hw/stel_sercom.c: clang_format src/hw/stel_sercom.c
+build $builddir/format/src/hw/hubble_clocks.h: clang_format $
+    src/hw/hubble_clocks.h
 
-build $builddir/format/src/lib/stel_syscalls.c: clang_format $
-    src/lib/stel_syscalls.c
+build $builddir/format/src/lib/hubble_math_utils.h: clang_format $
+    src/lib/hubble_math_utils.h
 
-build $builddir/format/src/lib/stel_math_utils.h: clang_format $
-    src/lib/stel_math_utils.h
+build $builddir/format/src/lib/hubble_syscalls.c: clang_format $
+    src/lib/hubble_syscalls.c
 
-build format: phony | $builddir/format/src/stel.h $
-    $builddir/format/src/stel_config.h $builddir/format/src/main.c $
+build format: phony | $builddir/format/src/hubble.h $
+    $builddir/format/src/hubble_usb_descriptors.c $
+    $builddir/format/src/main.c $builddir/format/src/hubble_config.h $
     $builddir/format/src/tusb_config.h $
-    $builddir/format/src/stel_usb_descriptors.c $
-    $builddir/format/src/drivers/stel_dotstar.h $
-    $builddir/format/src/drivers/stel_ad5685.h $
-    $builddir/format/src/drivers/stel_adc.c $
-    $builddir/format/src/drivers/stel_dac.c $
-    $builddir/format/src/drivers/stel_dotstar.c $
-    $builddir/format/src/drivers/stel_dac.h $
-    $builddir/format/src/drivers/stel_adc.h $
-    $builddir/format/src/drivers/stel_ad5685.c $
+    $builddir/format/src/drivers/hubble_ad5685.h $
+    $builddir/format/src/drivers/hubble_mux50x.h $
+    $builddir/format/src/drivers/hubble_dotstar.h $
+    $builddir/format/src/drivers/hubble_adc.h $
+    $builddir/format/src/drivers/hubble_dac.h $
+    $builddir/format/src/drivers/hubble_ad5685.c $
+    $builddir/format/src/drivers/hubble_dac.c $
+    $builddir/format/src/drivers/hubble_adc.c $
+    $builddir/format/src/drivers/hubble_dotstar.c $
     $builddir/format/src/hw/system_samd51.c $
-    $builddir/format/src/hw/stel_sercom_spi.c $
-    $builddir/format/src/hw/stel_clocks.c $
-    $builddir/format/src/hw/stel_usb.h $builddir/format/src/hw/stel_bod.c $
-    $builddir/format/src/hw/stel_sercom.h $
-    $builddir/format/src/hw/stel_sercom_spi.h $
-    $builddir/format/src/hw/stel_clocks.h $
-    $builddir/format/src/hw/stel_bod.h $builddir/format/src/hw/stel_usb.c $
-    $builddir/format/src/hw/stel_sercom.c $
-    $builddir/format/src/lib/stel_syscalls.c $
-    $builddir/format/src/lib/stel_math_utils.h
+    $builddir/format/src/hw/hubble_sercom.h $
+    $builddir/format/src/hw/hubble_sercom_spi.c $
+    $builddir/format/src/hw/hubble_usb.c $
+    $builddir/format/src/hw/hubble_bod.h $
+    $builddir/format/src/hw/hubble_clocks.c $
+    $builddir/format/src/hw/hubble_sercom.c $
+    $builddir/format/src/hw/hubble_bod.c $
+    $builddir/format/src/hw/hubble_usb.h $
+    $builddir/format/src/hw/hubble_sercom_spi.h $
+    $builddir/format/src/hw/hubble_clocks.h $
+    $builddir/format/src/lib/hubble_math_utils.h $
+    $builddir/format/src/lib/hubble_syscalls.c
 configure_args = --config debug
 
 rule configure

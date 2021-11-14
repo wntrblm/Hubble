@@ -4,11 +4,11 @@
     Full text available at: https://opensource.org/licenses/MIT
 */
 
-#include "stel_clocks.h"
+#include "hubble_clocks.h"
+#include "hubble_config.h"
 #include "sam.h"
-#include "stel_config.h"
 
-/* Stellar's clock configuration after stel_clocks_init() is:
+/* Hubble's clock configuration after hubble_clocks_init() is:
 
 - GCLK0: 120 MHz from DPLL0 (used by CPU)
 - GCLK1: 48 MHz from DFLL48M (used by USB, ADC)
@@ -32,7 +32,7 @@ static void setup_cpu_dpll0();
 
 /* Public functions */
 
-void stel_clocks_init() {
+void hubble_clocks_init() {
     /* Enable automatic flash wait states. */
     NVMCTRL->CTRLA.reg |= NVMCTRL_CTRLA_RWS(0) | NVMCTRL_CTRLA_AUTOWS;
 
@@ -41,7 +41,7 @@ void stel_clocks_init() {
     while (GCLK->SYNCBUSY.reg & GCLK_SYNCBUSY_SWRST) {}
 
 /* Configure 32kHz Oscillator */
-#if STEL_HAS_CRYSTAL
+#if HUBBLE_HAS_CRYSTAL
     init_xosc32k();
 #else
     init_osc32k();
@@ -52,7 +52,7 @@ void stel_clocks_init() {
     setup_cpu_osc32k();
 
 /* Configure DFLL (48Mhz) & DPLL (120Mhz) */
-#ifdef STEL_HAS_CRYSTAL
+#ifdef HUBBLE_HAS_CRYSTAL
     init_dfll48m_closed_loop();
 #else
     init_dfll48m_open_loop();

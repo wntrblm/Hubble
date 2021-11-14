@@ -4,10 +4,10 @@
     Full text available at: https://opensource.org/licenses/MIT
 */
 
-#include "stel_bod.h"
+#include "hubble_bod.h"
 #include "sam.h"
 
-void stel_wait_for_stable_voltage() {
+void hubble_wait_for_stable_voltage() {
     /*
         Configure the BOD to monitor for at least 3.0 volts and wait for
         VDD to reach that level.

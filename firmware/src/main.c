@@ -4,9 +4,9 @@
     Full text available at: https://opensource.org/licenses/MIT
 */
 
+#include "hubble.h"
 #include "printf.h"
 #include "sam.h"
-#include "stel.h"
 #include "wntr_colorspace.h"
 #include "wntr_delay.h"
 #include "wntr_gpio.h"
@@ -34,10 +34,10 @@ static void loop_test_gpio();
 
 int main(void) {
     init();
-    printf("Hello, I'm Stellar!\n");
+    printf("Hello, I'm Hubble!\n");
 
     while (1) {
-        stel_usb_task();
+        hubble_usb_task();
         loop();
     }
 
@@ -52,32 +52,25 @@ static void init() {
     WntrGPIOPin_set(GPIO_23_LED, true);
 
     /* Setup USB as soon as possible */
-    stel_usb_init();
+    hubble_usb_init();
 
     /* Configure peripherals */
-    stel_dotstar_init(20);
+    hubble_dotstar_init(20);
 
-    stel_adc_init();
-    stel_adc_init_input(&ADC_A1);
-    stel_adc_init_input(&ADC_A2);
-    stel_adc_init_input(&ADC_A3);
-    stel_adc_init_input(&ADC_A4);
+    hubble_adc_init();
+    hubble_adc_init_input(&ADC_A1);
+    hubble_adc_init_input(&ADC_A2);
+    hubble_adc_init_input(&ADC_A3);
+    hubble_adc_init_input(&ADC_A4);
 
     /* SPI bus & external DAC */
-    stel_sercom_spi_init(&SPI);
-    stel_ad5685_init(&SPI);
-    stel_ad5685_soft_reset();
+    hubble_sercom_spi_init(&SPI);
+    hubble_ad5685_init(&SPI);
+    hubble_ad5685_soft_reset();
 
-    /* Multiplexer address lines */
-    WntrGPIOPin_set_as_output(GPIO_DAC_MUX_A0);
-    WntrGPIOPin_set_as_output(GPIO_DAC_MUX_A1);
-    WntrGPIOPin_set_as_output(GPIO_ADC_MUX_A0);
-    WntrGPIOPin_set_as_output(GPIO_ADC_MUX_A1);
-
-    WntrGPIOPin_set(GPIO_DAC_MUX_A0, false);
-    WntrGPIOPin_set(GPIO_DAC_MUX_A1, false);
-    WntrGPIOPin_set(GPIO_ADC_MUX_A0, false);
-    WntrGPIOPin_set(GPIO_ADC_MUX_A1, false);
+    /* Multiplexers */
+    hubble_mux50x_init(DAC_MUX);
+    hubble_mux50x_init(ADC_MUX);
 }
 
 /* Private functions */
@@ -92,8 +85,8 @@ static void loop() {
 
     /* Dotstar update */
     static uint16_t hue = 0;
-    stel_dotstar_set32(0, wntr_colorspace_hsv_to_rgb(hue, 200, 255));
-    stel_dotstar_update();
+    hubble_dotstar_set32(0, wntr_colorspace_hsv_to_rgb(hue, 200, 255));
+    hubble_dotstar_update();
     hue += 10;
 
     /* MIDI I/O update */
@@ -112,15 +105,14 @@ static void loop() {
 
 static void loop_test_adc() {
     for (uint8_t mux_addr = 0; mux_addr < 4; mux_addr++) {
-        WntrGPIOPin_set(GPIO_ADC_MUX_A0, (mux_addr & 0x1));
-        WntrGPIOPin_set(GPIO_ADC_MUX_A1, (mux_addr & 0x2) >> 1);
+        hubble_mux50x_set(ADC_MUX, mux_addr);
 
-        wntr_delay_ms(5);
+        wntr_delay_ms(1);
 
-        const uint16_t a1 = stel_adc_read_sync(&ADC_A1);
-        const uint16_t a2 = stel_adc_read_sync(&ADC_A2);
-        const uint16_t a3 = stel_adc_read_sync(&ADC_A3);
-        const uint16_t a4 = stel_adc_read_sync(&ADC_A4);
+        const uint16_t a1 = hubble_adc_read_sync(&ADC_A1);
+        const uint16_t a2 = hubble_adc_read_sync(&ADC_A2);
+        const uint16_t a3 = hubble_adc_read_sync(&ADC_A3);
+        const uint16_t a4 = hubble_adc_read_sync(&ADC_A4);
 
         printf("ADC %u: %04u %04u %04u %04u    ", mux_addr, a1, a2, a3, a4);
     }
@@ -136,13 +128,12 @@ static void loop_test_dac() {
         mux_addr = (mux_addr + 1) % 4;
     }
 
-    // WntrGPIOPin_set(GPIO_DAC_MUX_A0, (mux_addr & 0x1));
-    // WntrGPIOPin_set(GPIO_DAC_MUX_A1, (mux_addr & 0x2) >> 1);
+    hubble_mux50x_set(DAC_MUX, mux_addr);
 
-    stel_ad5685_write_channel(AD5685_CHANNEL_A, (wntr_ticks() * 100) % 65355, true);
-    stel_ad5685_write_channel(AD5685_CHANNEL_B, 65535 - ((wntr_ticks() * 100) % 65355), true);
-    stel_ad5685_write_channel(AD5685_CHANNEL_C, 65535 - ((wntr_ticks() * 10) % 65355), true);
-    stel_ad5685_write_channel(AD5685_CHANNEL_D, (wntr_ticks() * 10) % 65355, true);
+    hubble_ad5685_write_channel(AD5685_CHANNEL_A, (wntr_ticks() * 100) % 65355, true);
+    hubble_ad5685_write_channel(AD5685_CHANNEL_B, 65535 - ((wntr_ticks() * 100) % 65355), true);
+    hubble_ad5685_write_channel(AD5685_CHANNEL_C, 65535 - ((wntr_ticks() * 10) % 65355), true);
+    hubble_ad5685_write_channel(AD5685_CHANNEL_D, (wntr_ticks() * 10) % 65355, true);
 }
 
 /*

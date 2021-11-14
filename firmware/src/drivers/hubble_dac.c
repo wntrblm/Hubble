@@ -4,10 +4,10 @@
     Full text available at: https://opensource.org/licenses/MIT
 */
 
-#include "stel_dac.h"
+#include "hubble_dac.h"
 #include "wntr_gpio.h"
 
-void stel_dac_init() {
+void hubble_dac_init() {
     /* Enable the APB clock for the DAC. */
     MCLK->APBDMASK.reg |= MCLK_APBDMASK_DAC;
 
@@ -41,11 +41,11 @@ void stel_dac_init() {
     while (!DAC->STATUS.bit.READY1) {};
 }
 
-void stel_dac_init_output(const struct StelDACOutput* output) {
+void hubble_dac_init_output(const struct HubbleDACOutput* output) {
     wntr_gpio_configure_alt(output->port, output->pin, WNTR_PMUX_B);
 }
 
-void stel_dac_set(const struct StelDACOutput* output, uint16_t val) {
+void hubble_dac_set(const struct HubbleDACOutput* output, uint16_t val) {
     if (output->channel == 0) {
         while (DAC->SYNCBUSY.bit.DATA0) {};
         DAC->DATA[0].bit.DATA = val;

@@ -4,8 +4,8 @@
     Full text available at: https://opensource.org/licenses/MIT
 */
 
-#include "stel_adc.h"
-#include "stel_config.h"
+#include "hubble_adc.h"
+#include "hubble_config.h"
 #include "wntr_assert.h"
 #include "wntr_gpio.h"
 
@@ -15,14 +15,14 @@ static void adc_inst_configure(Adc* inst);
 
 /* Public methods. */
 
-void stel_adc_init() {
+void hubble_adc_init() {
     uint32_t biascomp;
     uint32_t biasr2r;
     uint32_t biasrefbuf;
 
-#if STEL_ADC0_ENABLED == 1
+#if HUBBLE_ADC0_ENABLED == 1
     MCLK->APBDMASK.reg |= MCLK_APBDMASK_ADC0;
-    GCLK->PCHCTRL[ADC0_GCLK_ID].reg = GCLK_PCHCTRL_CHEN | STEL_ADC_GCLK;
+    GCLK->PCHCTRL[ADC0_GCLK_ID].reg = GCLK_PCHCTRL_CHEN | HUBBLE_ADC_GCLK;
     while (!GCLK->PCHCTRL[ADC0_GCLK_ID].bit.CHEN) {};
 
     adc_inst_configure(ADC0);
@@ -38,9 +38,9 @@ void stel_adc_init() {
     while (ADC0->SYNCBUSY.bit.ENABLE) {};
 #endif
 
-#if STEL_ADC1_ENABLED == 1
+#if HUBBLE_ADC1_ENABLED == 1
     MCLK->APBDMASK.reg |= MCLK_APBDMASK_ADC1;
-    GCLK->PCHCTRL[ADC1_GCLK_ID].reg = GCLK_PCHCTRL_CHEN | STEL_ADC_GCLK;
+    GCLK->PCHCTRL[ADC1_GCLK_ID].reg = GCLK_PCHCTRL_CHEN | HUBBLE_ADC_GCLK;
     while (!GCLK->PCHCTRL[ADC1_GCLK_ID].bit.CHEN) {};
 
     adc_inst_configure(ADC1);
@@ -62,12 +62,12 @@ void stel_adc_init() {
     */
 }
 
-void stel_adc_init_input(const struct StelADCInput* input) {
+void hubble_adc_init_input(const struct HubbleADCInput* input) {
     wntr_gpio_set_as_input(input->port, input->pin, false);
     wntr_gpio_configure_alt(input->port, input->pin, WNTR_PMUX_B);
 }
 
-uint16_t stel_adc_read_sync(const struct StelADCInput* input) {
+uint16_t hubble_adc_read_sync(const struct HubbleADCInput* input) {
     /* Flush the ADC - if there's a conversion in process it'll be cancelled. */
     input->adc->SWTRIG.reg = ADC_SWTRIG_FLUSH;
     while (input->adc->SWTRIG.bit.FLUSH) {};
@@ -110,14 +110,14 @@ static void adc_inst_configure(Adc* inst) {
         Configure prescaler, resolution, sample time, and averaging. All of
         these impact the overall conversion throughput.
     */
-    inst->CTRLA.reg = STEL_ADC_PRESCALER;
+    inst->CTRLA.reg = HUBBLE_ADC_PRESCALER;
     inst->CTRLB.reg |= ADC_CTRLB_RESSEL_16BIT;
     while (inst->SYNCBUSY.bit.CTRLB) {};
 
-    inst->SAMPCTRL.reg = ADC_SAMPCTRL_SAMPLEN(STEL_ADC_SAMPLE_TIME);
+    inst->SAMPCTRL.reg = ADC_SAMPCTRL_SAMPLEN(HUBBLE_ADC_SAMPLE_TIME);
     while (inst->SYNCBUSY.bit.SAMPCTRL) {};
 
-    inst->AVGCTRL.reg = STEL_ADC_AVERAGE_SAMPLENUM | ADC_AVGCTRL_ADJRES(STEL_ADC_AVERAGE_ADJRES);
+    inst->AVGCTRL.reg = HUBBLE_ADC_AVERAGE_SAMPLENUM | ADC_AVGCTRL_ADJRES(HUBBLE_ADC_AVERAGE_ADJRES);
     while (inst->SYNCBUSY.bit.AVGCTRL) {};
 
     /* Configure the voltage references. */

@@ -6,6 +6,4 @@
 
 #pragma once
 
-/* Routines for interacting with the SAM D51's brown out detector (BOD33) */
-
-void stel_wait_for_stable_voltage();
+void hubble_clocks_init();

@@ -44,7 +44,7 @@ uint8_t const desc_configuration[] = {
 const char* string_desc_arr[] = {
     (const char[]){0x09, 0x04},  // 0: is supported language is English (0x0409)
     "Winterbloom",               // 1: Manufacturer
-    "Stellar",                   // 2: Product
+    "Hubble",                    // 2: Product
 };
 
 static char serial_number_str_[] = "00000000FFFFFFFF";  // 3: Serial number

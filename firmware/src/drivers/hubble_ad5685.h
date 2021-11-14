@@ -11,21 +11,21 @@
     converter.
 */
 
-#include "stel_sercom_spi.h"
+#include "hubble_sercom_spi.h"
 #include <stdbool.h>
 #include <stdint.h>
 
-enum StelAD5685Channel {
+enum HubbleAD5685Channel {
     AD5685_CHANNEL_A = 0,
     AD5685_CHANNEL_B = 1,
     AD5685_CHANNEL_C = 2,
     AD5685_CHANNEL_D = 3,
 };
 
-void stel_ad5685_init(const struct StelSERCOMSPI* spi);
+void hubble_ad5685_init(const struct HubbleSERCOMSPI* spi);
 
-void stel_ad5685_soft_reset();
+void hubble_ad5685_soft_reset();
 
-void stel_ad5685_write_channel(enum StelAD5685Channel channel, uint16_t val, bool update);
-void stel_ad5685_update_channel(enum StelAD5685Channel channel);
-void stel_ad5685_update_all_channels();
+void hubble_ad5685_write_channel(enum HubbleAD5685Channel channel, uint16_t val, bool update);
+void hubble_ad5685_update_channel(enum HubbleAD5685Channel channel);
+void hubble_ad5685_update_all_channels();
