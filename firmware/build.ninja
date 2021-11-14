@@ -12,16 +12,16 @@ c_flags = -std=gnu17 -x c
 cxx_flags = -std=gnu++17 -x c++
 
 cc_includes = -Ithird_party/samd51a/include -Ithird_party/cmsis/include $
-    -Ithird_party/wren/include -Ithird_party/libwinter/samd $
-    -Ithird_party/tinyusb/src/device -Ithird_party/rtt -Ibuild $
-    -Ithird_party/tinyusb/src/portable/microchip/samd -Isrc $
-    -Ithird_party/tinyusb/src/common -Ithird_party/tinyusb/src/class/midi $
-    -Ithird_party/samd51a/gcc -Ithird_party/tinyusb/src $
-    -Ithird_party/printf -Isrc/drivers -Isrc/lib -Isrc/hw $
-    -Ithird_party/libwinter
+    -Ithird_party/wren/include -Isrc/hw -Ithird_party/tinyusb/src/common $
+    -Ithird_party/tinyusb/src -Ibuild -Ithird_party/printf -Isrc/lib $
+    -Ithird_party/libwinter/samd $
+    -Ithird_party/tinyusb/src/portable/microchip/samd $
+    -Ithird_party/samd51a/gcc -Isrc -Ithird_party/rtt $
+    -Ithird_party/tinyusb/src/device -Ithird_party/tinyusb/src/class/midi $
+    -Ithird_party/libwinter -Isrc/drivers
 
 cc_defines = -D__SAMD51J20A__=1 -DSAMD51=1 -DARM_MATH_CM4=1 $
-    -DCFG_TUSB_MCU=OPT_MCU_SAMD51 -DDEBUG=1
+    -DCFG_TUSB_MCU=OPT_MCU_SAMD51 -DWNTR_MIDI_SYSEX_IDENTIFIER=119 -DDEBUG=1
 
 ld_flags = -mcpu=cortex-m4 -mfloat-abi=hard -mfpu=fpv4-sp-d16 --std=gnu11 $
     --specs=nano.specs -mthumb -mabi=aapcs -funsigned-char $
@@ -110,6 +110,9 @@ build $builddir/src/lib/hubble_syscalls.o: cc src/lib/hubble_syscalls.c
 
 build $builddir/build/generated_build_info.o: cc build/generated_build_info.c
 
+build $builddir/third_party/libwinter/teeth.o: cc $
+    third_party/libwinter/teeth.c
+
 build $builddir/third_party/libwinter/wntr_assert.o: cc $
     third_party/libwinter/wntr_assert.c
 
@@ -185,6 +188,7 @@ build build/hubble-firmware.elf: ld $builddir/src/hubble_usb_descriptors.o $
     $builddir/src/hw/hubble_clocks.o $builddir/src/hw/hubble_sercom.o $
     $builddir/src/hw/hubble_bod.o $builddir/src/lib/hubble_syscalls.o $
     $builddir/build/generated_build_info.o $
+    $builddir/third_party/libwinter/teeth.o $
     $builddir/third_party/libwinter/wntr_assert.o $
     $builddir/third_party/libwinter/wntr_bitbang_spi.o $
     $builddir/third_party/libwinter/wntr_colorspace.o $
@@ -293,6 +297,9 @@ build $builddir/format/src/hw/hubble_sercom_spi.h: clang_format $
 build $builddir/format/src/hw/hubble_clocks.h: clang_format $
     src/hw/hubble_clocks.h
 
+build $builddir/format/src/lib/hubble_sysex_utils.h: clang_format $
+    src/lib/hubble_sysex_utils.h
+
 build $builddir/format/src/lib/hubble_math_utils.h: clang_format $
     src/lib/hubble_math_utils.h
 
@@ -323,6 +330,7 @@ build format: phony | $builddir/format/src/hubble.h $
     $builddir/format/src/hw/hubble_usb.h $
     $builddir/format/src/hw/hubble_sercom_spi.h $
     $builddir/format/src/hw/hubble_clocks.h $
+    $builddir/format/src/lib/hubble_sysex_utils.h $
     $builddir/format/src/lib/hubble_math_utils.h $
     $builddir/format/src/lib/hubble_syscalls.c
 configure_args = --config debug

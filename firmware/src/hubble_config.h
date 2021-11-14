@@ -130,6 +130,13 @@ static const struct HubbleMUX50x ADC_MUX = {.a0 = GPIO_ADC_MUX_A0, .a1 = GPIO_AD
 #define GPIO_A4 (WNTR_GPIO_PIN(WNTR_PORT_B, 4))
 #define ADC_A4 ((const struct HubbleADCInput){ADC1, WNTR_PORT_B, 4, ADC_INPUTCTRL_MUXPOS_AIN7})
 
+static const struct HubbleADCInput ADC_CHANNELS[] = {
+    ADC_A1,
+    ADC_A2,
+    ADC_A3,
+    ADC_A4,
+};
+
 /*
     SPI configuration for the external DAC (AD5685)
 */

@@ -46,6 +46,7 @@ SRCS = [
     # the build to the program. The header is at src/lib/gem_build_info.h
     "build/generated_build_info.c",
     # libwinter is common winterbloom code.
+    "third_party/libwinter/teeth.c",
     "third_party/libwinter/wntr_assert.c",
     "third_party/libwinter/wntr_bitbang_spi.c",
     "third_party/libwinter/wntr_colorspace.c",
@@ -86,6 +87,8 @@ DEFINES.update(
     dict(
         # Defines for TinyUSB
         CFG_TUSB_MCU="OPT_MCU_SAMD51",
+        # Set the MIDI SysEx identifier
+        WNTR_MIDI_SYSEX_IDENTIFIER=0x77,
     )
 )
 

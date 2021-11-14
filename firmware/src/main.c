@@ -5,11 +5,14 @@
 */
 
 #include "hubble.h"
+#include "hubble_sysex_utils.h"
 #include "printf.h"
 #include "sam.h"
+#include "wntr_build_info.h"
 #include "wntr_colorspace.h"
 #include "wntr_delay.h"
 #include "wntr_gpio.h"
+#include "wntr_pack.h"
 #include "wntr_ticks.h"
 #include <math.h>
 #include <stdlib.h>
@@ -26,9 +29,16 @@
 int main(void);
 static void init();
 static void loop();
-static void loop_test_adc();
-static void loop_test_dac();
-static void loop_test_gpio();
+
+static void register_sysex_commands();
+SYSEX_COMMAND_DECL(0x01, hello);
+SYSEX_COMMAND_DECL(0x02, reset);
+SYSEX_COMMAND_DECL(0x03, read_gpio);
+SYSEX_COMMAND_DECL(0x04, set_gpio);
+SYSEX_COMMAND_DECL(0x05, read_adc);
+SYSEX_COMMAND_DECL(0x06, read_adc_voltage);
+SYSEX_COMMAND_DECL(0x07, set_dac);
+SYSEX_COMMAND_DECL(0x08, set_dac_voltage);
 
 /* Public functions */
 
@@ -43,6 +53,8 @@ int main(void) {
 
     return 0;
 }
+
+/* Private functions */
 
 static void init() {
     SystemInit();
@@ -71,9 +83,10 @@ static void init() {
     /* Multiplexers */
     hubble_mux50x_init(DAC_MUX);
     hubble_mux50x_init(ADC_MUX);
-}
 
-/* Private functions */
+    /* Sysex commands */
+    register_sysex_commands();
+}
 
 static void loop() {
     /* Blink the LED */
@@ -97,59 +110,116 @@ static void loop() {
     // } else {
     //     in.midi_msg = NULL;
     // }
-
-    loop_test_adc();
-    loop_test_dac();
-    loop_test_gpio();
 }
 
-static void loop_test_adc() {
-    for (uint8_t mux_addr = 0; mux_addr < 4; mux_addr++) {
-        hubble_mux50x_set(ADC_MUX, mux_addr);
+static void register_sysex_commands() {
+    REGISTER_SYSEX_COMMAND(0x01, hello);
+    REGISTER_SYSEX_COMMAND(0x02, reset);
+    REGISTER_SYSEX_COMMAND(0x03, read_gpio);
+    REGISTER_SYSEX_COMMAND(0x04, set_gpio);
+    REGISTER_SYSEX_COMMAND(0x05, read_adc);
+    REGISTER_SYSEX_COMMAND(0x06, read_adc_voltage);
+    REGISTER_SYSEX_COMMAND(0x07, set_dac);
+    REGISTER_SYSEX_COMMAND(0x08, set_dac_voltage);
+}
 
-        wntr_delay_ms(1);
+SYSEX_COMMAND_DECL(0x01, hello) {
+    /*
+        Response: 0x01 and the build info string, for example:
+        "12.24.2020 on 20/01/2021 23:38 UTC with arm-none-eabi-gcc 10.2.1 20201103 (release) by
+        stargirl@stargirls-mbp.lan"
+    */
 
-        const uint16_t a1 = hubble_adc_read_sync(&ADC_A1);
-        const uint16_t a2 = hubble_adc_read_sync(&ADC_A2);
-        const uint16_t a3 = hubble_adc_read_sync(&ADC_A3);
-        const uint16_t a4 = hubble_adc_read_sync(&ADC_A4);
+    const char* build_info = wntr_build_info_string();
+    size_t build_info_len = strlen(build_info);
 
-        printf("ADC %u: %04u %04u %04u %04u    ", mux_addr, a1, a2, a3, a4);
+    SYSEX_PREPARE_RESPONSE(0x01, 128);
+
+    /* Don't copy more of the build info string than we have room for. */
+    if (build_info_len > response_len) {
+        build_info_len = response_len;
     }
-    printf("\n");
+
+    memccpy(response, build_info, 0, build_info_len);
+
+    SYSEX_SEND_RESPONSE();
+
+    printf("SysEx 0x01: Hello! Build info length: %u\n", build_info_len);
 }
 
-static void loop_test_dac() {
-    static uint8_t mux_addr = 0;
-    static uint32_t last_update = 0;
-
-    uint32_t now = wntr_ticks();
-    if (last_update + 500 < now) {
-        mux_addr = (mux_addr + 1) % 4;
-    }
-
-    hubble_mux50x_set(DAC_MUX, mux_addr);
-
-    hubble_ad5685_write_channel(AD5685_CHANNEL_A, (wntr_ticks() * 100) % 65355, true);
-    hubble_ad5685_write_channel(AD5685_CHANNEL_B, 65535 - ((wntr_ticks() * 100) % 65355), true);
-    hubble_ad5685_write_channel(AD5685_CHANNEL_C, 65535 - ((wntr_ticks() * 10) % 65355), true);
-    hubble_ad5685_write_channel(AD5685_CHANNEL_D, (wntr_ticks() * 10) % 65355, true);
+SYSEX_COMMAND_DECL(0x02, reset) {
+    /* Response: None */
+    printf("SysEx 0x02: Reset requested\n");
+    NVIC_SystemReset();
 }
 
-/*
-    Steps through each GPIO pin and turns it on and off
-*/
-static void loop_test_gpio() {
-    static size_t gpio_idx = 0;
-    static uint32_t last_update = 0;
+SYSEX_COMMAND_DECL(0x03, read_gpio) {
+    /* Request: GPIO Pin (1) */
+    /* Response: Value (1) */
 
-    uint32_t now = wntr_ticks();
-    if (last_update + 100 < now) {
-        last_update = now;
-        WntrGPIOPin_set(GPIO[gpio_idx], false);
+    uint8_t pin = request_data[0];
 
-        gpio_idx = (gpio_idx + 1) % 23;
-        WntrGPIOPin_set_as_output(GPIO[gpio_idx]);
-        WntrGPIOPin_set(GPIO[gpio_idx], true);
-    }
+    WntrGPIOPin_set_as_input(GPIO[pin], false);
+
+    uint8_t result = WntrGPIOPin_get(GPIO[pin]);
+
+    SYSEX_RESPONSE_UNARY(0x03, result);
+
+    printf("SysEx 0x03: Read GPIO %u, result %u\n", pin, result);
 }
+
+SYSEX_COMMAND_DECL(0x04, set_gpio) {
+    /* Request: GPIO Pin (1), value (1) */
+    /* Response: ACK */
+
+    uint8_t pin = request_data[0];
+    uint8_t value = request_data[1];
+
+    WntrGPIOPin_set_as_output(GPIO[pin]);
+    WntrGPIOPin_set(GPIO[pin], value ? true : false);
+
+    SYSEX_RESPONSE_NULLARY(0x04);
+
+    printf("SysEx 0x04: Set GPIO %u to %u\n", pin, value);
+}
+
+SYSEX_COMMAND_DECL(0x05, read_adc) {
+    /* Request: MUX(1) CHANNEL(1) */
+    /* Response (teeth): VALUE(2) */
+
+    uint8_t mux = request_data[0];
+    uint8_t channel = request_data[1];
+
+    hubble_mux50x_set(ADC_MUX, mux);
+    uint16_t result = hubble_adc_read_sync(&ADC_CHANNELS[channel]);
+
+    SYSEX_PREPARE_RESPONSE(0x05, TEETH_ENCODED_LENGTH(2));
+
+    uint8_t unencoded_response[2];
+    WNTR_PACK_16(result, unencoded_response, 0);
+    teeth_encode(unencoded_response, 2, response);
+
+    SYSEX_SEND_RESPONSE();
+
+    printf("SysEx 0x05: Read ADC %u:%u, result %u\n", mux, channel, result);
+}
+
+SYSEX_COMMAND_DECL(0x06, read_adc_voltage) {}
+
+SYSEX_COMMAND_DECL(0x07, set_dac) {
+    /* Request (teeth): MUX(1) CHANNEL(1) VALUE(2) */
+    /* Response: ACK */
+
+    SYSEX_DECODE_TEETH_REQUEST(4);
+
+    uint8_t mux = request[0];
+    uint8_t channel = request[1];
+    uint16_t value = WNTR_UNPACK_16(request, 2);
+
+    hubble_mux50x_set(DAC_MUX, mux);
+    hubble_ad5685_write_channel(channel, value, true);
+
+    SYSEX_RESPONSE_NULLARY();
+}
+
+SYSEX_COMMAND_DECL(0x08, set_dac_voltage) {}
