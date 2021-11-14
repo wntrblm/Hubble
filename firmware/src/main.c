@@ -103,13 +103,13 @@ static void loop() {
     hue += 10;
 
     /* MIDI I/O update */
-    // struct WntrMIDIMessage midi_msg = {};
+    struct WntrMIDIMessage midi_msg = {};
 
-    // if (wntr_midi_receive(&midi_msg)) {
-    //     in.midi_msg = &midi_msg;
-    // } else {
-    //     in.midi_msg = NULL;
-    // }
+    if (wntr_midi_receive(&midi_msg)) {
+        if (midi_msg.code_index == MIDI_CODE_INDEX_SYSEX_START_OR_CONTINUE) {
+            wntr_midi_dispatch_sysex();
+        }
+    }
 }
 
 static void register_sysex_commands() {
