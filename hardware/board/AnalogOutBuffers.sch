@@ -4,7 +4,7 @@ EELAYER END
 $Descr A4 11693 8268
 encoding utf-8
 Sheet 4 7
-Title "TestKit Motherboard"
+Title "Hubble Motherboard"
 Date "2021-11-12"
 Rev "v2"
 Comp "Winterbloom"
@@ -23,7 +23,7 @@ F 2 "Package_SO:TSSOP-14_4.4x5mm_P0.65mm" H 1975 1150 50  0001 C CNN
 F 3 "https://www.ti.com/lit/ds/symlink/opa4197.pdf" H 2025 1700 50  0001 C CNN
 F 4 "OPA4197IPW" H 1975 1050 39  0001 C CNN "mpn"
 	1    1975 1500
-	1    0    0    -1  
+	1    0    0    -1
 $EndComp
 $Comp
 L Device:R_US R15
@@ -34,7 +34,7 @@ F 1 "10k" V 1886 1950 50  0000 C CNN
 F 2 "Resistor_SMD:R_0603_1608Metric_Pad0.98x0.95mm_HandSolder" V 2040 1940 50  0001 C CNN
 F 3 "~" H 2000 1950 50  0001 C CNN
 	1    2000 1950
-	0    1    1    0   
+	0    1    1    0
 $EndComp
 $Comp
 L Device:R_US R7
@@ -45,7 +45,7 @@ F 1 "1.54k" V 1186 1600 50  0000 C CNN
 F 2 "Resistor_SMD:R_0603_1608Metric_Pad0.98x0.95mm_HandSolder" V 1340 1590 50  0001 C CNN
 F 3 "~" H 1300 1600 50  0001 C CNN
 	1    1300 1600
-	0    1    1    0   
+	0    1    1    0
 $EndComp
 $Comp
 L Device:R_US R19
@@ -56,7 +56,7 @@ F 1 "1k" V 2311 1500 50  0000 C CNN
 F 2 "Resistor_SMD:R_0603_1608Metric_Pad0.98x0.95mm_HandSolder" V 2465 1490 50  0001 C CNN
 F 3 "~" H 2425 1500 50  0001 C CNN
 	1    2425 1500
-	0    1    1    0   
+	0    1    1    0
 $EndComp
 $Comp
 L Device:R_US R8
@@ -67,7 +67,7 @@ F 1 "12.4k" V 1186 1950 50  0000 C CNN
 F 2 "Resistor_SMD:R_0603_1608Metric_Pad0.98x0.95mm_HandSolder" V 1340 1940 50  0001 C CNN
 F 3 "~" H 1300 1950 50  0001 C CNN
 	1    1300 1950
-	0    1    1    0   
+	0    1    1    0
 $EndComp
 Wire Wire Line
 	1450 1600 1675 1600
@@ -88,7 +88,7 @@ F 1 "GND" H 1625 1250 50  0000 C CNN
 F 2 "" H 1625 1400 50  0001 C CNN
 F 3 "" H 1625 1400 50  0001 C CNN
 	1    1625 1400
-	-1   0    0    1   
+	-1   0    0    1
 $EndComp
 Wire Wire Line
 	1625 1400 1675 1400
@@ -110,7 +110,7 @@ F 2 "Package_SO:TSSOP-14_4.4x5mm_P0.65mm" H 2000 2150 50  0001 C CNN
 F 3 "https://www.ti.com/lit/ds/symlink/opa4197.pdf" H 2050 2700 50  0001 C CNN
 F 4 "OPA4197IPW" H 2000 2050 39  0001 C CNN "mpn"
 	2    2000 2500
-	1    0    0    -1  
+	1    0    0    -1
 $EndComp
 $Comp
 L Device:R_US R16
@@ -121,7 +121,7 @@ F 1 "10k" V 1911 2950 50  0000 C CNN
 F 2 "Resistor_SMD:R_0603_1608Metric_Pad0.98x0.95mm_HandSolder" V 2065 2940 50  0001 C CNN
 F 3 "~" H 2025 2950 50  0001 C CNN
 	1    2025 2950
-	0    1    1    0   
+	0    1    1    0
 $EndComp
 $Comp
 L Device:R_US R9
@@ -132,7 +132,7 @@ F 1 "1.54k" V 1211 2600 50  0000 C CNN
 F 2 "Resistor_SMD:R_0603_1608Metric_Pad0.98x0.95mm_HandSolder" V 1365 2590 50  0001 C CNN
 F 3 "~" H 1325 2600 50  0001 C CNN
 	1    1325 2600
-	0    1    1    0   
+	0    1    1    0
 $EndComp
 $Comp
 L Device:R_US R20
@@ -143,7 +143,7 @@ F 1 "1k" V 2336 2500 50  0000 C CNN
 F 2 "Resistor_SMD:R_0603_1608Metric_Pad0.98x0.95mm_HandSolder" V 2490 2490 50  0001 C CNN
 F 3 "~" H 2450 2500 50  0001 C CNN
 	1    2450 2500
-	0    1    1    0   
+	0    1    1    0
 $EndComp
 $Comp
 L Device:R_US R10
@@ -154,7 +154,7 @@ F 1 "12.4k" V 1211 2950 50  0000 C CNN
 F 2 "Resistor_SMD:R_0603_1608Metric_Pad0.98x0.95mm_HandSolder" V 1365 2940 50  0001 C CNN
 F 3 "~" H 1325 2950 50  0001 C CNN
 	1    1325 2950
-	0    1    1    0   
+	0    1    1    0
 $EndComp
 Wire Wire Line
 	1475 2600 1700 2600
@@ -175,7 +175,7 @@ F 1 "GND" H 1650 2250 50  0000 C CNN
 F 2 "" H 1650 2400 50  0001 C CNN
 F 3 "" H 1650 2400 50  0001 C CNN
 	1    1650 2400
-	-1   0    0    1   
+	-1   0    0    1
 $EndComp
 Wire Wire Line
 	1650 2400 1700 2400
@@ -195,7 +195,7 @@ F 2 "Package_SO:TSSOP-14_4.4x5mm_P0.65mm" H 2000 3125 50  0001 C CNN
 F 3 "https://www.ti.com/lit/ds/symlink/opa4197.pdf" H 2050 3675 50  0001 C CNN
 F 4 "OPA4197IPW" H 2000 3025 39  0001 C CNN "mpn"
 	3    2000 3475
-	1    0    0    -1  
+	1    0    0    -1
 $EndComp
 $Comp
 L Device:R_US R17
@@ -206,7 +206,7 @@ F 1 "10k" V 1911 3925 50  0000 C CNN
 F 2 "Resistor_SMD:R_0603_1608Metric_Pad0.98x0.95mm_HandSolder" V 2065 3915 50  0001 C CNN
 F 3 "~" H 2025 3925 50  0001 C CNN
 	1    2025 3925
-	0    1    1    0   
+	0    1    1    0
 $EndComp
 $Comp
 L Device:R_US R11
@@ -217,7 +217,7 @@ F 1 "1.54k" V 1211 3575 50  0000 C CNN
 F 2 "Resistor_SMD:R_0603_1608Metric_Pad0.98x0.95mm_HandSolder" V 1365 3565 50  0001 C CNN
 F 3 "~" H 1325 3575 50  0001 C CNN
 	1    1325 3575
-	0    1    1    0   
+	0    1    1    0
 $EndComp
 $Comp
 L Device:R_US R21
@@ -228,7 +228,7 @@ F 1 "1k" V 2336 3475 50  0000 C CNN
 F 2 "Resistor_SMD:R_0603_1608Metric_Pad0.98x0.95mm_HandSolder" V 2490 3465 50  0001 C CNN
 F 3 "~" H 2450 3475 50  0001 C CNN
 	1    2450 3475
-	0    1    1    0   
+	0    1    1    0
 $EndComp
 $Comp
 L Device:R_US R12
@@ -239,7 +239,7 @@ F 1 "12.4k" V 1211 3925 50  0000 C CNN
 F 2 "Resistor_SMD:R_0603_1608Metric_Pad0.98x0.95mm_HandSolder" V 1365 3915 50  0001 C CNN
 F 3 "~" H 1325 3925 50  0001 C CNN
 	1    1325 3925
-	0    1    1    0   
+	0    1    1    0
 $EndComp
 Wire Wire Line
 	1475 3575 1700 3575
@@ -260,7 +260,7 @@ F 1 "GND" H 1650 3225 50  0000 C CNN
 F 2 "" H 1650 3375 50  0001 C CNN
 F 3 "" H 1650 3375 50  0001 C CNN
 	1    1650 3375
-	-1   0    0    1   
+	-1   0    0    1
 $EndComp
 Wire Wire Line
 	1650 3375 1700 3375
@@ -280,7 +280,7 @@ F 2 "Package_SO:TSSOP-14_4.4x5mm_P0.65mm" H 2000 4100 50  0001 C CNN
 F 3 "https://www.ti.com/lit/ds/symlink/opa4197.pdf" H 2050 4650 50  0001 C CNN
 F 4 "OPA4197IPW" H 2000 4000 39  0001 C CNN "mpn"
 	4    2000 4450
-	1    0    0    -1  
+	1    0    0    -1
 $EndComp
 $Comp
 L Device:R_US R18
@@ -291,7 +291,7 @@ F 1 "10k" V 1911 4900 50  0000 C CNN
 F 2 "Resistor_SMD:R_0603_1608Metric_Pad0.98x0.95mm_HandSolder" V 2065 4890 50  0001 C CNN
 F 3 "~" H 2025 4900 50  0001 C CNN
 	1    2025 4900
-	0    1    1    0   
+	0    1    1    0
 $EndComp
 $Comp
 L Device:R_US R13
@@ -302,7 +302,7 @@ F 1 "1.54k" V 1211 4550 50  0000 C CNN
 F 2 "Resistor_SMD:R_0603_1608Metric_Pad0.98x0.95mm_HandSolder" V 1365 4540 50  0001 C CNN
 F 3 "~" H 1325 4550 50  0001 C CNN
 	1    1325 4550
-	0    1    1    0   
+	0    1    1    0
 $EndComp
 $Comp
 L Device:R_US R22
@@ -313,7 +313,7 @@ F 1 "1k" V 2336 4450 50  0000 C CNN
 F 2 "Resistor_SMD:R_0603_1608Metric_Pad0.98x0.95mm_HandSolder" V 2490 4440 50  0001 C CNN
 F 3 "~" H 2450 4450 50  0001 C CNN
 	1    2450 4450
-	0    1    1    0   
+	0    1    1    0
 $EndComp
 $Comp
 L Device:R_US R14
@@ -324,7 +324,7 @@ F 1 "12.4k" V 1211 4900 50  0000 C CNN
 F 2 "Resistor_SMD:R_0603_1608Metric_Pad0.98x0.95mm_HandSolder" V 1365 4890 50  0001 C CNN
 F 3 "~" H 1325 4900 50  0001 C CNN
 	1    1325 4900
-	0    1    1    0   
+	0    1    1    0
 $EndComp
 Wire Wire Line
 	1475 4550 1700 4550
@@ -345,7 +345,7 @@ F 1 "GND" H 1650 4200 50  0000 C CNN
 F 2 "" H 1650 4350 50  0001 C CNN
 F 3 "" H 1650 4350 50  0001 C CNN
 	1    1650 4350
-	-1   0    0    1   
+	-1   0    0    1
 $EndComp
 Wire Wire Line
 	1650 4350 1700 4350
@@ -377,7 +377,7 @@ F 2 "Package_SO:TSSOP-14_4.4x5mm_P0.65mm" H 4625 1700 50  0001 C CNN
 F 3 "https://www.ti.com/lit/ds/symlink/opa4197.pdf" H 4675 2250 50  0001 C CNN
 F 4 "OPA4197IPW" H 4625 1600 39  0001 C CNN "mpn"
 	5    4625 2050
-	1    0    0    -1  
+	1    0    0    -1
 $EndComp
 $Comp
 L power:-12V #PWR0161
@@ -388,7 +388,7 @@ F 1 "-12V" H 4540 2523 50  0000 C CNN
 F 2 "" H 4525 2350 50  0001 C CNN
 F 3 "" H 4525 2350 50  0001 C CNN
 	1    4525 2350
-	-1   0    0    1   
+	-1   0    0    1
 $EndComp
 $Comp
 L power:+12V #PWR0162
@@ -399,7 +399,7 @@ F 1 "+12V" H 4540 1923 50  0000 C CNN
 F 2 "" H 4525 1750 50  0001 C CNN
 F 3 "" H 4525 1750 50  0001 C CNN
 	1    4525 1750
-	1    0    0    -1  
+	1    0    0    -1
 $EndComp
 $Comp
 L power:+12V #PWR0163
@@ -410,7 +410,7 @@ F 1 "+12V" H 5890 2248 50  0000 C CNN
 F 2 "" H 5875 2075 50  0001 C CNN
 F 3 "" H 5875 2075 50  0001 C CNN
 	1    5875 2075
-	1    0    0    -1  
+	1    0    0    -1
 $EndComp
 $Comp
 L power:-12V #PWR0164
@@ -421,7 +421,7 @@ F 1 "-12V" H 5465 2348 50  0000 C CNN
 F 2 "" H 5450 2175 50  0001 C CNN
 F 3 "" H 5450 2175 50  0001 C CNN
 	1    5450 2175
-	-1   0    0    1   
+	-1   0    0    1
 $EndComp
 $Comp
 L Device:C_Small C33
@@ -432,7 +432,7 @@ F 1 "0.1uF" H 5542 2030 50  0000 L CNN
 F 2 "Capacitor_SMD:C_0603_1608Metric_Pad1.08x0.95mm_HandSolder" H 5450 2075 50  0001 C CNN
 F 3 "~" H 5450 2075 50  0001 C CNN
 	1    5450 2075
-	1    0    0    -1  
+	1    0    0    -1
 $EndComp
 $Comp
 L Device:C_Small C34
@@ -443,7 +443,7 @@ F 1 "0.1uF" H 5967 2130 50  0000 L CNN
 F 2 "Capacitor_SMD:C_0603_1608Metric_Pad1.08x0.95mm_HandSolder" H 5875 2175 50  0001 C CNN
 F 3 "~" H 5875 2175 50  0001 C CNN
 	1    5875 2175
-	1    0    0    -1  
+	1    0    0    -1
 $EndComp
 $Comp
 L power:GND #PWR0165
@@ -454,7 +454,7 @@ F 1 "GND" H 5455 1802 50  0001 C CNN
 F 2 "" H 5450 1975 50  0001 C CNN
 F 3 "" H 5450 1975 50  0001 C CNN
 	1    5450 1975
-	-1   0    0    1   
+	-1   0    0    1
 $EndComp
 $Comp
 L power:GND #PWR0166
@@ -465,7 +465,7 @@ F 1 "GND" H 5880 2102 50  0001 C CNN
 F 2 "" H 5875 2275 50  0001 C CNN
 F 3 "" H 5875 2275 50  0001 C CNN
 	1    5875 2275
-	1    0    0    -1  
+	1    0    0    -1
 $EndComp
 Text HLabel 1175 4550 0    50   Input ~ 0
 DAC_4_PRE
@@ -475,72 +475,72 @@ $Comp
 L winterbloom:LM4040-10 U?
 U 1 1 617993BE
 P 5075 3375
-AR Path="/60711259/617993BE" Ref="U?"  Part="1" 
-AR Path="/61059808/617993BE" Ref="U?"  Part="1" 
-AR Path="/608FFE97/617993BE" Ref="U2"  Part="1" 
+AR Path="/60711259/617993BE" Ref="U?"  Part="1"
+AR Path="/61059808/617993BE" Ref="U?"  Part="1"
+AR Path="/608FFE97/617993BE" Ref="U2"  Part="1"
 F 0 "U2" V 5029 3454 50  0000 L CNN
 F 1 "LM4040-10" V 5120 3454 50  0000 L CNN
 F 2 "Package_TO_SOT_SMD:SOT-23" H 5075 3175 50  0001 C CIN
 F 3 "http://www.ti.com/lit/ds/symlink/lm4040-n.pdf" H 5075 3375 50  0001 C CIN
 F 4 "LM4040DIM3-10.0/NOPB" H 5075 3575 50  0001 C CNN "mpn"
 	1    5075 3375
-	0    1    1    0   
+	0    1    1    0
 $EndComp
 $Comp
 L Device:R_US R?
 U 1 1 617993C4
 P 5075 3075
-AR Path="/60711259/617993C4" Ref="R?"  Part="1" 
-AR Path="/61059808/617993C4" Ref="R?"  Part="1" 
-AR Path="/608FFE97/617993C4" Ref="R36"  Part="1" 
+AR Path="/60711259/617993C4" Ref="R?"  Part="1"
+AR Path="/61059808/617993C4" Ref="R?"  Part="1"
+AR Path="/608FFE97/617993C4" Ref="R36"  Part="1"
 F 0 "R36" H 5143 3121 50  0000 L CNN
 F 1 "270" H 5143 3030 50  0000 L CNN
 F 2 "Resistor_SMD:R_0603_1608Metric_Pad0.98x0.95mm_HandSolder" V 5115 3065 50  0001 C CNN
 F 3 "~" H 5075 3075 50  0001 C CNN
 	1    5075 3075
-	1    0    0    -1  
+	1    0    0    -1
 $EndComp
 $Comp
 L power:GND #PWR?
 U 1 1 617993CA
 P 5075 3525
-AR Path="/60711259/617993CA" Ref="#PWR?"  Part="1" 
-AR Path="/61059808/617993CA" Ref="#PWR?"  Part="1" 
-AR Path="/608FFE97/617993CA" Ref="#PWR0159"  Part="1" 
+AR Path="/60711259/617993CA" Ref="#PWR?"  Part="1"
+AR Path="/61059808/617993CA" Ref="#PWR?"  Part="1"
+AR Path="/608FFE97/617993CA" Ref="#PWR0159"  Part="1"
 F 0 "#PWR0159" H 5075 3275 50  0001 C CNN
 F 1 "GND" H 5150 3375 50  0000 R CNN
 F 2 "" H 5075 3525 50  0001 C CNN
 F 3 "" H 5075 3525 50  0001 C CNN
 	1    5075 3525
-	1    0    0    -1  
+	1    0    0    -1
 $EndComp
 $Comp
 L power:-12V #PWR?
 U 1 1 617993D0
 P 5075 2925
-AR Path="/60711259/617993D0" Ref="#PWR?"  Part="1" 
-AR Path="/61059808/617993D0" Ref="#PWR?"  Part="1" 
-AR Path="/608FFE97/617993D0" Ref="#PWR0160"  Part="1" 
+AR Path="/60711259/617993D0" Ref="#PWR?"  Part="1"
+AR Path="/61059808/617993D0" Ref="#PWR?"  Part="1"
+AR Path="/608FFE97/617993D0" Ref="#PWR0160"  Part="1"
 F 0 "#PWR0160" H 5075 3025 50  0001 C CNN
 F 1 "-12V" H 4975 3075 50  0000 L CNN
 F 2 "" H 5075 2925 50  0001 C CNN
 F 3 "" H 5075 2925 50  0001 C CNN
 	1    5075 2925
-	1    0    0    -1  
+	1    0    0    -1
 $EndComp
 $Comp
 L Device:C_Small C?
 U 1 1 617993D6
 P 4825 3375
-AR Path="/60711259/617993D6" Ref="C?"  Part="1" 
-AR Path="/61059808/617993D6" Ref="C?"  Part="1" 
-AR Path="/608FFE97/617993D6" Ref="C15"  Part="1" 
+AR Path="/60711259/617993D6" Ref="C?"  Part="1"
+AR Path="/61059808/617993D6" Ref="C?"  Part="1"
+AR Path="/608FFE97/617993D6" Ref="C15"  Part="1"
 F 0 "C15" H 5000 3350 50  0000 R CNN
 F 1 "0.1uF" H 5125 3425 50  0000 R CNN
 F 2 "Capacitor_SMD:C_0603_1608Metric_Pad1.08x0.95mm_HandSolder" H 4825 3375 50  0001 C CNN
 F 3 "~" H 4825 3375 50  0001 C CNN
 	1    4825 3375
-	-1   0    0    1   
+	-1   0    0    1
 $EndComp
 Wire Wire Line
 	4825 3275 4825 3225
@@ -568,14 +568,14 @@ $Comp
 L Connector:TestPoint_Small TP?
 U 1 1 618195C6
 P 2800 1500
-AR Path="/617FCAA5/618195C6" Ref="TP?"  Part="1" 
-AR Path="/608FFE97/618195C6" Ref="TP3"  Part="1" 
+AR Path="/617FCAA5/618195C6" Ref="TP?"  Part="1"
+AR Path="/608FFE97/618195C6" Ref="TP3"  Part="1"
 F 0 "TP3" V 2600 1575 50  0000 R CNN
 F 1 "1" V 2675 1525 50  0000 R CNN
 F 2 "TestPoint:TestPoint_Pad_D1.0mm" H 3000 1500 50  0001 C CNN
 F 3 "~" H 3000 1500 50  0001 C CNN
 	1    2800 1500
-	0    1    1    0   
+	0    1    1    0
 $EndComp
 Wire Wire Line
 	2575 1500 2800 1500
@@ -587,14 +587,14 @@ $Comp
 L Connector:TestPoint_Small TP?
 U 1 1 6181CE72
 P 2825 2500
-AR Path="/617FCAA5/6181CE72" Ref="TP?"  Part="1" 
-AR Path="/608FFE97/6181CE72" Ref="TP4"  Part="1" 
+AR Path="/617FCAA5/6181CE72" Ref="TP?"  Part="1"
+AR Path="/608FFE97/6181CE72" Ref="TP4"  Part="1"
 F 0 "TP4" V 2625 2575 50  0000 R CNN
 F 1 "2" V 2700 2525 50  0000 R CNN
 F 2 "TestPoint:TestPoint_Pad_D1.0mm" H 3025 2500 50  0001 C CNN
 F 3 "~" H 3025 2500 50  0001 C CNN
 	1    2825 2500
-	0    1    1    0   
+	0    1    1    0
 $EndComp
 Wire Wire Line
 	2600 2500 2825 2500
@@ -605,14 +605,14 @@ $Comp
 L Connector:TestPoint_Small TP?
 U 1 1 6181D989
 P 2825 3475
-AR Path="/617FCAA5/6181D989" Ref="TP?"  Part="1" 
-AR Path="/608FFE97/6181D989" Ref="TP5"  Part="1" 
+AR Path="/617FCAA5/6181D989" Ref="TP?"  Part="1"
+AR Path="/608FFE97/6181D989" Ref="TP5"  Part="1"
 F 0 "TP5" V 2625 3550 50  0000 R CNN
 F 1 "3" V 2700 3500 50  0000 R CNN
 F 2 "TestPoint:TestPoint_Pad_D1.0mm" H 3025 3475 50  0001 C CNN
 F 3 "~" H 3025 3475 50  0001 C CNN
 	1    2825 3475
-	0    1    1    0   
+	0    1    1    0
 $EndComp
 Wire Wire Line
 	2600 3475 2825 3475
@@ -623,14 +623,14 @@ $Comp
 L Connector:TestPoint_Small TP?
 U 1 1 6181E6EB
 P 2825 4450
-AR Path="/617FCAA5/6181E6EB" Ref="TP?"  Part="1" 
-AR Path="/608FFE97/6181E6EB" Ref="TP6"  Part="1" 
+AR Path="/617FCAA5/6181E6EB" Ref="TP?"  Part="1"
+AR Path="/608FFE97/6181E6EB" Ref="TP6"  Part="1"
 F 0 "TP6" V 2625 4525 50  0000 R CNN
 F 1 "4" V 2700 4475 50  0000 R CNN
 F 2 "TestPoint:TestPoint_Pad_D1.0mm" H 3025 4450 50  0001 C CNN
 F 3 "~" H 3025 4450 50  0001 C CNN
 	1    2825 4450
-	0    1    1    0   
+	0    1    1    0
 $EndComp
 Wire Wire Line
 	2600 4450 2825 4450

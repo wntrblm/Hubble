@@ -4,7 +4,7 @@ EELAYER END
 $Descr A4 11693 8268
 encoding utf-8
 Sheet 3 7
-Title "TestKit Motherboard"
+Title "Hubble Motherboard"
 Date "2021-11-12"
 Rev "v2"
 Comp "Winterbloom"
@@ -23,7 +23,7 @@ F 2 "winterbloom:QFN+QFP-64-SAMD51" H 5525 3800 60  0001 C CNN
 F 3 "https://ww1.microchip.com/downloads/en/DeviceDoc/SAM_D5x_E5x_Family_Data_Sheet_DS60001507G.pdf" H 6425 2400 60  0001 C CNN
 F 4 "ATSAMD51J20A-M" H 5825 3650 39  0001 C CNN "mpn"
 	1    2825 2600
-	1    0    0    -1  
+	1    0    0    -1
 $EndComp
 $Comp
 L power:GND #PWR030
@@ -34,7 +34,7 @@ F 1 "GND" V 1280 1622 50  0001 R CNN
 F 2 "" H 1275 1750 50  0001 C CNN
 F 3 "" H 1275 1750 50  0001 C CNN
 	1    1275 1750
-	0    1    1    0   
+	0    1    1    0
 $EndComp
 $Comp
 L power:GND #PWR029
@@ -45,7 +45,7 @@ F 1 "GND" V 1205 2322 50  0001 R CNN
 F 2 "" H 1200 2450 50  0001 C CNN
 F 3 "" H 1200 2450 50  0001 C CNN
 	1    1200 2450
-	0    1    1    0   
+	0    1    1    0
 $EndComp
 $Comp
 L power:GND #PWR035
@@ -56,7 +56,7 @@ F 1 "GND" V 2575 3650 50  0001 C CNN
 F 2 "" H 2575 3850 50  0001 C CNN
 F 3 "" H 2575 3850 50  0001 C CNN
 	1    2575 3850
-	1    0    0    -1  
+	1    0    0    -1
 $EndComp
 $Comp
 L power:GND #PWR040
@@ -67,7 +67,7 @@ F 1 "GND" V 4125 3225 50  0001 R CNN
 F 2 "" H 4125 3350 50  0001 C CNN
 F 3 "" H 4125 3350 50  0001 C CNN
 	1    4125 3350
-	0    -1   -1   0   
+	0    -1   -1   0
 $EndComp
 $Comp
 L power:GND #PWR042
@@ -78,7 +78,7 @@ F 1 "GND" V 4325 1825 50  0000 R CNN
 F 2 "" H 4325 1950 50  0001 C CNN
 F 3 "" H 4325 1950 50  0001 C CNN
 	1    4325 1950
-	0    -1   -1   0   
+	0    -1   -1   0
 $EndComp
 $Comp
 L power:GND #PWR037
@@ -88,8 +88,8 @@ F 0 "#PWR037" H 3075 625 50  0001 C CNN
 F 1 "GND" V 3075 675 50  0001 C CNN
 F 2 "" H 3075 875 50  0001 C CNN
 F 3 "" H 3075 875 50  0001 C CNN
-	1    3075 875 
-	-1   0    0    1   
+	1    3075 875
+	-1   0    0    1
 $EndComp
 $Comp
 L power:+3V3 #PWR036
@@ -99,8 +99,8 @@ F 0 "#PWR036" H 2875 725 50  0001 C CNN
 F 1 "+3V3" V 2875 1100 50  0000 C CNN
 F 2 "" H 2875 875 50  0001 C CNN
 F 3 "" H 2875 875 50  0001 C CNN
-	1    2875 875 
-	1    0    0    -1  
+	1    2875 875
+	1    0    0    -1
 $EndComp
 $Comp
 L power:+3V3 #PWR033
@@ -111,7 +111,7 @@ F 1 "+3V3" V 2475 4075 50  0000 C CNN
 F 2 "" H 2475 3850 50  0001 C CNN
 F 3 "" H 2475 3850 50  0001 C CNN
 	1    2475 3850
-	-1   0    0    1   
+	-1   0    0    1
 $EndComp
 Text Label 1525 2550 2    50   ~ 0
 VDDANA
@@ -123,7 +123,7 @@ RESET
 Wire Wire Line
 	3075 875  3075 1250
 Wire Wire Line
-	2875 1250 2875 875 
+	2875 1250 2875 875
 Wire Wire Line
 	1525 2450 1200 2450
 Text Label 2675 1250 1    50   ~ 0
@@ -141,7 +141,7 @@ F 1 "+3V3" V 4325 2075 50  0000 C CNN
 F 2 "" H 4325 1850 50  0001 C CNN
 F 3 "" H 4325 1850 50  0001 C CNN
 	1    4325 1850
-	0    1    1    0   
+	0    1    1    0
 $EndComp
 Wire Wire Line
 	4325 1850 4125 1850
@@ -154,7 +154,7 @@ F 1 "+3V3" V 4125 3375 50  0000 L CNN
 F 2 "" H 4125 3250 50  0001 C CNN
 F 3 "" H 4125 3250 50  0001 C CNN
 	1    4125 3250
-	0    1    1    0   
+	0    1    1    0
 $EndComp
 Text Label 1525 1950 2    50   ~ 0
 XOUT
@@ -171,7 +171,7 @@ F 1 "+3V3" V 5200 6375 50  0000 C CNN
 F 2 "" H 5200 6150 50  0001 C CNN
 F 3 "" H 5200 6150 50  0001 C CNN
 	1    5200 6150
-	0    -1   -1   0   
+	0    -1   -1   0
 $EndComp
 $Comp
 L Device:C_Small C6
@@ -182,7 +182,7 @@ F 1 "0.1uF" H 5617 6305 50  0000 L CNN
 F 2 "Capacitor_SMD:C_0603_1608Metric_Pad1.08x0.95mm_HandSolder" H 5525 6350 50  0001 C CNN
 F 3 "~" H 5525 6350 50  0001 C CNN
 	1    5525 6350
-	1    0    0    -1  
+	1    0    0    -1
 $EndComp
 $Comp
 L power:GND #PWR027
@@ -193,7 +193,7 @@ F 1 "GND" H 5530 6277 50  0000 C CNN
 F 2 "" H 5525 6450 50  0001 C CNN
 F 3 "" H 5525 6450 50  0001 C CNN
 	1    5525 6450
-	1    0    0    -1  
+	1    0    0    -1
 $EndComp
 $Comp
 L Device:Ferrite_Bead_Small FB3
@@ -204,7 +204,7 @@ F 1 "300mA" V 5154 6150 50  0000 C CNN
 F 2 "Inductor_SMD:L_0603_1608Metric_Pad1.05x0.95mm_HandSolder" V 5230 6150 50  0001 C CNN
 F 3 "~" H 5300 6150 50  0001 C CNN
 	1    5300 6150
-	0    1    1    0   
+	0    1    1    0
 $EndComp
 Wire Wire Line
 	5525 6250 5525 6150
@@ -224,7 +224,7 @@ F 1 "GND" H 1225 7400 50  0001 R CNN
 F 2 "" H 1150 7550 50  0001 C CNN
 F 3 "" H 1150 7550 50  0001 C CNN
 	1    1150 7550
-	1    0    0    -1  
+	1    0    0    -1
 $EndComp
 Text Label 1750 6950 0    50   ~ 0
 SWDIO
@@ -242,7 +242,7 @@ F 2 "winterbloom:Tactile_Switch_4.2mm" H 2860 7260 20  0001 L CNN
 F 3 "https://factory.macrofab.com/part/MF-SW-TACT-4.2MM" H 3100 7125 60  0001 C CNN
 F 4 "MF-SW-TACT-4.2MM, MF-SW-TACT-6MM" H 3100 7315 50  0001 C CNN "mpn"
 	1    3100 7125
-	1    0    0    -1  
+	1    0    0    -1
 $EndComp
 Text Label 2900 7125 2    50   ~ 0
 RESET
@@ -255,7 +255,7 @@ F 1 "GND" V 3305 6997 50  0000 R CNN
 F 2 "" H 3300 7125 50  0001 C CNN
 F 3 "" H 3300 7125 50  0001 C CNN
 	1    3300 7125
-	0    -1   -1   0   
+	0    -1   -1   0
 $EndComp
 $Comp
 L Device:R_US R4
@@ -266,7 +266,7 @@ F 1 "10k" V 3214 7425 50  0000 C CNN
 F 2 "Resistor_SMD:R_0603_1608Metric_Pad0.98x0.95mm_HandSolder" V 3140 7415 50  0001 C CNN
 F 3 "~" H 3100 7425 50  0001 C CNN
 	1    3100 7425
-	0    -1   -1   0   
+	0    -1   -1   0
 $EndComp
 Text Label 2950 7425 2    50   ~ 0
 RESET
@@ -279,7 +279,7 @@ F 1 "+3V3" V 3250 7650 50  0000 C CNN
 F 2 "" H 3250 7425 50  0001 C CNN
 F 3 "" H 3250 7425 50  0001 C CNN
 	1    3250 7425
-	0    1    1    0   
+	0    1    1    0
 $EndComp
 Text Notes 2600 7625 0    39   ~ 0
 Required, see Errata CHIP003-159
@@ -292,7 +292,7 @@ F 1 "32.768 kHz" H 6475 7309 50  0000 C CNN
 F 2 "Crystal:Crystal_SMD_2012-2Pin_2.0x1.2mm_HandSoldering" H 6475 7175 50  0001 C CNN
 F 3 "~" H 6475 7175 50  0001 C CNN
 	1    6475 7175
-	1    0    0    -1  
+	1    0    0    -1
 $EndComp
 $Comp
 L Device:C_Small C8
@@ -303,7 +303,7 @@ F 1 "22pF" H 6550 7475 50  0000 R CNN
 F 2 "Capacitor_SMD:C_0603_1608Metric_Pad1.08x0.95mm_HandSolder" H 6575 7400 50  0001 C CNN
 F 3 "~" H 6575 7400 50  0001 C CNN
 	1    6575 7400
-	-1   0    0    1   
+	-1   0    0    1
 $EndComp
 $Comp
 L Device:C_Small C7
@@ -314,7 +314,7 @@ F 1 "22pF" H 6600 7475 50  0000 R CNN
 F 2 "Capacitor_SMD:C_0603_1608Metric_Pad1.08x0.95mm_HandSolder" H 6375 7400 50  0001 C CNN
 F 3 "~" H 6375 7400 50  0001 C CNN
 	1    6375 7400
-	-1   0    0    1   
+	-1   0    0    1
 $EndComp
 $Comp
 L power:GND #PWR031
@@ -325,7 +325,7 @@ F 1 "GND" H 6480 7327 50  0000 C CNN
 F 2 "" H 6475 7500 50  0001 C CNN
 F 3 "" H 6475 7500 50  0001 C CNN
 	1    6475 7500
-	1    0    0    -1  
+	1    0    0    -1
 $EndComp
 Wire Wire Line
 	6375 7500 6475 7500
@@ -349,7 +349,7 @@ F 1 "0.1uF" H 4325 7225 50  0000 R CNN
 F 2 "Capacitor_SMD:C_0603_1608Metric_Pad1.08x0.95mm_HandSolder" H 4350 7300 50  0001 C CNN
 F 3 "~" H 4350 7300 50  0001 C CNN
 	1    4350 7300
-	1    0    0    -1  
+	1    0    0    -1
 $EndComp
 $Comp
 L Device:C_Small C10
@@ -360,7 +360,7 @@ F 1 "4.7uF" H 4575 7225 50  0000 L CNN
 F 2 "Capacitor_SMD:C_0603_1608Metric_Pad1.08x0.95mm_HandSolder" H 4550 7300 50  0001 C CNN
 F 3 "~" H 4550 7300 50  0001 C CNN
 	1    4550 7300
-	1    0    0    -1  
+	1    0    0    -1
 $EndComp
 Wire Wire Line
 	4350 7200 4450 7200
@@ -380,7 +380,7 @@ F 1 "GND" H 4450 7375 50  0000 C CNN
 F 2 "" H 4450 7525 50  0001 C CNN
 F 3 "" H 4450 7525 50  0001 C CNN
 	1    4450 7525
-	1    0    0    -1  
+	1    0    0    -1
 $EndComp
 Text Label 4450 7050 2    50   ~ 0
 VDDCORE
@@ -398,7 +398,7 @@ F 1 "0.1uF" H 4900 7150 50  0001 L CNN
 F 2 "Capacitor_SMD:C_0603_1608Metric_Pad1.08x0.95mm_HandSolder" H 5025 7325 50  0001 C CNN
 F 3 "~" H 5025 7325 50  0001 C CNN
 	1    5025 7325
-	1    0    0    -1  
+	1    0    0    -1
 $EndComp
 $Comp
 L Device:C_Small C12
@@ -409,7 +409,7 @@ F 1 "0.1uF" H 5075 7150 50  0001 L CNN
 F 2 "Capacitor_SMD:C_0603_1608Metric_Pad1.08x0.95mm_HandSolder" H 5200 7325 50  0001 C CNN
 F 3 "~" H 5200 7325 50  0001 C CNN
 	1    5200 7325
-	1    0    0    -1  
+	1    0    0    -1
 $EndComp
 $Comp
 L Device:C_Small C13
@@ -420,7 +420,7 @@ F 1 "0.1uF" H 5725 7325 50  0000 L CNN
 F 2 "Capacitor_SMD:C_0603_1608Metric_Pad1.08x0.95mm_HandSolder" H 5450 7325 50  0001 C CNN
 F 3 "~" H 5450 7325 50  0001 C CNN
 	1    5450 7325
-	1    0    0    -1  
+	1    0    0    -1
 $EndComp
 $Comp
 L Device:C_Small C14
@@ -431,7 +431,7 @@ F 1 "0.1uF" H 5500 7150 50  0001 L CNN
 F 2 "Capacitor_SMD:C_0603_1608Metric_Pad1.08x0.95mm_HandSolder" H 5625 7325 50  0001 C CNN
 F 3 "~" H 5625 7325 50  0001 C CNN
 	1    5625 7325
-	1    0    0    -1  
+	1    0    0    -1
 $EndComp
 Wire Wire Line
 	5025 7425 5200 7425
@@ -454,7 +454,7 @@ F 1 "GND" H 5325 7375 50  0000 C CNN
 F 2 "" H 5325 7525 50  0001 C CNN
 F 3 "" H 5325 7525 50  0001 C CNN
 	1    5325 7525
-	1    0    0    -1  
+	1    0    0    -1
 $EndComp
 Wire Wire Line
 	5325 7525 5325 7425
@@ -467,7 +467,7 @@ F 1 "+3V3" H 5325 7250 50  0000 C CNN
 F 2 "" H 5325 7100 50  0001 C CNN
 F 3 "" H 5325 7100 50  0001 C CNN
 	1    5325 7100
-	1    0    0    -1  
+	1    0    0    -1
 $EndComp
 Wire Wire Line
 	5325 7100 5325 7225
@@ -481,7 +481,7 @@ F 2 "winterbloom:Dotstar_5050" H 8150 5625 50  0001 L TNN
 F 3 "https://www.alibaba.com/product-detail/High-Efficiency-SK9822-Similar-APA102-5050_62326807400.html" H 8200 5550 50  0001 L TNN
 F 4 "SK9822" H 8300 5525 50  0001 C CNN "mpn"
 	1    8100 5925
-	1    0    0    -1  
+	1    0    0    -1
 $EndComp
 Text Label 7800 5825 2    39   ~ 0
 DOTSTAR_DI
@@ -496,7 +496,7 @@ F 1 "GND" H 8100 6075 50  0000 C CNN
 F 2 "" H 8100 6225 50  0001 C CNN
 F 3 "" H 8100 6225 50  0001 C CNN
 	1    8100 6225
-	1    0    0    -1  
+	1    0    0    -1
 $EndComp
 $Comp
 L power:+3V3 #PWR052
@@ -507,7 +507,7 @@ F 1 "+3V3" H 8100 5775 50  0000 C CNN
 F 2 "" H 8100 5625 50  0001 C CNN
 F 3 "" H 8100 5625 50  0001 C CNN
 	1    8100 5625
-	1    0    0    -1  
+	1    0    0    -1
 $EndComp
 NoConn ~ 8400 5925
 NoConn ~ 8400 5825
@@ -519,14 +519,14 @@ $Comp
 L power:GND #PWR?
 U 1 1 60F60ECC
 P 10400 5725
-AR Path="/6091A4E3/60F60ECC" Ref="#PWR?"  Part="1" 
-AR Path="/608B4064/60F60ECC" Ref="#PWR024"  Part="1" 
+AR Path="/6091A4E3/60F60ECC" Ref="#PWR?"  Part="1"
+AR Path="/608B4064/60F60ECC" Ref="#PWR024"  Part="1"
 F 0 "#PWR024" H 10400 5475 50  0001 C CNN
 F 1 "GND" H 10405 5552 50  0001 C CNN
 F 2 "" H 10400 5725 50  0001 C CNN
 F 3 "" H 10400 5725 50  0001 C CNN
 	1    10400 5725
-	0    -1   -1   0   
+	0    -1   -1   0
 $EndComp
 Text Label 1525 2150 2    50   ~ 0
 ADC0.AIN1+ANAREF.VREF0
@@ -643,7 +643,7 @@ F 1 "SWD" H 807 6905 50  0000 R CNN
 F 2 "Connector_PinHeader_1.27mm:PinHeader_2x05_P1.27mm_Vertical" H 1250 6950 50  0001 C CNN
 F 3 "http://infocenter.arm.com/help/topic/com.arm.doc.ddi0314h/DDI0314H_coresight_components_trm.pdf" V 900 5700 50  0001 C CNN
 	1    1250 6950
-	1    0    0    -1  
+	1    0    0    -1
 $EndComp
 $Comp
 L power:+3V3 #PWR0154
@@ -654,7 +654,7 @@ F 1 "+3V3" H 1250 6525 50  0000 C CNN
 F 2 "" H 1250 6350 50  0001 C CNN
 F 3 "" H 1250 6350 50  0001 C CNN
 	1    1250 6350
-	1    0    0    -1  
+	1    0    0    -1
 $EndComp
 $Comp
 L power:GND #PWR0155
@@ -665,7 +665,7 @@ F 1 "GND" H 1325 7400 50  0001 R CNN
 F 2 "" H 1250 7550 50  0001 C CNN
 F 3 "" H 1250 7550 50  0001 C CNN
 	1    1250 7550
-	1    0    0    -1  
+	1    0    0    -1
 $EndComp
 NoConn ~ 1750 7050
 NoConn ~ 1750 7150
@@ -678,7 +678,7 @@ F 1 "VBUS" V 6973 5882 50  0000 R CNN
 F 2 "winterbloom:LED_0805_Kingbright_APT2012" H 7025 6000 50  0001 C CNN
 F 3 "~" H 7025 6000 50  0001 C CNN
 	1    7025 6000
-	0    -1   -1   0   
+	0    -1   -1   0
 $EndComp
 $Comp
 L Device:R_US R35
@@ -689,7 +689,7 @@ F 1 "10k" H 7150 5750 50  0000 C CNN
 F 2 "Resistor_SMD:R_0603_1608Metric_Pad0.98x0.95mm_HandSolder" V 7065 5690 50  0001 C CNN
 F 3 "~" H 7025 5700 50  0001 C CNN
 	1    7025 5700
-	1    0    0    -1  
+	1    0    0    -1
 $EndComp
 $Comp
 L power:GND #PWR0156
@@ -700,7 +700,7 @@ F 1 "GND" H 7025 6000 50  0000 C CNN
 F 2 "" H 7025 6150 50  0001 C CNN
 F 3 "" H 7025 6150 50  0001 C CNN
 	1    7025 6150
-	1    0    0    -1  
+	1    0    0    -1
 $EndComp
 Text Label 7025 5550 2    50   ~ 0
 VBUS
@@ -715,7 +715,7 @@ F 1 "ACT" V 6473 5882 50  0000 R CNN
 F 2 "winterbloom:LED_0805_Kingbright_APT2012" H 6525 6000 50  0001 C CNN
 F 3 "~" H 6525 6000 50  0001 C CNN
 	1    6525 6000
-	0    -1   -1   0   
+	0    -1   -1   0
 $EndComp
 $Comp
 L Device:R_US R6
@@ -726,7 +726,7 @@ F 1 "10k" H 6650 5750 50  0000 C CNN
 F 2 "Resistor_SMD:R_0603_1608Metric_Pad0.98x0.95mm_HandSolder" V 6565 5690 50  0001 C CNN
 F 3 "~" H 6525 5700 50  0001 C CNN
 	1    6525 5700
-	1    0    0    -1  
+	1    0    0    -1
 $EndComp
 $Comp
 L power:GND #PWR0157
@@ -737,7 +737,7 @@ F 1 "GND" H 6525 6000 50  0000 C CNN
 F 2 "" H 6525 6150 50  0001 C CNN
 F 3 "" H 6525 6150 50  0001 C CNN
 	1    6525 6150
-	1    0    0    -1  
+	1    0    0    -1
 $EndComp
 Text HLabel 10475 1525 2    50   Input ~ 0
 SPI_COPI
@@ -754,7 +754,7 @@ F 1 "4.7nF" H 10850 6000 50  0000 L CNN
 F 2 "Capacitor_SMD:C_0603_1608Metric_Pad1.08x0.95mm_HandSolder" H 10775 6050 50  0001 C CNN
 F 3 "~" H 10775 6050 50  0001 C CNN
 	1    10775 6050
-	1    0    0    -1  
+	1    0    0    -1
 $EndComp
 $Comp
 L Device:R_US R5
@@ -765,7 +765,7 @@ F 1 "1M" H 10525 6000 50  0000 L CNN
 F 2 "Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder" V 10515 6040 50  0001 C CNN
 F 3 "~" H 10475 6050 50  0001 C CNN
 	1    10475 6050
-	1    0    0    -1  
+	1    0    0    -1
 $EndComp
 $Comp
 L winterbloom:USB_B_Receptacle J3
@@ -777,7 +777,7 @@ F 2 "Connector_USB:USB_B_OST_USB-B1HSxx_Horizontal" H 10250 5575 50  0001 C CNN
 F 3 "https://www.te.com/commerce/DocumentDelivery/DDEController?Action=srchrtrv&DocNm=5787834&DocType=Customer+Drawing&DocLang=English&PartCntxt=5787834-1&DocFormat=pdf" H 10250 5575 50  0001 C CNN
 F 4 "5787834-1" H 10050 5625 39  0001 C CNN "mpn"
 	1    10050 5625
-	1    0    0    -1  
+	1    0    0    -1
 $EndComp
 Wire Wire Line
 	10400 5825 10475 5825
@@ -797,7 +797,7 @@ F 1 "GND" H 10700 6125 50  0000 R CNN
 F 2 "" H 10625 6275 50  0001 C CNN
 F 3 "" H 10625 6275 50  0001 C CNN
 	1    10625 6275
-	1    0    0    -1  
+	1    0    0    -1
 $EndComp
 Wire Wire Line
 	10475 6200 10475 6275

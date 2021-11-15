@@ -11,7 +11,7 @@
 
   (page A4)
   (title_block
-    (title "TestKit Motherboard")
+    (title "Hubble Motherboard")
     (date 2021-10-31)
     (rev v1)
     (company Winterbloom)
@@ -7123,7 +7123,7 @@
   (gr_text -12V (at 77.72 75.79 90) (layer F.SilkS)
     (effects (font (size 0.7 0.7) (thickness 0.15)))
   )
-  (gr_text "TestKit Motherboard\nv2 11/12/2021\nCERN-OHL-P V2" (at 126.07 100.15) (layer F.SilkS)
+  (gr_text "Hubble Motherboard\nv2 11/12/2021\nCERN-OHL-P V2" (at 126.07 100.15) (layer F.SilkS)
     (effects (font (size 1.5 1.5) (thickness 0.2)))
   )
   (gr_text - (at 78 86.158946) (layer F.SilkS) (tstamp 61881272)

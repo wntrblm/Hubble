@@ -4,7 +4,7 @@ EELAYER END
 $Descr A4 11693 8268
 encoding utf-8
 Sheet 5 7
-Title "TestKit Motherboard"
+Title "Hubble Motherboard"
 Date "2021-11-12"
 Rev "v2"
 Comp "Winterbloom"
@@ -17,54 +17,54 @@ $Comp
 L winterbloom:MCP6004 U?
 U 1 1 61068F7C
 P 2150 1275
-AR Path="/608FFE97/61068F7C" Ref="U?"  Part="1" 
-AR Path="/61059808/61068F7C" Ref="U11"  Part="1" 
+AR Path="/608FFE97/61068F7C" Ref="U?"  Part="1"
+AR Path="/61059808/61068F7C" Ref="U11"  Part="1"
 F 0 "U11" H 2150 1642 50  0000 C CNN
 F 1 "MCP6004" H 2150 1551 50  0000 C CNN
 F 2 "Package_SO:TSSOP-14_4.4x5mm_P0.65mm" H 2100 1375 50  0001 C CNN
 F 3 "http://datasheet.octopart.com/MCP6001T-I/OT-Microchip-datasheet-8823409.pdf" H 2200 1475 50  0001 C CNN
 F 4 "MCP6004T-I/ST, MCP6004T-E/ST" H 2150 1275 50  0001 C CNN "mpn"
 	1    2150 1275
-	1    0    0    -1  
+	1    0    0    -1
 $EndComp
 $Comp
 L Device:R_US R?
 U 1 1 61068F82
 P 1500 1375
-AR Path="/608FFE97/61068F82" Ref="R?"  Part="1" 
-AR Path="/61059808/61068F82" Ref="R23"  Part="1" 
+AR Path="/608FFE97/61068F82" Ref="R?"  Part="1"
+AR Path="/61059808/61068F82" Ref="R23"  Part="1"
 F 0 "R23" V 1295 1375 50  0000 C CNN
 F 1 "100k" V 1386 1375 50  0000 C CNN
 F 2 "Resistor_SMD:R_0603_1608Metric_Pad0.98x0.95mm_HandSolder" V 1540 1365 50  0001 C CNN
 F 3 "~" H 1500 1375 50  0001 C CNN
 	1    1500 1375
-	0    1    1    0   
+	0    1    1    0
 $EndComp
 $Comp
 L Device:R_US R?
 U 1 1 61068F88
 P 2175 1725
-AR Path="/608FFE97/61068F88" Ref="R?"  Part="1" 
-AR Path="/61059808/61068F88" Ref="R31"  Part="1" 
+AR Path="/608FFE97/61068F88" Ref="R?"  Part="1"
+AR Path="/61059808/61068F88" Ref="R31"  Part="1"
 F 0 "R31" V 1970 1725 50  0000 C CNN
 F 1 "18.7k" V 2061 1725 50  0000 C CNN
 F 2 "Resistor_SMD:R_0603_1608Metric_Pad0.98x0.95mm_HandSolder" V 2215 1715 50  0001 C CNN
 F 3 "~" H 2175 1725 50  0001 C CNN
 	1    2175 1725
-	0    1    1    0   
+	0    1    1    0
 $EndComp
 $Comp
 L Device:R_US R?
 U 1 1 61068F8E
 P 1500 1725
-AR Path="/608FFE97/61068F8E" Ref="R?"  Part="1" 
-AR Path="/61059808/61068F8E" Ref="R24"  Part="1" 
+AR Path="/608FFE97/61068F8E" Ref="R?"  Part="1"
+AR Path="/61059808/61068F8E" Ref="R24"  Part="1"
 F 0 "R24" V 1295 1725 50  0000 C CNN
 F 1 "121k" V 1386 1725 50  0000 C CNN
 F 2 "Resistor_SMD:R_0603_1608Metric_Pad0.98x0.95mm_HandSolder" V 1540 1715 50  0001 C CNN
 F 3 "~" H 1500 1725 50  0001 C CNN
 	1    1500 1725
-	0    1    1    0   
+	0    1    1    0
 $EndComp
 Wire Wire Line
 	1650 1375 1850 1375
@@ -89,54 +89,54 @@ $Comp
 L winterbloom:MCP6004 U?
 U 2 1 61068FA8
 P 2150 2800
-AR Path="/608FFE97/61068FA8" Ref="U?"  Part="1" 
-AR Path="/61059808/61068FA8" Ref="U11"  Part="2" 
+AR Path="/608FFE97/61068FA8" Ref="U?"  Part="1"
+AR Path="/61059808/61068FA8" Ref="U11"  Part="2"
 F 0 "U11" H 2150 3167 50  0000 C CNN
 F 1 "MCP6004" H 2150 3076 50  0000 C CNN
 F 2 "Package_SO:TSSOP-14_4.4x5mm_P0.65mm" H 2100 2900 50  0001 C CNN
 F 3 "http://datasheet.octopart.com/MCP6001T-I/OT-Microchip-datasheet-8823409.pdf" H 2200 3000 50  0001 C CNN
 F 4 "MCP6004T-I/ST, MCP6004T-E/ST" H 2150 2800 50  0001 C CNN "mpn"
 	2    2150 2800
-	1    0    0    -1  
+	1    0    0    -1
 $EndComp
 $Comp
 L Device:R_US R?
 U 1 1 61068FAE
 P 1500 2900
-AR Path="/608FFE97/61068FAE" Ref="R?"  Part="1" 
-AR Path="/61059808/61068FAE" Ref="R25"  Part="1" 
+AR Path="/608FFE97/61068FAE" Ref="R?"  Part="1"
+AR Path="/61059808/61068FAE" Ref="R25"  Part="1"
 F 0 "R25" V 1295 2900 50  0000 C CNN
 F 1 "100k" V 1386 2900 50  0000 C CNN
 F 2 "Resistor_SMD:R_0603_1608Metric_Pad0.98x0.95mm_HandSolder" V 1540 2890 50  0001 C CNN
 F 3 "~" H 1500 2900 50  0001 C CNN
 	1    1500 2900
-	0    1    1    0   
+	0    1    1    0
 $EndComp
 $Comp
 L Device:R_US R?
 U 1 1 61068FB4
 P 2175 3250
-AR Path="/608FFE97/61068FB4" Ref="R?"  Part="1" 
-AR Path="/61059808/61068FB4" Ref="R32"  Part="1" 
+AR Path="/608FFE97/61068FB4" Ref="R?"  Part="1"
+AR Path="/61059808/61068FB4" Ref="R32"  Part="1"
 F 0 "R32" V 1970 3250 50  0000 C CNN
 F 1 "18.7k" V 2061 3250 50  0000 C CNN
 F 2 "Resistor_SMD:R_0603_1608Metric_Pad0.98x0.95mm_HandSolder" V 2215 3240 50  0001 C CNN
 F 3 "~" H 2175 3250 50  0001 C CNN
 	1    2175 3250
-	0    1    1    0   
+	0    1    1    0
 $EndComp
 $Comp
 L Device:R_US R?
 U 1 1 61068FBA
 P 1500 3250
-AR Path="/608FFE97/61068FBA" Ref="R?"  Part="1" 
-AR Path="/61059808/61068FBA" Ref="R26"  Part="1" 
+AR Path="/608FFE97/61068FBA" Ref="R?"  Part="1"
+AR Path="/61059808/61068FBA" Ref="R26"  Part="1"
 F 0 "R26" V 1295 3250 50  0000 C CNN
 F 1 "121k" V 1386 3250 50  0000 C CNN
 F 2 "Resistor_SMD:R_0603_1608Metric_Pad0.98x0.95mm_HandSolder" V 1540 3240 50  0001 C CNN
 F 3 "~" H 1500 3250 50  0001 C CNN
 	1    1500 3250
-	0    1    1    0   
+	0    1    1    0
 $EndComp
 Wire Wire Line
 	1650 2900 1850 2900
@@ -161,54 +161,54 @@ $Comp
 L winterbloom:MCP6004 U?
 U 3 1 61068FD4
 P 2150 4300
-AR Path="/608FFE97/61068FD4" Ref="U?"  Part="1" 
-AR Path="/61059808/61068FD4" Ref="U11"  Part="3" 
+AR Path="/608FFE97/61068FD4" Ref="U?"  Part="1"
+AR Path="/61059808/61068FD4" Ref="U11"  Part="3"
 F 0 "U11" H 2150 4667 50  0000 C CNN
 F 1 "MCP6004" H 2150 4576 50  0000 C CNN
 F 2 "Package_SO:TSSOP-14_4.4x5mm_P0.65mm" H 2100 4400 50  0001 C CNN
 F 3 "http://datasheet.octopart.com/MCP6001T-I/OT-Microchip-datasheet-8823409.pdf" H 2200 4500 50  0001 C CNN
 F 4 "MCP6004T-I/ST, MCP6004T-E/ST" H 2150 4300 50  0001 C CNN "mpn"
 	3    2150 4300
-	1    0    0    -1  
+	1    0    0    -1
 $EndComp
 $Comp
 L Device:R_US R?
 U 1 1 61068FDA
 P 1500 4400
-AR Path="/608FFE97/61068FDA" Ref="R?"  Part="1" 
-AR Path="/61059808/61068FDA" Ref="R27"  Part="1" 
+AR Path="/608FFE97/61068FDA" Ref="R?"  Part="1"
+AR Path="/61059808/61068FDA" Ref="R27"  Part="1"
 F 0 "R27" V 1295 4400 50  0000 C CNN
 F 1 "100k" V 1386 4400 50  0000 C CNN
 F 2 "Resistor_SMD:R_0603_1608Metric_Pad0.98x0.95mm_HandSolder" V 1540 4390 50  0001 C CNN
 F 3 "~" H 1500 4400 50  0001 C CNN
 	1    1500 4400
-	0    1    1    0   
+	0    1    1    0
 $EndComp
 $Comp
 L Device:R_US R?
 U 1 1 61068FE0
 P 2175 4750
-AR Path="/608FFE97/61068FE0" Ref="R?"  Part="1" 
-AR Path="/61059808/61068FE0" Ref="R33"  Part="1" 
+AR Path="/608FFE97/61068FE0" Ref="R?"  Part="1"
+AR Path="/61059808/61068FE0" Ref="R33"  Part="1"
 F 0 "R33" V 1970 4750 50  0000 C CNN
 F 1 "18.7k" V 2061 4750 50  0000 C CNN
 F 2 "Resistor_SMD:R_0603_1608Metric_Pad0.98x0.95mm_HandSolder" V 2215 4740 50  0001 C CNN
 F 3 "~" H 2175 4750 50  0001 C CNN
 	1    2175 4750
-	0    1    1    0   
+	0    1    1    0
 $EndComp
 $Comp
 L Device:R_US R?
 U 1 1 61068FE6
 P 1500 4750
-AR Path="/608FFE97/61068FE6" Ref="R?"  Part="1" 
-AR Path="/61059808/61068FE6" Ref="R28"  Part="1" 
+AR Path="/608FFE97/61068FE6" Ref="R?"  Part="1"
+AR Path="/61059808/61068FE6" Ref="R28"  Part="1"
 F 0 "R28" V 1295 4750 50  0000 C CNN
 F 1 "121k" V 1386 4750 50  0000 C CNN
 F 2 "Resistor_SMD:R_0603_1608Metric_Pad0.98x0.95mm_HandSolder" V 1540 4740 50  0001 C CNN
 F 3 "~" H 1500 4750 50  0001 C CNN
 	1    1500 4750
-	0    1    1    0   
+	0    1    1    0
 $EndComp
 Wire Wire Line
 	1650 4400 1850 4400
@@ -233,54 +233,54 @@ $Comp
 L winterbloom:MCP6004 U?
 U 4 1 61069000
 P 2150 5675
-AR Path="/608FFE97/61069000" Ref="U?"  Part="1" 
-AR Path="/61059808/61069000" Ref="U11"  Part="4" 
+AR Path="/608FFE97/61069000" Ref="U?"  Part="1"
+AR Path="/61059808/61069000" Ref="U11"  Part="4"
 F 0 "U11" H 2150 6042 50  0000 C CNN
 F 1 "MCP6004" H 2150 5951 50  0000 C CNN
 F 2 "Package_SO:TSSOP-14_4.4x5mm_P0.65mm" H 2100 5775 50  0001 C CNN
 F 3 "http://datasheet.octopart.com/MCP6001T-I/OT-Microchip-datasheet-8823409.pdf" H 2200 5875 50  0001 C CNN
 F 4 "MCP6004T-I/ST, MCP6004T-E/ST" H 2150 5675 50  0001 C CNN "mpn"
 	4    2150 5675
-	1    0    0    -1  
+	1    0    0    -1
 $EndComp
 $Comp
 L Device:R_US R?
 U 1 1 61069006
 P 1500 5775
-AR Path="/608FFE97/61069006" Ref="R?"  Part="1" 
-AR Path="/61059808/61069006" Ref="R29"  Part="1" 
+AR Path="/608FFE97/61069006" Ref="R?"  Part="1"
+AR Path="/61059808/61069006" Ref="R29"  Part="1"
 F 0 "R29" V 1295 5775 50  0000 C CNN
 F 1 "100k" V 1386 5775 50  0000 C CNN
 F 2 "Resistor_SMD:R_0603_1608Metric_Pad0.98x0.95mm_HandSolder" V 1540 5765 50  0001 C CNN
 F 3 "~" H 1500 5775 50  0001 C CNN
 	1    1500 5775
-	0    1    1    0   
+	0    1    1    0
 $EndComp
 $Comp
 L Device:R_US R?
 U 1 1 6106900C
 P 2175 6125
-AR Path="/608FFE97/6106900C" Ref="R?"  Part="1" 
-AR Path="/61059808/6106900C" Ref="R34"  Part="1" 
+AR Path="/608FFE97/6106900C" Ref="R?"  Part="1"
+AR Path="/61059808/6106900C" Ref="R34"  Part="1"
 F 0 "R34" V 1970 6125 50  0000 C CNN
 F 1 "18.7k" V 2061 6125 50  0000 C CNN
 F 2 "Resistor_SMD:R_0603_1608Metric_Pad0.98x0.95mm_HandSolder" V 2215 6115 50  0001 C CNN
 F 3 "~" H 2175 6125 50  0001 C CNN
 	1    2175 6125
-	0    1    1    0   
+	0    1    1    0
 $EndComp
 $Comp
 L Device:R_US R?
 U 1 1 61069012
 P 1500 6125
-AR Path="/608FFE97/61069012" Ref="R?"  Part="1" 
-AR Path="/61059808/61069012" Ref="R30"  Part="1" 
+AR Path="/608FFE97/61069012" Ref="R?"  Part="1"
+AR Path="/61059808/61069012" Ref="R30"  Part="1"
 F 0 "R30" V 1295 6125 50  0000 C CNN
 F 1 "121k" V 1386 6125 50  0000 C CNN
 F 2 "Resistor_SMD:R_0603_1608Metric_Pad0.98x0.95mm_HandSolder" V 1540 6115 50  0001 C CNN
 F 3 "~" H 1500 6125 50  0001 C CNN
 	1    1500 6125
-	0    1    1    0   
+	0    1    1    0
 $EndComp
 Wire Wire Line
 	1650 5775 1850 5775
@@ -310,7 +310,7 @@ F 1 "GND" V 1855 1047 50  0001 R CNN
 F 2 "" H 1850 1175 50  0001 C CNN
 F 3 "" H 1850 1175 50  0001 C CNN
 	1    1850 1175
-	0    1    1    0   
+	0    1    1    0
 $EndComp
 $Comp
 L power:GND #PWR0150
@@ -321,7 +321,7 @@ F 1 "GND" V 1855 2572 50  0001 R CNN
 F 2 "" H 1850 2700 50  0001 C CNN
 F 3 "" H 1850 2700 50  0001 C CNN
 	1    1850 2700
-	0    1    1    0   
+	0    1    1    0
 $EndComp
 $Comp
 L power:GND #PWR0151
@@ -332,7 +332,7 @@ F 1 "GND" V 1855 4072 50  0001 R CNN
 F 2 "" H 1850 4200 50  0001 C CNN
 F 3 "" H 1850 4200 50  0001 C CNN
 	1    1850 4200
-	0    1    1    0   
+	0    1    1    0
 $EndComp
 $Comp
 L power:GND #PWR0152
@@ -343,21 +343,21 @@ F 1 "GND" V 1855 5447 50  0001 R CNN
 F 2 "" H 1850 5575 50  0001 C CNN
 F 3 "" H 1850 5575 50  0001 C CNN
 	1    1850 5575
-	0    1    1    0   
+	0    1    1    0
 $EndComp
 $Comp
 L winterbloom:MCP6004 U?
 U 5 1 613F4C1A
 P 4225 1425
-AR Path="/608FFE97/613F4C1A" Ref="U?"  Part="1" 
-AR Path="/61059808/613F4C1A" Ref="U11"  Part="5" 
+AR Path="/608FFE97/613F4C1A" Ref="U?"  Part="1"
+AR Path="/61059808/613F4C1A" Ref="U11"  Part="5"
 F 0 "U11" H 4350 1275 50  0000 C CNN
 F 1 "MCP6004" H 4425 1575 50  0000 C CNN
 F 2 "Package_SO:TSSOP-14_4.4x5mm_P0.65mm" H 4175 1525 50  0001 C CNN
 F 3 "http://datasheet.octopart.com/MCP6001T-I/OT-Microchip-datasheet-8823409.pdf" H 4275 1625 50  0001 C CNN
 F 4 "MCP6004T-I/ST, MCP6004T-E/ST" H 4225 1425 50  0001 C CNN "mpn"
 	5    4225 1425
-	1    0    0    -1  
+	1    0    0    -1
 $EndComp
 $Comp
 L power:+3.3V #PWR080
@@ -368,7 +368,7 @@ F 1 "+3.3V" H 4140 1298 50  0000 C CNN
 F 2 "" H 4125 1125 50  0001 C CNN
 F 3 "" H 4125 1125 50  0001 C CNN
 	1    4125 1125
-	1    0    0    -1  
+	1    0    0    -1
 $EndComp
 $Comp
 L power:GND #PWR081
@@ -379,7 +379,7 @@ F 1 "GND" V 4130 1597 50  0001 R CNN
 F 2 "" H 4125 1725 50  0001 C CNN
 F 3 "" H 4125 1725 50  0001 C CNN
 	1    4125 1725
-	1    0    0    -1  
+	1    0    0    -1
 $EndComp
 $Comp
 L power:+3.3V #PWR03
@@ -390,7 +390,7 @@ F 1 "+3.3V" H 3690 1498 50  0000 C CNN
 F 2 "" H 3675 1325 50  0001 C CNN
 F 3 "" H 3675 1325 50  0001 C CNN
 	1    3675 1325
-	1    0    0    -1  
+	1    0    0    -1
 $EndComp
 $Comp
 L power:GND #PWR04
@@ -401,7 +401,7 @@ F 1 "GND" V 3680 1397 50  0001 R CNN
 F 2 "" H 3675 1525 50  0001 C CNN
 F 3 "" H 3675 1525 50  0001 C CNN
 	1    3675 1525
-	1    0    0    -1  
+	1    0    0    -1
 $EndComp
 $Comp
 L Device:C_Small C20
@@ -412,7 +412,7 @@ F 1 "0.1uF" H 3767 1380 50  0000 L CNN
 F 2 "Capacitor_SMD:C_0603_1608Metric_Pad1.08x0.95mm_HandSolder" H 3675 1425 50  0001 C CNN
 F 3 "~" H 3675 1425 50  0001 C CNN
 	1    3675 1425
-	1    0    0    -1  
+	1    0    0    -1
 $EndComp
 $Comp
 L Device:C_Small C21
@@ -423,7 +423,7 @@ F 1 "22pF" V 2100 1750 50  0000 C CNN
 F 2 "Capacitor_SMD:C_0603_1608Metric_Pad1.08x0.95mm_HandSolder" H 2175 1900 50  0001 C CNN
 F 3 "~" H 2175 1900 50  0001 C CNN
 	1    2175 1900
-	0    -1   -1   0   
+	0    -1   -1   0
 $EndComp
 Wire Wire Line
 	2275 1900 2450 1900
@@ -444,7 +444,7 @@ F 1 "22pF" V 2100 3275 50  0000 C CNN
 F 2 "Capacitor_SMD:C_0603_1608Metric_Pad1.08x0.95mm_HandSolder" H 2175 3425 50  0001 C CNN
 F 3 "~" H 2175 3425 50  0001 C CNN
 	1    2175 3425
-	0    -1   -1   0   
+	0    -1   -1   0
 $EndComp
 Wire Wire Line
 	2275 3425 2450 3425
@@ -463,7 +463,7 @@ F 1 "22pF" V 2100 4775 50  0000 C CNN
 F 2 "Capacitor_SMD:C_0603_1608Metric_Pad1.08x0.95mm_HandSolder" H 2175 4925 50  0001 C CNN
 F 3 "~" H 2175 4925 50  0001 C CNN
 	1    2175 4925
-	0    -1   -1   0   
+	0    -1   -1   0
 $EndComp
 Wire Wire Line
 	2275 4925 2450 4925
@@ -482,7 +482,7 @@ F 1 "22pF" V 2100 6150 50  0000 C CNN
 F 2 "Capacitor_SMD:C_0603_1608Metric_Pad1.08x0.95mm_HandSolder" H 2175 6300 50  0001 C CNN
 F 3 "~" H 2175 6300 50  0001 C CNN
 	1    2175 6300
-	0    -1   -1   0   
+	0    -1   -1   0
 $EndComp
 Wire Wire Line
 	2275 6300 2450 6300
@@ -518,67 +518,67 @@ $Comp
 L winterbloom:LM4040-10 U?
 U 1 1 6178CB73
 P 4125 2800
-AR Path="/60711259/6178CB73" Ref="U?"  Part="1" 
-AR Path="/61059808/6178CB73" Ref="U3"  Part="1" 
+AR Path="/60711259/6178CB73" Ref="U?"  Part="1"
+AR Path="/61059808/6178CB73" Ref="U3"  Part="1"
 F 0 "U3" V 4079 2879 50  0000 L CNN
 F 1 "LM4040-10" V 4170 2879 50  0000 L CNN
 F 2 "Package_TO_SOT_SMD:SOT-23" H 4125 2600 50  0001 C CIN
 F 3 "http://www.ti.com/lit/ds/symlink/lm4040-n.pdf" H 4125 2800 50  0001 C CIN
 F 4 "LM4040DIM3-10.0/NOPB" H 4125 3000 50  0001 C CNN "mpn"
 	1    4125 2800
-	0    1    1    0   
+	0    1    1    0
 $EndComp
 $Comp
 L Device:R_US R?
 U 1 1 6178CB79
 P 4125 2500
-AR Path="/60711259/6178CB79" Ref="R?"  Part="1" 
-AR Path="/61059808/6178CB79" Ref="R37"  Part="1" 
+AR Path="/60711259/6178CB79" Ref="R?"  Part="1"
+AR Path="/61059808/6178CB79" Ref="R37"  Part="1"
 F 0 "R37" H 4193 2546 50  0000 L CNN
 F 1 "1k" H 4193 2455 50  0000 L CNN
 F 2 "Resistor_SMD:R_0603_1608Metric_Pad0.98x0.95mm_HandSolder" V 4165 2490 50  0001 C CNN
 F 3 "~" H 4125 2500 50  0001 C CNN
 	1    4125 2500
-	1    0    0    -1  
+	1    0    0    -1
 $EndComp
 $Comp
 L power:GND #PWR?
 U 1 1 6178CB7F
 P 4125 2950
-AR Path="/60711259/6178CB7F" Ref="#PWR?"  Part="1" 
-AR Path="/61059808/6178CB7F" Ref="#PWR0170"  Part="1" 
+AR Path="/60711259/6178CB7F" Ref="#PWR?"  Part="1"
+AR Path="/61059808/6178CB7F" Ref="#PWR0170"  Part="1"
 F 0 "#PWR0170" H 4125 2700 50  0001 C CNN
 F 1 "GND" H 4200 2800 50  0000 R CNN
 F 2 "" H 4125 2950 50  0001 C CNN
 F 3 "" H 4125 2950 50  0001 C CNN
 	1    4125 2950
-	1    0    0    -1  
+	1    0    0    -1
 $EndComp
 $Comp
 L power:-12V #PWR?
 U 1 1 6178CB85
 P 4125 2350
-AR Path="/60711259/6178CB85" Ref="#PWR?"  Part="1" 
-AR Path="/61059808/6178CB85" Ref="#PWR0171"  Part="1" 
+AR Path="/60711259/6178CB85" Ref="#PWR?"  Part="1"
+AR Path="/61059808/6178CB85" Ref="#PWR0171"  Part="1"
 F 0 "#PWR0171" H 4125 2450 50  0001 C CNN
 F 1 "-12V" H 4025 2500 50  0000 L CNN
 F 2 "" H 4125 2350 50  0001 C CNN
 F 3 "" H 4125 2350 50  0001 C CNN
 	1    4125 2350
-	1    0    0    -1  
+	1    0    0    -1
 $EndComp
 $Comp
 L Device:C_Small C?
 U 1 1 6178CB8B
 P 3875 2800
-AR Path="/60711259/6178CB8B" Ref="C?"  Part="1" 
-AR Path="/61059808/6178CB8B" Ref="C19"  Part="1" 
+AR Path="/60711259/6178CB8B" Ref="C?"  Part="1"
+AR Path="/61059808/6178CB8B" Ref="C19"  Part="1"
 F 0 "C19" H 4100 2775 50  0000 R CNN
 F 1 "0.1uF" H 4175 2850 50  0000 R CNN
 F 2 "Capacitor_SMD:C_0603_1608Metric_Pad1.08x0.95mm_HandSolder" H 3875 2800 50  0001 C CNN
 F 3 "~" H 3875 2800 50  0001 C CNN
 	1    3875 2800
-	-1   0    0    1   
+	-1   0    0    1
 $EndComp
 Wire Wire Line
 	3875 2700 3875 2650
