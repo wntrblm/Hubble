@@ -140,7 +140,7 @@ SYSEX_COMMAND_DECL(0x01, hello) {
         build_info_len = response_len;
     }
 
-    memccpy(response, build_info, 0, build_info_len);
+    memccpy(response, build_info, 0, 128);
 
     SYSEX_SEND_RESPONSE();
 
