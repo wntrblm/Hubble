@@ -99,6 +99,7 @@ DEFINES.update(
 COMMON_FLAGS = buildgen.SAMD51.common_flags() + [
     "-Wno-unused-parameter",
     "-Wno-unused-variable",
+    "-Wno-format-nonliteral"
 ]
 
 COMPILE_FLAGS = buildgen.SAMD51.cc_flags() + [
