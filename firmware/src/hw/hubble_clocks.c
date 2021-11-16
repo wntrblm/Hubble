@@ -141,8 +141,7 @@ static void init_dfll48m_closed_loop() {
 
 static void init_dfll48m_gclks() {
     /* GCLK1: 48 MHz */
-    GCLK->GENCTRL[1].reg =
-        GCLK_GENCTRL_SRC(GCLK_GENCTRL_SRC_DFLL) | GCLK_GENCTRL_IDC | GCLK_GENCTRL_OE | GCLK_GENCTRL_GENEN;
+    GCLK->GENCTRL[1].reg = GCLK_GENCTRL_SRC_DFLL | GCLK_GENCTRL_IDC | GCLK_GENCTRL_OE | GCLK_GENCTRL_GENEN;
     while (GCLK->SYNCBUSY.reg & GCLK_SYNCBUSY_GENCTRL1) {}
 
     /* GCLK4: 12 MHz */
