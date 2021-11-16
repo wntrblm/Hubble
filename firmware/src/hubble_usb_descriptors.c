@@ -36,7 +36,7 @@ enum { ITF_NUM_MIDI = 0, ITF_NUM_MIDI_STREAMING, ITF_NUM_TOTAL };
 
 uint8_t const desc_configuration[] = {
     // Config number, interface count, string index, total length, attribute, power in mA
-    TUD_CONFIG_DESCRIPTOR(1, ITF_NUM_TOTAL, 0, CONFIG_TOTAL_LEN, TUSB_DESC_CONFIG_ATT_REMOTE_WAKEUP, 100),
+    TUD_CONFIG_DESCRIPTOR(1, ITF_NUM_TOTAL, 0, CONFIG_TOTAL_LEN, TUSB_DESC_CONFIG_ATT_SELF_POWERED, 100),
 
     // Interface number, string index, EP Out & EP In address, EP size
     TUD_MIDI_DESCRIPTOR(ITF_NUM_MIDI, 0, 0x02, 0x81, 64)};
@@ -68,20 +68,20 @@ uint16_t const* tud_descriptor_string_cb(uint8_t index, uint16_t langid) {
         chr_count = 1;
     } else if (index == 3) {
         // Serial number.
-        uint8_t serial_number[WNTR_SERIAL_NUMBER_LEN];
-        wntr_serial_number(serial_number);
-        snprintf(
-            serial_number_str_,
-            16 + 1,
-            "%2x%2x%2x%2x%2x%2x%2x%2x",
-            serial_number[0],
-            serial_number[1],
-            serial_number[2],
-            serial_number[3],
-            serial_number[4],
-            serial_number[5],
-            serial_number[6],
-            serial_number[7]);
+        // uint8_t serial_number[WNTR_SERIAL_NUMBER_LEN];
+        // wntr_serial_number(serial_number);
+        // snprintf(
+        //     serial_number_str_,
+        //     16 + 1,
+        //     "%2x%2x%2x%2x%2x%2x%2x%2x",
+        //     serial_number[0],
+        //     serial_number[1],
+        //     serial_number[2],
+        //     serial_number[3],
+        //     serial_number[4],
+        //     serial_number[5],
+        //     serial_number[6],
+        //     serial_number[7]);
         for (uint8_t i = 0; i < 16; i++) { desc_str_[1 + i] = serial_number_str_[i]; }
         chr_count = 16;
     } else {
