@@ -4,6 +4,8 @@
     Full text available at: https://opensource.org/licenses/MIT
 */
 
+#pragma once
+
 #include <stdint.h>
 
 static inline float map_rangef(float value, float src_low, float src_hi, float dst_low, float dst_hi) {
