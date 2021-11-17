@@ -5,7 +5,6 @@
 */
 
 #include "hubble.h"
-#include "hubble_sysex_utils.h"
 #include "printf.h"
 #include "sam.h"
 #include "wntr_build_info.h"
@@ -23,6 +22,17 @@
 #define ADC_12_BIT_TO_FLOAT(val) (u12_invert(map_rangef(val, 0.0f, 4096.0f, -5.0f, 5.0f)))
 #define FLOAT_TO_16_BIT_DAC(val) (u16_invert(float_to_u16(map_rangef(val, -5.f, 8.f, 0.f, 1.0f))))
 #define FLOAT_TO_12_BIT_DAC(val) (u12_invert(float_to_u12(map_rangef(val, -5.f, 5.f, 0.f, 1.0f))))
+
+/* Global state */
+
+static struct HubbleVoltageCalibrationTableEntry dac_calibration_table[] = {
+    {.expected = -8.0, .measured = -8.192},
+    {.expected = -4.0, .measured = -4.133},
+    {.expected = 0.0, .measured = -0.074},
+    {.expected = 4.0, .measured = 3.98},
+    {.expected = 8.0, .measured = 8.04},
+};
+static const size_t dac_calibration_table_len = sizeof(dac_calibration_table) / sizeof(dac_calibration_table[0]);
 
 /* Forward declarations */
 
@@ -224,4 +234,22 @@ SYSEX_COMMAND_DECL(0x07, set_dac) {
     printf("SysEx 0x07: Set DAC %u:%u to %u\n", mux, channel, value);
 }
 
-SYSEX_COMMAND_DECL(0x08, set_dac_voltage) {}
+SYSEX_COMMAND_DECL(0x08, set_dac_voltage) {
+    /* Request (teeth): MUX(1) CHANNEL(1) VALUE(4) */
+    /* Response: ACK */
+
+    SYSEX_DECODE_TEETH_REQUEST(6);
+
+    uint8_t mux = request[0];
+    uint8_t channel = request[1];
+    float value = WNTR_UNPACK_FLOAT(request, 2);
+    float adjusted = HubbleVoltageCalibrationTable_lookup(value, dac_calibration_table, dac_calibration_table_len);
+    uint32_t code_point = hubble_volts_to_code_points(adjusted, HUBBLE_RESOLUTION_16_BIT, -8.0f, 8.0f, true);
+
+    hubble_mux50x_set(DAC_MUX, mux);
+    hubble_ad5685_write_channel(channel, code_point, true);
+
+    SYSEX_RESPONSE_NULLARY();
+
+    printf("SysEx 0x08: Set DAC voltage %u:%u to %0.3f\n", mux, channel, (double)(value));
+}
