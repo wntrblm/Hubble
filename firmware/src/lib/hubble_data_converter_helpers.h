@@ -6,9 +6,9 @@
 
 #pragma once
 
-#include <stdint.h>
-#include <stdbool.h>
 #include <math.h>
+#include <stdbool.h>
+#include <stdint.h>
 
 #define HUBBLE_RESOLUTION_8_BIT 256
 #define HUBBLE_RESOLUTION_10_BIT 1024
@@ -23,8 +23,8 @@
   measurements you can use this to determine which voltage
   an analogRead() result corresponds to.
 */
-inline static float
-hubble_code_points_to_volts(uint32_t code_point, uint32_t resolution, float min_voltage, float max_voltage, bool invert) {
+inline static float hubble_code_points_to_volts(
+    uint32_t code_point, uint32_t resolution, float min_voltage, float max_voltage, bool invert) {
     float voltage_range = max_voltage - min_voltage;
     if (invert) {
         code_point = (resolution - 1) - code_point;
@@ -87,47 +87,45 @@ struct HubbleVoltageCalibrationTableEntry {
 };
 
 inline static void HubbleVoltageCalibrationTable_find_nearest_pair(
-  float value, struct HubbleVoltageCalibrationTableEntry* table,
-  size_t table_len,
-  struct HubbleVoltageCalibrationTableEntry* out_low,
-  struct HubbleVoltageCalibrationTableEntry* out_high)
-{
-  struct HubbleVoltageCalibrationTableEntry* low = &table[0];
-  struct HubbleVoltageCalibrationTableEntry* high = &table[1];
-  struct HubbleVoltageCalibrationTableEntry* current;
-  bool found = false;
+    float value,
+    struct HubbleVoltageCalibrationTableEntry* table,
+    size_t table_len,
+    struct HubbleVoltageCalibrationTableEntry* out_low,
+    struct HubbleVoltageCalibrationTableEntry* out_high) {
+    struct HubbleVoltageCalibrationTableEntry* low = &table[0];
+    struct HubbleVoltageCalibrationTableEntry* high = &table[1];
+    struct HubbleVoltageCalibrationTableEntry* current;
+    bool found = false;
 
-  for(size_t i = 0; i < table_len; i++) {
-    current = &table[i];
-    if(current->measured <= value) {
-      low = current;
+    for (size_t i = 0; i < table_len; i++) {
+        current = &table[i];
+        if (current->measured <= value) {
+            low = current;
+        }
+        if (current->measured > value) {
+            high = current;
+            found = true;
+            break;
+        }
     }
-    if(current->measured > value) {
-      high = current;
-      found = true;
-      break;
+
+    if (!found) {
+        high = low;
     }
-  }
 
-  if(!found) {
-    high = low;
-  }
-
-  (*out_low) = (*low);
-  (*out_high) = (*high);
+    (*out_low) = (*low);
+    (*out_high) = (*high);
 }
 
-inline static float HubbleVoltageCalibrationTable_lookup(
-  float value, struct HubbleVoltageCalibrationTableEntry* table,
-  size_t table_len)
-{
-  struct HubbleVoltageCalibrationTableEntry low, high;
+inline static float
+HubbleVoltageCalibrationTable_lookup(float value, struct HubbleVoltageCalibrationTableEntry* table, size_t table_len) {
+    struct HubbleVoltageCalibrationTableEntry low, high;
 
-  HubbleVoltageCalibrationTable_find_nearest_pair(value, table, table_len, &low, &high);
+    HubbleVoltageCalibrationTable_find_nearest_pair(value, table, table_len, &low, &high);
 
-  float frac = (value - low.measured) / (high.measured - low.measured);
+    float frac = (value - low.measured) / (high.measured - low.measured);
 
-  float result = low.expected + ((high.expected - low.expected) * frac);
+    float result = low.expected + ((high.expected - low.expected) * frac);
 
-  return result;
+    return result;
 }
