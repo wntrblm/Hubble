@@ -22,6 +22,7 @@
 #define ADC_12_BIT_TO_FLOAT(val) (u12_invert(map_rangef(val, 0.0f, 4096.0f, -5.0f, 5.0f)))
 #define FLOAT_TO_16_BIT_DAC(val) (u16_invert(float_to_u16(map_rangef(val, -5.f, 8.f, 0.f, 1.0f))))
 #define FLOAT_TO_12_BIT_DAC(val) (u12_invert(float_to_u12(map_rangef(val, -5.f, 5.f, 0.f, 1.0f))))
+#define ARRAY_LEN(array) (sizeof(array) / sizeof(array[0]))
 
 /* Global state */
 
@@ -32,7 +33,16 @@ static struct HubbleVoltageCalibrationTableEntry dac_calibration_table[] = {
     {.expected = 4.0, .measured = 3.98},
     {.expected = 8.0, .measured = 8.04},
 };
-static const size_t dac_calibration_table_len = sizeof(dac_calibration_table) / sizeof(dac_calibration_table[0]);
+static const size_t dac_calibration_table_len = ARRAY_LEN(dac_calibration_table);
+
+static struct HubbleVoltageCalibrationTableEntry adc_calibration_table[] = {
+    {.expected = -8.0, .measured = -8.192},
+    {.expected = -4.0, .measured = -4.133},
+    {.expected = 0.0, .measured = -0.074},
+    {.expected = 4.0, .measured = 3.98},
+    {.expected = 8.0, .measured = 8.04},
+};
+static const size_t adc_calibration_table_len = ARRAY_LEN(adc_calibration_table);
 
 /* Forward declarations */
 
@@ -49,18 +59,14 @@ SYSEX_COMMAND_DECL(0x05, read_adc);
 SYSEX_COMMAND_DECL(0x06, read_adc_voltage);
 SYSEX_COMMAND_DECL(0x07, set_dac);
 SYSEX_COMMAND_DECL(0x08, set_dac_voltage);
+SYSEX_COMMAND_DECL(0xA1, set_calibration_table_entry);
+SYSEX_COMMAND_DECL(0xA2, save_calibration_table);
 
 /* Public functions */
 
 int main(void) {
     init();
     printf("Hello, I'm Hubble!\n");
-
-    // Test nvm stuff
-    uint8_t buf[] = {0x00, 0x01, 0x02, 0x03, 0x04, 0x05, 0x06, 0x07, 0x08, 0x09, 0x10, 0x11, 0x12, 0x13, 0x14, 0x15};
-    hubble_nvm_write((uint8_t*)(FLASH_SIZE - NVMCTRL_BLOCK_SIZE), buf, sizeof(buf));
-
-    wntr_debug_print_mem((uint8_t*)(FLASH_SIZE - NVMCTRL_BLOCK_SIZE), 32);
 
     while (1) {
         hubble_usb_task();
@@ -100,6 +106,10 @@ static void init() {
     hubble_mux50x_init(DAC_MUX);
     hubble_mux50x_init(ADC_MUX);
 
+    /* Calibrations */
+    hubble_load_voltage_calibration_table(dac_calibration_table, dac_calibration_table_len, 0);
+    hubble_load_voltage_calibration_table(adc_calibration_table, adc_calibration_table_len, 1);
+
     /* Sysex commands */
     register_sysex_commands();
 }
@@ -137,6 +147,8 @@ static void register_sysex_commands() {
     REGISTER_SYSEX_COMMAND(0x06, read_adc_voltage);
     REGISTER_SYSEX_COMMAND(0x07, set_dac);
     REGISTER_SYSEX_COMMAND(0x08, set_dac_voltage);
+    REGISTER_SYSEX_COMMAND(0xA1, set_calibration_table_entry);
+    REGISTER_SYSEX_COMMAND(0xA2, save_calibration_table);
 }
 
 SYSEX_COMMAND_DECL(0x01, hello) {
@@ -258,4 +270,43 @@ SYSEX_COMMAND_DECL(0x08, set_dac_voltage) {
     SYSEX_RESPONSE_NULLARY();
 
     printf("SysEx 0x08: Set DAC voltage %u:%u to %0.3f\n", mux, channel, (double)(value));
+}
+
+struct HubbleVoltageCalibrationTableEntry* calibration_tables_[] = {
+    dac_calibration_table,
+    adc_calibration_table,
+};
+
+SYSEX_COMMAND_DECL(0xA1, set_calibration_table_entry) {
+    /* Request (teeth): TABLE(1) INDEX(1) EXPECTED(4), MEASURED(4) */
+    /* Response: ACK */
+
+    SYSEX_DECODE_TEETH_REQUEST(10);
+
+    uint8_t table = request[0];
+    uint8_t index = request[1];
+    float expected = WNTR_UNPACK_FLOAT(request, 2);
+    float measured = WNTR_UNPACK_FLOAT(request, 6);
+
+    calibration_tables_[table][index].expected = expected;
+    calibration_tables_[table][index].measured = measured;
+
+    SYSEX_RESPONSE_NULLARY();
+
+    printf(
+        "SysEx 0xA1: Set calibration table %u[%u] to expected=%0.3f, measured=%0.3f\n",
+        table,
+        index,
+        (double)expected,
+        (double)measured);
+}
+
+SYSEX_COMMAND_DECL(0xA2, save_calibration_table) {
+    /* Request: TABLE(1) */
+    /* Response: ACK */
+    /* TODO: This is broken if the calibration tables aren't all the same size */
+
+    uint8_t table = request_data[0];
+
+    hubble_save_voltage_calibration_table(calibration_tables_[table], dac_calibration_table_len, table);
 }
