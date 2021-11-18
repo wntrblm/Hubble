@@ -309,4 +309,6 @@ SYSEX_COMMAND_DECL(0xA2, save_calibration_table) {
     uint8_t table = request_data[0];
 
     hubble_save_voltage_calibration_table(calibration_tables_[table], dac_calibration_table_len, table);
+
+    printf("SysEx 0xA2: Save calibration table %u\n", table);
 }
