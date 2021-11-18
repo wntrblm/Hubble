@@ -56,6 +56,12 @@ int main(void) {
     init();
     printf("Hello, I'm Hubble!\n");
 
+    // Test nvm stuff
+    uint8_t buf[] = {0x00, 0x01, 0x02, 0x03, 0x04, 0x05, 0x06, 0x07, 0x08, 0x09, 0x10, 0x11, 0x12, 0x13, 0x14, 0x15};
+    hubble_nvm_write((uint8_t*)(FLASH_SIZE - NVMCTRL_BLOCK_SIZE), buf, sizeof(buf));
+
+    wntr_debug_print_mem((uint8_t*)(FLASH_SIZE - NVMCTRL_BLOCK_SIZE), 32);
+
     while (1) {
         hubble_usb_task();
         loop();
