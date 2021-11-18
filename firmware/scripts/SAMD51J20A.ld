@@ -32,11 +32,17 @@ OUTPUT_FORMAT("elf32-littlearm", "elf32-littlearm", "elf32-littlearm")
 OUTPUT_ARCH(arm)
 SEARCH_DIR(.)
 
+
+FLASH_SIZE = 0x100000;      /* 1MB, 1,048,576 bytes */
+SRAM_SIZE = 0x40000;        /* 256kB, 262,144 bytes */
+NVM_SIZE = 0x2000;          /* 8kB, 8,192 bytes */
+
 /* Memory Spaces Definitions */
 MEMORY
 {
-  rom      (rx)  : ORIGIN = 0x00000000, LENGTH = 0x00100000
-  ram      (rwx) : ORIGIN = 0x20000000, LENGTH = 0x00040000
+  rom      (rx)  : ORIGIN = 0x00000000, LENGTH = FLASH_SIZE - NVM_SIZE
+  ram      (rwx) : ORIGIN = 0x20000000, LENGTH = SRAM_SIZE
+  nvm      (rx)  : ORIGIN = FLASH_SIZE - NVM_SIZE, LENGTH = NVM_SIZE
   bkupram  (rwx) : ORIGIN = 0x47000000, LENGTH = 0x00002000
 }
 
@@ -151,3 +157,7 @@ SECTIONS
     . = ALIGN(4);
     _end = . ;
 }
+
+
+_nvm_addr = ORIGIN(nvm);
+_nvm_length = LENGTH(nvm);
