@@ -22,7 +22,7 @@ F 1 "GND" V 925 950 50  0000 C CNN
 F 2 "" H 925 1150 50  0001 C CNN
 F 3 "" H 925 1150 50  0001 C CNN
 	1    925  1150
-	0    -1   -1   0
+	0    -1   -1   0   
 $EndComp
 $Comp
 L Diode:1N5819 D1
@@ -33,7 +33,7 @@ F 1 "BARRIER" H 1850 1125 50  0000 C CNN
 F 2 "winterbloom:DIODE_SOD-123_SOD-123F" H 1850 1075 50  0001 C CNN
 F 3 "http://www.vishay.com/docs/88525/1n5817.pdf" H 1850 1250 50  0001 C CNN
 	1    1850 1250
-	1    0    0    -1
+	1    0    0    -1  
 $EndComp
 $Comp
 L Diode:1N5819 D2
@@ -44,7 +44,7 @@ F 1 "BARRIER" H 1850 925 50  0000 C CNN
 F 2 "winterbloom:DIODE_SOD-123_SOD-123F" H 1850 875 50  0001 C CNN
 F 3 "http://www.vishay.com/docs/88525/1n5817.pdf" H 1850 1050 50  0001 C CNN
 	1    1850 1050
-	-1   0    0    1
+	-1   0    0    1   
 $EndComp
 Wire Wire Line
 	925  1250 1325 1250
@@ -59,7 +59,7 @@ F 1 "1A" V 1225 1250 50  0000 C CNN
 F 2 "Inductor_SMD:L_0603_1608Metric_Pad1.05x0.95mm_HandSolder" V 1355 1250 50  0001 C CNN
 F 3 "~" H 1425 1250 50  0001 C CNN
 	1    1425 1250
-	0    -1   -1   0
+	0    -1   -1   0   
 $EndComp
 $Comp
 L Device:Ferrite_Bead_Small FB1
@@ -70,7 +70,7 @@ F 1 "1A" V 1600 1050 50  0000 C CNN
 F 2 "Inductor_SMD:L_0603_1608Metric_Pad1.05x0.95mm_HandSolder" V 1330 1050 50  0001 C CNN
 F 3 "~" H 1400 1050 50  0001 C CNN
 	1    1400 1050
-	0    -1   -1   0
+	0    -1   -1   0   
 $EndComp
 Wire Wire Line
 	1700 1250 1525 1250
@@ -87,7 +87,7 @@ F 1 "-12V" V 2200 1350 50  0000 L CNN
 F 2 "" H 2200 1250 50  0001 C CNN
 F 3 "" H 2200 1250 50  0001 C CNN
 	1    2200 1250
-	0    1    1    0
+	0    1    1    0   
 $EndComp
 Wire Wire Line
 	2200 1050 2000 1050
@@ -107,8 +107,8 @@ F 0 "#PWR011" H 3525 800 50  0001 C CNN
 F 1 "+12V" V 3525 1050 50  0000 L CNN
 F 2 "" H 3525 950 50  0001 C CNN
 F 3 "" H 3525 950 50  0001 C CNN
-	1    3525 950
-	0    -1   -1   0
+	1    3525 950 
+	0    -1   -1   0   
 $EndComp
 $Comp
 L power:+3.3V #PWR021
@@ -118,8 +118,8 @@ F 0 "#PWR021" H 4925 800 50  0001 C CNN
 F 1 "+3.3V" V 4925 1175 50  0000 C CNN
 F 2 "" H 4925 950 50  0001 C CNN
 F 3 "" H 4925 950 50  0001 C CNN
-	1    4925 950
-	0    1    1    0
+	1    4925 950 
+	0    1    1    0   
 $EndComp
 $Comp
 L power:GND #PWR016
@@ -130,7 +130,7 @@ F 1 "GND" H 4325 1400 50  0000 R CNN
 F 2 "" H 4250 1550 50  0001 C CNN
 F 3 "" H 4250 1550 50  0001 C CNN
 	1    4250 1550
-	1    0    0    -1
+	1    0    0    -1  
 $EndComp
 $Comp
 L Switch:SW_DPST SW1
@@ -141,7 +141,7 @@ F 1 "POWER" H 1425 3459 50  0000 C CNN
 F 2 "Connector_Wire:SolderWire-0.75sqmm_1x04_P4.8mm_D1.25mm_OD2.3mm" H 1425 3225 50  0001 C CNN
 F 3 "~" H 1425 3225 50  0001 C CNN
 	1    1425 3225
-	1    0    0    -1
+	1    0    0    -1  
 $EndComp
 Text GLabel 1800 3125 2    50   Input ~ 0
 +12VDOWNSTREAM
@@ -160,7 +160,7 @@ F 1 "47uF" H 1365 2255 50  0000 L CNN
 F 2 "Capacitor_THT:CP_Radial_D5.0mm_P2.50mm" H 1250 2300 50  0001 C CNN
 F 3 "~" H 1250 2300 50  0001 C CNN
 	1    1250 2300
-	1    0    0    -1
+	1    0    0    -1  
 $EndComp
 $Comp
 L Device:CP1 C2
@@ -171,7 +171,7 @@ F 1 "47uF" H 1600 2350 50  0000 R CNN
 F 2 "Capacitor_THT:CP_Radial_D5.0mm_P2.50mm" H 1750 2300 50  0001 C CNN
 F 3 "~" H 1750 2300 50  0001 C CNN
 	1    1750 2300
-	-1   0    0    1
+	-1   0    0    1   
 $EndComp
 $Comp
 L power:GND #PWR0115
@@ -182,7 +182,7 @@ F 1 "GND" H 1325 2300 50  0000 R CNN
 F 2 "" H 1250 2450 50  0001 C CNN
 F 3 "" H 1250 2450 50  0001 C CNN
 	1    1250 2450
-	1    0    0    -1
+	1    0    0    -1  
 $EndComp
 $Comp
 L power:GND #PWR0116
@@ -193,7 +193,7 @@ F 1 "GND" H 1825 2300 50  0000 R CNN
 F 2 "" H 1750 2450 50  0001 C CNN
 F 3 "" H 1750 2450 50  0001 C CNN
 	1    1750 2450
-	1    0    0    -1
+	1    0    0    -1  
 $EndComp
 $Comp
 L power:+12V #PWR0118
@@ -204,7 +204,7 @@ F 1 "+12V" V 2200 1175 50  0000 L CNN
 F 2 "" H 2200 1050 50  0001 C CNN
 F 3 "" H 2200 1050 50  0001 C CNN
 	1    2200 1050
-	0    1    1    0
+	0    1    1    0   
 $EndComp
 $Comp
 L winterbloom:LM1117-3.3 U1
@@ -215,8 +215,8 @@ F 1 "LD1117-3.3" H 4250 1101 50  0000 C CNN
 F 2 "Package_TO_SOT_SMD:SOT-223-3_TabPin2" H 4250 1425 50  0001 C CNN
 F 3 "http://www.ti.com/lit/ds/symlink/lm1117.pdf" H 4250 950 50  0001 C CNN
 F 4 "LM1117IMP-3.3" H 4250 1300 50  0001 C CNN "mpn"
-	1    4250 950
-	1    0    0    -1
+	1    4250 950 
+	1    0    0    -1  
 $EndComp
 $Comp
 L Device:CP1 C3
@@ -227,7 +227,7 @@ F 1 "10uF" H 3790 1205 50  0000 L CNN
 F 2 "Capacitor_THT:CP_Radial_D5.0mm_P2.50mm" H 3675 1250 50  0001 C CNN
 F 3 "~" H 3675 1250 50  0001 C CNN
 	1    3675 1250
-	1    0    0    -1
+	1    0    0    -1  
 $EndComp
 $Comp
 L Device:CP1 C4
@@ -238,22 +238,22 @@ F 1 "10uF" H 4865 1180 50  0000 L CNN
 F 2 "Capacitor_THT:CP_Radial_D5.0mm_P2.50mm" H 4750 1225 50  0001 C CNN
 F 3 "~" H 4750 1225 50  0001 C CNN
 	1    4750 1225
-	1    0    0    -1
+	1    0    0    -1  
 $EndComp
 Wire Wire Line
-	3525 950  3675 950
+	3525 950  3675 950 
 Wire Wire Line
 	3675 950  3675 1100
 Wire Wire Line
-	3675 950  3950 950
-Connection ~ 3675 950
+	3675 950  3950 950 
+Connection ~ 3675 950 
 Wire Wire Line
-	4550 950  4750 950
+	4550 950  4750 950 
 Wire Wire Line
-	4750 1075 4750 950
-Connection ~ 4750 950
+	4750 1075 4750 950 
+Connection ~ 4750 950 
 Wire Wire Line
-	4750 950  4925 950
+	4750 950  4925 950 
 Wire Wire Line
 	4750 1375 4750 1550
 Wire Wire Line
@@ -269,40 +269,40 @@ $Comp
 L Device:LED_ALT D?
 U 1 1 617EC983
 P 3700 2700
-AR Path="/608B4064/617EC983" Ref="D?"  Part="1"
-AR Path="/60711259/617EC983" Ref="D4"  Part="1"
+AR Path="/608B4064/617EC983" Ref="D?"  Part="1" 
+AR Path="/60711259/617EC983" Ref="D4"  Part="1" 
 F 0 "D4" V 3739 2582 50  0000 R CNN
 F 1 "3.3" V 3648 2582 50  0000 R CNN
 F 2 "winterbloom:LED_0805_Kingbright_APT2012" H 3700 2700 50  0001 C CNN
 F 3 "~" H 3700 2700 50  0001 C CNN
 	1    3700 2700
-	0    -1   -1   0
+	0    -1   -1   0   
 $EndComp
 $Comp
 L Device:R_US R?
 U 1 1 617EC989
 P 3700 2400
-AR Path="/608B4064/617EC989" Ref="R?"  Part="1"
-AR Path="/60711259/617EC989" Ref="R1"  Part="1"
+AR Path="/608B4064/617EC989" Ref="R?"  Part="1" 
+AR Path="/60711259/617EC989" Ref="R1"  Part="1" 
 F 0 "R1" H 3825 2350 50  0000 C CNN
 F 1 "10k" H 3825 2450 50  0000 C CNN
 F 2 "Resistor_SMD:R_0603_1608Metric_Pad0.98x0.95mm_HandSolder" V 3740 2390 50  0001 C CNN
 F 3 "~" H 3700 2400 50  0001 C CNN
 	1    3700 2400
-	1    0    0    -1
+	1    0    0    -1  
 $EndComp
 $Comp
 L power:GND #PWR?
 U 1 1 617EC98F
 P 3700 2850
-AR Path="/608B4064/617EC98F" Ref="#PWR?"  Part="1"
-AR Path="/60711259/617EC98F" Ref="#PWR0119"  Part="1"
+AR Path="/608B4064/617EC98F" Ref="#PWR?"  Part="1" 
+AR Path="/60711259/617EC98F" Ref="#PWR0119"  Part="1" 
 F 0 "#PWR0119" H 3700 2600 50  0001 C CNN
 F 1 "GND" H 3700 2700 50  0000 C CNN
 F 2 "" H 3700 2850 50  0001 C CNN
 F 3 "" H 3700 2850 50  0001 C CNN
 	1    3700 2850
-	1    0    0    -1
+	1    0    0    -1  
 $EndComp
 $Comp
 L power:+3.3V #PWR0120
@@ -313,46 +313,46 @@ F 1 "+3.3V" H 3700 2400 50  0000 C CNN
 F 2 "" H 3700 2250 50  0001 C CNN
 F 3 "" H 3700 2250 50  0001 C CNN
 	1    3700 2250
-	1    0    0    -1
+	1    0    0    -1  
 $EndComp
 $Comp
 L Device:LED_ALT D?
 U 1 1 617EDA46
 P 4200 2700
-AR Path="/608B4064/617EDA46" Ref="D?"  Part="1"
-AR Path="/60711259/617EDA46" Ref="D5"  Part="1"
+AR Path="/608B4064/617EDA46" Ref="D?"  Part="1" 
+AR Path="/60711259/617EDA46" Ref="D5"  Part="1" 
 F 0 "D5" V 4239 2582 50  0000 R CNN
 F 1 "+12V" V 4148 2582 50  0000 R CNN
 F 2 "winterbloom:LED_0805_Kingbright_APT2012" H 4200 2700 50  0001 C CNN
 F 3 "~" H 4200 2700 50  0001 C CNN
 	1    4200 2700
-	0    -1   -1   0
+	0    -1   -1   0   
 $EndComp
 $Comp
 L Device:R_US R?
 U 1 1 617EDA50
 P 4200 2400
-AR Path="/608B4064/617EDA50" Ref="R?"  Part="1"
-AR Path="/60711259/617EDA50" Ref="R2"  Part="1"
+AR Path="/608B4064/617EDA50" Ref="R?"  Part="1" 
+AR Path="/60711259/617EDA50" Ref="R2"  Part="1" 
 F 0 "R2" H 4325 2350 50  0000 C CNN
 F 1 "10k" H 4325 2450 50  0000 C CNN
 F 2 "Resistor_SMD:R_0603_1608Metric_Pad0.98x0.95mm_HandSolder" V 4240 2390 50  0001 C CNN
 F 3 "~" H 4200 2400 50  0001 C CNN
 	1    4200 2400
-	1    0    0    -1
+	1    0    0    -1  
 $EndComp
 $Comp
 L power:GND #PWR?
 U 1 1 617EDA5A
 P 4200 2850
-AR Path="/608B4064/617EDA5A" Ref="#PWR?"  Part="1"
-AR Path="/60711259/617EDA5A" Ref="#PWR0135"  Part="1"
+AR Path="/608B4064/617EDA5A" Ref="#PWR?"  Part="1" 
+AR Path="/60711259/617EDA5A" Ref="#PWR0135"  Part="1" 
 F 0 "#PWR0135" H 4200 2600 50  0001 C CNN
 F 1 "GND" H 4200 2700 50  0000 C CNN
 F 2 "" H 4200 2850 50  0001 C CNN
 F 3 "" H 4200 2850 50  0001 C CNN
 	1    4200 2850
-	1    0    0    -1
+	1    0    0    -1  
 $EndComp
 $Comp
 L power:+12V #PWR0136
@@ -363,46 +363,46 @@ F 1 "+12V" H 4100 2400 50  0000 L CNN
 F 2 "" H 4200 2250 50  0001 C CNN
 F 3 "" H 4200 2250 50  0001 C CNN
 	1    4200 2250
-	1    0    0    -1
+	1    0    0    -1  
 $EndComp
 $Comp
 L power:GND #PWR?
 U 1 1 617EE346
 P 4750 2850
-AR Path="/608B4064/617EE346" Ref="#PWR?"  Part="1"
-AR Path="/60711259/617EE346" Ref="#PWR0137"  Part="1"
+AR Path="/608B4064/617EE346" Ref="#PWR?"  Part="1" 
+AR Path="/60711259/617EE346" Ref="#PWR0137"  Part="1" 
 F 0 "#PWR0137" H 4750 2600 50  0001 C CNN
 F 1 "GND" H 4750 2700 50  0000 C CNN
 F 2 "" H 4750 2850 50  0001 C CNN
 F 3 "" H 4750 2850 50  0001 C CNN
 	1    4750 2850
-	1    0    0    -1
+	1    0    0    -1  
 $EndComp
 $Comp
 L Device:R_US R?
 U 1 1 617EE33C
 P 4750 2700
-AR Path="/608B4064/617EE33C" Ref="R?"  Part="1"
-AR Path="/60711259/617EE33C" Ref="R3"  Part="1"
+AR Path="/608B4064/617EE33C" Ref="R?"  Part="1" 
+AR Path="/60711259/617EE33C" Ref="R3"  Part="1" 
 F 0 "R3" H 4600 2650 50  0000 C CNN
 F 1 "10k" H 4600 2750 50  0000 C CNN
 F 2 "Resistor_SMD:R_0603_1608Metric_Pad0.98x0.95mm_HandSolder" V 4790 2690 50  0001 C CNN
 F 3 "~" H 4750 2700 50  0001 C CNN
 	1    4750 2700
-	-1   0    0    1
+	-1   0    0    1   
 $EndComp
 $Comp
 L Device:LED_ALT D?
 U 1 1 617EE332
 P 4750 2400
-AR Path="/608B4064/617EE332" Ref="D?"  Part="1"
-AR Path="/60711259/617EE332" Ref="D6"  Part="1"
+AR Path="/608B4064/617EE332" Ref="D?"  Part="1" 
+AR Path="/60711259/617EE332" Ref="D6"  Part="1" 
 F 0 "D6" V 4750 2600 50  0000 R CNN
 F 1 "-12V" V 4675 2700 50  0000 R CNN
 F 2 "winterbloom:LED_0805_Kingbright_APT2012" H 4750 2400 50  0001 C CNN
 F 3 "~" H 4750 2400 50  0001 C CNN
 	1    4750 2400
-	0    1    1    0
+	0    1    1    0   
 $EndComp
 $Comp
 L power:-12V #PWR0138
@@ -413,7 +413,7 @@ F 1 "-12V" H 4650 2400 50  0000 L CNN
 F 2 "" H 4750 2250 50  0001 C CNN
 F 3 "" H 4750 2250 50  0001 C CNN
 	1    4750 2250
-	1    0    0    -1
+	1    0    0    -1  
 $EndComp
 $Comp
 L Connector_Generic:Conn_01x03 J1
@@ -424,7 +424,7 @@ F 1 "POWER" H 643 916 50  0000 C CNN
 F 2 "Connector_Wire:SolderWire-0.75sqmm_1x03_P4.8mm_D1.25mm_OD2.3mm" H 725 1150 50  0001 C CNN
 F 3 "~" H 725 1150 50  0001 C CNN
 	1    725  1150
-	-1   0    0    1
+	-1   0    0    1   
 $EndComp
 Wire Wire Line
 	1750 2050 1750 2150
@@ -439,7 +439,7 @@ F 1 "M3" H 5275 4783 50  0000 L CNN
 F 2 "MountingHole:MountingHole_3.2mm_M3_Pad_Via" H 5175 4825 50  0001 C CNN
 F 3 "~" H 5175 4825 50  0001 C CNN
 	1    5175 4825
-	1    0    0    -1
+	1    0    0    -1  
 $EndComp
 $Comp
 L Mechanical:MountingHole_Pad H2
@@ -450,7 +450,7 @@ F 1 "M3" H 5650 4783 50  0000 L CNN
 F 2 "MountingHole:MountingHole_3.2mm_M3_Pad_Via" H 5550 4825 50  0001 C CNN
 F 3 "~" H 5550 4825 50  0001 C CNN
 	1    5550 4825
-	1    0    0    -1
+	1    0    0    -1  
 $EndComp
 $Comp
 L Mechanical:MountingHole_Pad H3
@@ -461,7 +461,7 @@ F 1 "M3" H 6025 4783 50  0000 L CNN
 F 2 "MountingHole:MountingHole_3.2mm_M3_Pad_Via" H 5925 4825 50  0001 C CNN
 F 3 "~" H 5925 4825 50  0001 C CNN
 	1    5925 4825
-	1    0    0    -1
+	1    0    0    -1  
 $EndComp
 $Comp
 L Mechanical:MountingHole_Pad H4
@@ -472,59 +472,59 @@ F 1 "M3" H 6400 4783 50  0000 L CNN
 F 2 "MountingHole:MountingHole_3.2mm_M3_Pad_Via" H 6300 4825 50  0001 C CNN
 F 3 "~" H 6300 4825 50  0001 C CNN
 	1    6300 4825
-	1    0    0    -1
+	1    0    0    -1  
 $EndComp
 $Comp
 L power:GND #PWR?
 U 1 1 61D7723D
 P 5175 4925
-AR Path="/608B4064/61D7723D" Ref="#PWR?"  Part="1"
-AR Path="/60711259/61D7723D" Ref="#PWR0214"  Part="1"
+AR Path="/608B4064/61D7723D" Ref="#PWR?"  Part="1" 
+AR Path="/60711259/61D7723D" Ref="#PWR0214"  Part="1" 
 F 0 "#PWR0214" H 5175 4675 50  0001 C CNN
 F 1 "GND" H 5175 4775 50  0000 C CNN
 F 2 "" H 5175 4925 50  0001 C CNN
 F 3 "" H 5175 4925 50  0001 C CNN
 	1    5175 4925
-	1    0    0    -1
+	1    0    0    -1  
 $EndComp
 $Comp
 L power:GND #PWR?
 U 1 1 61D77CEB
 P 5550 4925
-AR Path="/608B4064/61D77CEB" Ref="#PWR?"  Part="1"
-AR Path="/60711259/61D77CEB" Ref="#PWR0215"  Part="1"
+AR Path="/608B4064/61D77CEB" Ref="#PWR?"  Part="1" 
+AR Path="/60711259/61D77CEB" Ref="#PWR0215"  Part="1" 
 F 0 "#PWR0215" H 5550 4675 50  0001 C CNN
 F 1 "GND" H 5550 4775 50  0000 C CNN
 F 2 "" H 5550 4925 50  0001 C CNN
 F 3 "" H 5550 4925 50  0001 C CNN
 	1    5550 4925
-	1    0    0    -1
+	1    0    0    -1  
 $EndComp
 $Comp
 L power:GND #PWR?
 U 1 1 61D780D8
 P 5925 4925
-AR Path="/608B4064/61D780D8" Ref="#PWR?"  Part="1"
-AR Path="/60711259/61D780D8" Ref="#PWR0216"  Part="1"
+AR Path="/608B4064/61D780D8" Ref="#PWR?"  Part="1" 
+AR Path="/60711259/61D780D8" Ref="#PWR0216"  Part="1" 
 F 0 "#PWR0216" H 5925 4675 50  0001 C CNN
 F 1 "GND" H 5925 4775 50  0000 C CNN
 F 2 "" H 5925 4925 50  0001 C CNN
 F 3 "" H 5925 4925 50  0001 C CNN
 	1    5925 4925
-	1    0    0    -1
+	1    0    0    -1  
 $EndComp
 $Comp
 L power:GND #PWR?
 U 1 1 61D78611
 P 6300 4925
-AR Path="/608B4064/61D78611" Ref="#PWR?"  Part="1"
-AR Path="/60711259/61D78611" Ref="#PWR0217"  Part="1"
+AR Path="/608B4064/61D78611" Ref="#PWR?"  Part="1" 
+AR Path="/60711259/61D78611" Ref="#PWR0217"  Part="1" 
 F 0 "#PWR0217" H 6300 4675 50  0001 C CNN
 F 1 "GND" H 6300 4775 50  0000 C CNN
 F 2 "" H 6300 4925 50  0001 C CNN
 F 3 "" H 6300 4925 50  0001 C CNN
 	1    6300 4925
-	1    0    0    -1
+	1    0    0    -1  
 $EndComp
 Text GLabel 1075 3325 0    50   Input ~ 0
 -12VRAW
@@ -539,7 +539,7 @@ F 1 "+12V" H 1150 2200 50  0000 L CNN
 F 2 "" H 1250 2050 50  0001 C CNN
 F 3 "" H 1250 2050 50  0001 C CNN
 	1    1250 2050
-	1    0    0    -1
+	1    0    0    -1  
 $EndComp
 $Comp
 L power:-12V #PWR0218
@@ -550,6 +550,6 @@ F 1 "-12V" H 1650 2200 50  0000 L CNN
 F 2 "" H 1750 2050 50  0001 C CNN
 F 3 "" H 1750 2050 50  0001 C CNN
 	1    1750 2050
-	1    0    0    -1
+	1    0    0    -1  
 $EndComp
 $EndSCHEMATC

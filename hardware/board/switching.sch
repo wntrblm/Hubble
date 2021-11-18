@@ -17,27 +17,27 @@ $Comp
 L power:GND #PWR0182
 U 1 1 6174706A
 P 4075 2875
-AR Path="/60F6EF94/6174706A" Ref="#PWR0182"  Part="1"
-AR Path="/6185E117/6174706A" Ref="#PWR?"  Part="1"
+AR Path="/60F6EF94/6174706A" Ref="#PWR0182"  Part="1" 
+AR Path="/6185E117/6174706A" Ref="#PWR?"  Part="1" 
 F 0 "#PWR0182" H 4075 2625 50  0001 C CNN
 F 1 "GND" H 4080 2702 50  0000 C CNN
 F 2 "" H 4075 2875 50  0001 C CNN
 F 3 "" H 4075 2875 50  0001 C CNN
 	1    4075 2875
-	1    0    0    -1
+	1    0    0    -1  
 $EndComp
 $Comp
 L winterbloom:MUX509 U4
 U 1 1 61748535
 P 4575 2275
-AR Path="/60F6EF94/61748535" Ref="U4"  Part="1"
-AR Path="/6185E117/61748535" Ref="U?"  Part="1"
+AR Path="/60F6EF94/61748535" Ref="U4"  Part="1" 
+AR Path="/6185E117/61748535" Ref="U?"  Part="1" 
 F 0 "U4" H 4575 3142 50  0000 C CNN
 F 1 "MUX509" H 4575 3051 50  0000 C CNN
 F 2 "Package_SO:TSSOP-16_4.4x5mm_P0.65mm" H 3825 1525 50  0001 L CNN
 F 3 "https://www.ti.com/lit/ds/symlink/mux509.pdf" H 4555 2575 50  0001 C CNN
 	1    4575 2275
-	1    0    0    -1
+	1    0    0    -1  
 $EndComp
 Text HLabel 5075 2675 2    50   Input ~ 0
 DAC_2D
@@ -59,27 +59,27 @@ $Comp
 L power:-12V #PWR0183
 U 1 1 6174CB53
 P 5075 2875
-AR Path="/60F6EF94/6174CB53" Ref="#PWR0183"  Part="1"
-AR Path="/6185E117/6174CB53" Ref="#PWR?"  Part="1"
+AR Path="/60F6EF94/6174CB53" Ref="#PWR0183"  Part="1" 
+AR Path="/6185E117/6174CB53" Ref="#PWR?"  Part="1" 
 F 0 "#PWR0183" H 5075 2975 50  0001 C CNN
 F 1 "-12V" H 5090 3048 50  0000 C CNN
 F 2 "" H 5075 2875 50  0001 C CNN
 F 3 "" H 5075 2875 50  0001 C CNN
 	1    5075 2875
-	-1   0    0    1
+	-1   0    0    1   
 $EndComp
 $Comp
 L power:+12V #PWR0184
 U 1 1 6174D0CA
 P 5075 1675
-AR Path="/60F6EF94/6174D0CA" Ref="#PWR0184"  Part="1"
-AR Path="/6185E117/6174D0CA" Ref="#PWR?"  Part="1"
+AR Path="/60F6EF94/6174D0CA" Ref="#PWR0184"  Part="1" 
+AR Path="/6185E117/6174D0CA" Ref="#PWR?"  Part="1" 
 F 0 "#PWR0184" H 5075 1525 50  0001 C CNN
 F 1 "+12V" H 5075 1850 50  0000 C CNN
 F 2 "" H 5075 1675 50  0001 C CNN
 F 3 "" H 5075 1675 50  0001 C CNN
 	1    5075 1675
-	1    0    0    -1
+	1    0    0    -1  
 $EndComp
 Text HLabel 4075 2525 0    50   Input ~ 0
 DAC_2
@@ -89,79 +89,79 @@ $Comp
 L power:+12V #PWR0185
 U 1 1 617501FB
 P 4075 1675
-AR Path="/60F6EF94/617501FB" Ref="#PWR0185"  Part="1"
-AR Path="/6185E117/617501FB" Ref="#PWR?"  Part="1"
+AR Path="/60F6EF94/617501FB" Ref="#PWR0185"  Part="1" 
+AR Path="/6185E117/617501FB" Ref="#PWR?"  Part="1" 
 F 0 "#PWR0185" H 4075 1525 50  0001 C CNN
 F 1 "+12V" H 4075 1850 50  0000 C CNN
 F 2 "" H 4075 1675 50  0001 C CNN
 F 3 "" H 4075 1675 50  0001 C CNN
 	1    4075 1675
-	1    0    0    -1
+	1    0    0    -1  
 $EndComp
 $Comp
 L power:GND #PWR0186
 U 1 1 61751C9C
 P 6225 2875
-AR Path="/60F6EF94/61751C9C" Ref="#PWR0186"  Part="1"
-AR Path="/6185E117/61751C9C" Ref="#PWR?"  Part="1"
+AR Path="/60F6EF94/61751C9C" Ref="#PWR0186"  Part="1" 
+AR Path="/6185E117/61751C9C" Ref="#PWR?"  Part="1" 
 F 0 "#PWR0186" H 6225 2625 50  0001 C CNN
 F 1 "GND" H 6230 2702 50  0000 C CNN
 F 2 "" H 6225 2875 50  0001 C CNN
 F 3 "" H 6225 2875 50  0001 C CNN
 	1    6225 2875
-	1    0    0    -1
+	1    0    0    -1  
 $EndComp
 $Comp
 L winterbloom:MUX509 U9
 U 1 1 61751CA6
 P 6725 2275
-AR Path="/60F6EF94/61751CA6" Ref="U9"  Part="1"
-AR Path="/6185E117/61751CA6" Ref="U?"  Part="1"
+AR Path="/60F6EF94/61751CA6" Ref="U9"  Part="1" 
+AR Path="/6185E117/61751CA6" Ref="U?"  Part="1" 
 F 0 "U9" H 6725 3142 50  0000 C CNN
 F 1 "MUX509" H 6725 3051 50  0000 C CNN
 F 2 "Package_SO:TSSOP-16_4.4x5mm_P0.65mm" H 5975 1525 50  0001 L CNN
 F 3 "https://www.ti.com/lit/ds/symlink/mux509.pdf" H 6705 2575 50  0001 C CNN
 	1    6725 2275
-	1    0    0    -1
+	1    0    0    -1  
 $EndComp
 $Comp
 L power:-12V #PWR0187
 U 1 1 61751CB8
 P 7225 2875
-AR Path="/60F6EF94/61751CB8" Ref="#PWR0187"  Part="1"
-AR Path="/6185E117/61751CB8" Ref="#PWR?"  Part="1"
+AR Path="/60F6EF94/61751CB8" Ref="#PWR0187"  Part="1" 
+AR Path="/6185E117/61751CB8" Ref="#PWR?"  Part="1" 
 F 0 "#PWR0187" H 7225 2975 50  0001 C CNN
 F 1 "-12V" H 7240 3048 50  0000 C CNN
 F 2 "" H 7225 2875 50  0001 C CNN
 F 3 "" H 7225 2875 50  0001 C CNN
 	1    7225 2875
-	-1   0    0    1
+	-1   0    0    1   
 $EndComp
 $Comp
 L power:+12V #PWR0188
 U 1 1 61751CC2
 P 7225 1675
-AR Path="/60F6EF94/61751CC2" Ref="#PWR0188"  Part="1"
-AR Path="/6185E117/61751CC2" Ref="#PWR?"  Part="1"
+AR Path="/60F6EF94/61751CC2" Ref="#PWR0188"  Part="1" 
+AR Path="/6185E117/61751CC2" Ref="#PWR?"  Part="1" 
 F 0 "#PWR0188" H 7225 1525 50  0001 C CNN
 F 1 "+12V" H 7225 1850 50  0000 C CNN
 F 2 "" H 7225 1675 50  0001 C CNN
 F 3 "" H 7225 1675 50  0001 C CNN
 	1    7225 1675
-	1    0    0    -1
+	1    0    0    -1  
 $EndComp
 $Comp
 L power:+12V #PWR0189
 U 1 1 61751CCE
 P 6225 1675
-AR Path="/60F6EF94/61751CCE" Ref="#PWR0189"  Part="1"
-AR Path="/6185E117/61751CCE" Ref="#PWR?"  Part="1"
+AR Path="/60F6EF94/61751CCE" Ref="#PWR0189"  Part="1" 
+AR Path="/6185E117/61751CCE" Ref="#PWR?"  Part="1" 
 F 0 "#PWR0189" H 6225 1525 50  0001 C CNN
 F 1 "+12V" H 6225 1850 50  0000 C CNN
 F 2 "" H 6225 1675 50  0001 C CNN
 F 3 "" H 6225 1675 50  0001 C CNN
 	1    6225 1675
-	1    0    0    -1
+	1    0    0    -1  
 $EndComp
 Text HLabel 7225 2675 2    50   Input ~ 0
 DAC_4D
@@ -187,27 +187,27 @@ $Comp
 L power:-12V #PWR0190
 U 1 1 6176AD55
 P 5075 4875
-AR Path="/60F6EF94/6176AD55" Ref="#PWR0190"  Part="1"
-AR Path="/6185E117/6176AD55" Ref="#PWR?"  Part="1"
+AR Path="/60F6EF94/6176AD55" Ref="#PWR0190"  Part="1" 
+AR Path="/6185E117/6176AD55" Ref="#PWR?"  Part="1" 
 F 0 "#PWR0190" H 5075 4975 50  0001 C CNN
 F 1 "-12V" H 5090 5048 50  0000 C CNN
 F 2 "" H 5075 4875 50  0001 C CNN
 F 3 "" H 5075 4875 50  0001 C CNN
 	1    5075 4875
-	-1   0    0    1
+	-1   0    0    1   
 $EndComp
 $Comp
 L power:+12V #PWR0191
 U 1 1 6176B562
 P 5075 3675
-AR Path="/60F6EF94/6176B562" Ref="#PWR0191"  Part="1"
-AR Path="/6185E117/6176B562" Ref="#PWR?"  Part="1"
+AR Path="/60F6EF94/6176B562" Ref="#PWR0191"  Part="1" 
+AR Path="/6185E117/6176B562" Ref="#PWR?"  Part="1" 
 F 0 "#PWR0191" H 5075 3525 50  0001 C CNN
 F 1 "+12V" H 5075 3850 50  0000 C CNN
 F 2 "" H 5075 3675 50  0001 C CNN
 F 3 "" H 5075 3675 50  0001 C CNN
 	1    5075 3675
-	1    0    0    -1
+	1    0    0    -1  
 $EndComp
 Text HLabel 4075 4025 0    50   Input ~ 0
 ADC_1
@@ -231,53 +231,53 @@ $Comp
 L power:GND #PWR0192
 U 1 1 6176C702
 P 4075 4875
-AR Path="/60F6EF94/6176C702" Ref="#PWR0192"  Part="1"
-AR Path="/6185E117/6176C702" Ref="#PWR?"  Part="1"
+AR Path="/60F6EF94/6176C702" Ref="#PWR0192"  Part="1" 
+AR Path="/6185E117/6176C702" Ref="#PWR?"  Part="1" 
 F 0 "#PWR0192" H 4075 4625 50  0001 C CNN
 F 1 "GND" H 4080 4702 50  0000 C CNN
 F 2 "" H 4075 4875 50  0001 C CNN
 F 3 "" H 4075 4875 50  0001 C CNN
 	1    4075 4875
-	1    0    0    -1
+	1    0    0    -1  
 $EndComp
 $Comp
 L power:+12V #PWR0193
 U 1 1 6176CCC6
 P 4075 3675
-AR Path="/60F6EF94/6176CCC6" Ref="#PWR0193"  Part="1"
-AR Path="/6185E117/6176CCC6" Ref="#PWR?"  Part="1"
+AR Path="/60F6EF94/6176CCC6" Ref="#PWR0193"  Part="1" 
+AR Path="/6185E117/6176CCC6" Ref="#PWR?"  Part="1" 
 F 0 "#PWR0193" H 4075 3525 50  0001 C CNN
 F 1 "+12V" H 4075 3850 50  0000 C CNN
 F 2 "" H 4075 3675 50  0001 C CNN
 F 3 "" H 4075 3675 50  0001 C CNN
 	1    4075 3675
-	1    0    0    -1
+	1    0    0    -1  
 $EndComp
 $Comp
 L power:-12V #PWR0194
 U 1 1 61770B51
 P 7200 4875
-AR Path="/60F6EF94/61770B51" Ref="#PWR0194"  Part="1"
-AR Path="/6185E117/61770B51" Ref="#PWR?"  Part="1"
+AR Path="/60F6EF94/61770B51" Ref="#PWR0194"  Part="1" 
+AR Path="/6185E117/61770B51" Ref="#PWR?"  Part="1" 
 F 0 "#PWR0194" H 7200 4975 50  0001 C CNN
 F 1 "-12V" H 7215 5048 50  0000 C CNN
 F 2 "" H 7200 4875 50  0001 C CNN
 F 3 "" H 7200 4875 50  0001 C CNN
 	1    7200 4875
-	-1   0    0    1
+	-1   0    0    1   
 $EndComp
 $Comp
 L power:+12V #PWR0195
 U 1 1 61770B5B
 P 7200 3675
-AR Path="/60F6EF94/61770B5B" Ref="#PWR0195"  Part="1"
-AR Path="/6185E117/61770B5B" Ref="#PWR?"  Part="1"
+AR Path="/60F6EF94/61770B5B" Ref="#PWR0195"  Part="1" 
+AR Path="/6185E117/61770B5B" Ref="#PWR?"  Part="1" 
 F 0 "#PWR0195" H 7200 3525 50  0001 C CNN
 F 1 "+12V" H 7200 3850 50  0000 C CNN
 F 2 "" H 7200 3675 50  0001 C CNN
 F 3 "" H 7200 3675 50  0001 C CNN
 	1    7200 3675
-	1    0    0    -1
+	1    0    0    -1  
 $EndComp
 Text HLabel 6200 4525 0    50   Input ~ 0
 ADC_2
@@ -301,53 +301,53 @@ $Comp
 L power:GND #PWR0196
 U 1 1 61770B6E
 P 6200 4875
-AR Path="/60F6EF94/61770B6E" Ref="#PWR0196"  Part="1"
-AR Path="/6185E117/61770B6E" Ref="#PWR?"  Part="1"
+AR Path="/60F6EF94/61770B6E" Ref="#PWR0196"  Part="1" 
+AR Path="/6185E117/61770B6E" Ref="#PWR?"  Part="1" 
 F 0 "#PWR0196" H 6200 4625 50  0001 C CNN
 F 1 "GND" H 6205 4702 50  0000 C CNN
 F 2 "" H 6200 4875 50  0001 C CNN
 F 3 "" H 6200 4875 50  0001 C CNN
 	1    6200 4875
-	1    0    0    -1
+	1    0    0    -1  
 $EndComp
 $Comp
 L power:+12V #PWR0197
 U 1 1 61770B78
 P 6200 3675
-AR Path="/60F6EF94/61770B78" Ref="#PWR0197"  Part="1"
-AR Path="/6185E117/61770B78" Ref="#PWR?"  Part="1"
+AR Path="/60F6EF94/61770B78" Ref="#PWR0197"  Part="1" 
+AR Path="/6185E117/61770B78" Ref="#PWR?"  Part="1" 
 F 0 "#PWR0197" H 6200 3525 50  0001 C CNN
 F 1 "+12V" H 6200 3850 50  0000 C CNN
 F 2 "" H 6200 3675 50  0001 C CNN
 F 3 "" H 6200 3675 50  0001 C CNN
 	1    6200 3675
-	1    0    0    -1
+	1    0    0    -1  
 $EndComp
 $Comp
 L winterbloom:MUX509 U7
 U 1 1 618787F0
 P 4575 4275
-AR Path="/60F6EF94/618787F0" Ref="U7"  Part="1"
-AR Path="/6185E117/618787F0" Ref="U?"  Part="1"
+AR Path="/60F6EF94/618787F0" Ref="U7"  Part="1" 
+AR Path="/6185E117/618787F0" Ref="U?"  Part="1" 
 F 0 "U7" H 4575 5142 50  0000 C CNN
 F 1 "MUX509" H 4575 5051 50  0000 C CNN
 F 2 "Package_SO:TSSOP-16_4.4x5mm_P0.65mm" H 3825 3525 50  0001 L CNN
 F 3 "https://www.ti.com/lit/ds/symlink/mux509.pdf" H 4555 4575 50  0001 C CNN
 	1    4575 4275
-	1    0    0    -1
+	1    0    0    -1  
 $EndComp
 $Comp
 L winterbloom:MUX509 U8
 U 1 1 61879030
 P 6700 4275
-AR Path="/60F6EF94/61879030" Ref="U8"  Part="1"
-AR Path="/6185E117/61879030" Ref="U?"  Part="1"
+AR Path="/60F6EF94/61879030" Ref="U8"  Part="1" 
+AR Path="/6185E117/61879030" Ref="U?"  Part="1" 
 F 0 "U8" H 6700 5142 50  0000 C CNN
 F 1 "MUX509" H 6700 5051 50  0000 C CNN
 F 2 "Package_SO:TSSOP-16_4.4x5mm_P0.65mm" H 5950 3525 50  0001 L CNN
 F 3 "https://www.ti.com/lit/ds/symlink/mux509.pdf" H 6680 4575 50  0001 C CNN
 	1    6700 4275
-	1    0    0    -1
+	1    0    0    -1  
 $EndComp
 Text HLabel 6200 4025 0    50   Input ~ 0
 ADC_3
@@ -357,313 +357,313 @@ $Comp
 L power:GND #PWR?
 U 1 1 6194B6C2
 P 5025 6250
-AR Path="/61059808/6194B6C2" Ref="#PWR?"  Part="1"
-AR Path="/60F6EF94/6194B6C2" Ref="#PWR0114"  Part="1"
+AR Path="/61059808/6194B6C2" Ref="#PWR?"  Part="1" 
+AR Path="/60F6EF94/6194B6C2" Ref="#PWR0114"  Part="1" 
 F 0 "#PWR0114" H 5025 6000 50  0001 C CNN
 F 1 "GND" V 5030 6122 50  0001 R CNN
 F 2 "" H 5025 6250 50  0001 C CNN
 F 3 "" H 5025 6250 50  0001 C CNN
 	1    5025 6250
-	1    0    0    -1
+	1    0    0    -1  
 $EndComp
 $Comp
 L Device:C_Small C?
 U 1 1 6194B6C8
 P 5025 6150
-AR Path="/61059808/6194B6C8" Ref="C?"  Part="1"
-AR Path="/60F6EF94/6194B6C8" Ref="C25"  Part="1"
+AR Path="/61059808/6194B6C8" Ref="C?"  Part="1" 
+AR Path="/60F6EF94/6194B6C8" Ref="C25"  Part="1" 
 F 0 "C25" H 5117 6196 50  0000 L CNN
 F 1 "0.1uF" H 5117 6105 50  0000 L CNN
 F 2 "Capacitor_SMD:C_0603_1608Metric_Pad1.08x0.95mm_HandSolder" H 5025 6150 50  0001 C CNN
 F 3 "~" H 5025 6150 50  0001 C CNN
 	1    5025 6150
-	1    0    0    -1
+	1    0    0    -1  
 $EndComp
 $Comp
 L power:GND #PWR?
 U 1 1 6194C947
 P 5425 6250
-AR Path="/61059808/6194C947" Ref="#PWR?"  Part="1"
-AR Path="/60F6EF94/6194C947" Ref="#PWR0140"  Part="1"
+AR Path="/61059808/6194C947" Ref="#PWR?"  Part="1" 
+AR Path="/60F6EF94/6194C947" Ref="#PWR0140"  Part="1" 
 F 0 "#PWR0140" H 5425 6000 50  0001 C CNN
 F 1 "GND" V 5430 6122 50  0001 R CNN
 F 2 "" H 5425 6250 50  0001 C CNN
 F 3 "" H 5425 6250 50  0001 C CNN
 	1    5425 6250
-	1    0    0    -1
+	1    0    0    -1  
 $EndComp
 $Comp
 L Device:C_Small C?
 U 1 1 6194C94D
 P 5425 6150
-AR Path="/61059808/6194C94D" Ref="C?"  Part="1"
-AR Path="/60F6EF94/6194C94D" Ref="C26"  Part="1"
+AR Path="/61059808/6194C94D" Ref="C?"  Part="1" 
+AR Path="/60F6EF94/6194C94D" Ref="C26"  Part="1" 
 F 0 "C26" H 5517 6196 50  0000 L CNN
 F 1 "0.1uF" H 5517 6105 50  0000 L CNN
 F 2 "Capacitor_SMD:C_0603_1608Metric_Pad1.08x0.95mm_HandSolder" H 5425 6150 50  0001 C CNN
 F 3 "~" H 5425 6150 50  0001 C CNN
 	1    5425 6150
-	1    0    0    -1
+	1    0    0    -1  
 $EndComp
 $Comp
 L power:GND #PWR?
 U 1 1 6194D74D
 P 5825 6250
-AR Path="/61059808/6194D74D" Ref="#PWR?"  Part="1"
-AR Path="/60F6EF94/6194D74D" Ref="#PWR0142"  Part="1"
+AR Path="/61059808/6194D74D" Ref="#PWR?"  Part="1" 
+AR Path="/60F6EF94/6194D74D" Ref="#PWR0142"  Part="1" 
 F 0 "#PWR0142" H 5825 6000 50  0001 C CNN
 F 1 "GND" V 5830 6122 50  0001 R CNN
 F 2 "" H 5825 6250 50  0001 C CNN
 F 3 "" H 5825 6250 50  0001 C CNN
 	1    5825 6250
-	1    0    0    -1
+	1    0    0    -1  
 $EndComp
 $Comp
 L Device:C_Small C?
 U 1 1 6194D753
 P 5825 6150
-AR Path="/61059808/6194D753" Ref="C?"  Part="1"
-AR Path="/60F6EF94/6194D753" Ref="C27"  Part="1"
+AR Path="/61059808/6194D753" Ref="C?"  Part="1" 
+AR Path="/60F6EF94/6194D753" Ref="C27"  Part="1" 
 F 0 "C27" H 5917 6196 50  0000 L CNN
 F 1 "0.1uF" H 5917 6105 50  0000 L CNN
 F 2 "Capacitor_SMD:C_0603_1608Metric_Pad1.08x0.95mm_HandSolder" H 5825 6150 50  0001 C CNN
 F 3 "~" H 5825 6150 50  0001 C CNN
 	1    5825 6150
-	1    0    0    -1
+	1    0    0    -1  
 $EndComp
 $Comp
 L power:GND #PWR?
 U 1 1 619504B4
 P 6225 6250
-AR Path="/61059808/619504B4" Ref="#PWR?"  Part="1"
-AR Path="/60F6EF94/619504B4" Ref="#PWR0144"  Part="1"
+AR Path="/61059808/619504B4" Ref="#PWR?"  Part="1" 
+AR Path="/60F6EF94/619504B4" Ref="#PWR0144"  Part="1" 
 F 0 "#PWR0144" H 6225 6000 50  0001 C CNN
 F 1 "GND" V 6230 6122 50  0001 R CNN
 F 2 "" H 6225 6250 50  0001 C CNN
 F 3 "" H 6225 6250 50  0001 C CNN
 	1    6225 6250
-	1    0    0    -1
+	1    0    0    -1  
 $EndComp
 $Comp
 L Device:C_Small C?
 U 1 1 619504BA
 P 6225 6150
-AR Path="/61059808/619504BA" Ref="C?"  Part="1"
-AR Path="/60F6EF94/619504BA" Ref="C28"  Part="1"
+AR Path="/61059808/619504BA" Ref="C?"  Part="1" 
+AR Path="/60F6EF94/619504BA" Ref="C28"  Part="1" 
 F 0 "C28" H 6317 6196 50  0000 L CNN
 F 1 "0.1uF" H 6317 6105 50  0000 L CNN
 F 2 "Capacitor_SMD:C_0603_1608Metric_Pad1.08x0.95mm_HandSolder" H 6225 6150 50  0001 C CNN
 F 3 "~" H 6225 6150 50  0001 C CNN
 	1    6225 6150
-	1    0    0    -1
+	1    0    0    -1  
 $EndComp
 $Comp
 L power:GND #PWR?
 U 1 1 6198AFF3
 P 5025 6975
-AR Path="/61059808/6198AFF3" Ref="#PWR?"  Part="1"
-AR Path="/60F6EF94/6198AFF3" Ref="#PWR0113"  Part="1"
+AR Path="/61059808/6198AFF3" Ref="#PWR?"  Part="1" 
+AR Path="/60F6EF94/6198AFF3" Ref="#PWR0113"  Part="1" 
 F 0 "#PWR0113" H 5025 6725 50  0001 C CNN
 F 1 "GND" V 5030 6847 50  0001 R CNN
 F 2 "" H 5025 6975 50  0001 C CNN
 F 3 "" H 5025 6975 50  0001 C CNN
 	1    5025 6975
-	1    0    0    -1
+	1    0    0    -1  
 $EndComp
 $Comp
 L Device:C_Small C?
 U 1 1 6198AFFD
 P 5025 6875
-AR Path="/61059808/6198AFFD" Ref="C?"  Part="1"
-AR Path="/60F6EF94/6198AFFD" Ref="C29"  Part="1"
+AR Path="/61059808/6198AFFD" Ref="C?"  Part="1" 
+AR Path="/60F6EF94/6198AFFD" Ref="C29"  Part="1" 
 F 0 "C29" H 5117 6921 50  0000 L CNN
 F 1 "0.1uF" H 5117 6830 50  0000 L CNN
 F 2 "Capacitor_SMD:C_0603_1608Metric_Pad1.08x0.95mm_HandSolder" H 5025 6875 50  0001 C CNN
 F 3 "~" H 5025 6875 50  0001 C CNN
 	1    5025 6875
-	1    0    0    -1
+	1    0    0    -1  
 $EndComp
 $Comp
 L power:GND #PWR?
 U 1 1 6198B011
 P 5425 6975
-AR Path="/61059808/6198B011" Ref="#PWR?"  Part="1"
-AR Path="/60F6EF94/6198B011" Ref="#PWR0139"  Part="1"
+AR Path="/61059808/6198B011" Ref="#PWR?"  Part="1" 
+AR Path="/60F6EF94/6198B011" Ref="#PWR0139"  Part="1" 
 F 0 "#PWR0139" H 5425 6725 50  0001 C CNN
 F 1 "GND" V 5430 6847 50  0001 R CNN
 F 2 "" H 5425 6975 50  0001 C CNN
 F 3 "" H 5425 6975 50  0001 C CNN
 	1    5425 6975
-	1    0    0    -1
+	1    0    0    -1  
 $EndComp
 $Comp
 L Device:C_Small C?
 U 1 1 6198B01B
 P 5425 6875
-AR Path="/61059808/6198B01B" Ref="C?"  Part="1"
-AR Path="/60F6EF94/6198B01B" Ref="C30"  Part="1"
+AR Path="/61059808/6198B01B" Ref="C?"  Part="1" 
+AR Path="/60F6EF94/6198B01B" Ref="C30"  Part="1" 
 F 0 "C30" H 5517 6921 50  0000 L CNN
 F 1 "0.1uF" H 5517 6830 50  0000 L CNN
 F 2 "Capacitor_SMD:C_0603_1608Metric_Pad1.08x0.95mm_HandSolder" H 5425 6875 50  0001 C CNN
 F 3 "~" H 5425 6875 50  0001 C CNN
 	1    5425 6875
-	1    0    0    -1
+	1    0    0    -1  
 $EndComp
 $Comp
 L power:GND #PWR?
 U 1 1 6198B02F
 P 5825 6975
-AR Path="/61059808/6198B02F" Ref="#PWR?"  Part="1"
-AR Path="/60F6EF94/6198B02F" Ref="#PWR0141"  Part="1"
+AR Path="/61059808/6198B02F" Ref="#PWR?"  Part="1" 
+AR Path="/60F6EF94/6198B02F" Ref="#PWR0141"  Part="1" 
 F 0 "#PWR0141" H 5825 6725 50  0001 C CNN
 F 1 "GND" V 5830 6847 50  0001 R CNN
 F 2 "" H 5825 6975 50  0001 C CNN
 F 3 "" H 5825 6975 50  0001 C CNN
 	1    5825 6975
-	1    0    0    -1
+	1    0    0    -1  
 $EndComp
 $Comp
 L Device:C_Small C?
 U 1 1 6198B039
 P 5825 6875
-AR Path="/61059808/6198B039" Ref="C?"  Part="1"
-AR Path="/60F6EF94/6198B039" Ref="C31"  Part="1"
+AR Path="/61059808/6198B039" Ref="C?"  Part="1" 
+AR Path="/60F6EF94/6198B039" Ref="C31"  Part="1" 
 F 0 "C31" H 5917 6921 50  0000 L CNN
 F 1 "0.1uF" H 5917 6830 50  0000 L CNN
 F 2 "Capacitor_SMD:C_0603_1608Metric_Pad1.08x0.95mm_HandSolder" H 5825 6875 50  0001 C CNN
 F 3 "~" H 5825 6875 50  0001 C CNN
 	1    5825 6875
-	1    0    0    -1
+	1    0    0    -1  
 $EndComp
 $Comp
 L power:GND #PWR?
 U 1 1 6198B04D
 P 6225 6975
-AR Path="/61059808/6198B04D" Ref="#PWR?"  Part="1"
-AR Path="/60F6EF94/6198B04D" Ref="#PWR0143"  Part="1"
+AR Path="/61059808/6198B04D" Ref="#PWR?"  Part="1" 
+AR Path="/60F6EF94/6198B04D" Ref="#PWR0143"  Part="1" 
 F 0 "#PWR0143" H 6225 6725 50  0001 C CNN
 F 1 "GND" V 6230 6847 50  0001 R CNN
 F 2 "" H 6225 6975 50  0001 C CNN
 F 3 "" H 6225 6975 50  0001 C CNN
 	1    6225 6975
-	1    0    0    -1
+	1    0    0    -1  
 $EndComp
 $Comp
 L Device:C_Small C?
 U 1 1 6198B057
 P 6225 6875
-AR Path="/61059808/6198B057" Ref="C?"  Part="1"
-AR Path="/60F6EF94/6198B057" Ref="C32"  Part="1"
+AR Path="/61059808/6198B057" Ref="C?"  Part="1" 
+AR Path="/60F6EF94/6198B057" Ref="C32"  Part="1" 
 F 0 "C32" H 6317 6921 50  0000 L CNN
 F 1 "0.1uF" H 6317 6830 50  0000 L CNN
 F 2 "Capacitor_SMD:C_0603_1608Metric_Pad1.08x0.95mm_HandSolder" H 6225 6875 50  0001 C CNN
 F 3 "~" H 6225 6875 50  0001 C CNN
 	1    6225 6875
-	1    0    0    -1
+	1    0    0    -1  
 $EndComp
 $Comp
 L power:-12V #PWR0145
 U 1 1 6198FE21
 P 5025 6050
-AR Path="/60F6EF94/6198FE21" Ref="#PWR0145"  Part="1"
-AR Path="/6185E117/6198FE21" Ref="#PWR?"  Part="1"
+AR Path="/60F6EF94/6198FE21" Ref="#PWR0145"  Part="1" 
+AR Path="/6185E117/6198FE21" Ref="#PWR?"  Part="1" 
 F 0 "#PWR0145" H 5025 6150 50  0001 C CNN
 F 1 "-12V" H 5040 6223 50  0000 C CNN
 F 2 "" H 5025 6050 50  0001 C CNN
 F 3 "" H 5025 6050 50  0001 C CNN
 	1    5025 6050
-	1    0    0    -1
+	1    0    0    -1  
 $EndComp
 $Comp
 L power:-12V #PWR0146
 U 1 1 619902BB
 P 5425 6050
-AR Path="/60F6EF94/619902BB" Ref="#PWR0146"  Part="1"
-AR Path="/6185E117/619902BB" Ref="#PWR?"  Part="1"
+AR Path="/60F6EF94/619902BB" Ref="#PWR0146"  Part="1" 
+AR Path="/6185E117/619902BB" Ref="#PWR?"  Part="1" 
 F 0 "#PWR0146" H 5425 6150 50  0001 C CNN
 F 1 "-12V" H 5440 6223 50  0000 C CNN
 F 2 "" H 5425 6050 50  0001 C CNN
 F 3 "" H 5425 6050 50  0001 C CNN
 	1    5425 6050
-	1    0    0    -1
+	1    0    0    -1  
 $EndComp
 $Comp
 L power:-12V #PWR0147
 U 1 1 61990642
 P 5825 6050
-AR Path="/60F6EF94/61990642" Ref="#PWR0147"  Part="1"
-AR Path="/6185E117/61990642" Ref="#PWR?"  Part="1"
+AR Path="/60F6EF94/61990642" Ref="#PWR0147"  Part="1" 
+AR Path="/6185E117/61990642" Ref="#PWR?"  Part="1" 
 F 0 "#PWR0147" H 5825 6150 50  0001 C CNN
 F 1 "-12V" H 5840 6223 50  0000 C CNN
 F 2 "" H 5825 6050 50  0001 C CNN
 F 3 "" H 5825 6050 50  0001 C CNN
 	1    5825 6050
-	1    0    0    -1
+	1    0    0    -1  
 $EndComp
 $Comp
 L power:-12V #PWR0148
 U 1 1 619908CE
 P 6225 6050
-AR Path="/60F6EF94/619908CE" Ref="#PWR0148"  Part="1"
-AR Path="/6185E117/619908CE" Ref="#PWR?"  Part="1"
+AR Path="/60F6EF94/619908CE" Ref="#PWR0148"  Part="1" 
+AR Path="/6185E117/619908CE" Ref="#PWR?"  Part="1" 
 F 0 "#PWR0148" H 6225 6150 50  0001 C CNN
 F 1 "-12V" H 6240 6223 50  0000 C CNN
 F 2 "" H 6225 6050 50  0001 C CNN
 F 3 "" H 6225 6050 50  0001 C CNN
 	1    6225 6050
-	1    0    0    -1
+	1    0    0    -1  
 $EndComp
 $Comp
 L power:+12V #PWR0198
 U 1 1 61990D21
 P 5025 6775
-AR Path="/60F6EF94/61990D21" Ref="#PWR0198"  Part="1"
-AR Path="/6185E117/61990D21" Ref="#PWR?"  Part="1"
+AR Path="/60F6EF94/61990D21" Ref="#PWR0198"  Part="1" 
+AR Path="/6185E117/61990D21" Ref="#PWR?"  Part="1" 
 F 0 "#PWR0198" H 5025 6625 50  0001 C CNN
 F 1 "+12V" H 5025 6950 50  0000 C CNN
 F 2 "" H 5025 6775 50  0001 C CNN
 F 3 "" H 5025 6775 50  0001 C CNN
 	1    5025 6775
-	1    0    0    -1
+	1    0    0    -1  
 $EndComp
 $Comp
 L power:+12V #PWR0199
 U 1 1 619917E8
 P 5425 6775
-AR Path="/60F6EF94/619917E8" Ref="#PWR0199"  Part="1"
-AR Path="/6185E117/619917E8" Ref="#PWR?"  Part="1"
+AR Path="/60F6EF94/619917E8" Ref="#PWR0199"  Part="1" 
+AR Path="/6185E117/619917E8" Ref="#PWR?"  Part="1" 
 F 0 "#PWR0199" H 5425 6625 50  0001 C CNN
 F 1 "+12V" H 5425 6950 50  0000 C CNN
 F 2 "" H 5425 6775 50  0001 C CNN
 F 3 "" H 5425 6775 50  0001 C CNN
 	1    5425 6775
-	1    0    0    -1
+	1    0    0    -1  
 $EndComp
 $Comp
 L power:+12V #PWR0200
 U 1 1 61991CC7
 P 5825 6775
-AR Path="/60F6EF94/61991CC7" Ref="#PWR0200"  Part="1"
-AR Path="/6185E117/61991CC7" Ref="#PWR?"  Part="1"
+AR Path="/60F6EF94/61991CC7" Ref="#PWR0200"  Part="1" 
+AR Path="/6185E117/61991CC7" Ref="#PWR?"  Part="1" 
 F 0 "#PWR0200" H 5825 6625 50  0001 C CNN
 F 1 "+12V" H 5825 6950 50  0000 C CNN
 F 2 "" H 5825 6775 50  0001 C CNN
 F 3 "" H 5825 6775 50  0001 C CNN
 	1    5825 6775
-	1    0    0    -1
+	1    0    0    -1  
 $EndComp
 $Comp
 L power:+12V #PWR0201
 U 1 1 619921A8
 P 6225 6775
-AR Path="/60F6EF94/619921A8" Ref="#PWR0201"  Part="1"
-AR Path="/6185E117/619921A8" Ref="#PWR?"  Part="1"
+AR Path="/60F6EF94/619921A8" Ref="#PWR0201"  Part="1" 
+AR Path="/6185E117/619921A8" Ref="#PWR?"  Part="1" 
 F 0 "#PWR0201" H 6225 6625 50  0001 C CNN
 F 1 "+12V" H 6225 6950 50  0000 C CNN
 F 2 "" H 6225 6775 50  0001 C CNN
 F 3 "" H 6225 6775 50  0001 C CNN
 	1    6225 6775
-	1    0    0    -1
+	1    0    0    -1  
 $EndComp
 Text HLabel 4075 1775 0    50   Input ~ 0
 DAC_A0
