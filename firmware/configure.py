@@ -89,6 +89,7 @@ DEFINES.update(
         CFG_TUSB_MCU="OPT_MCU_SAMD51",
         # Set the MIDI SysEx identifier
         WNTR_MIDI_SYSEX_IDENTIFIER=0x77,
+        WNTR_MIDI_MAX_SYSEX_CALLBACKS=127,
         # More room for the RTT buffer
         BUFFER_SIZE_UP=2048,
     )
