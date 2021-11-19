@@ -9,6 +9,7 @@
 #include "hubble_nvm.h"
 #include "printf.h"
 #include "wntr_assert.h"
+#include "wntr_debug.h"
 #include "wntr_pack.h"
 #include <stdbool.h>
 #include <string.h>
@@ -31,21 +32,19 @@ static const size_t entry_size_ = sizeof(struct HubbleVoltageCalibrationTableEnt
 
 /* Public functions. */
 
-bool hubble_load_voltage_calibration_table(
-    struct HubbleVoltageCalibrationTableEntry* table, size_t table_len, uint8_t bank) {
+bool HubbleVoltageCalibrationTable_load_from_nvm(struct HubbleVoltageCalibrationTable table, uint8_t bank) {
 
     uint8_t* src = NVM_BANK_ADDR(bank);
-    uint8_t* src_marker = BANK_MARKER_ADDR(src, table_len);
+    uint8_t* src_marker = BANK_MARKER_ADDR(src, table.len);
 
     if ((*src_marker) != VALID_BANK_MARKER) {
         printf("NVM bank %u does not have a valid calibration table.\n", bank);
         return false;
     }
-    src++;
 
-    for (size_t idx = 0; idx < table_len; idx++) {
-        table[idx].measured = WNTR_UNPACK_FLOAT(src, idx * entry_size_);
-        table[idx].expected = WNTR_UNPACK_FLOAT(src, idx * entry_size_ + 4);
+    for (size_t idx = 0; idx < table.len; idx++) {
+        table.entries[idx].measured = WNTR_UNPACK_FLOAT(src, idx * entry_size_);
+        table.entries[idx].expected = WNTR_UNPACK_FLOAT(src, idx * entry_size_ + 4);
     }
 
     printf("Loaded calibration table from NVM bank %u\n", bank);
@@ -53,17 +52,16 @@ bool hubble_load_voltage_calibration_table(
     return true;
 }
 
-void hubble_save_voltage_calibration_table(
-    struct HubbleVoltageCalibrationTableEntry* table, size_t table_len, uint8_t bank) {
-    WNTR_ASSERT(table_len * sizeof(struct HubbleVoltageCalibrationTableEntry) <= sizeof(nvm_buf_));
+void HubbleVoltageCalibrationTable_save_to_nvm(struct HubbleVoltageCalibrationTable table, uint8_t bank) {
+    WNTR_ASSERT(table.len * sizeof(struct HubbleVoltageCalibrationTableEntry) <= sizeof(nvm_buf_));
 
-    for (size_t idx = 0; idx < table_len; idx++) {
-        struct HubbleVoltageCalibrationTableEntry entry = table[idx];
+    for (size_t idx = 0; idx < table.len; idx++) {
+        struct HubbleVoltageCalibrationTableEntry entry = table.entries[idx];
         WNTR_PACK_FLOAT(entry.expected, nvm_buf_, idx * entry_size_);
         WNTR_PACK_FLOAT(entry.measured, nvm_buf_, idx * entry_size_ + 4);
     }
 
-    uint8_t* dst_marker = BANK_MARKER_ADDR(nvm_buf_, table_len);
+    uint8_t* dst_marker = BANK_MARKER_ADDR(nvm_buf_, table.len);
     *dst_marker = VALID_BANK_MARKER;
 
     hubble_nvm_write(NVM_BANK_ADDR(bank), nvm_buf_, nvm_buf_len_);
@@ -71,7 +69,7 @@ void hubble_save_voltage_calibration_table(
     printf("Saved calibration table to NVM bank %u\n", bank);
 }
 
-void hubble_erase_calibration_table(uint32_t bank) {
+void HubbleVoltageCalibrationTable_erase_nvm_bank(uint32_t bank) {
     memset(nvm_buf_, 0xFF, nvm_buf_len_);
 
     hubble_nvm_write(NVM_BANK_ADDR(bank), nvm_buf_, nvm_buf_len_);

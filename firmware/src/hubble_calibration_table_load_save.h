@@ -12,10 +12,8 @@
 
 #include "hubble_data_converter_helpers.h"
 
-bool hubble_load_voltage_calibration_table(
-    struct HubbleVoltageCalibrationTableEntry* table, size_t table_len, uint8_t bank);
+bool HubbleVoltageCalibrationTable_load_from_nvm(struct HubbleVoltageCalibrationTable table, uint8_t bank);
 
-void hubble_save_voltage_calibration_table(
-    struct HubbleVoltageCalibrationTableEntry* table, size_t table_len, uint8_t bank);
+void HubbleVoltageCalibrationTable_save_to_nvm(struct HubbleVoltageCalibrationTable table, uint8_t bank);
 
-void hubble_erase_calibration_table(uint32_t bank);
+void HubbleVoltageCalibrationTable_erase_nvm_bank(uint32_t bank);

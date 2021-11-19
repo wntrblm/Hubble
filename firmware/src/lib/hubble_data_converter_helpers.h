@@ -6,6 +6,7 @@
 
 #pragma once
 
+#include "printf.h"
 #include <math.h>
 #include <stdbool.h>
 #include <stdint.h>
@@ -86,19 +87,23 @@ struct HubbleVoltageCalibrationTableEntry {
     float measured;
 };
 
+struct HubbleVoltageCalibrationTable {
+    struct HubbleVoltageCalibrationTableEntry* entries;
+    size_t len;
+};
+
 inline static void HubbleVoltageCalibrationTable_find_nearest_pair(
     float value,
-    struct HubbleVoltageCalibrationTableEntry* table,
-    size_t table_len,
+    struct HubbleVoltageCalibrationTable table,
     struct HubbleVoltageCalibrationTableEntry* out_low,
     struct HubbleVoltageCalibrationTableEntry* out_high) {
-    struct HubbleVoltageCalibrationTableEntry* low = &table[0];
-    struct HubbleVoltageCalibrationTableEntry* high = &table[1];
+    struct HubbleVoltageCalibrationTableEntry* low = &(table.entries)[0];
+    struct HubbleVoltageCalibrationTableEntry* high = &(table.entries)[1];
     struct HubbleVoltageCalibrationTableEntry* current;
     bool found = false;
 
-    for (size_t i = 0; i < table_len; i++) {
-        current = &table[i];
+    for (size_t i = 0; i < table.len; i++) {
+        current = &(table.entries)[i];
         if (current->measured <= value) {
             low = current;
         }
@@ -117,15 +122,22 @@ inline static void HubbleVoltageCalibrationTable_find_nearest_pair(
     (*out_high) = (*high);
 }
 
-inline static float
-HubbleVoltageCalibrationTable_lookup(float value, struct HubbleVoltageCalibrationTableEntry* table, size_t table_len) {
+inline static float HubbleVoltageCalibrationTable_lookup(float value, struct HubbleVoltageCalibrationTable table) {
     struct HubbleVoltageCalibrationTableEntry low, high;
 
-    HubbleVoltageCalibrationTable_find_nearest_pair(value, table, table_len, &low, &high);
+    HubbleVoltageCalibrationTable_find_nearest_pair(value, table, &low, &high);
 
     float frac = (value - low.measured) / (high.measured - low.measured);
 
     float result = low.expected + ((high.expected - low.expected) * frac);
 
     return result;
+}
+
+inline static void HubbleVoltageCalibrationTable_print(struct HubbleVoltageCalibrationTable table) {
+    printf("---- HubbleVoltageCalibrationTable 0x%x + %x\n", table.entries, table.len);
+    for (size_t i = 0; i < table.len; i++) {
+        printf("%0.3f : %0.3f\n", (double)(table.entries[i].expected), (double)(table.entries[i].measured));
+    }
+    printf("----\n");
 }
