@@ -135,7 +135,7 @@ inline static float HubbleVoltageCalibrationTable_lookup(float value, struct Hub
 }
 
 inline static void HubbleVoltageCalibrationTable_print(struct HubbleVoltageCalibrationTable table) {
-    printf("---- HubbleVoltageCalibrationTable 0x%x + %x\n", table.entries, table.len);
+    printf("---- HubbleVoltageCalibrationTable 0x%x + %u\n", table.entries, table.len);
     for (size_t i = 0; i < table.len; i++) {
         printf("%0.3f : %0.3f\n", (double)(table.entries[i].expected), (double)(table.entries[i].measured));
     }
