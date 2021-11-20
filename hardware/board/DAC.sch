@@ -5,12 +5,12 @@ $Descr A4 11693 8268
 encoding utf-8
 Sheet 6 7
 Title "Hubble Motherboard"
-Date "2021-11-12"
+Date "2021-11-20"
 Rev "v2"
 Comp "Winterbloom"
 Comment1 "Alethea Flowers"
 Comment2 "CERN-OHL-P V2"
-Comment3 ""
+Comment3 "hubble.wntr.dev"
 Comment4 ""
 $EndDescr
 $Comp
@@ -20,7 +20,7 @@ P 2500 2775
 AR Path="/608B4064/6180A7CC" Ref="U?"  Part="1" 
 AR Path="/617FCAA5/6180A7CC" Ref="U6"  Part="1" 
 F 0 "U6" H 2000 3325 50  0000 C CNN
-F 1 "AD5685R?RUZ" H 2950 2225 50  0000 C CNN
+F 1 "AD5689R?RUZ" H 2950 2225 50  0000 C CNN
 F 2 "Package_SO:TSSOP-16_4.4x5mm_P0.65mm" H 2500 4125 50  0001 C CNN
 F 3 "https://www.analog.com/media/en/technical-documentation/data-sheets/ad5686r_5685r_5684r.pdf" H 2550 2775 50  0001 C CNN
 F 4 "AD5685ARUZ, AD5685BRUZ" H 2500 4025 39  0001 C CNN "mpn"

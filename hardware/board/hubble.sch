@@ -5,12 +5,12 @@ $Descr USLetter 11000 8500
 encoding utf-8
 Sheet 1 7
 Title "Hubble Motherboard"
-Date "2021-11-12"
+Date "2021-11-20"
 Rev "v2"
 Comp "Winterbloom"
 Comment1 "Alethea Flowers"
 Comment2 "CERN-OHL-P V2"
-Comment3 ""
+Comment3 "hubble.wntr.dev"
 Comment4 ""
 $EndDescr
 $Sheet
@@ -1082,4 +1082,64 @@ Wire Wire Line
 	2300 3050 3450 3050
 Wire Wire Line
 	3450 2950 2300 2950
+$Comp
+L Connector_Generic:Conn_02x04_Odd_Even J?
+U 1 1 619E345F
+P 9625 5375
+AR Path="/60711259/619E345F" Ref="J?"  Part="1" 
+AR Path="/619E345F" Ref="J12"  Part="1" 
+F 0 "J12" V 9725 5075 50  0000 R CNN
+F 1 "FRONT" V 9625 5075 50  0000 R CNN
+F 2 "Connector_PinHeader_2.54mm:PinHeader_2x04_P2.54mm_Vertical" H 9625 5375 50  0001 C CNN
+F 3 "~" H 9625 5375 50  0001 C CNN
+	1    9625 5375
+	0    -1   -1   0   
+$EndComp
+$Comp
+L power:GND #PWR0220
+U 1 1 619EF9B6
+P 9525 5575
+F 0 "#PWR0220" H 9525 5325 50  0001 C CNN
+F 1 "GND" V 9530 5447 50  0001 R CNN
+F 2 "" H 9525 5575 50  0001 C CNN
+F 3 "" H 9525 5575 50  0001 C CNN
+	1    9525 5575
+	1    0    0    -1  
+$EndComp
+Text Label 9525 5075 1    50   ~ 0
+IO15
+Text Label 9625 5075 1    50   ~ 0
+IO17
+Text Label 9725 5075 1    50   ~ 0
+IO19
+Text Label 9725 5575 3    50   ~ 0
+IO16
+Text Label 9825 5575 3    50   ~ 0
+IO18
+$Comp
+L power:GND #PWR0221
+U 1 1 619F674A
+P 5000 6350
+F 0 "#PWR0221" H 5000 6100 50  0001 C CNN
+F 1 "GND" H 5005 6177 50  0001 C CNN
+F 2 "" H 5000 6350 50  0001 C CNN
+F 3 "" H 5000 6350 50  0001 C CNN
+	1    5000 6350
+	1    0    0    -1  
+$EndComp
+Text Label 9625 5575 3    50   ~ 0
+IO14
+$Comp
+L power:+3.3V #PWR?
+U 1 1 619F9149
+P 9825 5075
+AR Path="/60711259/619F9149" Ref="#PWR?"  Part="1" 
+AR Path="/619F9149" Ref="#PWR0222"  Part="1" 
+F 0 "#PWR0222" H 9825 4925 50  0001 C CNN
+F 1 "+3.3V" V 9825 5300 50  0000 C CNN
+F 2 "" H 9825 5075 50  0001 C CNN
+F 3 "" H 9825 5075 50  0001 C CNN
+	1    9825 5075
+	-1   0    0    -1  
+$EndComp
 $EndSCHEMATC

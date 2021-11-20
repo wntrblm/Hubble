@@ -5,12 +5,12 @@ $Descr A4 11693 8268
 encoding utf-8
 Sheet 4 7
 Title "Hubble Motherboard"
-Date "2021-11-12"
+Date "2021-11-20"
 Rev "v2"
 Comp "Winterbloom"
 Comment1 "Alethea Flowers"
 Comment2 "CERN-OHL-P V2"
-Comment3 ""
+Comment3 "hubble.wntr.dev"
 Comment4 ""
 $EndDescr
 $Comp

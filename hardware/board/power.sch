@@ -5,12 +5,12 @@ $Descr A4 11693 8268
 encoding utf-8
 Sheet 2 7
 Title "Hubble Motherboard"
-Date "2021-11-12"
+Date "2021-11-20"
 Rev "v2"
 Comp "Winterbloom"
 Comment1 "Alethea Flowers"
 Comment2 "CERN-OHL-P V2"
-Comment3 ""
+Comment3 "hubble.wntr.dev"
 Comment4 ""
 $EndDescr
 $Comp
@@ -96,9 +96,9 @@ Text GLabel 1125 1250 3    50   Input ~ 0
 Text GLabel 1125 1050 1    50   Input ~ 0
 +12VRAW
 Wire Wire Line
-	1075 3325 1225 3325
+	1075 3575 1225 3575
 Wire Wire Line
-	1075 3125 1225 3125
+	1075 3375 1225 3375
 $Comp
 L power:+12V #PWR011
 U 1 1 6074291B
@@ -135,22 +135,22 @@ $EndComp
 $Comp
 L Switch:SW_DPST SW1
 U 1 1 60721796
-P 1425 3225
-F 0 "SW1" H 1425 3550 50  0000 C CNN
-F 1 "POWER" H 1425 3459 50  0000 C CNN
-F 2 "Connector_Wire:SolderWire-0.75sqmm_1x04_P4.8mm_D1.25mm_OD2.3mm" H 1425 3225 50  0001 C CNN
-F 3 "~" H 1425 3225 50  0001 C CNN
-	1    1425 3225
+P 1425 3475
+F 0 "SW1" H 1425 3800 50  0000 C CNN
+F 1 "POWER" H 1425 3709 50  0000 C CNN
+F 2 "Connector_Wire:SolderWire-0.75sqmm_1x04_P4.8mm_D1.25mm_OD2.3mm" H 1425 3475 50  0001 C CNN
+F 3 "~" H 1425 3475 50  0001 C CNN
+	1    1425 3475
 	1    0    0    -1  
 $EndComp
-Text GLabel 1800 3125 2    50   Input ~ 0
+Text GLabel 2175 3375 2    50   Input ~ 0
 +12VDOWNSTREAM
-Text GLabel 1800 3325 2    50   Input ~ 0
+Text GLabel 2175 3575 2    50   Input ~ 0
 -12VDOWNSTREAM
 Wire Wire Line
-	1800 3125 1625 3125
+	1800 3375 1625 3375
 Wire Wire Line
-	1625 3325 1800 3325
+	1625 3575 1800 3575
 $Comp
 L Device:CP1 C1
 U 1 1 61721677
@@ -526,9 +526,9 @@ F 3 "" H 6300 4925 50  0001 C CNN
 	1    6300 4925
 	1    0    0    -1  
 $EndComp
-Text GLabel 1075 3325 0    50   Input ~ 0
+Text GLabel 1075 3575 0    50   Input ~ 0
 -12VRAW
-Text GLabel 1075 3125 0    50   Input ~ 0
+Text GLabel 1075 3375 0    50   Input ~ 0
 +12VRAW
 $Comp
 L power:+12V #PWR0117
@@ -552,4 +552,32 @@ F 3 "" H 1750 2050 50  0001 C CNN
 	1    1750 2050
 	1    0    0    -1  
 $EndComp
+$Comp
+L Device:Polyfuse_Small F2
+U 1 1 619A3015
+P 1900 3575
+F 0 "F2" V 1700 3575 50  0000 C CNN
+F 1 "1A Polyfuse" V 1800 3575 50  0000 C CNN
+F 2 "winterbloom:Littelfuse_0805L" H 1950 3375 50  0001 L CNN
+F 3 "https://m.littelfuse.com/~/media/electronics/datasheets/resettable_ptcs/littelfuse_ptc_0805l_datasheet.pdf.pdf" H 1900 3575 50  0001 C CNN
+F 4 "0805L075" V 1900 3575 50  0001 C CNN "mpn"
+	1    1900 3575
+	0    -1   -1   0   
+$EndComp
+$Comp
+L Device:Polyfuse_Small F1
+U 1 1 619A193A
+P 1900 3375
+F 0 "F1" V 1695 3375 50  0000 C CNN
+F 1 "1A Polyfuse" V 1786 3375 50  0000 C CNN
+F 2 "winterbloom:Littelfuse_0805L" H 1950 3175 50  0001 L CNN
+F 3 "https://m.littelfuse.com/~/media/electronics/datasheets/resettable_ptcs/littelfuse_ptc_0805l_datasheet.pdf.pdf" H 1900 3375 50  0001 C CNN
+F 4 "0805L075" V 1900 3375 50  0001 C CNN "mpn"
+	1    1900 3375
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	2000 3375 2175 3375
+Wire Wire Line
+	2175 3575 2000 3575
 $EndSCHEMATC

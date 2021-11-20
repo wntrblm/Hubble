@@ -5,12 +5,12 @@ $Descr A4 11693 8268
 encoding utf-8
 Sheet 3 7
 Title "Hubble Motherboard"
-Date "2021-11-12"
+Date "2021-11-20"
 Rev "v2"
 Comp "Winterbloom"
 Comment1 "Alethea Flowers"
 Comment2 "CERN-OHL-P V2"
-Comment3 ""
+Comment3 "hubble.wntr.dev"
 Comment4 ""
 $EndDescr
 $Comp
@@ -509,8 +509,6 @@ F 3 "" H 8100 5625 50  0001 C CNN
 	1    8100 5625
 	1    0    0    -1  
 $EndComp
-NoConn ~ 8400 5925
-NoConn ~ 8400 5825
 Text Label 10475 1725 0    39   ~ 0
 DOTSTAR_CI
 Text Label 10475 1825 0    39   ~ 0
@@ -772,7 +770,7 @@ L winterbloom:USB_B_Receptacle J3
 U 1 1 618203F7
 P 10050 5625
 F 0 "J3" H 10083 6090 50  0000 C CNN
-F 1 "USB_B_Receptacle" H 10083 5999 50  0000 C CNN
+F 1 "USB B" H 10083 5999 50  0000 C CNN
 F 2 "Connector_USB:USB_B_OST_USB-B1HSxx_Horizontal" H 10250 5575 50  0001 C CNN
 F 3 "https://www.te.com/commerce/DocumentDelivery/DDEController?Action=srchrtrv&DocNm=5787834&DocType=Customer+Drawing&DocLang=English&PartCntxt=5787834-1&DocFormat=pdf" H 10250 5575 50  0001 C CNN
 F 4 "5787834-1" H 10050 5625 39  0001 C CNN "mpn"
@@ -848,8 +846,6 @@ Text HLabel 3475 1250 1    50   Input ~ 0
 PB23
 Text HLabel 3575 1250 1    50   Input ~ 0
 PB22
-Text Notes 8325 6375 0    50   ~ 0
-TODO: Dotstar ext header
 Text HLabel 2175 1250 1    50   Input ~ 0
 PB02
 Text HLabel 2075 1250 1    50   Input ~ 0
@@ -894,4 +890,46 @@ Text HLabel 6525 5550 1    50   Input ~ 0
 PB30
 Text HLabel 3375 1250 1    50   Input ~ 0
 PA27
+$Comp
+L Connector_Generic:Conn_01x05 J11
+U 1 1 6198BFAF
+P 10975 5625
+F 0 "J11" H 11055 5667 50  0000 L CNN
+F 1 "USB" H 11055 5576 50  0000 L CNN
+F 2 "Connector_PinHeader_2.54mm:PinHeader_1x05_P2.54mm_Vertical" H 10975 5625 50  0001 C CNN
+F 3 "~" H 10975 5625 50  0001 C CNN
+	1    10975 5625
+	1    0    0    -1  
+$EndComp
+Connection ~ 10775 5825
+Wire Wire Line
+	10400 5425 10775 5425
+Wire Wire Line
+	10400 5525 10775 5525
+Wire Wire Line
+	10775 5625 10400 5625
+$Comp
+L power:GND #PWR?
+U 1 1 6199095B
+P 10775 5725
+AR Path="/6091A4E3/6199095B" Ref="#PWR?"  Part="1" 
+AR Path="/608B4064/6199095B" Ref="#PWR0219"  Part="1" 
+F 0 "#PWR0219" H 10775 5475 50  0001 C CNN
+F 1 "GND" H 10780 5552 50  0001 C CNN
+F 2 "" H 10775 5725 50  0001 C CNN
+F 3 "" H 10775 5725 50  0001 C CNN
+	1    10775 5725
+	0    1    1    0   
+$EndComp
+$Comp
+L Connector_Generic:Conn_01x02 J10
+U 1 1 6199B10E
+P 8600 5825
+F 0 "J10" H 8680 5817 50  0000 L CNN
+F 1 "Dotstars" H 8680 5726 50  0000 L CNN
+F 2 "Connector_PinHeader_2.54mm:PinHeader_1x02_P2.54mm_Vertical" H 8600 5825 50  0001 C CNN
+F 3 "~" H 8600 5825 50  0001 C CNN
+	1    8600 5825
+	1    0    0    -1  
+$EndComp
 $EndSCHEMATC
