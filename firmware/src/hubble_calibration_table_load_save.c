@@ -22,7 +22,7 @@ extern uint8_t _nvm_addr;
 extern uint8_t _nvm_length;
 
 static uint8_t nvm_buf_[256];
-static const size_t nvm_buf_len_ = sizeof(nvm_buf_) / sizeof(nvm_buf_len_);
+static const size_t nvm_buf_len_ = sizeof(nvm_buf_) / sizeof(nvm_buf_[0]);
 static const size_t entry_size_ = sizeof(struct HubbleVoltageCalibrationTableEntry);
 
 /* There are 32 banks of 256 bytes to work with */
@@ -53,7 +53,7 @@ bool HubbleVoltageCalibrationTable_load_from_nvm(struct HubbleVoltageCalibration
 }
 
 void HubbleVoltageCalibrationTable_save_to_nvm(struct HubbleVoltageCalibrationTable table, uint8_t bank) {
-    WNTR_ASSERT(table.len * sizeof(struct HubbleVoltageCalibrationTableEntry) <= sizeof(nvm_buf_));
+    WNTR_ASSERT(table.len * sizeof(struct HubbleVoltageCalibrationTableEntry) <= (sizeof(nvm_buf_) - 1));
 
     for (size_t idx = 0; idx < table.len; idx++) {
         struct HubbleVoltageCalibrationTableEntry entry = table.entries[idx];
@@ -67,6 +67,7 @@ void HubbleVoltageCalibrationTable_save_to_nvm(struct HubbleVoltageCalibrationTa
     hubble_nvm_write(NVM_BANK_ADDR(bank), nvm_buf_, nvm_buf_len_);
 
     printf("Saved calibration table to NVM bank %u\n", bank);
+    wntr_debug_print_mem(NVM_BANK_ADDR(bank), nvm_buf_len_);
 }
 
 void HubbleVoltageCalibrationTable_erase_nvm_bank(uint32_t bank) {
