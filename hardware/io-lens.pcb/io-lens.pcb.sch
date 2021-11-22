@@ -1,0 +1,1713 @@
+EESchema Schematic File Version 4
+EELAYER 30 0
+EELAYER END
+$Descr USLetter 11000 8500
+encoding utf-8
+Sheet 1 1
+Title "TestKit Adapter Template"
+Date "2021-11-01"
+Rev "v1"
+Comp "Winterbloom"
+Comment1 "Alethea Flowers"
+Comment2 "CERN-OHL-P V2"
+Comment3 ""
+Comment4 ""
+$EndDescr
+$Comp
+L Connector_Generic:Conn_02x20_Odd_Even J6
+U 1 1 6137A5E9
+P 5400 6675
+F 0 "J6" H 5450 7792 50  0000 C CNN
+F 1 "Right" H 5450 7701 50  0000 C CNN
+F 2 "Connector_PinSocket_2.54mm:PinSocket_2x20_P2.54mm_Vertical" H 5400 6675 50  0001 C CNN
+F 3 "~" H 5400 6675 50  0001 C CNN
+	1    5400 6675
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR0101
+U 1 1 613D42C8
+P 2575 7050
+F 0 "#PWR0101" H 2575 6800 50  0001 C CNN
+F 1 "GND" H 2580 6877 50  0001 C CNN
+F 2 "" H 2575 7050 50  0001 C CNN
+F 3 "" H 2575 7050 50  0001 C CNN
+	1    2575 7050
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR0102
+U 1 1 613D4870
+P 4475 7050
+F 0 "#PWR0102" H 4475 6800 50  0001 C CNN
+F 1 "GND" H 4480 6877 50  0001 C CNN
+F 2 "" H 4475 7050 50  0001 C CNN
+F 3 "" H 4475 7050 50  0001 C CNN
+	1    4475 7050
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR0103
+U 1 1 613D4D0A
+P 4475 6550
+F 0 "#PWR0103" H 4475 6300 50  0001 C CNN
+F 1 "GND" H 4480 6377 50  0001 C CNN
+F 2 "" H 4475 6550 50  0001 C CNN
+F 3 "" H 4475 6550 50  0001 C CNN
+	1    4475 6550
+	-1   0    0    1   
+$EndComp
+$Comp
+L power:GND #PWR0109
+U 1 1 613D7482
+P 5700 5775
+F 0 "#PWR0109" H 5700 5525 50  0001 C CNN
+F 1 "GND" V 5705 5647 50  0001 R CNN
+F 2 "" H 5700 5775 50  0001 C CNN
+F 3 "" H 5700 5775 50  0001 C CNN
+	1    5700 5775
+	0    -1   -1   0   
+$EndComp
+$Comp
+L power:GND #PWR0110
+U 1 1 613D7A6C
+P 5200 5775
+F 0 "#PWR0110" H 5200 5525 50  0001 C CNN
+F 1 "GND" V 5205 5647 50  0001 R CNN
+F 2 "" H 5200 5775 50  0001 C CNN
+F 3 "" H 5200 5775 50  0001 C CNN
+	1    5200 5775
+	0    1    1    0   
+$EndComp
+$Comp
+L power:GND #PWR0111
+U 1 1 613D8081
+P 5200 7675
+F 0 "#PWR0111" H 5200 7425 50  0001 C CNN
+F 1 "GND" V 5205 7547 50  0001 R CNN
+F 2 "" H 5200 7675 50  0001 C CNN
+F 3 "" H 5200 7675 50  0001 C CNN
+	1    5200 7675
+	0    1    1    0   
+$EndComp
+$Comp
+L power:GND #PWR0112
+U 1 1 613D85FC
+P 5700 7675
+F 0 "#PWR0112" H 5700 7425 50  0001 C CNN
+F 1 "GND" V 5705 7547 50  0001 R CNN
+F 2 "" H 5700 7675 50  0001 C CNN
+F 3 "" H 5700 7675 50  0001 C CNN
+	1    5700 7675
+	0    -1   -1   0   
+$EndComp
+Text GLabel 5200 6975 0    50   Input ~ 0
+SERIAL1.3
+Text GLabel 5700 6975 2    50   Input ~ 0
+SERIAL1.2
+Text GLabel 5200 7075 0    50   Input ~ 0
+SERIAL1.1
+Text GLabel 5700 7075 2    50   Input ~ 0
+SERIAL1.0
+Text Label 5700 7275 0    50   ~ 0
+DAC_1A
+Text Label 5200 7275 2    50   ~ 0
+DAC_1B
+Text Label 5700 7375 0    50   ~ 0
+DAC_1C
+Text Label 5200 7375 2    50   ~ 0
+DAC_1D
+Text Label 4375 7050 3    50   ~ 0
+DAC_2A
+Text Label 4375 6550 1    50   ~ 0
+DAC_2B
+Text Label 4275 7050 3    50   ~ 0
+DAC_2C
+Text Label 4275 6550 1    50   ~ 0
+DAC_2D
+Text Label 4175 7050 3    50   ~ 0
+DAC_3A
+Text Label 4175 6550 1    50   ~ 0
+DAC_3B
+Text Label 4075 7050 3    50   ~ 0
+DAC_3C
+Text Label 4075 6550 1    50   ~ 0
+DAC_3D
+Text Label 5700 7475 0    50   ~ 0
+DAC_4A
+Text Label 5200 7475 2    50   ~ 0
+DAC_4B
+Text Label 5700 7575 0    50   ~ 0
+DAC_4C
+Text Label 5200 7575 2    50   ~ 0
+DAC_4D
+$Comp
+L power:GND #PWR0123
+U 1 1 61429FEB
+P 5200 7175
+F 0 "#PWR0123" H 5200 6925 50  0001 C CNN
+F 1 "GND" V 5205 7047 50  0001 R CNN
+F 2 "" H 5200 7175 50  0001 C CNN
+F 3 "" H 5200 7175 50  0001 C CNN
+	1    5200 7175
+	0    1    1    0   
+$EndComp
+$Comp
+L power:GND #PWR0124
+U 1 1 6142A557
+P 5700 7175
+F 0 "#PWR0124" H 5700 6925 50  0001 C CNN
+F 1 "GND" V 5705 7047 50  0001 R CNN
+F 2 "" H 5700 7175 50  0001 C CNN
+F 3 "" H 5700 7175 50  0001 C CNN
+	1    5700 7175
+	0    -1   -1   0   
+$EndComp
+$Comp
+L power:GND #PWR0125
+U 1 1 6142E9CE
+P 5200 6575
+F 0 "#PWR0125" H 5200 6325 50  0001 C CNN
+F 1 "GND" V 5205 6447 50  0001 R CNN
+F 2 "" H 5200 6575 50  0001 C CNN
+F 3 "" H 5200 6575 50  0001 C CNN
+	1    5200 6575
+	0    1    1    0   
+$EndComp
+$Comp
+L power:GND #PWR0126
+U 1 1 6142ED24
+P 5700 6575
+F 0 "#PWR0126" H 5700 6325 50  0001 C CNN
+F 1 "GND" V 5705 6447 50  0001 R CNN
+F 2 "" H 5700 6575 50  0001 C CNN
+F 3 "" H 5700 6575 50  0001 C CNN
+	1    5700 6575
+	0    -1   -1   0   
+$EndComp
+Text Label 5200 5875 2    50   ~ 0
+EXT_OSC_A
+Text GLabel 3775 6550 1    50   Input ~ 0
+SERIAL4.3
+Text GLabel 3775 7050 3    50   Input ~ 0
+SERIAL4.2
+Text GLabel 3675 6550 1    50   Input ~ 0
+SERIAL4.1
+Text GLabel 3675 7050 3    50   Input ~ 0
+SERIAL4.0
+Text Label 5700 5975 0    50   ~ 0
+EXT_OSC_C
+Text Label 5700 5875 0    50   ~ 0
+EXT_OSC_B
+Text Label 5200 5975 2    50   ~ 0
+EXT_OSC_D
+Text Label 5200 6175 2    50   ~ 0
+EXT_MM_V
+Text Label 5700 6175 0    50   ~ 0
+EXT_MM_A
+Text Label 5200 6275 2    50   ~ 0
+EXT_FG_A
+Text Label 5700 6275 0    50   ~ 0
+EXT_FG_B
+Text Label 5200 6075 2    50   ~ 0
+EXT_AUDIO_A
+Text Label 5700 6075 0    50   ~ 0
+EXT_AUDIO_B
+$Comp
+L Connector_Generic:Conn_02x20_Odd_Even J7
+U 1 1 61377789
+P 3475 6750
+F 0 "J7" V 3479 7730 50  0000 L CNN
+F 1 "Bottom" V 3570 7730 50  0000 L CNN
+F 2 "Connector_PinSocket_2.54mm:PinSocket_2x20_P2.54mm_Vertical" H 3475 6750 50  0001 C CNN
+F 3 "~" H 3475 6750 50  0001 C CNN
+	1    3475 6750
+	0    -1   1    0   
+$EndComp
+Text Label 5200 6675 2    50   ~ 0
+IO1
+Text Label 5700 6675 0    50   ~ 0
+IO2
+Text Label 5200 6775 2    50   ~ 0
+IO3
+Text Label 5700 6775 0    50   ~ 0
+IO4
+Text Label 5200 6875 2    50   ~ 0
+IO5
+$Comp
+L power:GND #PWR0121
+U 1 1 61A56C45
+P 5700 6875
+F 0 "#PWR0121" H 5700 6625 50  0001 C CNN
+F 1 "GND" V 5705 6747 50  0001 R CNN
+F 2 "" H 5700 6875 50  0001 C CNN
+F 3 "" H 5700 6875 50  0001 C CNN
+	1    5700 6875
+	0    -1   -1   0   
+$EndComp
+$Comp
+L power:GND #PWR0122
+U 1 1 61A9603C
+P 3975 7050
+F 0 "#PWR0122" H 3975 6800 50  0001 C CNN
+F 1 "GND" H 3980 6877 50  0001 C CNN
+F 2 "" H 3975 7050 50  0001 C CNN
+F 3 "" H 3975 7050 50  0001 C CNN
+	1    3975 7050
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR0153
+U 1 1 61A965C2
+P 3975 6550
+F 0 "#PWR0153" H 3975 6300 50  0001 C CNN
+F 1 "GND" H 3980 6377 50  0001 C CNN
+F 2 "" H 3975 6550 50  0001 C CNN
+F 3 "" H 3975 6550 50  0001 C CNN
+	1    3975 6550
+	-1   0    0    1   
+$EndComp
+Text Label 1275 7450 2    50   ~ 0
+ADC_2A
+Text Label 1775 7450 0    50   ~ 0
+ADC_2B
+Text Label 1275 7550 2    50   ~ 0
+ADC_2C
+Text Label 1775 7550 0    50   ~ 0
+ADC_2D
+Text Label 1275 7250 2    50   ~ 0
+ADC_3A
+Text Label 1775 7250 0    50   ~ 0
+ADC_3B
+Text Label 1275 7350 2    50   ~ 0
+ADC_3C
+Text Label 1775 7350 0    50   ~ 0
+ADC_3D
+Text Label 1275 6950 2    50   ~ 0
+ADC_4A
+Text Label 1775 6950 0    50   ~ 0
+ADC_4B
+Text Label 1275 7050 2    50   ~ 0
+ADC_4C
+Text Label 1775 7050 0    50   ~ 0
+ADC_4D
+Text Label 1775 6850 0    50   ~ 0
+ADC_1D
+Text Label 1275 6850 2    50   ~ 0
+ADC_1C
+Text Label 1775 6750 0    50   ~ 0
+ADC_1B
+Text Label 1275 6750 2    50   ~ 0
+ADC_1A
+$Comp
+L power:GND #PWR0169
+U 1 1 616A2BF7
+P 1775 6350
+F 0 "#PWR0169" H 1775 6100 50  0001 C CNN
+F 1 "GND" V 1780 6222 50  0001 R CNN
+F 2 "" H 1775 6350 50  0001 C CNN
+F 3 "" H 1775 6350 50  0001 C CNN
+	1    1775 6350
+	0    -1   1    0   
+$EndComp
+$Comp
+L power:GND #PWR0168
+U 1 1 616A2886
+P 1275 6350
+F 0 "#PWR0168" H 1275 6100 50  0001 C CNN
+F 1 "GND" V 1280 6222 50  0001 R CNN
+F 2 "" H 1275 6350 50  0001 C CNN
+F 3 "" H 1275 6350 50  0001 C CNN
+	1    1275 6350
+	0    1    -1   0   
+$EndComp
+$Comp
+L power:+3.3V #PWR?
+U 1 1 6144C266
+P 1775 6250
+AR Path="/60711259/6144C266" Ref="#PWR?"  Part="1" 
+AR Path="/6144C266" Ref="#PWR0134"  Part="1" 
+F 0 "#PWR0134" H 1775 6100 50  0001 C CNN
+F 1 "+3.3V" V 1775 6475 50  0000 C CNN
+F 2 "" H 1775 6250 50  0001 C CNN
+F 3 "" H 1775 6250 50  0001 C CNN
+	1    1775 6250
+	0    1    -1   0   
+$EndComp
+$Comp
+L power:+3.3V #PWR?
+U 1 1 6144C0F6
+P 1275 6250
+AR Path="/60711259/6144C0F6" Ref="#PWR?"  Part="1" 
+AR Path="/6144C0F6" Ref="#PWR0133"  Part="1" 
+F 0 "#PWR0133" H 1275 6100 50  0001 C CNN
+F 1 "+3.3V" V 1275 6475 50  0000 C CNN
+F 2 "" H 1275 6250 50  0001 C CNN
+F 3 "" H 1275 6250 50  0001 C CNN
+	1    1275 6250
+	0    -1   1    0   
+$EndComp
+$Comp
+L power:GND #PWR0132
+U 1 1 61437330
+P 1775 7150
+F 0 "#PWR0132" H 1775 6900 50  0001 C CNN
+F 1 "GND" V 1780 7022 50  0001 R CNN
+F 2 "" H 1775 7150 50  0001 C CNN
+F 3 "" H 1775 7150 50  0001 C CNN
+	1    1775 7150
+	0    -1   1    0   
+$EndComp
+$Comp
+L power:GND #PWR0130
+U 1 1 61436A22
+P 1275 6150
+F 0 "#PWR0130" H 1275 5900 50  0001 C CNN
+F 1 "GND" V 1280 6022 50  0001 R CNN
+F 2 "" H 1275 6150 50  0001 C CNN
+F 3 "" H 1275 6150 50  0001 C CNN
+	1    1275 6150
+	0    1    -1   0   
+$EndComp
+Text GLabel 1275 5950 0    50   Input ~ 0
+-12VDOWNSTREAM
+Text GLabel 1775 5950 2    50   Input ~ 0
++12VDOWNSTREAM
+$Comp
+L power:GND #PWR0108
+U 1 1 613D6C7A
+P 1775 7650
+F 0 "#PWR0108" H 1775 7400 50  0001 C CNN
+F 1 "GND" V 1780 7522 50  0000 R CNN
+F 2 "" H 1775 7650 50  0001 C CNN
+F 3 "" H 1775 7650 50  0001 C CNN
+	1    1775 7650
+	0    -1   1    0   
+$EndComp
+$Comp
+L power:GND #PWR0107
+U 1 1 613D6590
+P 1275 7650
+F 0 "#PWR0107" H 1275 7400 50  0001 C CNN
+F 1 "GND" V 1280 7522 50  0000 R CNN
+F 2 "" H 1275 7650 50  0001 C CNN
+F 3 "" H 1275 7650 50  0001 C CNN
+	1    1275 7650
+	0    1    -1   0   
+$EndComp
+$Comp
+L power:GND #PWR0106
+U 1 1 613D60E3
+P 1275 5750
+F 0 "#PWR0106" H 1275 5500 50  0001 C CNN
+F 1 "GND" V 1280 5622 50  0001 R CNN
+F 2 "" H 1275 5750 50  0001 C CNN
+F 3 "" H 1275 5750 50  0001 C CNN
+	1    1275 5750
+	0    1    -1   0   
+$EndComp
+$Comp
+L power:GND #PWR0105
+U 1 1 613D5998
+P 1775 5750
+F 0 "#PWR0105" H 1775 5500 50  0001 C CNN
+F 1 "GND" V 1780 5622 50  0001 R CNN
+F 2 "" H 1775 5750 50  0001 C CNN
+F 3 "" H 1775 5750 50  0001 C CNN
+	1    1775 5750
+	0    -1   1    0   
+$EndComp
+$Comp
+L Connector_Generic:Conn_02x20_Odd_Even J5
+U 1 1 613689DC
+P 1575 6650
+F 0 "J5" H 1625 7767 50  0000 C CNN
+F 1 "Left" H 1625 7676 50  0000 C CNN
+F 2 "Connector_PinSocket_2.54mm:PinSocket_2x20_P2.54mm_Vertical" H 1575 6650 50  0001 C CNN
+F 3 "~" H 1575 6650 50  0001 C CNN
+	1    1575 6650
+	-1   0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR0202
+U 1 1 61AC589F
+P 1775 6650
+F 0 "#PWR0202" H 1775 6400 50  0001 C CNN
+F 1 "GND" V 1780 6522 50  0001 R CNN
+F 2 "" H 1775 6650 50  0001 C CNN
+F 3 "" H 1775 6650 50  0001 C CNN
+	1    1775 6650
+	0    -1   1    0   
+$EndComp
+$Comp
+L power:GND #PWR0203
+U 1 1 61AC5D8A
+P 1275 6650
+F 0 "#PWR0203" H 1275 6400 50  0001 C CNN
+F 1 "GND" V 1280 6522 50  0001 R CNN
+F 2 "" H 1275 6650 50  0001 C CNN
+F 3 "" H 1275 6650 50  0001 C CNN
+	1    1275 6650
+	0    1    -1   0   
+$EndComp
+$Comp
+L power:GND #PWR0104
+U 1 1 613D5215
+P 2575 6550
+F 0 "#PWR0104" H 2575 6300 50  0001 C CNN
+F 1 "GND" H 2580 6377 50  0001 C CNN
+F 2 "" H 2575 6550 50  0001 C CNN
+F 3 "" H 2575 6550 50  0001 C CNN
+	1    2575 6550
+	-1   0    0    1   
+$EndComp
+Text Label 3875 6550 1    50   ~ 0
+IO6
+Text Label 3575 6550 1    50   ~ 0
+IO7
+Text Label 3575 7050 3    50   ~ 0
+IO8
+Text Label 3275 6550 1    50   ~ 0
+IO9
+Text Label 3275 7050 3    50   ~ 0
+IO10
+Text Label 3175 6550 1    50   ~ 0
+IO11
+Text Label 3175 7050 3    50   ~ 0
+IO12
+Text Label 2975 6550 1    50   ~ 0
+IO13
+Text Label 2975 7050 3    50   ~ 0
+IO14
+Text Label 2875 6550 1    50   ~ 0
+IO15
+$Comp
+L power:GND #PWR0167
+U 1 1 61BB832B
+P 3875 7050
+F 0 "#PWR0167" H 3875 6800 50  0001 C CNN
+F 1 "GND" H 3880 6877 50  0001 C CNN
+F 2 "" H 3875 7050 50  0001 C CNN
+F 3 "" H 3875 7050 50  0001 C CNN
+	1    3875 7050
+	1    0    0    -1  
+$EndComp
+Text Label 2875 7050 3    50   ~ 0
+IO16
+$Comp
+L power:GND #PWR0204
+U 1 1 61BB92F0
+P 3075 7050
+F 0 "#PWR0204" H 3075 6800 50  0001 C CNN
+F 1 "GND" H 3080 6877 50  0001 C CNN
+F 2 "" H 3075 7050 50  0001 C CNN
+F 3 "" H 3075 7050 50  0001 C CNN
+	1    3075 7050
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR0205
+U 1 1 61BB96B9
+P 3075 6550
+F 0 "#PWR0205" H 3075 6300 50  0001 C CNN
+F 1 "GND" H 3080 6377 50  0001 C CNN
+F 2 "" H 3075 6550 50  0001 C CNN
+F 3 "" H 3075 6550 50  0001 C CNN
+	1    3075 6550
+	-1   0    0    1   
+$EndComp
+Text Label 2775 6550 1    50   ~ 0
+IO17
+Text Label 2775 7050 3    50   ~ 0
+IO18
+Text Label 2675 6550 1    50   ~ 0
+IO19
+Text Label 1775 6550 0    50   ~ 0
+IO20
+Text Label 1275 6550 2    50   ~ 0
+IO21
+$Comp
+L power:GND #PWR0206
+U 1 1 61BC6861
+P 3375 7050
+F 0 "#PWR0206" H 3375 6800 50  0001 C CNN
+F 1 "GND" H 3380 6877 50  0001 C CNN
+F 2 "" H 3375 7050 50  0001 C CNN
+F 3 "" H 3375 7050 50  0001 C CNN
+	1    3375 7050
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR0207
+U 1 1 61BC6C5C
+P 3375 6550
+F 0 "#PWR0207" H 3375 6300 50  0001 C CNN
+F 1 "GND" H 3380 6377 50  0001 C CNN
+F 2 "" H 3375 6550 50  0001 C CNN
+F 3 "" H 3375 6550 50  0001 C CNN
+	1    3375 6550
+	-1   0    0    1   
+$EndComp
+$Comp
+L power:GND #PWR0208
+U 1 1 61BC74DF
+P 3475 6550
+F 0 "#PWR0208" H 3475 6300 50  0001 C CNN
+F 1 "GND" H 3480 6377 50  0001 C CNN
+F 2 "" H 3475 6550 50  0001 C CNN
+F 3 "" H 3475 6550 50  0001 C CNN
+	1    3475 6550
+	-1   0    0    1   
+$EndComp
+$Comp
+L power:GND #PWR0209
+U 1 1 61BC7886
+P 3475 7050
+F 0 "#PWR0209" H 3475 6800 50  0001 C CNN
+F 1 "GND" H 3480 6877 50  0001 C CNN
+F 2 "" H 3475 7050 50  0001 C CNN
+F 3 "" H 3475 7050 50  0001 C CNN
+	1    3475 7050
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR0131
+U 1 1 61436FC1
+P 1275 7150
+F 0 "#PWR0131" H 1275 6900 50  0001 C CNN
+F 1 "GND" V 1280 7022 50  0001 R CNN
+F 2 "" H 1275 7150 50  0001 C CNN
+F 3 "" H 1275 7150 50  0001 C CNN
+	1    1275 7150
+	0    1    -1   0   
+$EndComp
+Text Label 1275 6450 2    50   ~ 0
+IO23
+Text Label 1775 6450 0    50   ~ 0
+IO22
+Text Label 5200 6375 2    50   ~ 0
+EXT_INST_A
+Text Label 5700 6375 0    50   ~ 0
+EXT_INST_B
+Text Label 5200 6475 2    50   ~ 0
+EXT_INST_D
+Text Label 5700 6475 0    50   ~ 0
+EXT_INST_C
+$Comp
+L power:+12V #PWR0127
+U 1 1 61D5A7F6
+P 1775 6050
+F 0 "#PWR0127" H 1775 5900 50  0001 C CNN
+F 1 "+12V" V 1775 6175 50  0000 L CNN
+F 2 "" H 1775 6050 50  0001 C CNN
+F 3 "" H 1775 6050 50  0001 C CNN
+	1    1775 6050
+	0    1    1    0   
+$EndComp
+$Comp
+L power:-12V #PWR0128
+U 1 1 61D5B08B
+P 1275 6050
+F 0 "#PWR0128" H 1275 6150 50  0001 C CNN
+F 1 "-12V" V 1275 6175 50  0000 L CNN
+F 2 "" H 1275 6050 50  0001 C CNN
+F 3 "" H 1275 6050 50  0001 C CNN
+	1    1275 6050
+	0    -1   -1   0   
+$EndComp
+$Comp
+L power:GND #PWR0129
+U 1 1 61D5EA26
+P 1775 6150
+F 0 "#PWR0129" H 1775 5900 50  0001 C CNN
+F 1 "GND" V 1780 6022 50  0001 R CNN
+F 2 "" H 1775 6150 50  0001 C CNN
+F 3 "" H 1775 6150 50  0001 C CNN
+	1    1775 6150
+	0    -1   1    0   
+$EndComp
+Text GLabel 1275 5850 0    50   Input ~ 0
+-12VDOWNSTREAM
+Text GLabel 1775 5850 2    50   Input ~ 0
++12VDOWNSTREAM
+$Comp
+L Mechanical:MountingHole_Pad H1
+U 1 1 61D75881
+P 9100 6400
+F 0 "H1" H 9200 6449 50  0000 L CNN
+F 1 "M3" H 9200 6358 50  0000 L CNN
+F 2 "MountingHole:MountingHole_3.2mm_M3_Pad_Via" H 9100 6400 50  0001 C CNN
+F 3 "~" H 9100 6400 50  0001 C CNN
+	1    9100 6400
+	1    0    0    -1  
+$EndComp
+$Comp
+L Mechanical:MountingHole_Pad H2
+U 1 1 61D764D5
+P 9475 6400
+F 0 "H2" H 9575 6449 50  0000 L CNN
+F 1 "M3" H 9575 6358 50  0000 L CNN
+F 2 "MountingHole:MountingHole_3.2mm_M3_Pad_Via" H 9475 6400 50  0001 C CNN
+F 3 "~" H 9475 6400 50  0001 C CNN
+	1    9475 6400
+	1    0    0    -1  
+$EndComp
+$Comp
+L Mechanical:MountingHole_Pad H3
+U 1 1 61D76922
+P 9850 6400
+F 0 "H3" H 9950 6449 50  0000 L CNN
+F 1 "M3" H 9950 6358 50  0000 L CNN
+F 2 "MountingHole:MountingHole_3.2mm_M3_Pad_Via" H 9850 6400 50  0001 C CNN
+F 3 "~" H 9850 6400 50  0001 C CNN
+	1    9850 6400
+	1    0    0    -1  
+$EndComp
+$Comp
+L Mechanical:MountingHole_Pad H4
+U 1 1 61D76DEB
+P 10225 6400
+F 0 "H4" H 10325 6449 50  0000 L CNN
+F 1 "M3" H 10325 6358 50  0000 L CNN
+F 2 "MountingHole:MountingHole_3.2mm_M3_Pad_Via" H 10225 6400 50  0001 C CNN
+F 3 "~" H 10225 6400 50  0001 C CNN
+	1    10225 6400
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR0113
+U 1 1 61834042
+P 9100 6500
+F 0 "#PWR0113" H 9100 6250 50  0001 C CNN
+F 1 "GND" V 9105 6372 50  0001 R CNN
+F 2 "" H 9100 6500 50  0001 C CNN
+F 3 "" H 9100 6500 50  0001 C CNN
+	1    9100 6500
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR0114
+U 1 1 618346BF
+P 9475 6500
+F 0 "#PWR0114" H 9475 6250 50  0001 C CNN
+F 1 "GND" V 9480 6372 50  0001 R CNN
+F 2 "" H 9475 6500 50  0001 C CNN
+F 3 "" H 9475 6500 50  0001 C CNN
+	1    9475 6500
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR0115
+U 1 1 618349B5
+P 9850 6500
+F 0 "#PWR0115" H 9850 6250 50  0001 C CNN
+F 1 "GND" V 9855 6372 50  0001 R CNN
+F 2 "" H 9850 6500 50  0001 C CNN
+F 3 "" H 9850 6500 50  0001 C CNN
+	1    9850 6500
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR0116
+U 1 1 61834E38
+P 10225 6500
+F 0 "#PWR0116" H 10225 6250 50  0001 C CNN
+F 1 "GND" V 10230 6372 50  0001 R CNN
+F 2 "" H 10225 6500 50  0001 C CNN
+F 3 "" H 10225 6500 50  0001 C CNN
+	1    10225 6500
+	1    0    0    -1  
+$EndComp
+$Comp
+L winterbloom:Eurorack_Mono_Jack J20
+U 1 1 619C991D
+P 7250 1075
+F 0 "J20" H 7218 700 50  0000 C CNN
+F 1 "VO 1A" H 7218 791 50  0000 C CNN
+F 2 "winterbloom:WQP-WQP518MA" H 7300 725 50  0001 C CNN
+F 3 "http://www.qingpu-electronics.com/en/products/WQP-PJ398SM-362.html" H 7250 1025 50  0001 C CNN
+F 4 "WQP-WQP518MA" H 7250 825 50  0001 C CNN "mpn"
+	1    7250 1075
+	-1   0    0    1   
+$EndComp
+$Comp
+L power:GND #PWR033
+U 1 1 619D17B6
+P 7450 925
+F 0 "#PWR033" H 7450 675 50  0001 C CNN
+F 1 "GND" V 7455 797 50  0001 R CNN
+F 2 "" H 7450 925 50  0001 C CNN
+F 3 "" H 7450 925 50  0001 C CNN
+	1    7450 925 
+	0    -1   -1   0   
+$EndComp
+Text Label 7450 1025 0    50   ~ 0
+DAC_1A
+NoConn ~ 7450 1125
+$Comp
+L winterbloom:Eurorack_Mono_Jack J21
+U 1 1 619EA4E2
+P 7250 1675
+F 0 "J21" H 7218 1300 50  0000 C CNN
+F 1 "VO 1B" H 7218 1391 50  0000 C CNN
+F 2 "winterbloom:WQP-WQP518MA" H 7300 1325 50  0001 C CNN
+F 3 "http://www.qingpu-electronics.com/en/products/WQP-PJ398SM-362.html" H 7250 1625 50  0001 C CNN
+F 4 "WQP-WQP518MA" H 7250 1425 50  0001 C CNN "mpn"
+	1    7250 1675
+	-1   0    0    1   
+$EndComp
+$Comp
+L power:GND #PWR034
+U 1 1 619EA4EF
+P 7450 1525
+F 0 "#PWR034" H 7450 1275 50  0001 C CNN
+F 1 "GND" V 7455 1397 50  0001 R CNN
+F 2 "" H 7450 1525 50  0001 C CNN
+F 3 "" H 7450 1525 50  0001 C CNN
+	1    7450 1525
+	0    -1   -1   0   
+$EndComp
+Text Label 7450 1625 0    50   ~ 0
+DAC_1B
+NoConn ~ 7450 1725
+$Comp
+L winterbloom:Eurorack_Mono_Jack J22
+U 1 1 619EA62E
+P 7250 2275
+F 0 "J22" H 7218 1900 50  0000 C CNN
+F 1 "VO 1C" H 7218 1991 50  0000 C CNN
+F 2 "winterbloom:WQP-WQP518MA" H 7300 1925 50  0001 C CNN
+F 3 "http://www.qingpu-electronics.com/en/products/WQP-PJ398SM-362.html" H 7250 2225 50  0001 C CNN
+F 4 "WQP-WQP518MA" H 7250 2025 50  0001 C CNN "mpn"
+	1    7250 2275
+	-1   0    0    1   
+$EndComp
+$Comp
+L power:GND #PWR035
+U 1 1 619EA63B
+P 7450 2125
+F 0 "#PWR035" H 7450 1875 50  0001 C CNN
+F 1 "GND" V 7455 1997 50  0001 R CNN
+F 2 "" H 7450 2125 50  0001 C CNN
+F 3 "" H 7450 2125 50  0001 C CNN
+	1    7450 2125
+	0    -1   -1   0   
+$EndComp
+Text Label 7450 2225 0    50   ~ 0
+DAC_1C
+NoConn ~ 7450 2325
+$Comp
+L winterbloom:Eurorack_Mono_Jack J23
+U 1 1 619EC726
+P 7250 2875
+F 0 "J23" H 7218 2500 50  0000 C CNN
+F 1 "VO 1D" H 7218 2591 50  0000 C CNN
+F 2 "winterbloom:WQP-WQP518MA" H 7300 2525 50  0001 C CNN
+F 3 "http://www.qingpu-electronics.com/en/products/WQP-PJ398SM-362.html" H 7250 2825 50  0001 C CNN
+F 4 "WQP-WQP518MA" H 7250 2625 50  0001 C CNN "mpn"
+	1    7250 2875
+	-1   0    0    1   
+$EndComp
+$Comp
+L power:GND #PWR036
+U 1 1 619EC733
+P 7450 2725
+F 0 "#PWR036" H 7450 2475 50  0001 C CNN
+F 1 "GND" V 7455 2597 50  0001 R CNN
+F 2 "" H 7450 2725 50  0001 C CNN
+F 3 "" H 7450 2725 50  0001 C CNN
+	1    7450 2725
+	0    -1   -1   0   
+$EndComp
+Text Label 7450 2825 0    50   ~ 0
+DAC_1D
+NoConn ~ 7450 2925
+$Comp
+L winterbloom:Eurorack_Mono_Jack J24
+U 1 1 619F1F04
+P 8150 1075
+F 0 "J24" H 8118 700 50  0000 C CNN
+F 1 "VO 2A" H 8118 791 50  0000 C CNN
+F 2 "winterbloom:WQP-WQP518MA" H 8200 725 50  0001 C CNN
+F 3 "http://www.qingpu-electronics.com/en/products/WQP-PJ398SM-362.html" H 8150 1025 50  0001 C CNN
+F 4 "WQP-WQP518MA" H 8150 825 50  0001 C CNN "mpn"
+	1    8150 1075
+	-1   0    0    1   
+$EndComp
+$Comp
+L power:GND #PWR037
+U 1 1 619F1F0A
+P 8350 925
+F 0 "#PWR037" H 8350 675 50  0001 C CNN
+F 1 "GND" V 8355 797 50  0001 R CNN
+F 2 "" H 8350 925 50  0001 C CNN
+F 3 "" H 8350 925 50  0001 C CNN
+	1    8350 925 
+	0    -1   -1   0   
+$EndComp
+Text Label 8350 1025 0    50   ~ 0
+DAC_2A
+NoConn ~ 8350 1125
+$Comp
+L winterbloom:Eurorack_Mono_Jack J25
+U 1 1 619F1F13
+P 8150 1675
+F 0 "J25" H 8118 1300 50  0000 C CNN
+F 1 "VO 2B" H 8118 1391 50  0000 C CNN
+F 2 "winterbloom:WQP-WQP518MA" H 8200 1325 50  0001 C CNN
+F 3 "http://www.qingpu-electronics.com/en/products/WQP-PJ398SM-362.html" H 8150 1625 50  0001 C CNN
+F 4 "WQP-WQP518MA" H 8150 1425 50  0001 C CNN "mpn"
+	1    8150 1675
+	-1   0    0    1   
+$EndComp
+$Comp
+L power:GND #PWR038
+U 1 1 619F1F19
+P 8350 1525
+F 0 "#PWR038" H 8350 1275 50  0001 C CNN
+F 1 "GND" V 8355 1397 50  0001 R CNN
+F 2 "" H 8350 1525 50  0001 C CNN
+F 3 "" H 8350 1525 50  0001 C CNN
+	1    8350 1525
+	0    -1   -1   0   
+$EndComp
+Text Label 8350 1625 0    50   ~ 0
+DAC_2B
+NoConn ~ 8350 1725
+$Comp
+L winterbloom:Eurorack_Mono_Jack J26
+U 1 1 619F1F22
+P 8150 2275
+F 0 "J26" H 8118 1900 50  0000 C CNN
+F 1 "VO 2C" H 8118 1991 50  0000 C CNN
+F 2 "winterbloom:WQP-WQP518MA" H 8200 1925 50  0001 C CNN
+F 3 "http://www.qingpu-electronics.com/en/products/WQP-PJ398SM-362.html" H 8150 2225 50  0001 C CNN
+F 4 "WQP-WQP518MA" H 8150 2025 50  0001 C CNN "mpn"
+	1    8150 2275
+	-1   0    0    1   
+$EndComp
+$Comp
+L power:GND #PWR039
+U 1 1 619F1F28
+P 8350 2125
+F 0 "#PWR039" H 8350 1875 50  0001 C CNN
+F 1 "GND" V 8355 1997 50  0001 R CNN
+F 2 "" H 8350 2125 50  0001 C CNN
+F 3 "" H 8350 2125 50  0001 C CNN
+	1    8350 2125
+	0    -1   -1   0   
+$EndComp
+Text Label 8350 2225 0    50   ~ 0
+DAC_2C
+NoConn ~ 8350 2325
+$Comp
+L winterbloom:Eurorack_Mono_Jack J27
+U 1 1 619F1F31
+P 8150 2875
+F 0 "J27" H 8118 2500 50  0000 C CNN
+F 1 "VO 2D" H 8118 2591 50  0000 C CNN
+F 2 "winterbloom:WQP-WQP518MA" H 8200 2525 50  0001 C CNN
+F 3 "http://www.qingpu-electronics.com/en/products/WQP-PJ398SM-362.html" H 8150 2825 50  0001 C CNN
+F 4 "WQP-WQP518MA" H 8150 2625 50  0001 C CNN "mpn"
+	1    8150 2875
+	-1   0    0    1   
+$EndComp
+$Comp
+L power:GND #PWR040
+U 1 1 619F1F37
+P 8350 2725
+F 0 "#PWR040" H 8350 2475 50  0001 C CNN
+F 1 "GND" V 8355 2597 50  0001 R CNN
+F 2 "" H 8350 2725 50  0001 C CNN
+F 3 "" H 8350 2725 50  0001 C CNN
+	1    8350 2725
+	0    -1   -1   0   
+$EndComp
+Text Label 8350 2825 0    50   ~ 0
+DAC_2D
+NoConn ~ 8350 2925
+$Comp
+L winterbloom:Eurorack_Mono_Jack J28
+U 1 1 619F983A
+P 9025 1075
+F 0 "J28" H 8993 700 50  0000 C CNN
+F 1 "VO 3A" H 8993 791 50  0000 C CNN
+F 2 "winterbloom:WQP-WQP518MA" H 9075 725 50  0001 C CNN
+F 3 "http://www.qingpu-electronics.com/en/products/WQP-PJ398SM-362.html" H 9025 1025 50  0001 C CNN
+F 4 "WQP-WQP518MA" H 9025 825 50  0001 C CNN "mpn"
+	1    9025 1075
+	-1   0    0    1   
+$EndComp
+$Comp
+L power:GND #PWR041
+U 1 1 619F9840
+P 9225 925
+F 0 "#PWR041" H 9225 675 50  0001 C CNN
+F 1 "GND" V 9230 797 50  0001 R CNN
+F 2 "" H 9225 925 50  0001 C CNN
+F 3 "" H 9225 925 50  0001 C CNN
+	1    9225 925 
+	0    -1   -1   0   
+$EndComp
+Text Label 9225 1025 0    50   ~ 0
+DAC_3A
+NoConn ~ 9225 1125
+$Comp
+L winterbloom:Eurorack_Mono_Jack J29
+U 1 1 619F9849
+P 9025 1675
+F 0 "J29" H 8993 1300 50  0000 C CNN
+F 1 "VO 3B" H 8993 1391 50  0000 C CNN
+F 2 "winterbloom:WQP-WQP518MA" H 9075 1325 50  0001 C CNN
+F 3 "http://www.qingpu-electronics.com/en/products/WQP-PJ398SM-362.html" H 9025 1625 50  0001 C CNN
+F 4 "WQP-WQP518MA" H 9025 1425 50  0001 C CNN "mpn"
+	1    9025 1675
+	-1   0    0    1   
+$EndComp
+$Comp
+L power:GND #PWR042
+U 1 1 619F984F
+P 9225 1525
+F 0 "#PWR042" H 9225 1275 50  0001 C CNN
+F 1 "GND" V 9230 1397 50  0001 R CNN
+F 2 "" H 9225 1525 50  0001 C CNN
+F 3 "" H 9225 1525 50  0001 C CNN
+	1    9225 1525
+	0    -1   -1   0   
+$EndComp
+Text Label 9225 1625 0    50   ~ 0
+DAC_3B
+NoConn ~ 9225 1725
+$Comp
+L winterbloom:Eurorack_Mono_Jack J30
+U 1 1 619F9858
+P 9025 2275
+F 0 "J30" H 8993 1900 50  0000 C CNN
+F 1 "VO 3C" H 8993 1991 50  0000 C CNN
+F 2 "winterbloom:WQP-WQP518MA" H 9075 1925 50  0001 C CNN
+F 3 "http://www.qingpu-electronics.com/en/products/WQP-PJ398SM-362.html" H 9025 2225 50  0001 C CNN
+F 4 "WQP-WQP518MA" H 9025 2025 50  0001 C CNN "mpn"
+	1    9025 2275
+	-1   0    0    1   
+$EndComp
+$Comp
+L power:GND #PWR043
+U 1 1 619F985E
+P 9225 2125
+F 0 "#PWR043" H 9225 1875 50  0001 C CNN
+F 1 "GND" V 9230 1997 50  0001 R CNN
+F 2 "" H 9225 2125 50  0001 C CNN
+F 3 "" H 9225 2125 50  0001 C CNN
+	1    9225 2125
+	0    -1   -1   0   
+$EndComp
+Text Label 9225 2225 0    50   ~ 0
+DAC_3C
+NoConn ~ 9225 2325
+$Comp
+L winterbloom:Eurorack_Mono_Jack J31
+U 1 1 619F9867
+P 9025 2875
+F 0 "J31" H 8993 2500 50  0000 C CNN
+F 1 "VO 3D" H 8993 2591 50  0000 C CNN
+F 2 "winterbloom:WQP-WQP518MA" H 9075 2525 50  0001 C CNN
+F 3 "http://www.qingpu-electronics.com/en/products/WQP-PJ398SM-362.html" H 9025 2825 50  0001 C CNN
+F 4 "WQP-WQP518MA" H 9025 2625 50  0001 C CNN "mpn"
+	1    9025 2875
+	-1   0    0    1   
+$EndComp
+$Comp
+L power:GND #PWR044
+U 1 1 619F986D
+P 9225 2725
+F 0 "#PWR044" H 9225 2475 50  0001 C CNN
+F 1 "GND" V 9230 2597 50  0001 R CNN
+F 2 "" H 9225 2725 50  0001 C CNN
+F 3 "" H 9225 2725 50  0001 C CNN
+	1    9225 2725
+	0    -1   -1   0   
+$EndComp
+Text Label 9225 2825 0    50   ~ 0
+DAC_3D
+NoConn ~ 9225 2925
+$Comp
+L winterbloom:Eurorack_Mono_Jack J32
+U 1 1 619FA21C
+P 9900 1075
+F 0 "J32" H 9868 700 50  0000 C CNN
+F 1 "VO 4A" H 9868 791 50  0000 C CNN
+F 2 "winterbloom:WQP-WQP518MA" H 9950 725 50  0001 C CNN
+F 3 "http://www.qingpu-electronics.com/en/products/WQP-PJ398SM-362.html" H 9900 1025 50  0001 C CNN
+F 4 "WQP-WQP518MA" H 9900 825 50  0001 C CNN "mpn"
+	1    9900 1075
+	-1   0    0    1   
+$EndComp
+$Comp
+L power:GND #PWR045
+U 1 1 619FA222
+P 10100 925
+F 0 "#PWR045" H 10100 675 50  0001 C CNN
+F 1 "GND" V 10105 797 50  0001 R CNN
+F 2 "" H 10100 925 50  0001 C CNN
+F 3 "" H 10100 925 50  0001 C CNN
+	1    10100 925 
+	0    -1   -1   0   
+$EndComp
+Text Label 10100 1025 0    50   ~ 0
+DAC_4A
+NoConn ~ 10100 1125
+$Comp
+L winterbloom:Eurorack_Mono_Jack J33
+U 1 1 619FA22B
+P 9900 1675
+F 0 "J33" H 9868 1300 50  0000 C CNN
+F 1 "VO 4B" H 9868 1391 50  0000 C CNN
+F 2 "winterbloom:WQP-WQP518MA" H 9950 1325 50  0001 C CNN
+F 3 "http://www.qingpu-electronics.com/en/products/WQP-PJ398SM-362.html" H 9900 1625 50  0001 C CNN
+F 4 "WQP-WQP518MA" H 9900 1425 50  0001 C CNN "mpn"
+	1    9900 1675
+	-1   0    0    1   
+$EndComp
+$Comp
+L power:GND #PWR046
+U 1 1 619FA231
+P 10100 1525
+F 0 "#PWR046" H 10100 1275 50  0001 C CNN
+F 1 "GND" V 10105 1397 50  0001 R CNN
+F 2 "" H 10100 1525 50  0001 C CNN
+F 3 "" H 10100 1525 50  0001 C CNN
+	1    10100 1525
+	0    -1   -1   0   
+$EndComp
+Text Label 10100 1625 0    50   ~ 0
+DAC_4B
+NoConn ~ 10100 1725
+$Comp
+L winterbloom:Eurorack_Mono_Jack J34
+U 1 1 619FA23A
+P 9900 2275
+F 0 "J34" H 9868 1900 50  0000 C CNN
+F 1 "VO 4C" H 9868 1991 50  0000 C CNN
+F 2 "winterbloom:WQP-WQP518MA" H 9950 1925 50  0001 C CNN
+F 3 "http://www.qingpu-electronics.com/en/products/WQP-PJ398SM-362.html" H 9900 2225 50  0001 C CNN
+F 4 "WQP-WQP518MA" H 9900 2025 50  0001 C CNN "mpn"
+	1    9900 2275
+	-1   0    0    1   
+$EndComp
+$Comp
+L power:GND #PWR047
+U 1 1 619FA240
+P 10100 2125
+F 0 "#PWR047" H 10100 1875 50  0001 C CNN
+F 1 "GND" V 10105 1997 50  0001 R CNN
+F 2 "" H 10100 2125 50  0001 C CNN
+F 3 "" H 10100 2125 50  0001 C CNN
+	1    10100 2125
+	0    -1   -1   0   
+$EndComp
+Text Label 10100 2225 0    50   ~ 0
+DAC_4C
+NoConn ~ 10100 2325
+$Comp
+L winterbloom:Eurorack_Mono_Jack J35
+U 1 1 619FA249
+P 9900 2875
+F 0 "J35" H 9868 2500 50  0000 C CNN
+F 1 "VO 4D" H 9868 2591 50  0000 C CNN
+F 2 "winterbloom:WQP-WQP518MA" H 9950 2525 50  0001 C CNN
+F 3 "http://www.qingpu-electronics.com/en/products/WQP-PJ398SM-362.html" H 9900 2825 50  0001 C CNN
+F 4 "WQP-WQP518MA" H 9900 2625 50  0001 C CNN "mpn"
+	1    9900 2875
+	-1   0    0    1   
+$EndComp
+$Comp
+L power:GND #PWR048
+U 1 1 619FA24F
+P 10100 2725
+F 0 "#PWR048" H 10100 2475 50  0001 C CNN
+F 1 "GND" V 10105 2597 50  0001 R CNN
+F 2 "" H 10100 2725 50  0001 C CNN
+F 3 "" H 10100 2725 50  0001 C CNN
+	1    10100 2725
+	0    -1   -1   0   
+$EndComp
+Text Label 10100 2825 0    50   ~ 0
+DAC_4D
+NoConn ~ 10100 2925
+$Comp
+L winterbloom:Eurorack_Mono_Jack J1
+U 1 1 61A26A49
+P 3500 1075
+F 0 "J1" H 3468 700 50  0000 C CNN
+F 1 "VI 1A" H 3468 791 50  0000 C CNN
+F 2 "winterbloom:WQP-WQP518MA" H 3550 725 50  0001 C CNN
+F 3 "http://www.qingpu-electronics.com/en/products/WQP-PJ398SM-362.html" H 3500 1025 50  0001 C CNN
+F 4 "WQP-WQP518MA" H 3500 825 50  0001 C CNN "mpn"
+	1    3500 1075
+	-1   0    0    1   
+$EndComp
+$Comp
+L power:GND #PWR01
+U 1 1 61A26A4F
+P 3700 925
+F 0 "#PWR01" H 3700 675 50  0001 C CNN
+F 1 "GND" V 3705 797 50  0001 R CNN
+F 2 "" H 3700 925 50  0001 C CNN
+F 3 "" H 3700 925 50  0001 C CNN
+	1    3700 925 
+	0    -1   -1   0   
+$EndComp
+Text Label 3700 1025 0    50   ~ 0
+ADC_1A
+$Comp
+L winterbloom:Eurorack_Mono_Jack J2
+U 1 1 61A26A58
+P 3500 1675
+F 0 "J2" H 3468 1300 50  0000 C CNN
+F 1 "VI 1B" H 3468 1391 50  0000 C CNN
+F 2 "winterbloom:WQP-WQP518MA" H 3550 1325 50  0001 C CNN
+F 3 "http://www.qingpu-electronics.com/en/products/WQP-PJ398SM-362.html" H 3500 1625 50  0001 C CNN
+F 4 "WQP-WQP518MA" H 3500 1425 50  0001 C CNN "mpn"
+	1    3500 1675
+	-1   0    0    1   
+$EndComp
+$Comp
+L power:GND #PWR03
+U 1 1 61A26A5E
+P 3700 1525
+F 0 "#PWR03" H 3700 1275 50  0001 C CNN
+F 1 "GND" V 3705 1397 50  0001 R CNN
+F 2 "" H 3700 1525 50  0001 C CNN
+F 3 "" H 3700 1525 50  0001 C CNN
+	1    3700 1525
+	0    -1   -1   0   
+$EndComp
+Text Label 3700 1625 0    50   ~ 0
+ADC_1B
+$Comp
+L winterbloom:Eurorack_Mono_Jack J3
+U 1 1 61A26A67
+P 3500 2275
+F 0 "J3" H 3468 1900 50  0000 C CNN
+F 1 "VI 1C" H 3468 1991 50  0000 C CNN
+F 2 "winterbloom:WQP-WQP518MA" H 3550 1925 50  0001 C CNN
+F 3 "http://www.qingpu-electronics.com/en/products/WQP-PJ398SM-362.html" H 3500 2225 50  0001 C CNN
+F 4 "WQP-WQP518MA" H 3500 2025 50  0001 C CNN "mpn"
+	1    3500 2275
+	-1   0    0    1   
+$EndComp
+$Comp
+L power:GND #PWR05
+U 1 1 61A26A6D
+P 3700 2125
+F 0 "#PWR05" H 3700 1875 50  0001 C CNN
+F 1 "GND" V 3705 1997 50  0001 R CNN
+F 2 "" H 3700 2125 50  0001 C CNN
+F 3 "" H 3700 2125 50  0001 C CNN
+	1    3700 2125
+	0    -1   -1   0   
+$EndComp
+Text Label 3700 2225 0    50   ~ 0
+ADC_1C
+$Comp
+L winterbloom:Eurorack_Mono_Jack J4
+U 1 1 61A26A76
+P 3500 2875
+F 0 "J4" H 3468 2500 50  0000 C CNN
+F 1 "VI 1D" H 3468 2591 50  0000 C CNN
+F 2 "winterbloom:WQP-WQP518MA" H 3550 2525 50  0001 C CNN
+F 3 "http://www.qingpu-electronics.com/en/products/WQP-PJ398SM-362.html" H 3500 2825 50  0001 C CNN
+F 4 "WQP-WQP518MA" H 3500 2625 50  0001 C CNN "mpn"
+	1    3500 2875
+	-1   0    0    1   
+$EndComp
+$Comp
+L power:GND #PWR07
+U 1 1 61A26A7C
+P 3700 2725
+F 0 "#PWR07" H 3700 2475 50  0001 C CNN
+F 1 "GND" V 3705 2597 50  0001 R CNN
+F 2 "" H 3700 2725 50  0001 C CNN
+F 3 "" H 3700 2725 50  0001 C CNN
+	1    3700 2725
+	0    -1   -1   0   
+$EndComp
+Text Label 3700 2825 0    50   ~ 0
+ADC_1D
+$Comp
+L winterbloom:Eurorack_Mono_Jack J8
+U 1 1 61A26A85
+P 4400 1075
+F 0 "J8" H 4368 700 50  0000 C CNN
+F 1 "VI 2A" H 4368 791 50  0000 C CNN
+F 2 "winterbloom:WQP-WQP518MA" H 4450 725 50  0001 C CNN
+F 3 "http://www.qingpu-electronics.com/en/products/WQP-PJ398SM-362.html" H 4400 1025 50  0001 C CNN
+F 4 "WQP-WQP518MA" H 4400 825 50  0001 C CNN "mpn"
+	1    4400 1075
+	-1   0    0    1   
+$EndComp
+$Comp
+L power:GND #PWR09
+U 1 1 61A26A8B
+P 4600 925
+F 0 "#PWR09" H 4600 675 50  0001 C CNN
+F 1 "GND" V 4605 797 50  0001 R CNN
+F 2 "" H 4600 925 50  0001 C CNN
+F 3 "" H 4600 925 50  0001 C CNN
+	1    4600 925 
+	0    -1   -1   0   
+$EndComp
+Text Label 4600 1025 0    50   ~ 0
+ADC_2A
+$Comp
+L winterbloom:Eurorack_Mono_Jack J9
+U 1 1 61A26A94
+P 4400 1675
+F 0 "J9" H 4368 1300 50  0000 C CNN
+F 1 "VI 2B" H 4368 1391 50  0000 C CNN
+F 2 "winterbloom:WQP-WQP518MA" H 4450 1325 50  0001 C CNN
+F 3 "http://www.qingpu-electronics.com/en/products/WQP-PJ398SM-362.html" H 4400 1625 50  0001 C CNN
+F 4 "WQP-WQP518MA" H 4400 1425 50  0001 C CNN "mpn"
+	1    4400 1675
+	-1   0    0    1   
+$EndComp
+$Comp
+L power:GND #PWR011
+U 1 1 61A26A9A
+P 4600 1525
+F 0 "#PWR011" H 4600 1275 50  0001 C CNN
+F 1 "GND" V 4605 1397 50  0001 R CNN
+F 2 "" H 4600 1525 50  0001 C CNN
+F 3 "" H 4600 1525 50  0001 C CNN
+	1    4600 1525
+	0    -1   -1   0   
+$EndComp
+Text Label 4600 1625 0    50   ~ 0
+ADC_2B
+$Comp
+L winterbloom:Eurorack_Mono_Jack J10
+U 1 1 61A26AA3
+P 4400 2275
+F 0 "J10" H 4368 1900 50  0000 C CNN
+F 1 "VI 2C" H 4368 1991 50  0000 C CNN
+F 2 "winterbloom:WQP-WQP518MA" H 4450 1925 50  0001 C CNN
+F 3 "http://www.qingpu-electronics.com/en/products/WQP-PJ398SM-362.html" H 4400 2225 50  0001 C CNN
+F 4 "WQP-WQP518MA" H 4400 2025 50  0001 C CNN "mpn"
+	1    4400 2275
+	-1   0    0    1   
+$EndComp
+$Comp
+L power:GND #PWR013
+U 1 1 61A26AA9
+P 4600 2125
+F 0 "#PWR013" H 4600 1875 50  0001 C CNN
+F 1 "GND" V 4605 1997 50  0001 R CNN
+F 2 "" H 4600 2125 50  0001 C CNN
+F 3 "" H 4600 2125 50  0001 C CNN
+	1    4600 2125
+	0    -1   -1   0   
+$EndComp
+Text Label 4600 2225 0    50   ~ 0
+ADC_2C
+$Comp
+L winterbloom:Eurorack_Mono_Jack J11
+U 1 1 61A26AB2
+P 4400 2875
+F 0 "J11" H 4368 2500 50  0000 C CNN
+F 1 "VI 2D" H 4368 2591 50  0000 C CNN
+F 2 "winterbloom:WQP-WQP518MA" H 4450 2525 50  0001 C CNN
+F 3 "http://www.qingpu-electronics.com/en/products/WQP-PJ398SM-362.html" H 4400 2825 50  0001 C CNN
+F 4 "WQP-WQP518MA" H 4400 2625 50  0001 C CNN "mpn"
+	1    4400 2875
+	-1   0    0    1   
+$EndComp
+$Comp
+L power:GND #PWR015
+U 1 1 61A26AB8
+P 4600 2725
+F 0 "#PWR015" H 4600 2475 50  0001 C CNN
+F 1 "GND" V 4605 2597 50  0001 R CNN
+F 2 "" H 4600 2725 50  0001 C CNN
+F 3 "" H 4600 2725 50  0001 C CNN
+	1    4600 2725
+	0    -1   -1   0   
+$EndComp
+Text Label 4600 2825 0    50   ~ 0
+ADC_2D
+$Comp
+L winterbloom:Eurorack_Mono_Jack J12
+U 1 1 61A26AC1
+P 5275 1075
+F 0 "J12" H 5243 700 50  0000 C CNN
+F 1 "VI 3A" H 5243 791 50  0000 C CNN
+F 2 "winterbloom:WQP-WQP518MA" H 5325 725 50  0001 C CNN
+F 3 "http://www.qingpu-electronics.com/en/products/WQP-PJ398SM-362.html" H 5275 1025 50  0001 C CNN
+F 4 "WQP-WQP518MA" H 5275 825 50  0001 C CNN "mpn"
+	1    5275 1075
+	-1   0    0    1   
+$EndComp
+$Comp
+L power:GND #PWR017
+U 1 1 61A26AC7
+P 5475 925
+F 0 "#PWR017" H 5475 675 50  0001 C CNN
+F 1 "GND" V 5480 797 50  0001 R CNN
+F 2 "" H 5475 925 50  0001 C CNN
+F 3 "" H 5475 925 50  0001 C CNN
+	1    5475 925 
+	0    -1   -1   0   
+$EndComp
+Text Label 5475 1025 0    50   ~ 0
+ADC_3A
+$Comp
+L winterbloom:Eurorack_Mono_Jack J13
+U 1 1 61A26AD0
+P 5275 1675
+F 0 "J13" H 5243 1300 50  0000 C CNN
+F 1 "VI 3B" H 5243 1391 50  0000 C CNN
+F 2 "winterbloom:WQP-WQP518MA" H 5325 1325 50  0001 C CNN
+F 3 "http://www.qingpu-electronics.com/en/products/WQP-PJ398SM-362.html" H 5275 1625 50  0001 C CNN
+F 4 "WQP-WQP518MA" H 5275 1425 50  0001 C CNN "mpn"
+	1    5275 1675
+	-1   0    0    1   
+$EndComp
+$Comp
+L power:GND #PWR019
+U 1 1 61A26AD6
+P 5475 1525
+F 0 "#PWR019" H 5475 1275 50  0001 C CNN
+F 1 "GND" V 5480 1397 50  0001 R CNN
+F 2 "" H 5475 1525 50  0001 C CNN
+F 3 "" H 5475 1525 50  0001 C CNN
+	1    5475 1525
+	0    -1   -1   0   
+$EndComp
+Text Label 5475 1625 0    50   ~ 0
+ADC_3B
+$Comp
+L winterbloom:Eurorack_Mono_Jack J14
+U 1 1 61A26ADF
+P 5275 2275
+F 0 "J14" H 5243 1900 50  0000 C CNN
+F 1 "VI 3C" H 5243 1991 50  0000 C CNN
+F 2 "winterbloom:WQP-WQP518MA" H 5325 1925 50  0001 C CNN
+F 3 "http://www.qingpu-electronics.com/en/products/WQP-PJ398SM-362.html" H 5275 2225 50  0001 C CNN
+F 4 "WQP-WQP518MA" H 5275 2025 50  0001 C CNN "mpn"
+	1    5275 2275
+	-1   0    0    1   
+$EndComp
+$Comp
+L power:GND #PWR021
+U 1 1 61A26AE5
+P 5475 2125
+F 0 "#PWR021" H 5475 1875 50  0001 C CNN
+F 1 "GND" V 5480 1997 50  0001 R CNN
+F 2 "" H 5475 2125 50  0001 C CNN
+F 3 "" H 5475 2125 50  0001 C CNN
+	1    5475 2125
+	0    -1   -1   0   
+$EndComp
+Text Label 5475 2225 0    50   ~ 0
+ADC_3C
+$Comp
+L winterbloom:Eurorack_Mono_Jack J15
+U 1 1 61A26AEE
+P 5275 2875
+F 0 "J15" H 5243 2500 50  0000 C CNN
+F 1 "VI 3D" H 5243 2591 50  0000 C CNN
+F 2 "winterbloom:WQP-WQP518MA" H 5325 2525 50  0001 C CNN
+F 3 "http://www.qingpu-electronics.com/en/products/WQP-PJ398SM-362.html" H 5275 2825 50  0001 C CNN
+F 4 "WQP-WQP518MA" H 5275 2625 50  0001 C CNN "mpn"
+	1    5275 2875
+	-1   0    0    1   
+$EndComp
+$Comp
+L power:GND #PWR023
+U 1 1 61A26AF4
+P 5475 2725
+F 0 "#PWR023" H 5475 2475 50  0001 C CNN
+F 1 "GND" V 5480 2597 50  0001 R CNN
+F 2 "" H 5475 2725 50  0001 C CNN
+F 3 "" H 5475 2725 50  0001 C CNN
+	1    5475 2725
+	0    -1   -1   0   
+$EndComp
+Text Label 5475 2825 0    50   ~ 0
+ADC_3D
+$Comp
+L winterbloom:Eurorack_Mono_Jack J16
+U 1 1 61A26AFD
+P 6150 1075
+F 0 "J16" H 6118 700 50  0000 C CNN
+F 1 "VI 4A" H 6118 791 50  0000 C CNN
+F 2 "winterbloom:WQP-WQP518MA" H 6200 725 50  0001 C CNN
+F 3 "http://www.qingpu-electronics.com/en/products/WQP-PJ398SM-362.html" H 6150 1025 50  0001 C CNN
+F 4 "WQP-WQP518MA" H 6150 825 50  0001 C CNN "mpn"
+	1    6150 1075
+	-1   0    0    1   
+$EndComp
+$Comp
+L power:GND #PWR025
+U 1 1 61A26B03
+P 6350 925
+F 0 "#PWR025" H 6350 675 50  0001 C CNN
+F 1 "GND" V 6355 797 50  0001 R CNN
+F 2 "" H 6350 925 50  0001 C CNN
+F 3 "" H 6350 925 50  0001 C CNN
+	1    6350 925 
+	0    -1   -1   0   
+$EndComp
+Text Label 6350 1025 0    50   ~ 0
+ADC_4A
+$Comp
+L winterbloom:Eurorack_Mono_Jack J17
+U 1 1 61A26B0C
+P 6150 1675
+F 0 "J17" H 6118 1300 50  0000 C CNN
+F 1 "VI 4B" H 6118 1391 50  0000 C CNN
+F 2 "winterbloom:WQP-WQP518MA" H 6200 1325 50  0001 C CNN
+F 3 "http://www.qingpu-electronics.com/en/products/WQP-PJ398SM-362.html" H 6150 1625 50  0001 C CNN
+F 4 "WQP-WQP518MA" H 6150 1425 50  0001 C CNN "mpn"
+	1    6150 1675
+	-1   0    0    1   
+$EndComp
+$Comp
+L power:GND #PWR027
+U 1 1 61A26B12
+P 6350 1525
+F 0 "#PWR027" H 6350 1275 50  0001 C CNN
+F 1 "GND" V 6355 1397 50  0001 R CNN
+F 2 "" H 6350 1525 50  0001 C CNN
+F 3 "" H 6350 1525 50  0001 C CNN
+	1    6350 1525
+	0    -1   -1   0   
+$EndComp
+Text Label 6350 1625 0    50   ~ 0
+ADC_4B
+$Comp
+L winterbloom:Eurorack_Mono_Jack J18
+U 1 1 61A26B1B
+P 6150 2275
+F 0 "J18" H 6118 1900 50  0000 C CNN
+F 1 "VI 4C" H 6118 1991 50  0000 C CNN
+F 2 "winterbloom:WQP-WQP518MA" H 6200 1925 50  0001 C CNN
+F 3 "http://www.qingpu-electronics.com/en/products/WQP-PJ398SM-362.html" H 6150 2225 50  0001 C CNN
+F 4 "WQP-WQP518MA" H 6150 2025 50  0001 C CNN "mpn"
+	1    6150 2275
+	-1   0    0    1   
+$EndComp
+$Comp
+L power:GND #PWR029
+U 1 1 61A26B21
+P 6350 2125
+F 0 "#PWR029" H 6350 1875 50  0001 C CNN
+F 1 "GND" V 6355 1997 50  0001 R CNN
+F 2 "" H 6350 2125 50  0001 C CNN
+F 3 "" H 6350 2125 50  0001 C CNN
+	1    6350 2125
+	0    -1   -1   0   
+$EndComp
+Text Label 6350 2225 0    50   ~ 0
+ADC_4C
+$Comp
+L winterbloom:Eurorack_Mono_Jack J19
+U 1 1 61A26B2A
+P 6150 2875
+F 0 "J19" H 6118 2500 50  0000 C CNN
+F 1 "VI 4D" H 6118 2591 50  0000 C CNN
+F 2 "winterbloom:WQP-WQP518MA" H 6200 2525 50  0001 C CNN
+F 3 "http://www.qingpu-electronics.com/en/products/WQP-PJ398SM-362.html" H 6150 2825 50  0001 C CNN
+F 4 "WQP-WQP518MA" H 6150 2625 50  0001 C CNN "mpn"
+	1    6150 2875
+	-1   0    0    1   
+$EndComp
+$Comp
+L power:GND #PWR031
+U 1 1 61A26B30
+P 6350 2725
+F 0 "#PWR031" H 6350 2475 50  0001 C CNN
+F 1 "GND" V 6355 2597 50  0001 R CNN
+F 2 "" H 6350 2725 50  0001 C CNN
+F 3 "" H 6350 2725 50  0001 C CNN
+	1    6350 2725
+	0    -1   -1   0   
+$EndComp
+Text Label 6350 2825 0    50   ~ 0
+ADC_4D
+$Comp
+L power:GND #PWR02
+U 1 1 61A29807
+P 3700 1125
+F 0 "#PWR02" H 3700 875 50  0001 C CNN
+F 1 "GND" V 3705 997 50  0001 R CNN
+F 2 "" H 3700 1125 50  0001 C CNN
+F 3 "" H 3700 1125 50  0001 C CNN
+	1    3700 1125
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR04
+U 1 1 61A2A1A4
+P 3700 1725
+F 0 "#PWR04" H 3700 1475 50  0001 C CNN
+F 1 "GND" V 3705 1597 50  0001 R CNN
+F 2 "" H 3700 1725 50  0001 C CNN
+F 3 "" H 3700 1725 50  0001 C CNN
+	1    3700 1725
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR06
+U 1 1 61A2A5F6
+P 3700 2325
+F 0 "#PWR06" H 3700 2075 50  0001 C CNN
+F 1 "GND" V 3705 2197 50  0001 R CNN
+F 2 "" H 3700 2325 50  0001 C CNN
+F 3 "" H 3700 2325 50  0001 C CNN
+	1    3700 2325
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR08
+U 1 1 61A30235
+P 3700 2925
+F 0 "#PWR08" H 3700 2675 50  0001 C CNN
+F 1 "GND" V 3705 2797 50  0001 R CNN
+F 2 "" H 3700 2925 50  0001 C CNN
+F 3 "" H 3700 2925 50  0001 C CNN
+	1    3700 2925
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR016
+U 1 1 61A306BD
+P 4600 2925
+F 0 "#PWR016" H 4600 2675 50  0001 C CNN
+F 1 "GND" V 4605 2797 50  0001 R CNN
+F 2 "" H 4600 2925 50  0001 C CNN
+F 3 "" H 4600 2925 50  0001 C CNN
+	1    4600 2925
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR014
+U 1 1 61A30C9F
+P 4600 2325
+F 0 "#PWR014" H 4600 2075 50  0001 C CNN
+F 1 "GND" V 4605 2197 50  0001 R CNN
+F 2 "" H 4600 2325 50  0001 C CNN
+F 3 "" H 4600 2325 50  0001 C CNN
+	1    4600 2325
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR012
+U 1 1 61A3103F
+P 4600 1725
+F 0 "#PWR012" H 4600 1475 50  0001 C CNN
+F 1 "GND" V 4605 1597 50  0001 R CNN
+F 2 "" H 4600 1725 50  0001 C CNN
+F 3 "" H 4600 1725 50  0001 C CNN
+	1    4600 1725
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR010
+U 1 1 61A31388
+P 4600 1125
+F 0 "#PWR010" H 4600 875 50  0001 C CNN
+F 1 "GND" V 4605 997 50  0001 R CNN
+F 2 "" H 4600 1125 50  0001 C CNN
+F 3 "" H 4600 1125 50  0001 C CNN
+	1    4600 1125
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR018
+U 1 1 61A31738
+P 5475 1125
+F 0 "#PWR018" H 5475 875 50  0001 C CNN
+F 1 "GND" V 5480 997 50  0001 R CNN
+F 2 "" H 5475 1125 50  0001 C CNN
+F 3 "" H 5475 1125 50  0001 C CNN
+	1    5475 1125
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR020
+U 1 1 61A31BC2
+P 5475 1725
+F 0 "#PWR020" H 5475 1475 50  0001 C CNN
+F 1 "GND" V 5480 1597 50  0001 R CNN
+F 2 "" H 5475 1725 50  0001 C CNN
+F 3 "" H 5475 1725 50  0001 C CNN
+	1    5475 1725
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR022
+U 1 1 61A320C6
+P 5475 2325
+F 0 "#PWR022" H 5475 2075 50  0001 C CNN
+F 1 "GND" V 5480 2197 50  0001 R CNN
+F 2 "" H 5475 2325 50  0001 C CNN
+F 3 "" H 5475 2325 50  0001 C CNN
+	1    5475 2325
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR024
+U 1 1 61A32443
+P 5475 2925
+F 0 "#PWR024" H 5475 2675 50  0001 C CNN
+F 1 "GND" V 5480 2797 50  0001 R CNN
+F 2 "" H 5475 2925 50  0001 C CNN
+F 3 "" H 5475 2925 50  0001 C CNN
+	1    5475 2925
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR032
+U 1 1 61A32AD0
+P 6350 2925
+F 0 "#PWR032" H 6350 2675 50  0001 C CNN
+F 1 "GND" V 6355 2797 50  0001 R CNN
+F 2 "" H 6350 2925 50  0001 C CNN
+F 3 "" H 6350 2925 50  0001 C CNN
+	1    6350 2925
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR030
+U 1 1 61A32E1B
+P 6350 2325
+F 0 "#PWR030" H 6350 2075 50  0001 C CNN
+F 1 "GND" V 6355 2197 50  0001 R CNN
+F 2 "" H 6350 2325 50  0001 C CNN
+F 3 "" H 6350 2325 50  0001 C CNN
+	1    6350 2325
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR028
+U 1 1 61A331E2
+P 6350 1725
+F 0 "#PWR028" H 6350 1475 50  0001 C CNN
+F 1 "GND" V 6355 1597 50  0001 R CNN
+F 2 "" H 6350 1725 50  0001 C CNN
+F 3 "" H 6350 1725 50  0001 C CNN
+	1    6350 1725
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR026
+U 1 1 61A33479
+P 6350 1125
+F 0 "#PWR026" H 6350 875 50  0001 C CNN
+F 1 "GND" V 6355 997 50  0001 R CNN
+F 2 "" H 6350 1125 50  0001 C CNN
+F 3 "" H 6350 1125 50  0001 C CNN
+	1    6350 1125
+	1    0    0    -1  
+$EndComp
+$EndSCHEMATC
