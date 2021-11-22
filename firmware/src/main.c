@@ -6,23 +6,17 @@
 
 #include "hubble.h"
 #include "printf.h"
-#include "sam.h"
+#include "wntr_array.h"
 #include "wntr_build_info.h"
 #include "wntr_colorspace.h"
 #include "wntr_delay.h"
 #include "wntr_gpio.h"
-#include "wntr_pack.h"
 #include "wntr_ticks.h"
 #include <math.h>
 #include <stdlib.h>
 #include <string.h>
 
 /* Macros */
-
-#define ADC_12_BIT_TO_FLOAT(val) (u12_invert(map_rangef(val, 0.0f, 4096.0f, -5.0f, 5.0f)))
-#define FLOAT_TO_16_BIT_DAC(val) (u16_invert(float_to_u16(map_rangef(val, -5.f, 8.f, 0.f, 1.0f))))
-#define FLOAT_TO_12_BIT_DAC(val) (u12_invert(float_to_u12(map_rangef(val, -5.f, 5.f, 0.f, 1.0f))))
-#define ARRAY_LEN(array) (sizeof(array) / sizeof(array[0]))
 
 /* Global state */
 
@@ -49,7 +43,7 @@ static struct HubbleVoltageCalibrationTableEntry dac_calibration_table_entries_[
 };
 static struct HubbleVoltageCalibrationTable dac_calibration_table = {
     .entries = dac_calibration_table_entries_,
-    .len = ARRAY_LEN(dac_calibration_table_entries_),
+    .len = WNTR_ARRAY_LEN(dac_calibration_table_entries_),
 };
 
 static struct HubbleVoltageCalibrationTableEntry adc_calibration_table_entries_[] = {
@@ -61,7 +55,7 @@ static struct HubbleVoltageCalibrationTableEntry adc_calibration_table_entries_[
 };
 static struct HubbleVoltageCalibrationTable adc_calibration_table = {
     .entries = adc_calibration_table_entries_,
-    .len = ARRAY_LEN(adc_calibration_table_entries_),
+    .len = WNTR_ARRAY_LEN(adc_calibration_table_entries_),
 };
 
 /* Forward declarations */

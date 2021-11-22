@@ -8,6 +8,7 @@
 #include "hubble_data_converter_helpers.h"
 #include "hubble_nvm.h"
 #include "printf.h"
+#include "wntr_array.h"
 #include "wntr_assert.h"
 #include "wntr_debug.h"
 #include "wntr_pack.h"
@@ -22,7 +23,7 @@ extern uint8_t _nvm_addr;
 extern uint8_t _nvm_length;
 
 static uint8_t nvm_buf_[256];
-static const size_t nvm_buf_len_ = sizeof(nvm_buf_) / sizeof(nvm_buf_[0]);
+static const size_t nvm_buf_len_ = WNTR_ARRAY_LEN(nvm_buf_);
 static const size_t entry_size_ = sizeof(struct HubbleVoltageCalibrationTableEntry);
 
 /* There are 32 banks of 256 bytes to work with */

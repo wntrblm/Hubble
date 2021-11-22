@@ -6,6 +6,7 @@
 
 #include "printf.h"
 #include "tusb.h"
+#include "wntr_array.h"
 #include "wntr_serial_number.h"
 
 tusb_desc_device_t const desc_device = {
@@ -88,7 +89,7 @@ uint16_t const* tud_descriptor_string_cb(uint8_t index, uint16_t langid) {
         // Note: the 0xEE index string is a Microsoft OS 1.0 Descriptors.
         // https://docs.microsoft.com/en-us/windows-hardware/drivers/usbcon/microsoft-defined-usb-descriptors
 
-        if (!(index < sizeof(string_desc_arr) / sizeof(string_desc_arr[0])))
+        if (!(index < WNTR_ARRAY_LEN(string_desc_arr)))
             return NULL;
 
         const char* str = string_desc_arr[index];

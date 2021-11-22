@@ -9,11 +9,10 @@
 /* Helpers for making sysex commands */
 
 #include "teeth.h"
+#include "wntr_array.h"
 #include "wntr_assert.h"
 #include "wntr_pack.h"
 #include "wntr_serial_number.h"
-
-#define _SYSEX_ARRAY_LEN(array) (sizeof(array) / sizeof(array[0]))
 
 #define SYSEX_COMMAND_FUNC_NAME(number, name) sysex_command_##number##_##name
 #define SYSEX_COMMAND_DECL(number, name)                                                                               \
@@ -37,4 +36,4 @@
     _full_response[0] = WNTR_MIDI_SYSEX_IDENTIFIER;                                                                    \
     _full_response[1] = command;
 
-#define SYSEX_SEND_RESPONSE() wntr_midi_send_sysex(_full_response, _SYSEX_ARRAY_LEN(_full_response));
+#define SYSEX_SEND_RESPONSE() wntr_midi_send_sysex(_full_response, WNTR_ARRAY_LEN(_full_response));
