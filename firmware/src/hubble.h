@@ -18,7 +18,6 @@
 #include "hubble_math_utils.h"
 #include "hubble_nvm.h"
 #include "hubble_sercom_spi.h"
-#include "hubble_sysex_utils.h"
 #include "hubble_usb.h"
 #include "wntr_debug.h"
 #include "wntr_midi.h"
