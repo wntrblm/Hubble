@@ -6,15 +6,7 @@
 
 #pragma once
 
-#include <stdbool.h>
+#include <stddef.h>
 #include <stdint.h>
 
-/*
-    Routines for managing USB.
-
-    These are thin wrappers over tinyUSB.
-*/
-
-void hubble_usb_init();
-
-void hubble_usb_task();
+void wntr_nvm_write(uint8_t* dst, uint8_t* src, size_t src_len);

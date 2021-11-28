@@ -57,6 +57,7 @@ SRCS = [
     "third_party/libwinter/wntr_random.c",
     "third_party/libwinter/wntr_ticks.c",
     "third_party/libwinter/samd/*.c",
+    "third_party/libwinter/samd/samd51/*.c",
     # Contains the main entrypoint for the processor and the ARM exception
     # table. TODO: this should be pulled into the application.
     "third_party/samd51a/gcc/startup_samd51.c",
@@ -86,6 +87,8 @@ DEFINES = buildgen.SAMD51.defines(MCU)
 
 DEFINES.update(
     dict(
+        # Defines for libwinter's hardware libraries
+        WNTR_SYSTEM_CLOCKS_USE_32K_CRYSTAL=1,
         # Defines for TinyUSB
         CFG_TUSB_MCU="OPT_MCU_SAMD51",
         # Set the MIDI SysEx identifier

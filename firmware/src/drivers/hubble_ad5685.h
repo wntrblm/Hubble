@@ -11,7 +11,7 @@
     converter.
 */
 
-#include "hubble_sercom_spi.h"
+#include "wntr_sercom_spi.h"
 #include <stdbool.h>
 #include <stdint.h>
 
@@ -22,7 +22,7 @@ enum HubbleAD5685Channel {
     AD5685_CHANNEL_D = 3,
 };
 
-void hubble_ad5685_init(const struct HubbleSERCOMSPI* spi);
+void hubble_ad5685_init(const struct WntrSERCOMSPI* spi);
 
 void hubble_ad5685_soft_reset();
 

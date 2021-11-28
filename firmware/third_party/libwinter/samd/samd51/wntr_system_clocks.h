@@ -6,4 +6,4 @@
 
 #pragma once
 
-void hubble_clocks_init();
+void wntr_system_clocks_init();

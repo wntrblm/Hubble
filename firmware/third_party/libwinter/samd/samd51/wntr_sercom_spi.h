@@ -8,12 +8,12 @@
 
 /* SERCOM SPI driver for SAMD51 */
 
-#include "hubble_sercom.h"
 #include "sam.h"
 #include "wntr_gpio.h"
+#include "wntr_sercom.h"
 #include <stddef.h>
 
-struct HubbleSERCOMSPI {
+struct WntrSERCOMSPI {
     SercomSpi* sercom;
     uint8_t dopo : 2;
     uint8_t phase : 1;
@@ -27,5 +27,5 @@ struct HubbleSERCOMSPI {
     uint8_t cs_alt;
 };
 
-void hubble_sercom_spi_init(const struct HubbleSERCOMSPI* inst);
-void hubble_sercom_spi_write(const struct HubbleSERCOMSPI* inst, const uint8_t* data, size_t len);
+void WntrSERCOMSPI_init(const struct WntrSERCOMSPI* inst);
+void WntrSERCOMSPI_write(const struct WntrSERCOMSPI* inst, const uint8_t* data, size_t len);

@@ -47,7 +47,7 @@ static void nvm_write_page_(uint8_t* dst, uint8_t* src) {
     NVMCTRL->INTFLAG.reg = NVMCTRL_INTFLAG_DONE;
 }
 
-void hubble_nvm_write(uint8_t* dst, uint8_t* src, size_t src_len) {
+void wntr_nvm_write(uint8_t* dst, uint8_t* src, size_t src_len) {
     // Disable caches while reading and writing at the same time.
     NVMCTRL->CTRLA.bit.CACHEDIS0 = true;
     NVMCTRL->CTRLA.bit.CACHEDIS1 = true;

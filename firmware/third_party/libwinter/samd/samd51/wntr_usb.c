@@ -12,7 +12,7 @@
 
 #define USB_GCLK GCLK_PCHCTRL_GEN_GCLK1
 
-void hubble_usb_init() {
+void wntr_usb_init() {
     /* Setup clocks */
     GCLK->PCHCTRL[USB_GCLK_ID].reg = GCLK_PCHCTRL_CHEN | USB_GCLK;
     while (!GCLK->PCHCTRL[USB_GCLK_ID].bit.CHEN) {};
@@ -35,7 +35,7 @@ void hubble_usb_init() {
     tusb_init();
 }
 
-void hubble_usb_task() { tud_task(); }
+void wntr_usb_task() { tud_task(); }
 
 void USB_0_Handler(void) { tud_int_handler(0); }
 void USB_1_Handler(void) { tud_int_handler(0); }

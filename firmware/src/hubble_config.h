@@ -11,16 +11,16 @@
 #include "hubble_adc.h"
 #include "hubble_dac.h"
 #include "hubble_mux50x.h"
-#include "hubble_sercom_spi.h"
 #include "sam.h"
 #include "wntr_bitbang_spi.h"
 #include "wntr_gpio.h"
+#include "wntr_sercom_spi.h"
 #include <stdint.h>
 
 /*
     Clock configuration
 */
-#define HUBBLE_HAS_CRYSTAL 1
+#define WNTR_SYSTEM_CLOCKS_USE_32K_CRYSTAL 1
 
 /*
     ADC/DAC configuration
@@ -141,7 +141,7 @@ static const struct HubbleADCInput ADC_CHANNELS[] = {
     SPI configuration for the external DAC (AD5685)
 */
 
-static const struct HubbleSERCOMSPI SPI = {
+static const struct WntrSERCOMSPI SPI = {
     .sercom = &SERCOM2->SPI,
     .dopo = SERCOM_SPI_DOPO_SDO_3_SCK_1_CS_2,
     .sdo = WNTR_GPIO_PIN(WNTR_PORT_A, 15),

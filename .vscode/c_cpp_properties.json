@@ -22,7 +22,8 @@
                 "__SAM_D51_SUBFAMILY",
                 "__SAMD51P20A__",
                 "F_CPU = 120000000",
-                "TUSB_OPT_DEVICE_ENABLED"
+                "TUSB_OPT_DEVICE_ENABLED",
+                "WNTR_SYSTEM_CLOCKS_USE_32K_CRYSTAL=1"
             ],
             "intelliSenseMode": "gcc-arm",
             "compilerPath": "/Users/stargirl/.local/gcc-arm-none-eabi-10.3-2021.07/bin/arm-none-eabi-gcc",

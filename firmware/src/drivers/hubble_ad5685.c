@@ -20,19 +20,19 @@
 #define CMD_ADDR_DAC_ALL 0b1111
 
 /* Static variables */
-static const struct HubbleSERCOMSPI* spi_;
+static const struct WntrSERCOMSPI* spi_;
 
 /* Private functions */
 
 inline static void send_command(uint8_t command, uint8_t data1, uint8_t data2) {
     WntrGPIOPin_set(HUBBLE_AD5685_CS, false);
-    hubble_sercom_spi_write(spi_, (const uint8_t[]){command, data1, data2}, 3);
+    WntrSERCOMSPI_write(spi_, (const uint8_t[]){command, data1, data2}, 3);
     WntrGPIOPin_set(HUBBLE_AD5685_CS, true);
 }
 
 /* Public functions */
 
-void hubble_ad5685_init(const struct HubbleSERCOMSPI* spi) {
+void hubble_ad5685_init(const struct WntrSERCOMSPI* spi) {
     spi_ = spi;
     WntrGPIOPin_set_as_output(HUBBLE_AD5685_CS);
     WntrGPIOPin_set(HUBBLE_AD5685_CS, true);

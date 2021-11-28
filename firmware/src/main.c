@@ -86,7 +86,7 @@ int main(void) {
     printf("Hello, I'm Hubble!\n");
 
     while (1) {
-        hubble_usb_task();
+        wntr_usb_task();
         loop();
     }
 
@@ -103,7 +103,7 @@ static void init() {
     WntrGPIOPin_set(GPIO_23_LED, true);
 
     /* Setup USB as soon as possible */
-    hubble_usb_init();
+    wntr_usb_init();
 
     /* Configure peripherals */
     hubble_dotstar_init(20);
@@ -115,7 +115,7 @@ static void init() {
     hubble_adc_init_input(&ADC_A4);
 
     /* SPI bus & external DAC */
-    hubble_sercom_spi_init(&SPI);
+    WntrSERCOMSPI_init(&SPI);
     hubble_ad5685_init(&SPI);
     hubble_ad5685_soft_reset();
 

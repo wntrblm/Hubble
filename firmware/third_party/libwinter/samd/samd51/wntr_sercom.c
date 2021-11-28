@@ -4,10 +4,10 @@
     Full text available at: https://opensource.org/licenses/MIT
 */
 
-#include "hubble_sercom.h"
+#include "wntr_sercom.h"
 #include <stddef.h>
 
-void hubble_sercom_clock_init(Sercom* inst, uint32_t gclk) {
+void wntr_sercom_init_clock(Sercom* inst, uint32_t gclk) {
     size_t gclk_id = 0;
 
     switch ((intptr_t)inst) {

@@ -4,8 +4,7 @@
     Full text available at: https://opensource.org/licenses/MIT
 */
 
-#include "hubble_clocks.h"
-#include "hubble_config.h"
+#include "wntr_system_clocks.h"
 #include "sam.h"
 
 /* Hubble's clock configuration after hubble_clocks_init() is:
@@ -30,9 +29,13 @@ static void init_dpll0();
 static void setup_cpu_osc32k();
 static void setup_cpu_dpll0();
 
+#ifndef WNTR_SYSTEM_CLOCKS_USE_32K_CRYSTAL
+#error "Set WNTR_SYSTEM_CLOCKS_USE_32K_CRYSTAL to 1 or 0."
+#endif
+
 /* Public functions */
 
-void hubble_clocks_init() {
+void wntr_system_clocks_init() {
     /* Enable automatic flash wait states. */
     NVMCTRL->CTRLA.reg |= NVMCTRL_CTRLA_RWS(0) | NVMCTRL_CTRLA_AUTOWS;
 
@@ -41,7 +44,7 @@ void hubble_clocks_init() {
     while (GCLK->SYNCBUSY.reg & GCLK_SYNCBUSY_SWRST) {}
 
 /* Configure 32kHz Oscillator */
-#if HUBBLE_HAS_CRYSTAL
+#if WNTR_SYSTEM_CLOCKS_USE_32K_CRYSTAL
     init_xosc32k();
 #else
     init_osc32k();
@@ -52,7 +55,7 @@ void hubble_clocks_init() {
     setup_cpu_osc32k();
 
 /* Configure DFLL (48Mhz) & DPLL (120Mhz) */
-#ifdef HUBBLE_HAS_CRYSTAL
+#ifdef WNTR_SYSTEM_CLOCKS_USE_32K_CRYSTAL
     init_dfll48m_closed_loop();
 #else
     init_dfll48m_open_loop();

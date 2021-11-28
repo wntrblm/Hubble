@@ -4,15 +4,15 @@
     Full text available at: https://opensource.org/licenses/MIT
 */
 
-#include "hubble_sercom_spi.h"
+#include "wntr_sercom_spi.h"
 #include "wntr_delay.h"
 
 /* 12 MHz clock for SPI */
 #define SERCOM_SPI_GCLK GCLK_PCHCTRL_GEN_GCLK4;
 
-void hubble_sercom_spi_init(const struct HubbleSERCOMSPI* inst) {
+void WntrSERCOMSPI_init(const struct WntrSERCOMSPI* inst) {
     /* Enable clocks */
-    hubble_sercom_clock_init((Sercom*)inst->sercom, GCLK_PCHCTRL_GEN_GCLK4);
+    wntr_sercom_init_clock((Sercom*)inst->sercom, GCLK_PCHCTRL_GEN_GCLK4);
 
     /* Reset and configure */
     inst->sercom->CTRLA.bit.ENABLE = 0;
@@ -55,7 +55,7 @@ void hubble_sercom_spi_init(const struct HubbleSERCOMSPI* inst) {
     while (inst->sercom->SYNCBUSY.bit.ENABLE) {};
 }
 
-void hubble_sercom_spi_write(const struct HubbleSERCOMSPI* inst, const uint8_t* data, size_t len) {
+void WntrSERCOMSPI_write(const struct WntrSERCOMSPI* inst, const uint8_t* data, size_t len) {
     for (size_t i = 0; i < len; i++) {
         while (!inst->sercom->INTFLAG.bit.DRE) {}
         inst->sercom->DATA.bit.DATA = data[i];

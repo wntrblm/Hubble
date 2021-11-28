@@ -5,11 +5,11 @@
 */
 
 #include "hubble_calibration_table_load_save.h"
-#include "hubble_nvm.h"
 #include "printf.h"
 #include "wntr_array.h"
 #include "wntr_assert.h"
 #include "wntr_debug.h"
+#include "wntr_nvm.h"
 #include "wntr_pack.h"
 #include <stdbool.h>
 #include <string.h>
@@ -64,7 +64,7 @@ void HubbleVoltageCalibrationTable_save_to_nvm(struct WntrVoltageCalibrationTabl
     uint8_t* dst_marker = BANK_MARKER_ADDR(nvm_buf_, table.len);
     *dst_marker = VALID_BANK_MARKER;
 
-    hubble_nvm_write(NVM_BANK_ADDR(bank), nvm_buf_, nvm_buf_len_);
+    wntr_nvm_write(NVM_BANK_ADDR(bank), nvm_buf_, nvm_buf_len_);
 
     printf("Saved calibration table to NVM bank %u\n", bank);
     wntr_debug_print_mem(NVM_BANK_ADDR(bank), nvm_buf_len_);
@@ -73,7 +73,7 @@ void HubbleVoltageCalibrationTable_save_to_nvm(struct WntrVoltageCalibrationTabl
 void HubbleVoltageCalibrationTable_erase_nvm_bank(uint32_t bank) {
     memset(nvm_buf_, 0xFF, nvm_buf_len_);
 
-    hubble_nvm_write(NVM_BANK_ADDR(bank), nvm_buf_, nvm_buf_len_);
+    wntr_nvm_write(NVM_BANK_ADDR(bank), nvm_buf_, nvm_buf_len_);
 
     printf("Erased calibration table in NVM bank %u\n", bank);
 }

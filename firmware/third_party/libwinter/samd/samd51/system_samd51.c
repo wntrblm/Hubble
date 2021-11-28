@@ -4,9 +4,9 @@
     Full text available at: https://opensource.org/licenses/MIT
 */
 
-#include "hubble_bod.h"
-#include "hubble_clocks.h"
 #include "samd51.h"
+#include "wntr_bod.h"
+#include "wntr_system_clocks.h"
 #include "wntr_ticks.h"
 
 /*
@@ -30,10 +30,10 @@ void SystemInit(void) {
     DWT->CTRL |= DWT_CTRL_CYCCNTENA_Msk;
 
     /* Wait for brown-out detector */
-    hubble_wait_for_stable_voltage();
+    wntr_bod_wait_for_stable_voltage();
 
     /* Configure clocks */
-    hubble_clocks_init();
+    wntr_system_clocks_init();
     wntr_ticks_init();
 
     return;

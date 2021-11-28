@@ -6,7 +6,6 @@
 
 #pragma once
 
-#include <stddef.h>
-#include <stdint.h>
+/* Routines for interacting with the SAM D51's brown out detector (BOD33) */
 
-void hubble_nvm_write(uint8_t* dst, uint8_t* src, size_t src_len);
+void wntr_bod_wait_for_stable_voltage();
