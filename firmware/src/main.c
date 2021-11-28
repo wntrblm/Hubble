@@ -9,6 +9,7 @@
 #include "wntr_array.h"
 #include "wntr_build_info.h"
 #include "wntr_colorspace.h"
+#include "wntr_data_converter_helpers.h"
 #include "wntr_delay.h"
 #include "wntr_gpio.h"
 #include "wntr_sysex_utils.h"
@@ -23,7 +24,7 @@
 
 static bool calibration_enabled = true;
 
-static struct HubbleVoltageCalibrationTableEntry dac_calibration_table_entries_[] = {
+static struct WntrVoltageCalibrationTableEntry dac_calibration_table_entries_[] = {
     {.expected = -8.0, .measured = -8.0},
     {.expected = -7.0, .measured = -7.0},
     {.expected = -6.0, .measured = -6.0},
@@ -42,19 +43,19 @@ static struct HubbleVoltageCalibrationTableEntry dac_calibration_table_entries_[
     {.expected = 7.0, .measured = 7.0},
     {.expected = 8.0, .measured = 8.0},
 };
-static struct HubbleVoltageCalibrationTable dac_calibration_table = {
+static struct WntrVoltageCalibrationTable dac_calibration_table = {
     .entries = dac_calibration_table_entries_,
     .len = WNTR_ARRAY_LEN(dac_calibration_table_entries_),
 };
 
-static struct HubbleVoltageCalibrationTableEntry adc_calibration_table_entries_[] = {
+static struct WntrVoltageCalibrationTableEntry adc_calibration_table_entries_[] = {
     {.expected = -8.0, .measured = -8.0},
     {.expected = -4.0, .measured = -4.0},
     {.expected = 0.0, .measured = -0.0},
     {.expected = 4.0, .measured = 4.0},
     {.expected = 8.0, .measured = 8.0},
 };
-static struct HubbleVoltageCalibrationTable adc_calibration_table = {
+static struct WntrVoltageCalibrationTable adc_calibration_table = {
     .entries = adc_calibration_table_entries_,
     .len = WNTR_ARRAY_LEN(adc_calibration_table_entries_),
 };
@@ -124,9 +125,9 @@ static void init() {
 
     /* Calibrations */
     HubbleVoltageCalibrationTable_load_from_nvm(dac_calibration_table, 0);
-    HubbleVoltageCalibrationTable_print(dac_calibration_table);
+    WntrVoltageCalibrationTable_print(dac_calibration_table);
     HubbleVoltageCalibrationTable_load_from_nvm(adc_calibration_table, 1);
-    HubbleVoltageCalibrationTable_print(adc_calibration_table);
+    WntrVoltageCalibrationTable_print(adc_calibration_table);
 
     /* Sysex commands */
     register_sysex_commands();
@@ -282,10 +283,10 @@ WNTR_SYSEX_COMMAND_DECL(0x08, set_dac_voltage) {
     float value = WNTR_UNPACK_FLOAT(request, 2);
 
     if (calibration_enabled) {
-        value = HubbleVoltageCalibrationTable_lookup(value, dac_calibration_table);
+        value = WntrVoltageCalibrationTable_lookup(value, dac_calibration_table);
     }
 
-    uint32_t code_point = hubble_volts_to_code_points(value, HUBBLE_RESOLUTION_16_BIT, -8.0f, 8.0f, true);
+    uint32_t code_point = wntr_volts_to_code_points(value, WNTR_RESOLUTION_16_BIT, -8.0f, 8.0f, true);
 
     hubble_mux50x_set(DAC_MUX, mux);
     hubble_ad5685_write_channel(channel, code_point, true);
@@ -295,7 +296,7 @@ WNTR_SYSEX_COMMAND_DECL(0x08, set_dac_voltage) {
     printf("SysEx 0x08: Set DAC voltage %u:%u to %0.3f\n", mux, channel, (double)(value));
 }
 
-static struct HubbleVoltageCalibrationTable* calibration_tables_[] = {
+static struct WntrVoltageCalibrationTable* calibration_tables_[] = {
     &dac_calibration_table,
     &adc_calibration_table,
 };
@@ -346,5 +347,5 @@ WNTR_SYSEX_COMMAND_DECL(0x52, save_calibration_table) {
     WNTR_SYSEX_RESPONSE_NULLARY();
 
     printf("SysEx 0x52: Save calibration table %u\n", table);
-    HubbleVoltageCalibrationTable_print(*(calibration_tables_[table]));
+    WntrVoltageCalibrationTable_print(*(calibration_tables_[table]));
 }

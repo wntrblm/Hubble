@@ -10,10 +10,10 @@
 #include <stddef.h>
 #include <stdint.h>
 
-#include "hubble_data_converter_helpers.h"
+#include "wntr_data_converter_helpers.h"
 
-bool HubbleVoltageCalibrationTable_load_from_nvm(struct HubbleVoltageCalibrationTable table, uint8_t bank);
+bool HubbleVoltageCalibrationTable_load_from_nvm(struct WntrVoltageCalibrationTable table, uint8_t bank);
 
-void HubbleVoltageCalibrationTable_save_to_nvm(struct HubbleVoltageCalibrationTable table, uint8_t bank);
+void HubbleVoltageCalibrationTable_save_to_nvm(struct WntrVoltageCalibrationTable table, uint8_t bank);
 
 void HubbleVoltageCalibrationTable_erase_nvm_bank(uint32_t bank);

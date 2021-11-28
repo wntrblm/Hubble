@@ -5,7 +5,6 @@
 */
 
 #include "hubble_calibration_table_load_save.h"
-#include "hubble_data_converter_helpers.h"
 #include "hubble_nvm.h"
 #include "printf.h"
 #include "wntr_array.h"
@@ -24,7 +23,7 @@ extern uint8_t _nvm_length;
 
 static uint8_t nvm_buf_[256];
 static const size_t nvm_buf_len_ = WNTR_ARRAY_LEN(nvm_buf_);
-static const size_t entry_size_ = sizeof(struct HubbleVoltageCalibrationTableEntry);
+static const size_t entry_size_ = sizeof(struct WntrVoltageCalibrationTableEntry);
 
 /* There are 32 banks of 256 bytes to work with */
 #define VALID_BANK_MARKER 0xAB
@@ -33,7 +32,7 @@ static const size_t entry_size_ = sizeof(struct HubbleVoltageCalibrationTableEnt
 
 /* Public functions. */
 
-bool HubbleVoltageCalibrationTable_load_from_nvm(struct HubbleVoltageCalibrationTable table, uint8_t bank) {
+bool HubbleVoltageCalibrationTable_load_from_nvm(struct WntrVoltageCalibrationTable table, uint8_t bank) {
 
     uint8_t* src = NVM_BANK_ADDR(bank);
     uint8_t* src_marker = BANK_MARKER_ADDR(src, table.len);
@@ -53,11 +52,11 @@ bool HubbleVoltageCalibrationTable_load_from_nvm(struct HubbleVoltageCalibration
     return true;
 }
 
-void HubbleVoltageCalibrationTable_save_to_nvm(struct HubbleVoltageCalibrationTable table, uint8_t bank) {
-    WNTR_ASSERT(table.len * sizeof(struct HubbleVoltageCalibrationTableEntry) <= (sizeof(nvm_buf_) - 1));
+void HubbleVoltageCalibrationTable_save_to_nvm(struct WntrVoltageCalibrationTable table, uint8_t bank) {
+    WNTR_ASSERT(table.len * sizeof(struct WntrVoltageCalibrationTableEntry) <= (sizeof(nvm_buf_) - 1));
 
     for (size_t idx = 0; idx < table.len; idx++) {
-        struct HubbleVoltageCalibrationTableEntry entry = table.entries[idx];
+        struct WntrVoltageCalibrationTableEntry entry = table.entries[idx];
         WNTR_PACK_FLOAT(entry.expected, nvm_buf_, idx * entry_size_);
         WNTR_PACK_FLOAT(entry.measured, nvm_buf_, idx * entry_size_ + 4);
     }

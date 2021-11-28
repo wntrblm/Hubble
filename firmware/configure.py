@@ -50,6 +50,7 @@ SRCS = [
     "third_party/libwinter/wntr_assert.c",
     "third_party/libwinter/wntr_bitbang_spi.c",
     "third_party/libwinter/wntr_colorspace.c",
+    "third_party/libwinter/wntr_data_converter_helpers.c",
     "third_party/libwinter/wntr_deque.c",
     "third_party/libwinter/wntr_midi_core.c",
     "third_party/libwinter/wntr_midi_sysex_dispatcher.c",
