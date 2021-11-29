@@ -13,7 +13,8 @@
                 "${workspaceFolder}/firmware/third_party/printf",
                 "${workspaceFolder}/firmware/src/lib",
                 "${workspaceFolder}/firmware/third_party/libwinter",
-                "${workspaceFolder}/firmware/third_party/libwinter/samd"
+                "${workspaceFolder}/firmware/third_party/libwinter/samd",
+                "${workspaceFolder}/firmware/third_party/libwinter/samd/samd51"
             ],
             "defines": [
                 "DEBUG=1",
