@@ -43,8 +43,8 @@ bool HubbleVoltageCalibrationTable_load_from_nvm(struct WntrVoltageCalibrationTa
     }
 
     for (size_t idx = 0; idx < table.len; idx++) {
-        table.entries[idx].measured = WNTR_UNPACK_FLOAT(src, idx * entry_size_);
-        table.entries[idx].expected = WNTR_UNPACK_FLOAT(src, idx * entry_size_ + 4);
+        table.entries[idx].expected = WNTR_UNPACK_FLOAT(src, idx * entry_size_);
+        table.entries[idx].measured = WNTR_UNPACK_FLOAT(src, idx * entry_size_ + 4);
     }
 
     printf("Loaded calibration table from NVM bank %u\n", bank);

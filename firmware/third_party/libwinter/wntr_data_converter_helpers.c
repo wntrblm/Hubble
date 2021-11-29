@@ -56,6 +56,7 @@ float WntrVoltageCalibrationTable_lookup(float value, struct WntrVoltageCalibrat
 
 void WntrVoltageCalibrationTable_print(struct WntrVoltageCalibrationTable table) {
     printf("---- WntrVoltageCalibrationTable 0x%zx + %zu\n", (size_t)(table.entries), table.len);
+    printf("Expected : Measured\n");
     for (size_t i = 0; i < table.len; i++) {
         printf("%0.3f : %0.3f\n", (double)(table.entries[i].expected), (double)(table.entries[i].measured));
     }
