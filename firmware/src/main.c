@@ -44,36 +44,32 @@ static const struct WntrVoltageCalibrationTableEntry dac_reference_calibration_e
     {.expected = 8.0, .measured = 8.0},
 };
 
-static struct WntrVoltageCalibrationTableEntry
-    dac_1_calibration_table_entries_[WNTR_ARRAY_LEN(dac_reference_calibration_entires_)];
-static struct WntrVoltageCalibrationTable dac_1_calibration_table = {
-    .entries = dac_1_calibration_table_entries_,
-    .len = WNTR_ARRAY_LEN(dac_1_calibration_table_entries_),
-};
-static struct WntrVoltageCalibrationTableEntry
-    dac_2_calibration_table_entries_[WNTR_ARRAY_LEN(dac_reference_calibration_entires_)];
-static struct WntrVoltageCalibrationTable dac_2_calibration_table = {
-    .entries = dac_2_calibration_table_entries_,
-    .len = WNTR_ARRAY_LEN(dac_2_calibration_table_entries_),
-};
-static struct WntrVoltageCalibrationTableEntry
-    dac_3_calibration_table_entries_[WNTR_ARRAY_LEN(dac_reference_calibration_entires_)];
-static struct WntrVoltageCalibrationTable dac_3_calibration_table = {
-    .entries = dac_3_calibration_table_entries_,
-    .len = WNTR_ARRAY_LEN(dac_3_calibration_table_entries_),
-};
-static struct WntrVoltageCalibrationTableEntry
-    dac_4_calibration_table_entries_[WNTR_ARRAY_LEN(dac_reference_calibration_entires_)];
-static struct WntrVoltageCalibrationTable dac_4_calibration_table = {
-    .entries = dac_4_calibration_table_entries_,
-    .len = WNTR_ARRAY_LEN(dac_4_calibration_table_entries_),
-};
+#define DEF_CALIBRATION_TABLE(name)                                                                                    \
+    static struct WntrVoltageCalibrationTableEntry                                                                     \
+        name##_calibration_table_entries_[WNTR_ARRAY_LEN(dac_reference_calibration_entires_)];                         \
+    static struct WntrVoltageCalibrationTable name##_calibration_table = {                                             \
+        .entries = name##_calibration_table_entries_,                                                                  \
+        .len = WNTR_ARRAY_LEN(name##_calibration_table_entries_),                                                      \
+    };
+
+DEF_CALIBRATION_TABLE(dac_1);
+DEF_CALIBRATION_TABLE(dac_2);
+DEF_CALIBRATION_TABLE(dac_3);
+DEF_CALIBRATION_TABLE(dac_4);
+DEF_CALIBRATION_TABLE(adc_1);
+DEF_CALIBRATION_TABLE(adc_2);
+DEF_CALIBRATION_TABLE(adc_3);
+DEF_CALIBRATION_TABLE(adc_4);
 
 static struct WntrVoltageCalibrationTable* calibration_tables[] = {
     &dac_1_calibration_table,
     &dac_2_calibration_table,
     &dac_3_calibration_table,
     &dac_4_calibration_table,
+    &adc_1_calibration_table,
+    &adc_2_calibration_table,
+    &adc_3_calibration_table,
+    &adc_4_calibration_table,
 };
 
 /* Forward declarations */
@@ -157,7 +153,6 @@ static void init_calibrations() {
             sizeof(struct WntrVoltageCalibrationTableEntry) * table.len);
         /* Load the saved values (if available) */
         HubbleVoltageCalibrationTable_load_from_nvm(table, i);
-        WntrVoltageCalibrationTable_print(table);
     }
 }
 
@@ -280,7 +275,33 @@ WNTR_SYSEX_COMMAND_DECL(0x05, read_adc) {
     printf("SysEx 0x05: Read ADC %u:%u, result %u\n", mux, channel, result);
 }
 
-WNTR_SYSEX_COMMAND_DECL(0x06, read_adc_voltage) {}
+WNTR_SYSEX_COMMAND_DECL(0x06, read_adc_voltage) {
+    /* Request: CHANNEL(1) MUX(1) */
+    /* Response (teeth): VALUE(4) */
+    uint8_t channel = request_data[0];
+    uint8_t mux = request_data[1];
+
+    hubble_mux50x_set(ADC_MUX, mux);
+    uint16_t code_points = hubble_adc_read_sync(&ADC_CHANNELS[channel]);
+
+    float result = wntr_code_points_to_volts(code_points, WNTR_RESOLUTION_12_BIT, -8.0f, 8.0f, true);
+
+    if (calibration_enabled) {
+        result = WntrVoltageCalibrationTable_lookup(result, *calibration_tables[4 + channel]);
+    } else {
+        printf("Warning: calibration tables disabled.\n");
+    }
+
+    WNTR_SYSEX_PREPARE_RESPONSE(0x06, TEETH_ENCODED_LENGTH(4));
+
+    uint8_t unencoded_response[4];
+    WNTR_PACK_FLOAT(result, unencoded_response, 0);
+    teeth_encode(unencoded_response, 4, response);
+
+    WNTR_SYSEX_SEND_RESPONSE();
+
+    printf("SysEx 0x06: Read ADC voltage %u:%u is %0.3f\n", mux, channel, (double)(result));
+}
 
 WNTR_SYSEX_COMMAND_DECL(0x07, set_dac) {
     /* Request (teeth): CHANNEL(1) MUX(1) VALUE(2) */
@@ -312,6 +333,8 @@ WNTR_SYSEX_COMMAND_DECL(0x08, set_dac_voltage) {
 
     if (calibration_enabled) {
         value = WntrVoltageCalibrationTable_lookup(value, *calibration_tables[channel]);
+    } else {
+        printf("Warning: calibration tables disabled.\n");
     }
 
     uint32_t code_point = wntr_volts_to_code_points(value, WNTR_RESOLUTION_16_BIT, -8.0f, 8.0f, true);
