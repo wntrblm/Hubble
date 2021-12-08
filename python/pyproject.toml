@@ -1,0 +1,12 @@
+[build-system]
+requires = ["flit_core >=3.2,<4"]
+build-backend = "flit_core.buildapi"
+
+[project]
+name = "hubble"
+authors = [{name = "Alethea Flowers", email = "thea@winterbloom.com"}]
+classifiers = ["License :: OSI Approved :: MIT License"]
+dynamic = ["version", "description"]
+
+[project.urls]
+Home = "https://hubble.wntr.dev"
