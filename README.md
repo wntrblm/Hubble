@@ -8,6 +8,7 @@ This repository contains the hardware design files and firmware files for Hubble
 
 - **firmware/** contains the firmware source code, build scripts, and third-party dependencies. The firmware is written in C using GCC ARM.
 - **hardware/** contains the hardware design files for the mainboard, jackboard, panel, and programming board. These are all created using KiCAD.
+- **mechanical/** contains various designs for laser-cut and 3d-printed parts used to modify the stock test jig assembly for Hubble.
 
 ## License and contributing
 

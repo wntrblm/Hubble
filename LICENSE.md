@@ -14,7 +14,9 @@ individual parts of the project are made available under different licenses.
    of terms.
 2. The functional hardware designs located at `./hardware` are available under
    the CERN-OHL-P v2 license. Full text is available at https://cern.ch/cern-ohl.
-3. Winterbloom's logo and branding is used throughout this project. This
+3. The mechanical designs located at `./mechanical` are available under the Creative Commons Attribution-ShareAlike 4.0
+International (CC BY-SA 4.0) license. Full text is available at https://creativecommons.org/licenses/by-sa/4.0
+4. Winterbloom's logo and branding is used throughout this project. This
    branding is Copyright (c) Winterbloom / Alethea Katherine Flowers 2020 and
    all rights are reserved. You may not distribute derivative works or products
    bearing the Winterbloom logo. Derivative works should remove Winterbloom
