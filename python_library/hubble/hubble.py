@@ -2,14 +2,15 @@
 # Published under the standard MIT License.
 # Full text available at: https://opensource.org/licenses/MIT
 
-"""Control Hubble (our test platform)"""
-
-__version__ = "0.0.0a0"
+"""Python library for interacting with Hubble (our test platform)"""
 
 import enum
+import random
 import struct
 
 from wintertools import midi
+
+from hubble.frontpanel import FrontPanel
 
 
 class DigitalIO:
@@ -48,9 +49,7 @@ class VoltageOut:
     value = property(None, value)
 
     def voltage(self, voltage):
-        return self._device.set_dac_voltage(
-            self._channel, self._mux, voltage
-        )
+        return self._device.set_dac_voltage(self._channel, self._mux, voltage)
 
     voltage = property(None, voltage)
 
@@ -90,9 +89,8 @@ class _DACChannels(enum.IntEnum):
     D3 = 2
     D4 = 1
 
+
 class _DACMUX(enum.IntEnum):
-
-
     MUX_A = 0
     MUX_B = 1
     MUX_C = 2
@@ -178,6 +176,12 @@ class Hubble(midi.MIDIDevice):
         self.VOUT4C = VoltageOut(self, 1, 2)
         self.VOUT4D = VoltageOut(self, 1, 3)
 
+        self._front_panel = FrontPanel()
+
+        self.RED_LED = self._front_panel.RED_LED
+        self.BLUE_LED = self._front_panel.BLUE_LED
+        self.GREEN_LED = self._front_panel.GREEN_LED
+
     def get_firmware_version(self):
         resp = self.sysex(_SysExCommands.HELLO, response=True)
         self.version = bytearray(resp[3:-1]).decode("ascii")
@@ -192,7 +196,9 @@ class Hubble(midi.MIDIDevice):
         return True if resp[4] else False
 
     def set_gpio(self, pin, value):
-        self.sysex(_SysExCommands.SET_GPIO, data=[pin, 1 if value else 0], response=True)
+        self.sysex(
+            _SysExCommands.SET_GPIO, data=[pin, 1 if value else 0], response=True
+        )
         return
 
     def read_adc(self, channel, mux):
@@ -204,7 +210,10 @@ class Hubble(midi.MIDIDevice):
 
     def read_adc_voltage(self, channel, mux):
         resp = self.sysex(
-            _SysExCommands.READ_ADC_VOLTAGE, data=[channel, mux], response=True, decode=True
+            _SysExCommands.READ_ADC_VOLTAGE,
+            data=[channel, mux],
+            response=True,
+            decode=True,
         )
         (val,) = struct.unpack(">f", resp)
         return val
@@ -213,7 +222,11 @@ class Hubble(midi.MIDIDevice):
         return [self.read_adc(channel, mux) for channel in range(4) for mux in range(4)]
 
     def scan_adc_volts(self):
-        return [self.read_adc_voltage(channel, mux) for channel in range(4) for mux in range(4)]
+        return [
+            self.read_adc_voltage(channel, mux)
+            for channel in range(4)
+            for mux in range(4)
+        ]
 
     def set_dac(self, channel, mux, value):
         data = struct.pack(">BBH", channel, mux, value)
@@ -221,7 +234,9 @@ class Hubble(midi.MIDIDevice):
 
     def set_dac_voltage(self, channel, mux, value):
         data = struct.pack(">BBf", channel, mux, value)
-        self.sysex(_SysExCommands.SET_DAC_VOLTAGE, data=data, encode=True, response=True)
+        self.sysex(
+            _SysExCommands.SET_DAC_VOLTAGE, data=data, encode=True, response=True
+        )
 
     def set_calibration_enabled(self, enabled):
         self.sysex(
@@ -241,3 +256,31 @@ class Hubble(midi.MIDIDevice):
 
     def save_calibration_table(self, table):
         self.sysex(_SysExCommands.SAVE_CALIBRATION_TABLE, data=[table], response=True)
+
+    def start(self):
+        self.BLUE_LED.on()
+        self._front_panel.text = "Testing..."
+
+    def fail(self, msg=""):
+        self.RED_LED.flash()
+        self.BLUE_LED.off()
+        self.GREEN_LED.off()
+        self._front_panel.text = f"FAILED!\n{msg}"
+
+    def success(self):
+        self.RED_LED.off()
+        self.GREEN_LED.on()
+        self._front_panel.text = random.choice(
+            [
+                "GOOD!",
+                "NICE!",
+                "GREAT!",
+                "JAMMIN!",
+                "COOL!",
+                "RADICAL!",
+                "TIGHT!",
+                "AWESOME!",
+                "EXTREME!",
+                "PERFECT!!!",
+            ]
+        )
