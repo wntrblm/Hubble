@@ -79,3 +79,6 @@ class FrontPanel(midi.MIDIDevice):
     @text.setter
     def text(self, value):
         self.sysex(0x01, data=value.encode("ascii"))
+
+    def oh_no(self):
+        self.sysex(0x02)

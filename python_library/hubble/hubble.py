@@ -7,16 +7,36 @@
 import enum
 import random
 import struct
-
 from wintertools import midi
 
 from hubble.frontpanel import FrontPanel
 
 
+class _IODescriptor:
+    def __init__(self, type_, *args, **kwargs):
+        self._name = None
+        self._type = type_
+        self._args = args
+        self._kwargs = kwargs
+
+    def __set_name__(self, owner, name):
+        self._name = name
+
+    def __set__(self, obj, value):
+        raise AttributeError(f"Can not set property {self._name} on {obj}")
+
+    def __get__(self, obj, objtype=None):
+        cache_key = f"__{self._name}_cache"
+        if cache_key not in obj.__dict__:
+            obj.__dict__[cache_key] = self._type(obj, *self._args, **self._kwargs)
+        return obj.__dict__[cache_key]
+
+
 class DigitalIO:
-    def __init__(self, device, pin):
-        self._device = device
+    def __init__(self, pin):
         self._pin = pin
+        self._name = None
+        self._device = None
 
     @property
     def value(self):
@@ -42,16 +62,26 @@ class VoltageOut:
         self._device = device
         self._channel = channel
         self._mux = mux
+        self._voltage = 0
+        self._value = 0
 
+    @property
+    def value(self):
+        return self._value
+
+    @value.setter
     def value(self, value):
+        self._value = value
         return self._device.set_dac(self._channel, self._mux, value)
 
-    value = property(None, value)
+    @property
+    def voltage(self):
+        return self._voltage
 
+    @voltage.setter
     def voltage(self, voltage):
+        self._voltage = voltage
         return self._device.set_dac_voltage(self._channel, self._mux, voltage)
-
-    voltage = property(None, voltage)
 
 
 class VoltageIn:
@@ -101,86 +131,84 @@ class Hubble(midi.MIDIDevice):
     MIDI_PORT_NAME = "Hubble"
     SYSEX_MARKER = 0x77
 
+    IO1 = _IODescriptor(DigitalIO, 0)
+    IO2 = _IODescriptor(DigitalIO, 1)
+    IO3 = _IODescriptor(DigitalIO, 2)
+    IO4 = _IODescriptor(DigitalIO, 3)
+    IO5 = _IODescriptor(DigitalIO, 4)
+    IO6 = _IODescriptor(DigitalIO, 5)
+    IO7 = _IODescriptor(DigitalIO, 6)
+    IO8 = _IODescriptor(DigitalIO, 7)
+    IO9 = _IODescriptor(DigitalIO, 8)
+    A9 = _IODescriptor(AnalogIn, 8)
+    IO10 = _IODescriptor(DigitalIO, 9)
+    A10 = _IODescriptor(AnalogIn, 9)
+    IO11 = _IODescriptor(DigitalIO, 10)
+    A11 = _IODescriptor(AnalogIn, 10)
+    IO12 = _IODescriptor(DigitalIO, 11)
+    A12 = _IODescriptor(AnalogIn, 11)
+    IO13 = _IODescriptor(DigitalIO, 12)
+    A13 = _IODescriptor(AnalogIn, 12)
+    IO14 = _IODescriptor(DigitalIO, 13)
+    A14 = _IODescriptor(AnalogIn, 13)
+    IO15 = _IODescriptor(DigitalIO, 14)
+    A15 = _IODescriptor(AnalogIn, 14)
+    IO16 = _IODescriptor(DigitalIO, 15)
+    A16 = _IODescriptor(AnalogIn, 15)
+    IO17 = _IODescriptor(DigitalIO, 16)
+    A17 = _IODescriptor(AnalogIn, 16)
+    IO18 = _IODescriptor(DigitalIO, 17)
+    A18 = _IODescriptor(AnalogIn, 17)
+    IO19 = _IODescriptor(DigitalIO, 18)
+    A19 = _IODescriptor(AnalogIn, 18)
+    IO20 = _IODescriptor(DigitalIO, 19)
+    A20 = _IODescriptor(AnalogIn, 19)
+    IO21 = _IODescriptor(DigitalIO, 20)
+    A21 = _IODescriptor(AnalogIn, 20)
+    IO22 = _IODescriptor(DigitalIO, 21)
+    IO23 = _IODescriptor(DigitalIO, 22)
+    LED = _IODescriptor(DigitalIO, 22)
+
+    VIN1A = _IODescriptor(VoltageIn, 0, 0)
+    VIN1B = _IODescriptor(VoltageIn, 0, 1)
+    VIN1C = _IODescriptor(VoltageIn, 0, 2)
+    VIN1D = _IODescriptor(VoltageIn, 0, 3)
+    VIN2A = _IODescriptor(VoltageIn, 1, 0)
+    VIN2B = _IODescriptor(VoltageIn, 1, 1)
+    VIN2C = _IODescriptor(VoltageIn, 1, 2)
+    VIN2D = _IODescriptor(VoltageIn, 1, 3)
+    VIN3A = _IODescriptor(VoltageIn, 2, 0)
+    VIN3B = _IODescriptor(VoltageIn, 2, 1)
+    VIN3C = _IODescriptor(VoltageIn, 2, 2)
+    VIN3D = _IODescriptor(VoltageIn, 2, 3)
+    VIN4A = _IODescriptor(VoltageIn, 3, 0)
+    VIN4B = _IODescriptor(VoltageIn, 3, 1)
+    VIN4C = _IODescriptor(VoltageIn, 3, 2)
+    VIN4D = _IODescriptor(VoltageIn, 3, 3)
+
+    VOUT1A = _IODescriptor(VoltageOut, 0, 0)
+    VOUT1B = _IODescriptor(VoltageOut, 0, 1)
+    VOUT1C = _IODescriptor(VoltageOut, 0, 2)
+    VOUT1D = _IODescriptor(VoltageOut, 0, 3)
+    VOUT2A = _IODescriptor(VoltageOut, 3, 0)
+    VOUT2B = _IODescriptor(VoltageOut, 3, 1)
+    VOUT2C = _IODescriptor(VoltageOut, 3, 2)
+    VOUT2D = _IODescriptor(VoltageOut, 3, 3)
+    VOUT3A = _IODescriptor(VoltageOut, 2, 0)
+    VOUT3B = _IODescriptor(VoltageOut, 2, 1)
+    VOUT3C = _IODescriptor(VoltageOut, 2, 2)
+    VOUT3D = _IODescriptor(VoltageOut, 2, 3)
+    VOUT4A = _IODescriptor(VoltageOut, 1, 0)
+    VOUT4B = _IODescriptor(VoltageOut, 1, 1)
+    VOUT4C = _IODescriptor(VoltageOut, 1, 2)
+    VOUT4D = _IODescriptor(VoltageOut, 1, 3)
+    RED_LED = property(lambda self: self._front_panel.RED_LED)
+    BLUE_LED = property(lambda self: self._front_panel.BLUE_LED)
+    GREEN_LED = property(lambda self: self._front_panel.GREEN_LED)
+
     def __init__(self):
         super().__init__()
-
-        self.IO1 = DigitalIO(self, 0)
-        self.IO2 = DigitalIO(self, 1)
-        self.IO3 = DigitalIO(self, 2)
-        self.IO4 = DigitalIO(self, 3)
-        self.IO5 = DigitalIO(self, 4)
-        self.IO6 = DigitalIO(self, 5)
-        self.IO7 = DigitalIO(self, 6)
-        self.IO8 = DigitalIO(self, 7)
-        self.IO9 = DigitalIO(self, 8)
-        self.A9 = AnalogIn(self, 8)
-        self.IO10 = DigitalIO(self, 9)
-        self.A10 = AnalogIn(self, 9)
-        self.IO11 = DigitalIO(self, 10)
-        self.A11 = AnalogIn(self, 10)
-        self.IO12 = DigitalIO(self, 11)
-        self.A12 = AnalogIn(self, 11)
-        self.IO13 = DigitalIO(self, 12)
-        self.A13 = AnalogIn(self, 12)
-        self.IO14 = DigitalIO(self, 13)
-        self.A14 = AnalogIn(self, 13)
-        self.IO15 = DigitalIO(self, 14)
-        self.A15 = AnalogIn(self, 14)
-        self.IO16 = DigitalIO(self, 15)
-        self.A16 = AnalogIn(self, 15)
-        self.IO17 = DigitalIO(self, 16)
-        self.A17 = AnalogIn(self, 16)
-        self.IO18 = DigitalIO(self, 17)
-        self.A18 = AnalogIn(self, 17)
-        self.IO19 = DigitalIO(self, 18)
-        self.A19 = AnalogIn(self, 18)
-        self.IO20 = DigitalIO(self, 19)
-        self.A20 = AnalogIn(self, 19)
-        self.IO21 = DigitalIO(self, 20)
-        self.A21 = AnalogIn(self, 20)
-        self.IO22 = DigitalIO(self, 21)
-        self.IO23 = DigitalIO(self, 22)
-        self.LED = self.IO23
-
-        self.VIN1A = VoltageIn(self, 0, 0)
-        self.VIN1B = VoltageIn(self, 0, 1)
-        self.VIN1C = VoltageIn(self, 0, 2)
-        self.VIN1D = VoltageIn(self, 0, 3)
-        self.VIN2A = VoltageIn(self, 1, 0)
-        self.VIN2B = VoltageIn(self, 1, 1)
-        self.VIN2C = VoltageIn(self, 1, 2)
-        self.VIN2D = VoltageIn(self, 1, 3)
-        self.VIN3A = VoltageIn(self, 2, 0)
-        self.VIN3B = VoltageIn(self, 2, 1)
-        self.VIN3C = VoltageIn(self, 2, 2)
-        self.VIN3D = VoltageIn(self, 2, 3)
-        self.VIN4A = VoltageIn(self, 3, 0)
-        self.VIN4B = VoltageIn(self, 3, 1)
-        self.VIN4C = VoltageIn(self, 3, 2)
-        self.VIN4D = VoltageIn(self, 3, 3)
-
-        self.VOUT1A = VoltageOut(self, 0, 0)
-        self.VOUT1B = VoltageOut(self, 0, 1)
-        self.VOUT1C = VoltageOut(self, 0, 2)
-        self.VOUT1D = VoltageOut(self, 0, 3)
-        self.VOUT2A = VoltageOut(self, 3, 0)
-        self.VOUT2B = VoltageOut(self, 3, 1)
-        self.VOUT2C = VoltageOut(self, 3, 2)
-        self.VOUT2D = VoltageOut(self, 3, 3)
-        self.VOUT3A = VoltageOut(self, 2, 0)
-        self.VOUT3B = VoltageOut(self, 2, 1)
-        self.VOUT3C = VoltageOut(self, 2, 2)
-        self.VOUT3D = VoltageOut(self, 2, 3)
-        self.VOUT4A = VoltageOut(self, 1, 0)
-        self.VOUT4B = VoltageOut(self, 1, 1)
-        self.VOUT4C = VoltageOut(self, 1, 2)
-        self.VOUT4D = VoltageOut(self, 1, 3)
-
         self._front_panel = FrontPanel()
-
-        self.RED_LED = self._front_panel.RED_LED
-        self.BLUE_LED = self._front_panel.BLUE_LED
-        self.GREEN_LED = self._front_panel.GREEN_LED
 
     def get_firmware_version(self):
         resp = self.sysex(_SysExCommands.HELLO, response=True)
@@ -259,13 +287,16 @@ class Hubble(midi.MIDIDevice):
 
     def start(self):
         self.BLUE_LED.on()
-        self._front_panel.text = "Testing..."
+        self._front_panel.text = "Started..."
 
-    def fail(self, msg=""):
+    def fail(self):
         self.RED_LED.flash()
         self.BLUE_LED.off()
         self.GREEN_LED.off()
-        self._front_panel.text = f"FAILED!\n{msg}"
+        self._front_panel.oh_no()
+
+    def print(self, msg=""):
+        self._front_panel.text = msg
 
     def success(self):
         self.RED_LED.off()

@@ -1,7 +1,3 @@
-# Copyright (c) 2021 Alethea Katherine Flowers.
-# Published under the standard MIT License.
-# Full text available at: https://opensource.org/licenses/MIT
-
 import time
 
 import adafruit_displayio_sh1107
@@ -17,6 +13,7 @@ from adafruit_display_text import bitmap_label
 from adafruit_hid.keyboard import Keyboard
 from adafruit_hid.keyboard_layout_us import KeyboardLayoutUS
 from adafruit_hid.keycode import Keycode
+import adafruit_imageload
 
 import smolmidi
 
@@ -127,6 +124,12 @@ class LED:
             self.brightness = abs(-1 + ((time.monotonic() / 2) % 1.0) * 2)
 
 
+def chunks(lst, n):
+    """Yield successive n-sized chunks from lst."""
+    for i in range(0, len(lst), n):
+        yield lst[i : i + n]
+
+
 # Keyboard, gamepad and such
 
 KEYBOARD = Keyboard(usb_hid.devices)
@@ -163,6 +166,7 @@ display_bus = displayio.I2CDisplay(I2C, device_address=0x3C)
 display = adafruit_displayio_sh1107.SH1107(
     display_bus, width=128, height=64, rotation=0
 )
+display.auto_refresh = True
 display_group = displayio.Group()
 display.show(display_group)
 
@@ -170,8 +174,14 @@ text = bitmap_label.Label(
     terminalio.FONT, text="Idle", scale=2, color=0xFFFFFF, x=0, y=10
 )
 display_group.append(text)
-display.auto_refresh = True
 
+oh_no_bitmap, oh_no_palette = adafruit_imageload.load(
+    "/ohno.bmp", bitmap=displayio.Bitmap, palette=displayio.Palette
+)
+oh_no_tile_grid = displayio.TileGrid(oh_no_bitmap, pixel_shader=oh_no_palette)
+oh_no_tile_grid.hidden = True
+
+# Now the fun stuff.
 RED_LED.mode = LED.BREATHING
 
 while True:
@@ -198,6 +208,8 @@ while True:
     if POWER_SWITCH.pressed:
         text.text = "Ready!"
     elif POWER_SWITCH.released:
+        GREEN_LED.mode = GREEN_LED.OFF
+        RED_LED.mode = GREEN_LED.OFF
         text.text = "Idle"
 
     BLUE_LED.update()
@@ -219,3 +231,22 @@ while True:
 
             led.brightness = msg.data[1] / 127
             led.mode = led_mode
+
+        if msg.type == smolmidi.SYSEX:
+            data, _ = midi_in.receive_sysex(128)
+            if not data:
+                continue
+
+            command = data[1]
+
+            if command == 0x01:
+                new_text = bytes(data[2:]).decode("ascii")
+                lines = "\n".join(line.strip() for line in chunks(new_text, 10))
+                text.text = lines
+                if not oh_no_tile_grid.hidden:
+                    oh_no_tile_grid.hidden = True
+                    display_group.pop()
+
+            elif command == 0x02:
+                oh_no_tile_grid.hidden = False
+                display_group.append(oh_no_tile_grid)
