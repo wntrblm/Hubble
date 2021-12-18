@@ -1,7 +1,9 @@
 from wintertools import midi
 
+
 def _midi_clamp(val):
     return min(127, max(0, int(val)))
+
 
 class _LED:
     NORMAL = 0
@@ -17,7 +19,9 @@ class _LED:
         self._brightness = 0
 
     def update(self):
-        self._device.send(0x90, (self.mode << 4) | (self._number), _midi_clamp(127 * self._brightness))
+        self._device.send(
+            0x90, (self.mode << 4) | (self._number), _midi_clamp(127 * self._brightness)
+        )
 
     @property
     def brightness(self):
