@@ -77,6 +77,7 @@ static struct WntrVoltageCalibrationTable* calibration_tables[] = {
 int main(void);
 static void init();
 static void init_calibrations();
+static void init_dacs_and_muxes();
 static void loop();
 static void register_sysex_commands();
 
@@ -139,6 +140,9 @@ static void init() {
     /* Calibrations */
     init_calibrations();
 
+    /* Set initial values for dacs and muxes */
+    init_dacs_and_muxes();
+
     /* Sysex commands */
     register_sysex_commands();
 }
@@ -154,6 +158,19 @@ static void init_calibrations() {
         /* Load the saved values (if available) */
         HubbleVoltageCalibrationTable_load_from_nvm(table, i);
     }
+}
+
+static void init_dacs_and_muxes() {
+    // Yes, slightly above zero, since MCU inputs tend to be
+    // more forgiving of a very small positive voltage than any negative
+    // voltage.
+    uint32_t zero_code_point = wntr_volts_to_code_points(0.1f, WNTR_RESOLUTION_16_BIT, -8.0f, 8.0f, true);
+    hubble_ad5685_write_channel(0, zero_code_point, true);
+    hubble_ad5685_write_channel(1, zero_code_point, true);
+    hubble_ad5685_write_channel(2, zero_code_point, true);
+    hubble_ad5685_write_channel(3, zero_code_point, true);
+    hubble_mux50x_set(DAC_MUX, 0);
+    hubble_mux50x_set(ADC_MUX, 0);
 }
 
 static void loop() {
