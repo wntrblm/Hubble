@@ -56,7 +56,8 @@ class _LED:
 
 
 class FrontPanel(midi.MIDIDevice):
-    MIDI_PORT_NAME = "Feather RP2040 CircuitPython usb_midi.ports[0]"
+    # MIDI_PORT_NAME = "Feather RP2040 CircuitPython usb_midi.ports[0]"
+    MIDI_PORT_NAME = "Pico CircuitPython usb_midi.ports[0]"
     SYSEX_MARKER = 0x77
 
     def __init__(self):
