@@ -33,10 +33,10 @@ class _IODescriptor:
 
 
 class DigitalIO:
-    def __init__(self, pin):
+    def __init__(self, device, pin):
         self._pin = pin
         self._name = None
-        self._device = None
+        self._device = device
 
     @property
     def value(self):
