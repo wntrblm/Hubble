@@ -92,11 +92,11 @@ class VoltageIn:
 
     @property
     def value(self):
-        return self._device.read_adc(self._device, self._channel, self._mux)
+        return self._device.read_adc(self._channel, self._mux)
 
     @property
     def voltage(self):
-        return self._device.read_adc_voltage(self._device, self._channel, self._mux)
+        return self._device.read_adc_voltage(self._channel, self._mux)
 
 
 class _SysExCommands(enum.IntEnum):
@@ -220,8 +220,7 @@ class Hubble(midi.MIDIDevice):
 
     def read_gpio(self, pin):
         resp = self.sysex(_SysExCommands.READ_GPIO, data=[pin], response=True)
-        print(resp)
-        return True if resp[4] else False
+        return True if resp[3] else False
 
     def set_gpio(self, pin, value):
         self.sysex(
