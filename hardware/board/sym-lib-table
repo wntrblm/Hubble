@@ -1,3 +1,4 @@
 (sym_lib_table
-  (lib (name hubble-rescue)(type Legacy)(uri ${KIPRJMOD}/hubble-rescue.lib)(options "")(descr ""))
+  (version 7)
+  (lib (name "hubble")(type "KiCad")(uri "${KIPRJMOD}/hubble.kicad_sym")(options "")(descr ""))
 )

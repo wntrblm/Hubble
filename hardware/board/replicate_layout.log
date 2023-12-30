@@ -1,0 +1,97 @@
+12-19 10:18:39 com_github_MitjaNemec_ReplicateLayout.action_replicate_layout 400:Plugin executed on: 'darwin'
+12-19 10:18:39 com_github_MitjaNemec_ReplicateLayout.action_replicate_layout 401:Plugin executed with python version: '3.9.13 (v3.9.13:6de2ca5339, May 17 2022, 11:37:23) \n[Clang 13.0.0 (clang-1300.0.29.30)]'
+12-19 10:18:39 com_github_MitjaNemec_ReplicateLayout.action_replicate_layout 402:KiCad build version: 7.0.9
+12-19 10:18:39 com_github_MitjaNemec_ReplicateLayout.action_replicate_layout 403:Plugin version: 2.1.0
+12-19 10:18:39 com_github_MitjaNemec_ReplicateLayout.action_replicate_layout 404:Frame repr: <wx._core.Frame object at 0x1315854c0>
+12-19 10:18:39 com_github_MitjaNemec_ReplicateLayout.action_replicate_layout 428:Preparing replicator with U901 as a reference
+12-19 10:18:39 com_github_MitjaNemec_ReplicateLayout.replicate_layout 116:getting a list of all footprints on board
+12-19 10:18:39 com_github_MitjaNemec_ReplicateLayout.replicate_layout 135:Footprint REF** does not have Sheetfile property, it will not be replicated. Most likely it is only in layout
+12-19 10:18:39 com_github_MitjaNemec_ReplicateLayout.replicate_layout 135:Footprint G*** does not have Sheetfile property, it will not be replicated. Most likely it is only in layout
+12-19 10:18:39 com_github_MitjaNemec_ReplicateLayout.action_replicate_layout 476:source anchor footprint is 'U901'
+Located on: ['Analog Outs 1-4']
+With filenames: ['analog-outs.kicad_sch']
+With sheet_id:['Analog Outs 1-4']
+12-19 10:18:39 com_github_MitjaNemec_ReplicateLayout.action_replicate_layout 483:Corresponding footprints are 
+[('U901', ['Analog Outs 1-4']), ('U1001', ['Analog Outs 5-8']), ('U1101', ['Analog Outs 9-12'])]
+12-19 10:18:39 com_github_MitjaNemec_ReplicateLayout.action_replicate_layout 495:Showing dialog
+12-19 10:18:39 com_github_MitjaNemec_ReplicateLayout.replicate_layout 403:constructing a list of sheets suitable for replication on level:'Analog Outs 1-4', file:'analog-outs.kicad_sch'
+12-19 10:18:39 com_github_MitjaNemec_ReplicateLayout.replicate_layout 440:suitable sheets are:[['Analog Outs 5-8'], ['Analog Outs 9-12']]
+12-19 10:18:39 com_github_MitjaNemec_ReplicateLayout.replicate_layout 1411:Level selected: ['Analog Outs 1-4']
+12-19 10:18:39 com_github_MitjaNemec_ReplicateLayout.replicate_layout 1246:Filtering list of tracks
+12-19 10:18:39 com_github_MitjaNemec_ReplicateLayout.action_replicate_layout 501:Toolbar position: wx.Point(1478, 100)
+12-19 10:18:39 com_github_MitjaNemec_ReplicateLayout.action_replicate_layout 506:Dialog position: wx.Point(1116, 100)
+12-19 10:18:42 com_github_MitjaNemec_ReplicateLayout.replicate_layout 403:constructing a list of sheets suitable for replication on level:'Analog Outs 1-4', file:'analog-outs.kicad_sch'
+12-19 10:18:42 com_github_MitjaNemec_ReplicateLayout.replicate_layout 440:suitable sheets are:[['Analog Outs 5-8'], ['Analog Outs 9-12']]
+12-19 10:18:42 com_github_MitjaNemec_ReplicateLayout.replicate_layout 1411:Level selected: ['Analog Outs 1-4']
+12-19 10:18:42 com_github_MitjaNemec_ReplicateLayout.replicate_layout 1246:Filtering list of tracks
+12-19 10:18:46 com_github_MitjaNemec_ReplicateLayout.replicate_layout 403:constructing a list of sheets suitable for replication on level:'Analog Outs 1-4', file:'analog-outs.kicad_sch'
+12-19 10:18:46 com_github_MitjaNemec_ReplicateLayout.replicate_layout 440:suitable sheets are:[['Analog Outs 5-8'], ['Analog Outs 9-12']]
+12-19 10:18:46 com_github_MitjaNemec_ReplicateLayout.replicate_layout 1411:Level selected: ['Analog Outs 1-4']
+12-19 10:18:46 com_github_MitjaNemec_ReplicateLayout.replicate_layout 1246:Filtering list of tracks
+12-19 10:18:47 com_github_MitjaNemec_ReplicateLayout.replicate_layout 403:constructing a list of sheets suitable for replication on level:'Analog Outs 1-4', file:'analog-outs.kicad_sch'
+12-19 10:18:47 com_github_MitjaNemec_ReplicateLayout.replicate_layout 440:suitable sheets are:[['Analog Outs 5-8'], ['Analog Outs 9-12']]
+12-19 10:18:47 com_github_MitjaNemec_ReplicateLayout.replicate_layout 1411:Level selected: ['Analog Outs 1-4']
+12-19 10:18:47 com_github_MitjaNemec_ReplicateLayout.replicate_layout 1246:Filtering list of tracks
+12-19 10:18:47 com_github_MitjaNemec_ReplicateLayout.replicate_layout 403:constructing a list of sheets suitable for replication on level:'Analog Outs 1-4', file:'analog-outs.kicad_sch'
+12-19 10:18:47 com_github_MitjaNemec_ReplicateLayout.replicate_layout 440:suitable sheets are:[['Analog Outs 5-8'], ['Analog Outs 9-12']]
+12-19 10:18:48 com_github_MitjaNemec_ReplicateLayout.replicate_layout 1411:Level selected: ['Analog Outs 1-4']
+12-19 10:18:48 com_github_MitjaNemec_ReplicateLayout.replicate_layout 1246:Filtering list of tracks
+12-19 10:18:48 com_github_MitjaNemec_ReplicateLayout.replicate_layout 403:constructing a list of sheets suitable for replication on level:'Analog Outs 1-4', file:'analog-outs.kicad_sch'
+12-19 10:18:48 com_github_MitjaNemec_ReplicateLayout.replicate_layout 440:suitable sheets are:[['Analog Outs 5-8'], ['Analog Outs 9-12']]
+12-19 10:18:48 com_github_MitjaNemec_ReplicateLayout.replicate_layout 1411:Level selected: ['Analog Outs 1-4']
+12-19 10:18:48 com_github_MitjaNemec_ReplicateLayout.replicate_layout 1246:Filtering list of tracks
+12-19 10:18:48 com_github_MitjaNemec_ReplicateLayout.replicate_layout 403:constructing a list of sheets suitable for replication on level:'Analog Outs 1-4', file:'analog-outs.kicad_sch'
+12-19 10:18:48 com_github_MitjaNemec_ReplicateLayout.replicate_layout 440:suitable sheets are:[['Analog Outs 5-8'], ['Analog Outs 9-12']]
+12-19 10:18:48 com_github_MitjaNemec_ReplicateLayout.replicate_layout 1411:Level selected: ['Analog Outs 1-4']
+12-19 10:18:48 com_github_MitjaNemec_ReplicateLayout.replicate_layout 1246:Filtering list of tracks
+12-19 10:18:54 com_github_MitjaNemec_ReplicateLayout.replicate_layout 403:constructing a list of sheets suitable for replication on level:'Analog Outs 1-4', file:'analog-outs.kicad_sch'
+12-19 10:18:54 com_github_MitjaNemec_ReplicateLayout.replicate_layout 440:suitable sheets are:[['Analog Outs 5-8'], ['Analog Outs 9-12']]
+12-19 10:18:54 com_github_MitjaNemec_ReplicateLayout.action_replicate_layout 248:Replicating layout
+12-19 10:18:54 com_github_MitjaNemec_ReplicateLayout.replicate_layout 239:Starting replication of sheets: [['Analog Outs 5-8'], ['Analog Outs 9-12']]
+on level: ['Analog Outs 1-4']
+with tracks=True, zone=True, text=True, text=True, intersecting=False, remove=False, locked footprints=False, group_only=False
+12-19 10:18:54 root 340:updating GUI message: 'Preparing for replication'
+12-19 10:18:54 root 345:updating GUI with: 0
+12-19 10:18:54 com_github_MitjaNemec_ReplicateLayout.replicate_layout 309:Getting the list of source footprints
+12-19 10:18:54 root 345:updating GUI with: 0
+12-19 10:18:54 com_github_MitjaNemec_ReplicateLayout.replicate_layout 319:Getting the list of all the remaining footprints
+12-19 10:18:54 com_github_MitjaNemec_ReplicateLayout.replicate_layout 326:Getting source tracks
+12-19 10:18:54 com_github_MitjaNemec_ReplicateLayout.replicate_layout 1246:Filtering list of tracks
+12-19 10:18:54 com_github_MitjaNemec_ReplicateLayout.replicate_layout 330:Getting source zones
+12-19 10:18:54 com_github_MitjaNemec_ReplicateLayout.replicate_layout 334:Getting source text items
+12-19 10:18:54 root 345:updating GUI with: 66
+12-19 10:18:54 com_github_MitjaNemec_ReplicateLayout.replicate_layout 338:Getting source drawing items
+12-19 10:18:54 root 340:updating GUI message: 'Replicating footprints'
+12-19 10:18:54 com_github_MitjaNemec_ReplicateLayout.replicate_layout 754:Replicating footprints
+12-19 10:18:54 com_github_MitjaNemec_ReplicateLayout.replicate_layout 761:Replicating footprints on sheet ['Analog Outs 5-8']
+12-19 10:18:54 com_github_MitjaNemec_ReplicateLayout.replicate_layout 761:Replicating footprints on sheet ['Analog Outs 9-12']
+12-19 10:18:54 root 345:updating GUI with: 72
+12-19 10:18:54 root 340:updating GUI message: 'Replicating tracks'
+12-19 10:18:54 com_github_MitjaNemec_ReplicateLayout.replicate_layout 924:Replicating tracks
+12-19 10:18:54 com_github_MitjaNemec_ReplicateLayout.replicate_layout 930:Replicating tracks on sheet ['Analog Outs 5-8']
+12-19 10:18:54 com_github_MitjaNemec_ReplicateLayout.replicate_layout 749:Net pairs for sheet ['Analog Outs 5-8'] :[('/Analog Outs 1-4/SDO', '/Analog Outs 5-8/SDO'), ('Net-(U902-VOUTB)', 'Net-(U1002-VOUTB)'), ('Net-(U901B--)', 'Net-(U1001B--)'), ('+3V3', '+3V3'), ('Net-(C906-Pad2)', 'Net-(C1006-Pad2)'), ('Net-(U902-VOUTD)', 'Net-(U1002-VOUTD)'), ('/Analog Outs 1-4/SCK', '/Analog Outs 1-4/SCK'), ('-12V', '-12V'), ('Net-(C908-Pad2)', 'Net-(C1008-Pad2)'), ('GND', 'GND'), ('/Analog Outs 1-4/VOUTD', '/Analog Outs 5-8/VOUTD'), ('Net-(U901A--)', 'Net-(U1001A--)'), ('+3V3A', '+3V3A'), ('Net-(U901C--)', 'Net-(U1001C--)'), ('Net-(C901-Pad2)', 'Net-(C1001-Pad2)'), ('/Analog Outs 1-4/VOUTC', '/Analog Outs 5-8/VOUTC'), ('+12V', '+12V'), ('Net-(U902-VOUTA)', 'Net-(U1002-VOUTA)'), ('/Analog Outs 1-4/VOUTA', '/Analog Outs 5-8/VOUTA'), ('/Analog Outs 1-4/VREF-10V', '/Analog Outs 5-8/VREF-10V'), ('/Analog Outs 1-4/~{CS}', '/Analog Outs 1-4/~{CS}'), ('/Analog Outs 1-4/SDI', '/Analog Outs 1-4/SDO'), ('Net-(U902-VDD)', 'Net-(U1002-VDD)'), ('Net-(U901D--)', 'Net-(U1001D--)'), ('unconnected-(U903-NC-Pad3)', 'unconnected-(U1003-NC-Pad3)'), ('/Analog Outs 1-4/VOUTB', '/Analog Outs 5-8/VOUTB'), ('Net-(C905-Pad2)', 'Net-(C1005-Pad2)'), ('Net-(U902-VREF)', 'Net-(U1002-VREF)'), ('Net-(U902-VOUTC)', 'Net-(U1002-VOUTC)')]
+12-19 10:18:54 com_github_MitjaNemec_ReplicateLayout.replicate_layout 930:Replicating tracks on sheet ['Analog Outs 9-12']
+12-19 10:18:54 com_github_MitjaNemec_ReplicateLayout.replicate_layout 733:Cannot pair src net: ['', 'Analog Outs 1-4', 'SDI'] and dst net: ['', 'Analog Outs 5-8', 'SDO'], with src_net_depth=3, dst_net_depth=3, src_fp_depth=1, dst_fp_depth=1
+12-19 10:18:54 com_github_MitjaNemec_ReplicateLayout.replicate_layout 749:Net pairs for sheet ['Analog Outs 9-12'] :[('Net-(C906-Pad2)', 'Net-(C1106-Pad2)'), ('Net-(U901A--)', 'Net-(U1101A--)'), ('Net-(U902-VOUTD)', 'Net-(U1102-VOUTD)'), ('+3V3', '+3V3'), ('Net-(C901-Pad2)', 'Net-(C1101-Pad2)'), ('Net-(U902-VOUTA)', 'Net-(U1102-VOUTA)'), ('/Analog Outs 1-4/VREF-10V', '/Analog Outs 9-12/VREF-10V'), ('Net-(U902-VOUTC)', 'Net-(U1102-VOUTC)'), ('/Analog Outs 1-4/VOUTB', '/Analog Outs 9-12/VOUTB'), ('Net-(U901D--)', 'Net-(U1101D--)'), ('/Analog Outs 1-4/SCK', '/Analog Outs 1-4/SCK'), ('Net-(U902-VDD)', 'Net-(U1102-VDD)'), ('-12V', '-12V'), ('Net-(U901C--)', 'Net-(U1101C--)'), ('GND', 'GND'), ('Net-(U902-VOUTB)', 'Net-(U1102-VOUTB)'), ('unconnected-(U903-NC-Pad3)', 'unconnected-(U1103-NC-Pad3)'), ('+3V3A', '+3V3A'), ('/Analog Outs 1-4/VOUTD', '/Analog Outs 9-12/VOUTD'), ('/Analog Outs 1-4/VOUTC', '/Analog Outs 9-12/VOUTC'), ('Net-(C908-Pad2)', 'Net-(C1108-Pad2)'), ('+12V', '+12V'), ('/Analog Outs 1-4/~{CS}', '/Analog Outs 1-4/~{CS}'), ('/Analog Outs 1-4/SDO', '/Analog Outs 9-12/SDO'), ('Net-(U901B--)', 'Net-(U1101B--)'), ('Net-(C905-Pad2)', 'Net-(C1105-Pad2)'), ('Net-(U902-VREF)', 'Net-(U1102-VREF)'), ('/Analog Outs 1-4/VOUTA', '/Analog Outs 9-12/VOUTA')]
+12-19 10:18:54 root 345:updating GUI with: 91
+12-19 10:18:54 root 340:updating GUI message: 'Replicating zones'
+12-19 10:18:54 com_github_MitjaNemec_ReplicateLayout.replicate_layout 994:Replicating zones
+12-19 10:18:54 com_github_MitjaNemec_ReplicateLayout.replicate_layout 1001:Replicating zones on sheet ['Analog Outs 5-8']
+12-19 10:18:54 com_github_MitjaNemec_ReplicateLayout.replicate_layout 749:Net pairs for sheet ['Analog Outs 5-8'] :[('/Analog Outs 1-4/SDO', '/Analog Outs 5-8/SDO'), ('Net-(U902-VOUTB)', 'Net-(U1002-VOUTB)'), ('Net-(U901B--)', 'Net-(U1001B--)'), ('+3V3', '+3V3'), ('Net-(C906-Pad2)', 'Net-(C1006-Pad2)'), ('Net-(U902-VOUTD)', 'Net-(U1002-VOUTD)'), ('/Analog Outs 1-4/SCK', '/Analog Outs 1-4/SCK'), ('-12V', '-12V'), ('Net-(C908-Pad2)', 'Net-(C1008-Pad2)'), ('GND', 'GND'), ('/Analog Outs 1-4/VOUTD', '/Analog Outs 5-8/VOUTD'), ('Net-(U901A--)', 'Net-(U1001A--)'), ('+3V3A', '+3V3A'), ('Net-(U901C--)', 'Net-(U1001C--)'), ('Net-(C901-Pad2)', 'Net-(C1001-Pad2)'), ('/Analog Outs 1-4/VOUTC', '/Analog Outs 5-8/VOUTC'), ('+12V', '+12V'), ('Net-(U902-VOUTA)', 'Net-(U1002-VOUTA)'), ('/Analog Outs 1-4/VOUTA', '/Analog Outs 5-8/VOUTA'), ('/Analog Outs 1-4/VREF-10V', '/Analog Outs 5-8/VREF-10V'), ('/Analog Outs 1-4/~{CS}', '/Analog Outs 1-4/~{CS}'), ('/Analog Outs 1-4/SDI', '/Analog Outs 1-4/SDO'), ('Net-(U902-VDD)', 'Net-(U1002-VDD)'), ('Net-(U901D--)', 'Net-(U1001D--)'), ('unconnected-(U903-NC-Pad3)', 'unconnected-(U1003-NC-Pad3)'), ('/Analog Outs 1-4/VOUTB', '/Analog Outs 5-8/VOUTB'), ('Net-(C905-Pad2)', 'Net-(C1005-Pad2)'), ('Net-(U902-VREF)', 'Net-(U1002-VREF)'), ('Net-(U902-VOUTC)', 'Net-(U1002-VOUTC)')]
+12-19 10:18:54 com_github_MitjaNemec_ReplicateLayout.replicate_layout 1001:Replicating zones on sheet ['Analog Outs 9-12']
+12-19 10:18:54 com_github_MitjaNemec_ReplicateLayout.replicate_layout 733:Cannot pair src net: ['', 'Analog Outs 1-4', 'SDI'] and dst net: ['', 'Analog Outs 5-8', 'SDO'], with src_net_depth=3, dst_net_depth=3, src_fp_depth=1, dst_fp_depth=1
+12-19 10:18:54 com_github_MitjaNemec_ReplicateLayout.replicate_layout 749:Net pairs for sheet ['Analog Outs 9-12'] :[('Net-(C906-Pad2)', 'Net-(C1106-Pad2)'), ('Net-(U901A--)', 'Net-(U1101A--)'), ('Net-(U902-VOUTD)', 'Net-(U1102-VOUTD)'), ('+3V3', '+3V3'), ('Net-(C901-Pad2)', 'Net-(C1101-Pad2)'), ('Net-(U902-VOUTA)', 'Net-(U1102-VOUTA)'), ('/Analog Outs 1-4/VREF-10V', '/Analog Outs 9-12/VREF-10V'), ('Net-(U902-VOUTC)', 'Net-(U1102-VOUTC)'), ('/Analog Outs 1-4/VOUTB', '/Analog Outs 9-12/VOUTB'), ('Net-(U901D--)', 'Net-(U1101D--)'), ('/Analog Outs 1-4/SCK', '/Analog Outs 1-4/SCK'), ('Net-(U902-VDD)', 'Net-(U1102-VDD)'), ('-12V', '-12V'), ('Net-(U901C--)', 'Net-(U1101C--)'), ('GND', 'GND'), ('Net-(U902-VOUTB)', 'Net-(U1102-VOUTB)'), ('unconnected-(U903-NC-Pad3)', 'unconnected-(U1103-NC-Pad3)'), ('+3V3A', '+3V3A'), ('/Analog Outs 1-4/VOUTD', '/Analog Outs 9-12/VOUTD'), ('/Analog Outs 1-4/VOUTC', '/Analog Outs 9-12/VOUTC'), ('Net-(C908-Pad2)', 'Net-(C1108-Pad2)'), ('+12V', '+12V'), ('/Analog Outs 1-4/~{CS}', '/Analog Outs 1-4/~{CS}'), ('/Analog Outs 1-4/SDO', '/Analog Outs 9-12/SDO'), ('Net-(U901B--)', 'Net-(U1101B--)'), ('Net-(C905-Pad2)', 'Net-(C1105-Pad2)'), ('Net-(U902-VREF)', 'Net-(U1102-VREF)'), ('/Analog Outs 1-4/VOUTA', '/Analog Outs 9-12/VOUTA')]
+12-19 10:18:54 root 340:updating GUI message: 'Replicating text'
+12-19 10:18:54 com_github_MitjaNemec_ReplicateLayout.replicate_layout 1083:Replicating text
+12-19 10:18:54 com_github_MitjaNemec_ReplicateLayout.replicate_layout 1090:Replicating text on sheet ['Analog Outs 5-8']
+12-19 10:18:54 com_github_MitjaNemec_ReplicateLayout.replicate_layout 1090:Replicating text on sheet ['Analog Outs 9-12']
+12-19 10:18:54 root 340:updating GUI message: 'Replicating drawings'
+12-19 10:18:54 com_github_MitjaNemec_ReplicateLayout.replicate_layout 1134:Replicating drawings
+12-19 10:18:54 com_github_MitjaNemec_ReplicateLayout.replicate_layout 1140:Replicating drawings on sheet ['Analog Outs 5-8']
+12-19 10:18:54 com_github_MitjaNemec_ReplicateLayout.replicate_layout 1140:Replicating drawings on sheet ['Analog Outs 9-12']
+12-19 10:18:55 com_github_MitjaNemec_ReplicateLayout.action_replicate_layout 264:Replication complete
+12-19 10:18:55 com_github_MitjaNemec_ReplicateLayout.action_replicate_layout 267:Letting the user know there are some issues with replicated design
+12-19 10:18:55 com_github_MitjaNemec_ReplicateLayout.action_replicate_layout 271:Looks like the design has an exotic connectivity that is not supported by the plugin
+ Make sure that you check the connectivity around:
+Footprint U1102, pad 14
+
