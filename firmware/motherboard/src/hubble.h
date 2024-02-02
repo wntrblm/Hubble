@@ -8,6 +8,7 @@
 
 #include "hubble_ad5685.h"
 #include "hubble_adc.h"
+#include "hubble_calibration_table.h"
 #include "hubble_calibration_table_load_save.h"
 #include "hubble_config.h"
 #include "hubble_dac.h"

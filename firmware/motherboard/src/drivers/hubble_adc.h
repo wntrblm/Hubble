@@ -26,7 +26,7 @@ struct HubbleADCInput {
     uint32_t ain;
 };
 
-#define HUBBLE_ADC_INPUT(adc_, ain_, port_, pin_)                                                                \
+#define HUBBLE_ADC_INPUT(adc_, ain_, port_, pin_)                                                                      \
     ((struct HubbleADCInput){                                                                                          \
         .adc = adc_,                                                                                                   \
         .ain = ADC_INPUTCTRL_MUXPOS_AIN##ain_,                                                                         \
