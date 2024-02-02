@@ -1254,7 +1254,7 @@
   (symbol (lib_id "power:+12V") (at 48.26 86.36 270) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid 042c93a0-447c-4c18-8e1a-fac189ba92b3)
-    (property "Reference" "#PWR?" (at 44.45 86.36 0)
+    (property "Reference" "#PWR01415" (at 44.45 86.36 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "+12V" (at 51.435 86.36 90)
@@ -1269,9 +1269,6 @@
     (pin "1" (uuid e5510af6-6c9c-4172-ba31-7b73573d0fc4))
     (instances
       (project "hubble"
-        (path "/f6dd3a30-118f-450f-a0e1-e755e60c59b2"
-          (reference "#PWR?") (unit 1)
-        )
         (path "/f6dd3a30-118f-450f-a0e1-e755e60c59b2/21c90f29-fa7e-445f-bce5-bb77fe6ab990"
           (reference "#PWR01415") (unit 1)
         )
@@ -1314,9 +1311,6 @@
         )
       )
       (project "hubble"
-        (path "/f6dd3a30-118f-450f-a0e1-e755e60c59b2/00000000-0000-0000-0000-000060711259"
-          (reference "J202") (unit 1)
-        )
         (path "/f6dd3a30-118f-450f-a0e1-e755e60c59b2/21c90f29-fa7e-445f-bce5-bb77fe6ab990"
           (reference "J1303") (unit 1)
         )
@@ -1359,9 +1353,6 @@
         )
       )
       (project "hubble"
-        (path "/f6dd3a30-118f-450f-a0e1-e755e60c59b2/00000000-0000-0000-0000-000060711259"
-          (reference "J202") (unit 1)
-        )
         (path "/f6dd3a30-118f-450f-a0e1-e755e60c59b2/21c90f29-fa7e-445f-bce5-bb77fe6ab990"
           (reference "J1305") (unit 1)
         )
@@ -1372,7 +1363,7 @@
   (symbol (lib_id "power:GND") (at 186.055 60.325 0) (mirror y) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid 107016c4-a1a7-4a73-b184-69c57e4bffb4)
-    (property "Reference" "#PWR?" (at 186.055 66.675 0)
+    (property "Reference" "#PWR01302" (at 186.055 66.675 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "GND" (at 186.055 64.135 0)
@@ -1387,9 +1378,6 @@
     (pin "1" (uuid 2a09ea75-174a-4efa-9c72-68fcfdca59eb))
     (instances
       (project "hubble"
-        (path "/f6dd3a30-118f-450f-a0e1-e755e60c59b2"
-          (reference "#PWR?") (unit 1)
-        )
         (path "/f6dd3a30-118f-450f-a0e1-e755e60c59b2/21c90f29-fa7e-445f-bce5-bb77fe6ab990"
           (reference "#PWR01302") (unit 1)
         )
@@ -1400,7 +1388,7 @@
   (symbol (lib_id "power:GND") (at 132.715 60.325 0) (mirror y) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid 13fa582f-fe24-4408-8604-4790abe8aacd)
-    (property "Reference" "#PWR?" (at 132.715 66.675 0)
+    (property "Reference" "#PWR01311" (at 132.715 66.675 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "GND" (at 132.715 64.135 0)
@@ -1415,9 +1403,6 @@
     (pin "1" (uuid 2710fb46-ff0d-47f4-ba42-00d50c5a337c))
     (instances
       (project "hubble"
-        (path "/f6dd3a30-118f-450f-a0e1-e755e60c59b2"
-          (reference "#PWR?") (unit 1)
-        )
         (path "/f6dd3a30-118f-450f-a0e1-e755e60c59b2/21c90f29-fa7e-445f-bce5-bb77fe6ab990"
           (reference "#PWR01311") (unit 1)
         )
@@ -1448,12 +1433,6 @@
         )
       )
       (project "hubble"
-        (path "/f6dd3a30-118f-450f-a0e1-e755e60c59b2/00000000-0000-0000-0000-000060711259"
-          (reference "#PWR?") (unit 1)
-        )
-        (path "/f6dd3a30-118f-450f-a0e1-e755e60c59b2"
-          (reference "#PWR?") (unit 1)
-        )
         (path "/f6dd3a30-118f-450f-a0e1-e755e60c59b2/21c90f29-fa7e-445f-bce5-bb77fe6ab990"
           (reference "#PWR01409") (unit 1)
         )
@@ -1464,7 +1443,7 @@
   (symbol (lib_id "power:GND") (at 95.885 127 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid 2394c6ad-9c97-48a4-8055-3b5f52030d47)
-    (property "Reference" "#PWR?" (at 95.885 133.35 0)
+    (property "Reference" "#PWR01454" (at 95.885 133.35 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "GND" (at 95.885 130.81 0)
@@ -1479,9 +1458,6 @@
     (pin "1" (uuid 257c0fc2-8ed2-4a6a-a63c-5c2fc1dc0009))
     (instances
       (project "hubble"
-        (path "/f6dd3a30-118f-450f-a0e1-e755e60c59b2"
-          (reference "#PWR?") (unit 1)
-        )
         (path "/f6dd3a30-118f-450f-a0e1-e755e60c59b2/21c90f29-fa7e-445f-bce5-bb77fe6ab990"
           (reference "#PWR01454") (unit 1)
         )
@@ -1492,7 +1468,7 @@
   (symbol (lib_id "power:GND") (at 83.185 99.06 270) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid 2585bfeb-c7f2-439c-b191-6a876702e52c)
-    (property "Reference" "#PWR?" (at 76.835 99.06 0)
+    (property "Reference" "#PWR01427" (at 76.835 99.06 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "GND" (at 79.375 99.06 0)
@@ -1507,9 +1483,6 @@
     (pin "1" (uuid e6cc608d-e9a1-4a1f-a0fd-a0b45d5f76d0))
     (instances
       (project "hubble"
-        (path "/f6dd3a30-118f-450f-a0e1-e755e60c59b2"
-          (reference "#PWR?") (unit 1)
-        )
         (path "/f6dd3a30-118f-450f-a0e1-e755e60c59b2/21c90f29-fa7e-445f-bce5-bb77fe6ab990"
           (reference "#PWR01427") (unit 1)
         )
@@ -1520,7 +1493,7 @@
   (symbol (lib_id "power:GND") (at 83.185 101.6 270) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid 2d1c3e9e-d782-42ae-b344-484deefafe6e)
-    (property "Reference" "#PWR?" (at 76.835 101.6 0)
+    (property "Reference" "#PWR01434" (at 76.835 101.6 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "GND" (at 79.375 101.6 0)
@@ -1535,9 +1508,6 @@
     (pin "1" (uuid f5267de3-6569-4a69-94d6-f0a0c9d1b58f))
     (instances
       (project "hubble"
-        (path "/f6dd3a30-118f-450f-a0e1-e755e60c59b2"
-          (reference "#PWR?") (unit 1)
-        )
         (path "/f6dd3a30-118f-450f-a0e1-e755e60c59b2/21c90f29-fa7e-445f-bce5-bb77fe6ab990"
           (reference "#PWR01434") (unit 1)
         )
@@ -1548,7 +1518,7 @@
   (symbol (lib_id "power:GND") (at 48.26 78.74 90) (mirror x) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid 33aac644-4a7a-4921-b779-33faa3f246b9)
-    (property "Reference" "#PWR?" (at 54.61 78.74 0)
+    (property "Reference" "#PWR01402" (at 54.61 78.74 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "GND" (at 52.07 78.74 0)
@@ -1563,9 +1533,6 @@
     (pin "1" (uuid 5b74afd1-5486-47c5-b92c-9dbac9aac151))
     (instances
       (project "hubble"
-        (path "/f6dd3a30-118f-450f-a0e1-e755e60c59b2"
-          (reference "#PWR?") (unit 1)
-        )
         (path "/f6dd3a30-118f-450f-a0e1-e755e60c59b2/21c90f29-fa7e-445f-bce5-bb77fe6ab990"
           (reference "#PWR01402") (unit 1)
         )
@@ -1576,7 +1543,7 @@
   (symbol (lib_id "power:GND") (at 173.99 60.325 0) (mirror y) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid 33e98873-468f-4918-b0de-0d5c2449f392)
-    (property "Reference" "#PWR?" (at 173.99 66.675 0)
+    (property "Reference" "#PWR01308" (at 173.99 66.675 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "GND" (at 173.99 64.135 0)
@@ -1591,9 +1558,6 @@
     (pin "1" (uuid 55535ece-ef1d-49f6-858f-b8537dcd20fd))
     (instances
       (project "hubble"
-        (path "/f6dd3a30-118f-450f-a0e1-e755e60c59b2"
-          (reference "#PWR?") (unit 1)
-        )
         (path "/f6dd3a30-118f-450f-a0e1-e755e60c59b2/21c90f29-fa7e-445f-bce5-bb77fe6ab990"
           (reference "#PWR01308") (unit 1)
         )
@@ -1604,7 +1568,7 @@
   (symbol (lib_id "power:GND") (at 172.085 114.3 90) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid 3b5792eb-fbd9-4a38-9629-ab191141dfa9)
-    (property "Reference" "#PWR?" (at 178.435 114.3 0)
+    (property "Reference" "#PWR01448" (at 178.435 114.3 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "GND" (at 175.895 114.3 0)
@@ -1619,9 +1583,6 @@
     (pin "1" (uuid 68efe3ea-f416-4794-b9b4-6faf70e78852))
     (instances
       (project "hubble"
-        (path "/f6dd3a30-118f-450f-a0e1-e755e60c59b2"
-          (reference "#PWR?") (unit 1)
-        )
         (path "/f6dd3a30-118f-450f-a0e1-e755e60c59b2/21c90f29-fa7e-445f-bce5-bb77fe6ab990"
           (reference "#PWR01448") (unit 1)
         )
@@ -1632,7 +1593,7 @@
   (symbol (lib_id "power:GND") (at 172.085 127 90) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid 3e8dcea5-6843-4b59-8cbb-10eedb0d1cc7)
-    (property "Reference" "#PWR?" (at 178.435 127 0)
+    (property "Reference" "#PWR01456" (at 178.435 127 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "GND" (at 175.895 127 0)
@@ -1647,9 +1608,6 @@
     (pin "1" (uuid 791b7b83-642f-448b-b3ee-b174b6fead08))
     (instances
       (project "hubble"
-        (path "/f6dd3a30-118f-450f-a0e1-e755e60c59b2"
-          (reference "#PWR?") (unit 1)
-        )
         (path "/f6dd3a30-118f-450f-a0e1-e755e60c59b2/21c90f29-fa7e-445f-bce5-bb77fe6ab990"
           (reference "#PWR01456") (unit 1)
         )
@@ -1660,7 +1618,7 @@
   (symbol (lib_id "power:GND") (at 35.56 93.98 270) (mirror x) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid 400e0640-5170-462c-ae09-072c6f1df736)
-    (property "Reference" "#PWR?" (at 29.21 93.98 0)
+    (property "Reference" "#PWR01425" (at 29.21 93.98 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "GND" (at 31.75 93.98 0)
@@ -1675,9 +1633,6 @@
     (pin "1" (uuid fdf0e01f-5184-49ce-8eb8-a7cadbc355b4))
     (instances
       (project "hubble"
-        (path "/f6dd3a30-118f-450f-a0e1-e755e60c59b2"
-          (reference "#PWR?") (unit 1)
-        )
         (path "/f6dd3a30-118f-450f-a0e1-e755e60c59b2/21c90f29-fa7e-445f-bce5-bb77fe6ab990"
           (reference "#PWR01425") (unit 1)
         )
@@ -1720,9 +1675,6 @@
         )
       )
       (project "hubble"
-        (path "/f6dd3a30-118f-450f-a0e1-e755e60c59b2/00000000-0000-0000-0000-000060711259"
-          (reference "J202") (unit 1)
-        )
         (path "/f6dd3a30-118f-450f-a0e1-e755e60c59b2/21c90f29-fa7e-445f-bce5-bb77fe6ab990"
           (reference "J1306") (unit 1)
         )
@@ -1733,7 +1685,7 @@
   (symbol (lib_id "power:GND") (at 157.48 60.325 0) (mirror y) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid 401fe18c-9907-4212-85b3-54e2389e398d)
-    (property "Reference" "#PWR?" (at 157.48 66.675 0)
+    (property "Reference" "#PWR01305" (at 157.48 66.675 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "GND" (at 157.48 64.135 0)
@@ -1748,9 +1700,6 @@
     (pin "1" (uuid 278a59ed-dfdd-4b80-9ad8-5703cb55eb07))
     (instances
       (project "hubble"
-        (path "/f6dd3a30-118f-450f-a0e1-e755e60c59b2"
-          (reference "#PWR?") (unit 1)
-        )
         (path "/f6dd3a30-118f-450f-a0e1-e755e60c59b2/21c90f29-fa7e-445f-bce5-bb77fe6ab990"
           (reference "#PWR01305") (unit 1)
         )
@@ -1761,7 +1710,7 @@
   (symbol (lib_id "power:GND") (at 95.885 91.44 90) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid 41c64af3-49d9-42f5-9ad3-fb67a95ebb31)
-    (property "Reference" "#PWR?" (at 102.235 91.44 0)
+    (property "Reference" "#PWR01422" (at 102.235 91.44 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "GND" (at 99.695 91.44 0)
@@ -1776,9 +1725,6 @@
     (pin "1" (uuid 325daae0-46ba-4b3e-aeab-05ebefee2ad3))
     (instances
       (project "hubble"
-        (path "/f6dd3a30-118f-450f-a0e1-e755e60c59b2"
-          (reference "#PWR?") (unit 1)
-        )
         (path "/f6dd3a30-118f-450f-a0e1-e755e60c59b2/21c90f29-fa7e-445f-bce5-bb77fe6ab990"
           (reference "#PWR01422") (unit 1)
         )
@@ -1789,7 +1735,7 @@
   (symbol (lib_id "Connector_Generic:Conn_02x20_Odd_Even") (at 43.18 101.6 0) (mirror y) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid 48f1f85c-5ca2-4223-b02a-97e8cd5b674d)
-    (property "Reference" "J?" (at 41.91 73.2282 0)
+    (property "Reference" "J1403" (at 41.91 73.2282 0)
       (effects (font (size 1.27 1.27)))
     )
     (property "Value" "Left" (at 41.91 75.5396 0)
@@ -1843,9 +1789,6 @@
     (pin "9" (uuid 80bd4320-aa25-4f3f-a36b-e6fe5348ca2b))
     (instances
       (project "hubble"
-        (path "/f6dd3a30-118f-450f-a0e1-e755e60c59b2"
-          (reference "J?") (unit 1)
-        )
         (path "/f6dd3a30-118f-450f-a0e1-e755e60c59b2/21c90f29-fa7e-445f-bce5-bb77fe6ab990"
           (reference "J1403") (unit 1)
         )
@@ -1856,7 +1799,7 @@
   (symbol (lib_id "Connector_Generic:Conn_02x20_Odd_Even") (at 90.805 101.6 0) (mirror y) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 4b0d0516-6308-4eee-bd59-43244a4cc0d3)
-    (property "Reference" "J?" (at 89.535 73.3257 0)
+    (property "Reference" "J1404" (at 89.535 73.3257 0)
       (effects (font (size 1.27 1.27)))
     )
     (property "Value" "Bottom" (at 89.535 75.7499 0)
@@ -1919,9 +1862,6 @@
     (pin "9" (uuid d3baf46d-32fc-4058-97fa-ab52ba7b3e96))
     (instances
       (project "hubble"
-        (path "/f6dd3a30-118f-450f-a0e1-e755e60c59b2"
-          (reference "J?") (unit 1)
-        )
         (path "/f6dd3a30-118f-450f-a0e1-e755e60c59b2/21c90f29-fa7e-445f-bce5-bb77fe6ab990"
           (reference "J1404") (unit 1)
         )
@@ -1932,7 +1872,7 @@
   (symbol (lib_id "power:GND") (at 172.085 99.06 90) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid 4cdca66e-5922-46ed-8bfd-a38351523b42)
-    (property "Reference" "#PWR?" (at 178.435 99.06 0)
+    (property "Reference" "#PWR01430" (at 178.435 99.06 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "GND" (at 175.895 99.06 0)
@@ -1947,9 +1887,6 @@
     (pin "1" (uuid 62e32e30-b52f-48f7-a917-c18e0e4ea93f))
     (instances
       (project "hubble"
-        (path "/f6dd3a30-118f-450f-a0e1-e755e60c59b2"
-          (reference "#PWR?") (unit 1)
-        )
         (path "/f6dd3a30-118f-450f-a0e1-e755e60c59b2/21c90f29-fa7e-445f-bce5-bb77fe6ab990"
           (reference "#PWR01430") (unit 1)
         )
@@ -1960,7 +1897,7 @@
   (symbol (lib_id "power:GND") (at 172.085 78.74 90) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid 4e39d5ab-9ae4-4d82-b0ab-a9b1bf0359aa)
-    (property "Reference" "#PWR?" (at 178.435 78.74 0)
+    (property "Reference" "#PWR01406" (at 178.435 78.74 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "GND" (at 175.895 78.74 0)
@@ -1975,9 +1912,6 @@
     (pin "1" (uuid 6e93095c-c246-43e0-b52c-9fb612593b97))
     (instances
       (project "hubble"
-        (path "/f6dd3a30-118f-450f-a0e1-e755e60c59b2"
-          (reference "#PWR?") (unit 1)
-        )
         (path "/f6dd3a30-118f-450f-a0e1-e755e60c59b2/21c90f29-fa7e-445f-bce5-bb77fe6ab990"
           (reference "#PWR01406") (unit 1)
         )
@@ -1988,7 +1922,7 @@
   (symbol (lib_id "power:GND") (at 83.185 127 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid 539fe0de-fe7f-4922-928d-fdcd6ee2569e)
-    (property "Reference" "#PWR?" (at 83.185 133.35 0)
+    (property "Reference" "#PWR01453" (at 83.185 133.35 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "GND" (at 83.185 130.81 0)
@@ -2003,9 +1937,6 @@
     (pin "1" (uuid 07adbc9d-2ad3-41bc-b737-d837464fd82a))
     (instances
       (project "hubble"
-        (path "/f6dd3a30-118f-450f-a0e1-e755e60c59b2"
-          (reference "#PWR?") (unit 1)
-        )
         (path "/f6dd3a30-118f-450f-a0e1-e755e60c59b2/21c90f29-fa7e-445f-bce5-bb77fe6ab990"
           (reference "#PWR01453") (unit 1)
         )
@@ -2016,7 +1947,7 @@
   (symbol (lib_id "Mechanical:MountingHole_Pad") (at 122.555 172.72 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid 5ac9ac96-29ce-44bf-b532-78a3aa872673)
-    (property "Reference" "H?" (at 125.095 171.4754 0)
+    (property "Reference" "H1401" (at 125.095 171.4754 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
     (property "Value" "M3" (at 125.095 173.7868 0)
@@ -2031,9 +1962,6 @@
     (pin "1" (uuid 230433e3-4b31-4c92-bfd7-4274e8b6a9f9))
     (instances
       (project "hubble"
-        (path "/f6dd3a30-118f-450f-a0e1-e755e60c59b2/00000000-0000-0000-0000-000060711259"
-          (reference "H?") (unit 1)
-        )
         (path "/f6dd3a30-118f-450f-a0e1-e755e60c59b2/21c90f29-fa7e-445f-bce5-bb77fe6ab990"
           (reference "H1401") (unit 1)
         )
@@ -2064,12 +1992,6 @@
         )
       )
       (project "hubble"
-        (path "/f6dd3a30-118f-450f-a0e1-e755e60c59b2/00000000-0000-0000-0000-000060711259"
-          (reference "#PWR?") (unit 1)
-        )
-        (path "/f6dd3a30-118f-450f-a0e1-e755e60c59b2"
-          (reference "#PWR?") (unit 1)
-        )
         (path "/f6dd3a30-118f-450f-a0e1-e755e60c59b2/21c90f29-fa7e-445f-bce5-bb77fe6ab990"
           (reference "#PWR01410") (unit 1)
         )
@@ -2080,7 +2002,7 @@
   (symbol (lib_id "power:GND") (at 172.085 106.68 90) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid 6301b787-f1ab-4617-9583-41ebc03cd883)
-    (property "Reference" "#PWR?" (at 178.435 106.68 0)
+    (property "Reference" "#PWR01438" (at 178.435 106.68 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "GND" (at 175.895 106.68 0)
@@ -2095,9 +2017,6 @@
     (pin "1" (uuid bc719624-9598-4510-9aef-e0429fec341e))
     (instances
       (project "hubble"
-        (path "/f6dd3a30-118f-450f-a0e1-e755e60c59b2"
-          (reference "#PWR?") (unit 1)
-        )
         (path "/f6dd3a30-118f-450f-a0e1-e755e60c59b2/21c90f29-fa7e-445f-bce5-bb77fe6ab990"
           (reference "#PWR01438") (unit 1)
         )
@@ -2108,7 +2027,7 @@
   (symbol (lib_id "power:GND") (at 83.185 114.3 270) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid 6609894c-e161-4690-8b7f-2fea208f334f)
-    (property "Reference" "#PWR?" (at 76.835 114.3 0)
+    (property "Reference" "#PWR01445" (at 76.835 114.3 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "GND" (at 79.375 114.3 0)
@@ -2123,9 +2042,6 @@
     (pin "1" (uuid 55db4a9e-430e-4ad8-a3d3-76606f6a5803))
     (instances
       (project "hubble"
-        (path "/f6dd3a30-118f-450f-a0e1-e755e60c59b2"
-          (reference "#PWR?") (unit 1)
-        )
         (path "/f6dd3a30-118f-450f-a0e1-e755e60c59b2/21c90f29-fa7e-445f-bce5-bb77fe6ab990"
           (reference "#PWR01445") (unit 1)
         )
@@ -2136,7 +2052,7 @@
   (symbol (lib_id "power:GND") (at 161.925 60.325 0) (mirror y) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid 69331abd-ea85-4cbb-b756-8cd9d140aaf0)
-    (property "Reference" "#PWR?" (at 161.925 66.675 0)
+    (property "Reference" "#PWR01306" (at 161.925 66.675 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "GND" (at 161.925 64.135 0)
@@ -2151,9 +2067,6 @@
     (pin "1" (uuid 68b50801-12aa-44b8-92be-ee060b2b1660))
     (instances
       (project "hubble"
-        (path "/f6dd3a30-118f-450f-a0e1-e755e60c59b2"
-          (reference "#PWR?") (unit 1)
-        )
         (path "/f6dd3a30-118f-450f-a0e1-e755e60c59b2/21c90f29-fa7e-445f-bce5-bb77fe6ab990"
           (reference "#PWR01306") (unit 1)
         )
@@ -2184,9 +2097,6 @@
         )
       )
       (project "hubble"
-        (path "/f6dd3a30-118f-450f-a0e1-e755e60c59b2/00000000-0000-0000-0000-000060711259"
-          (reference "#PWR?") (unit 1)
-        )
         (path "/f6dd3a30-118f-450f-a0e1-e755e60c59b2/21c90f29-fa7e-445f-bce5-bb77fe6ab990"
           (reference "#PWR01459") (unit 1)
         )
@@ -2217,9 +2127,6 @@
         )
       )
       (project "hubble"
-        (path "/f6dd3a30-118f-450f-a0e1-e755e60c59b2/00000000-0000-0000-0000-000060711259"
-          (reference "#PWR0217") (unit 1)
-        )
         (path "/f6dd3a30-118f-450f-a0e1-e755e60c59b2/21c90f29-fa7e-445f-bce5-bb77fe6ab990"
           (reference "#PWR01419") (unit 1)
         )
@@ -2250,12 +2157,6 @@
         )
       )
       (project "hubble"
-        (path "/f6dd3a30-118f-450f-a0e1-e755e60c59b2/00000000-0000-0000-0000-000060711259"
-          (reference "#PWR?") (unit 1)
-        )
-        (path "/f6dd3a30-118f-450f-a0e1-e755e60c59b2"
-          (reference "#PWR?") (unit 1)
-        )
         (path "/f6dd3a30-118f-450f-a0e1-e755e60c59b2/21c90f29-fa7e-445f-bce5-bb77fe6ab990"
           (reference "#PWR01412") (unit 1)
         )
@@ -2266,7 +2167,7 @@
   (symbol (lib_id "power:GND") (at 193.675 60.325 0) (mirror y) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid 77d859cf-299c-450c-8036-49b1fea306bf)
-    (property "Reference" "#PWR?" (at 193.675 66.675 0)
+    (property "Reference" "#PWR01303" (at 193.675 66.675 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "GND" (at 193.675 64.135 0)
@@ -2281,9 +2182,6 @@
     (pin "1" (uuid 77783cac-1960-437e-9d22-f197e39d7097))
     (instances
       (project "hubble"
-        (path "/f6dd3a30-118f-450f-a0e1-e755e60c59b2"
-          (reference "#PWR?") (unit 1)
-        )
         (path "/f6dd3a30-118f-450f-a0e1-e755e60c59b2/21c90f29-fa7e-445f-bce5-bb77fe6ab990"
           (reference "#PWR01303") (unit 1)
         )
@@ -2294,7 +2192,7 @@
   (symbol (lib_id "power:GND") (at 95.885 114.3 90) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid 79213bd6-43d8-4a68-a563-95b4b40cb120)
-    (property "Reference" "#PWR?" (at 102.235 114.3 0)
+    (property "Reference" "#PWR01446" (at 102.235 114.3 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "GND" (at 99.695 114.3 0)
@@ -2309,9 +2207,6 @@
     (pin "1" (uuid 86c6a456-1c42-48c2-a085-bc1952192705))
     (instances
       (project "hubble"
-        (path "/f6dd3a30-118f-450f-a0e1-e755e60c59b2"
-          (reference "#PWR?") (unit 1)
-        )
         (path "/f6dd3a30-118f-450f-a0e1-e755e60c59b2/21c90f29-fa7e-445f-bce5-bb77fe6ab990"
           (reference "#PWR01446") (unit 1)
         )
@@ -2322,7 +2217,7 @@
   (symbol (lib_id "power:GND") (at 48.26 114.3 90) (mirror x) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid 7978337a-a25e-4e94-9c0b-8f498587fe6c)
-    (property "Reference" "#PWR?" (at 54.61 114.3 0)
+    (property "Reference" "#PWR01444" (at 54.61 114.3 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "GND" (at 52.07 114.3 0)
@@ -2337,9 +2232,6 @@
     (pin "1" (uuid 242ca7d5-7339-45da-9597-2def15be9bf0))
     (instances
       (project "hubble"
-        (path "/f6dd3a30-118f-450f-a0e1-e755e60c59b2"
-          (reference "#PWR?") (unit 1)
-        )
         (path "/f6dd3a30-118f-450f-a0e1-e755e60c59b2/21c90f29-fa7e-445f-bce5-bb77fe6ab990"
           (reference "#PWR01444") (unit 1)
         )
@@ -2350,7 +2242,7 @@
   (symbol (lib_id "power:GND") (at 159.385 114.3 270) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid 7a439617-d523-4658-a783-2234a3d94bf5)
-    (property "Reference" "#PWR?" (at 153.035 114.3 0)
+    (property "Reference" "#PWR01447" (at 153.035 114.3 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "GND" (at 155.575 114.3 0)
@@ -2365,9 +2257,6 @@
     (pin "1" (uuid 771ff098-012b-46a5-8e42-5bf5ee7a9ae9))
     (instances
       (project "hubble"
-        (path "/f6dd3a30-118f-450f-a0e1-e755e60c59b2"
-          (reference "#PWR?") (unit 1)
-        )
         (path "/f6dd3a30-118f-450f-a0e1-e755e60c59b2/21c90f29-fa7e-445f-bce5-bb77fe6ab990"
           (reference "#PWR01447") (unit 1)
         )
@@ -2410,9 +2299,6 @@
         )
       )
       (project "hubble"
-        (path "/f6dd3a30-118f-450f-a0e1-e755e60c59b2/00000000-0000-0000-0000-000060711259"
-          (reference "J202") (unit 1)
-        )
         (path "/f6dd3a30-118f-450f-a0e1-e755e60c59b2/21c90f29-fa7e-445f-bce5-bb77fe6ab990"
           (reference "J1304") (unit 1)
         )
@@ -2423,7 +2309,7 @@
   (symbol (lib_id "power:GND") (at 149.86 60.325 0) (mirror y) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid 7fde8ec1-5ffd-44d0-ab99-3374e005aa46)
-    (property "Reference" "#PWR?" (at 149.86 66.675 0)
+    (property "Reference" "#PWR01304" (at 149.86 66.675 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "GND" (at 149.86 64.135 0)
@@ -2438,9 +2324,6 @@
     (pin "1" (uuid 27f255b6-092f-460a-a338-cdef7bdb1f2f))
     (instances
       (project "hubble"
-        (path "/f6dd3a30-118f-450f-a0e1-e755e60c59b2"
-          (reference "#PWR?") (unit 1)
-        )
         (path "/f6dd3a30-118f-450f-a0e1-e755e60c59b2/21c90f29-fa7e-445f-bce5-bb77fe6ab990"
           (reference "#PWR01304") (unit 1)
         )
@@ -2451,7 +2334,7 @@
   (symbol (lib_id "Mechanical:MountingHole_Pad") (at 130.81 172.72 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid 81a52cb2-b42b-4c63-8345-2e3a6268a50f)
-    (property "Reference" "H?" (at 133.35 171.4754 0)
+    (property "Reference" "H1402" (at 133.35 171.4754 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
     (property "Value" "M3" (at 133.35 173.7868 0)
@@ -2466,9 +2349,6 @@
     (pin "1" (uuid c78d3101-d0a8-43b4-afc5-7498e4aff011))
     (instances
       (project "hubble"
-        (path "/f6dd3a30-118f-450f-a0e1-e755e60c59b2/00000000-0000-0000-0000-000060711259"
-          (reference "H?") (unit 1)
-        )
         (path "/f6dd3a30-118f-450f-a0e1-e755e60c59b2/21c90f29-fa7e-445f-bce5-bb77fe6ab990"
           (reference "H1402") (unit 1)
         )
@@ -2479,7 +2359,7 @@
   (symbol (lib_id "power:GND") (at 181.61 60.325 0) (mirror y) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid 81e17a93-d4b4-45b5-85a8-fe9f8214e10f)
-    (property "Reference" "#PWR?" (at 181.61 66.675 0)
+    (property "Reference" "#PWR01309" (at 181.61 66.675 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "GND" (at 181.61 64.135 0)
@@ -2494,9 +2374,6 @@
     (pin "1" (uuid 08cca569-5375-433a-8a15-f31dec8479a1))
     (instances
       (project "hubble"
-        (path "/f6dd3a30-118f-450f-a0e1-e755e60c59b2"
-          (reference "#PWR?") (unit 1)
-        )
         (path "/f6dd3a30-118f-450f-a0e1-e755e60c59b2/21c90f29-fa7e-445f-bce5-bb77fe6ab990"
           (reference "#PWR01309") (unit 1)
         )
@@ -2507,7 +2384,7 @@
   (symbol (lib_id "Connector_Generic:Conn_02x20_Odd_Even") (at 164.465 101.6 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid 86a20fc8-e15f-47fb-80d5-6cf11577a1e2)
-    (property "Reference" "J?" (at 165.735 73.2282 0)
+    (property "Reference" "J1405" (at 165.735 73.2282 0)
       (effects (font (size 1.27 1.27)))
     )
     (property "Value" "Right" (at 165.735 75.5396 0)
@@ -2561,9 +2438,6 @@
     (pin "9" (uuid 1c22cc56-0230-492b-b1c7-17c9898269a4))
     (instances
       (project "hubble"
-        (path "/f6dd3a30-118f-450f-a0e1-e755e60c59b2"
-          (reference "J?") (unit 1)
-        )
         (path "/f6dd3a30-118f-450f-a0e1-e755e60c59b2/21c90f29-fa7e-445f-bce5-bb77fe6ab990"
           (reference "J1405") (unit 1)
         )
@@ -2574,7 +2448,7 @@
   (symbol (lib_id "power:GND") (at 35.56 88.9 270) (mirror x) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid 8711ee3b-b8f9-4879-9e74-a593cc5bcc9e)
-    (property "Reference" "#PWR?" (at 29.21 88.9 0)
+    (property "Reference" "#PWR01416" (at 29.21 88.9 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "GND" (at 31.75 88.9 0)
@@ -2589,9 +2463,6 @@
     (pin "1" (uuid bb61d4b2-1d87-48be-b2a2-ce4d12d9088c))
     (instances
       (project "hubble"
-        (path "/f6dd3a30-118f-450f-a0e1-e755e60c59b2"
-          (reference "#PWR?") (unit 1)
-        )
         (path "/f6dd3a30-118f-450f-a0e1-e755e60c59b2/21c90f29-fa7e-445f-bce5-bb77fe6ab990"
           (reference "#PWR01416") (unit 1)
         )
@@ -2602,7 +2473,7 @@
   (symbol (lib_id "power:GND") (at 95.885 101.6 90) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid 8713de34-72db-4df8-8e96-9453371264c1)
-    (property "Reference" "#PWR?" (at 102.235 101.6 0)
+    (property "Reference" "#PWR01435" (at 102.235 101.6 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "GND" (at 99.695 101.6 0)
@@ -2617,9 +2488,6 @@
     (pin "1" (uuid 0e86b0eb-cd65-40a7-9bdf-4744a49c30f3))
     (instances
       (project "hubble"
-        (path "/f6dd3a30-118f-450f-a0e1-e755e60c59b2"
-          (reference "#PWR?") (unit 1)
-        )
         (path "/f6dd3a30-118f-450f-a0e1-e755e60c59b2/21c90f29-fa7e-445f-bce5-bb77fe6ab990"
           (reference "#PWR01435") (unit 1)
         )
@@ -2650,12 +2518,6 @@
         )
       )
       (project "hubble"
-        (path "/f6dd3a30-118f-450f-a0e1-e755e60c59b2/00000000-0000-0000-0000-000060711259"
-          (reference "#PWR?") (unit 1)
-        )
-        (path "/f6dd3a30-118f-450f-a0e1-e755e60c59b2"
-          (reference "#PWR?") (unit 1)
-        )
         (path "/f6dd3a30-118f-450f-a0e1-e755e60c59b2/21c90f29-fa7e-445f-bce5-bb77fe6ab990"
           (reference "#PWR01413") (unit 1)
         )
@@ -2666,7 +2528,7 @@
   (symbol (lib_id "power:GND") (at 35.56 127 0) (mirror y) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid 8a4738b5-df67-47cf-9683-c9b3f2bbb8eb)
-    (property "Reference" "#PWR?" (at 35.56 133.35 0)
+    (property "Reference" "#PWR01451" (at 35.56 133.35 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "GND" (at 35.56 130.81 0)
@@ -2681,9 +2543,6 @@
     (pin "1" (uuid 203abedc-b5b7-42d8-bee5-f0325ce37cde))
     (instances
       (project "hubble"
-        (path "/f6dd3a30-118f-450f-a0e1-e755e60c59b2"
-          (reference "#PWR?") (unit 1)
-        )
         (path "/f6dd3a30-118f-450f-a0e1-e755e60c59b2/21c90f29-fa7e-445f-bce5-bb77fe6ab990"
           (reference "#PWR01451") (unit 1)
         )
@@ -2694,7 +2553,7 @@
   (symbol (lib_id "power:GND") (at 145.415 60.325 0) (mirror y) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid 8ae8140e-9c5a-44f5-9afe-a5f9757f3c34)
-    (property "Reference" "#PWR?" (at 145.415 66.675 0)
+    (property "Reference" "#PWR01301" (at 145.415 66.675 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "GND" (at 145.415 64.135 0)
@@ -2709,9 +2568,6 @@
     (pin "1" (uuid c61e0904-3681-4f35-9f15-3d69e294a96f))
     (instances
       (project "hubble"
-        (path "/f6dd3a30-118f-450f-a0e1-e755e60c59b2"
-          (reference "#PWR?") (unit 1)
-        )
         (path "/f6dd3a30-118f-450f-a0e1-e755e60c59b2/21c90f29-fa7e-445f-bce5-bb77fe6ab990"
           (reference "#PWR01301") (unit 1)
         )
@@ -2722,7 +2578,7 @@
   (symbol (lib_id "power:GND") (at 48.26 88.9 90) (mirror x) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid 8b135395-996b-4b2b-a0fd-5ba3dcf124be)
-    (property "Reference" "#PWR?" (at 54.61 88.9 0)
+    (property "Reference" "#PWR01417" (at 54.61 88.9 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "GND" (at 52.07 88.9 0)
@@ -2737,9 +2593,6 @@
     (pin "1" (uuid 537b6193-cfe1-49a9-b86a-728612c649eb))
     (instances
       (project "hubble"
-        (path "/f6dd3a30-118f-450f-a0e1-e755e60c59b2"
-          (reference "#PWR?") (unit 1)
-        )
         (path "/f6dd3a30-118f-450f-a0e1-e755e60c59b2/21c90f29-fa7e-445f-bce5-bb77fe6ab990"
           (reference "#PWR01417") (unit 1)
         )
@@ -2750,7 +2603,7 @@
   (symbol (lib_id "power:GND") (at 83.185 91.44 270) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid 8f0e1ffd-0fe8-43c2-83bf-315911692ce3)
-    (property "Reference" "#PWR?" (at 76.835 91.44 0)
+    (property "Reference" "#PWR01421" (at 76.835 91.44 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "GND" (at 79.375 91.44 0)
@@ -2765,9 +2618,6 @@
     (pin "1" (uuid 86c00250-92a4-44a3-89c5-9da144c8cba3))
     (instances
       (project "hubble"
-        (path "/f6dd3a30-118f-450f-a0e1-e755e60c59b2"
-          (reference "#PWR?") (unit 1)
-        )
         (path "/f6dd3a30-118f-450f-a0e1-e755e60c59b2/21c90f29-fa7e-445f-bce5-bb77fe6ab990"
           (reference "#PWR01421") (unit 1)
         )
@@ -2778,7 +2628,7 @@
   (symbol (lib_id "power:GND") (at 125.095 60.325 0) (mirror y) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid 988affef-fbb2-4182-936a-6c00f4006d34)
-    (property "Reference" "#PWR?" (at 125.095 66.675 0)
+    (property "Reference" "#PWR01310" (at 125.095 66.675 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "GND" (at 125.095 64.135 0)
@@ -2793,9 +2643,6 @@
     (pin "1" (uuid a77f80f6-1a11-4b5e-a5d8-fef1be7e6a1e))
     (instances
       (project "hubble"
-        (path "/f6dd3a30-118f-450f-a0e1-e755e60c59b2"
-          (reference "#PWR?") (unit 1)
-        )
         (path "/f6dd3a30-118f-450f-a0e1-e755e60c59b2/21c90f29-fa7e-445f-bce5-bb77fe6ab990"
           (reference "#PWR01310") (unit 1)
         )
@@ -2806,7 +2653,7 @@
   (symbol (lib_id "power:GND") (at 159.385 127 270) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid 989e6a34-4ec7-4c13-80a1-0c1ec5e568c5)
-    (property "Reference" "#PWR?" (at 153.035 127 0)
+    (property "Reference" "#PWR01455" (at 153.035 127 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "GND" (at 155.575 127 0)
@@ -2821,9 +2668,6 @@
     (pin "1" (uuid ac4384bb-fb32-4442-9c3e-64efd2d1519a))
     (instances
       (project "hubble"
-        (path "/f6dd3a30-118f-450f-a0e1-e755e60c59b2"
-          (reference "#PWR?") (unit 1)
-        )
         (path "/f6dd3a30-118f-450f-a0e1-e755e60c59b2/21c90f29-fa7e-445f-bce5-bb77fe6ab990"
           (reference "#PWR01455") (unit 1)
         )
@@ -2834,7 +2678,7 @@
   (symbol (lib_id "power:GND") (at 159.385 99.06 270) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid 997ce72d-bbc7-4863-b8f9-3564831c6f60)
-    (property "Reference" "#PWR?" (at 153.035 99.06 0)
+    (property "Reference" "#PWR01429" (at 153.035 99.06 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "GND" (at 155.575 99.06 0)
@@ -2849,9 +2693,6 @@
     (pin "1" (uuid 37f3e373-3a6d-46fe-9bbf-692699cc004d))
     (instances
       (project "hubble"
-        (path "/f6dd3a30-118f-450f-a0e1-e755e60c59b2"
-          (reference "#PWR?") (unit 1)
-        )
         (path "/f6dd3a30-118f-450f-a0e1-e755e60c59b2/21c90f29-fa7e-445f-bce5-bb77fe6ab990"
           (reference "#PWR01429") (unit 1)
         )
@@ -2862,7 +2703,7 @@
   (symbol (lib_id "power:-12V") (at 35.56 86.36 90) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid 9daab27b-651c-4a80-b71a-aeab8d25b4c6)
-    (property "Reference" "#PWR?" (at 33.02 86.36 0)
+    (property "Reference" "#PWR01414" (at 33.02 86.36 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "-12V" (at 32.385 86.36 90)
@@ -2877,9 +2718,6 @@
     (pin "1" (uuid 58226963-41ae-4d30-a2dd-e3a8956b521f))
     (instances
       (project "hubble"
-        (path "/f6dd3a30-118f-450f-a0e1-e755e60c59b2"
-          (reference "#PWR?") (unit 1)
-        )
         (path "/f6dd3a30-118f-450f-a0e1-e755e60c59b2/21c90f29-fa7e-445f-bce5-bb77fe6ab990"
           (reference "#PWR01414") (unit 1)
         )
@@ -2890,7 +2728,7 @@
   (symbol (lib_id "power:GND") (at 83.185 81.28 270) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid 9eb916cd-0295-4c93-8e9b-8e09beb9c4db)
-    (property "Reference" "#PWR?" (at 76.835 81.28 0)
+    (property "Reference" "#PWR01411" (at 76.835 81.28 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "GND" (at 79.375 81.28 0)
@@ -2905,9 +2743,6 @@
     (pin "1" (uuid 5dd2a387-46ed-4179-9891-9796064235f1))
     (instances
       (project "hubble"
-        (path "/f6dd3a30-118f-450f-a0e1-e755e60c59b2"
-          (reference "#PWR?") (unit 1)
-        )
         (path "/f6dd3a30-118f-450f-a0e1-e755e60c59b2/21c90f29-fa7e-445f-bce5-bb77fe6ab990"
           (reference "#PWR01411") (unit 1)
         )
@@ -2918,7 +2753,7 @@
   (symbol (lib_id "power:GND") (at 159.385 78.74 270) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid ae5c218b-3f2f-4510-84d6-89a525598fb6)
-    (property "Reference" "#PWR?" (at 153.035 78.74 0)
+    (property "Reference" "#PWR01405" (at 153.035 78.74 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "GND" (at 155.575 78.74 0)
@@ -2933,9 +2768,6 @@
     (pin "1" (uuid 2e1f9760-f244-49d5-871b-27d8186963e4))
     (instances
       (project "hubble"
-        (path "/f6dd3a30-118f-450f-a0e1-e755e60c59b2"
-          (reference "#PWR?") (unit 1)
-        )
         (path "/f6dd3a30-118f-450f-a0e1-e755e60c59b2/21c90f29-fa7e-445f-bce5-bb77fe6ab990"
           (reference "#PWR01405") (unit 1)
         )
@@ -2946,7 +2778,7 @@
   (symbol (lib_id "power:GND") (at 95.885 99.06 90) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid b1702cf4-5fbc-4da1-bb16-12ba9c3baf48)
-    (property "Reference" "#PWR?" (at 102.235 99.06 0)
+    (property "Reference" "#PWR01428" (at 102.235 99.06 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "GND" (at 99.695 99.06 0)
@@ -2961,9 +2793,6 @@
     (pin "1" (uuid 85bb6a58-3b6c-41f6-a654-b6f31f95841e))
     (instances
       (project "hubble"
-        (path "/f6dd3a30-118f-450f-a0e1-e755e60c59b2"
-          (reference "#PWR?") (unit 1)
-        )
         (path "/f6dd3a30-118f-450f-a0e1-e755e60c59b2/21c90f29-fa7e-445f-bce5-bb77fe6ab990"
           (reference "#PWR01428") (unit 1)
         )
@@ -2974,7 +2803,7 @@
   (symbol (lib_id "power:GND") (at 95.885 78.74 90) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid b2cc5224-c4f3-433e-b478-7a81fc169b14)
-    (property "Reference" "#PWR?" (at 102.235 78.74 0)
+    (property "Reference" "#PWR01404" (at 102.235 78.74 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "GND" (at 99.695 78.74 0)
@@ -2989,9 +2818,6 @@
     (pin "1" (uuid 25bc3b4d-bf4b-4fd2-89e0-bcc5553a8fa9))
     (instances
       (project "hubble"
-        (path "/f6dd3a30-118f-450f-a0e1-e755e60c59b2"
-          (reference "#PWR?") (unit 1)
-        )
         (path "/f6dd3a30-118f-450f-a0e1-e755e60c59b2/21c90f29-fa7e-445f-bce5-bb77fe6ab990"
           (reference "#PWR01404") (unit 1)
         )
@@ -3022,9 +2848,6 @@
         )
       )
       (project "hubble"
-        (path "/f6dd3a30-118f-450f-a0e1-e755e60c59b2/00000000-0000-0000-0000-000060711259"
-          (reference "#PWR0217") (unit 1)
-        )
         (path "/f6dd3a30-118f-450f-a0e1-e755e60c59b2/21c90f29-fa7e-445f-bce5-bb77fe6ab990"
           (reference "#PWR01420") (unit 1)
         )
@@ -3035,7 +2858,7 @@
   (symbol (lib_id "Mechanical:MountingHole_Pad") (at 139.065 172.72 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid bd354323-02d6-4d57-a0e2-668d1006636b)
-    (property "Reference" "H?" (at 141.605 171.4754 0)
+    (property "Reference" "H1403" (at 141.605 171.4754 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
     (property "Value" "M3" (at 141.605 173.7868 0)
@@ -3050,9 +2873,6 @@
     (pin "1" (uuid 8aeea0db-a4c4-4e02-acaf-ea569c4fa33c))
     (instances
       (project "hubble"
-        (path "/f6dd3a30-118f-450f-a0e1-e755e60c59b2/00000000-0000-0000-0000-000060711259"
-          (reference "H?") (unit 1)
-        )
         (path "/f6dd3a30-118f-450f-a0e1-e755e60c59b2/21c90f29-fa7e-445f-bce5-bb77fe6ab990"
           (reference "H1403") (unit 1)
         )
@@ -3063,7 +2883,7 @@
   (symbol (lib_id "power:GND") (at 83.185 78.74 270) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid bf1c8a99-41c3-47f4-b227-e30c9b5eea7e)
-    (property "Reference" "#PWR?" (at 76.835 78.74 0)
+    (property "Reference" "#PWR01403" (at 76.835 78.74 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "GND" (at 79.375 78.74 0)
@@ -3078,9 +2898,6 @@
     (pin "1" (uuid 24134bdc-38c3-4ea1-9acd-5797a841143c))
     (instances
       (project "hubble"
-        (path "/f6dd3a30-118f-450f-a0e1-e755e60c59b2"
-          (reference "#PWR?") (unit 1)
-        )
         (path "/f6dd3a30-118f-450f-a0e1-e755e60c59b2/21c90f29-fa7e-445f-bce5-bb77fe6ab990"
           (reference "#PWR01403") (unit 1)
         )
@@ -3091,7 +2908,7 @@
   (symbol (lib_id "power:GND") (at 35.56 114.3 270) (mirror x) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid bf6dbe6e-5c58-4a84-b538-c19b81ebc8b4)
-    (property "Reference" "#PWR?" (at 29.21 114.3 0)
+    (property "Reference" "#PWR01443" (at 29.21 114.3 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "GND" (at 31.75 114.3 0)
@@ -3106,9 +2923,6 @@
     (pin "1" (uuid 89c35463-8966-4ccc-9409-48875f99e210))
     (instances
       (project "hubble"
-        (path "/f6dd3a30-118f-450f-a0e1-e755e60c59b2"
-          (reference "#PWR?") (unit 1)
-        )
         (path "/f6dd3a30-118f-450f-a0e1-e755e60c59b2/21c90f29-fa7e-445f-bce5-bb77fe6ab990"
           (reference "#PWR01443") (unit 1)
         )
@@ -3119,7 +2933,7 @@
   (symbol (lib_id "power:GND") (at 137.795 60.325 0) (mirror y) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid c14e0c09-e815-4251-80f6-fe71d509cc27)
-    (property "Reference" "#PWR?" (at 137.795 66.675 0)
+    (property "Reference" "#PWR01436" (at 137.795 66.675 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "GND" (at 137.795 64.135 0)
@@ -3134,9 +2948,6 @@
     (pin "1" (uuid b241f209-3136-4179-8cac-4127b4a667ab))
     (instances
       (project "hubble"
-        (path "/f6dd3a30-118f-450f-a0e1-e755e60c59b2"
-          (reference "#PWR?") (unit 1)
-        )
         (path "/f6dd3a30-118f-450f-a0e1-e755e60c59b2/21c90f29-fa7e-445f-bce5-bb77fe6ab990"
           (reference "#PWR01436") (unit 1)
         )
@@ -3147,7 +2958,7 @@
   (symbol (lib_id "power:GND") (at 48.26 101.6 90) (mirror x) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid c4554dc4-d1e5-42ca-8883-207a0d7d76be)
-    (property "Reference" "#PWR?" (at 54.61 101.6 0)
+    (property "Reference" "#PWR01433" (at 54.61 101.6 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "GND" (at 52.07 101.6 0)
@@ -3162,9 +2973,6 @@
     (pin "1" (uuid aa1ba47f-4f18-40db-ae63-f63ad69d2545))
     (instances
       (project "hubble"
-        (path "/f6dd3a30-118f-450f-a0e1-e755e60c59b2"
-          (reference "#PWR?") (unit 1)
-        )
         (path "/f6dd3a30-118f-450f-a0e1-e755e60c59b2/21c90f29-fa7e-445f-bce5-bb77fe6ab990"
           (reference "#PWR01433") (unit 1)
         )
@@ -3175,7 +2983,7 @@
   (symbol (lib_id "power:GND") (at 198.755 60.325 0) (mirror y) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid c989fa16-bf4a-4dc9-8453-384d20ba3412)
-    (property "Reference" "#PWR?" (at 198.755 66.675 0)
+    (property "Reference" "#PWR01312" (at 198.755 66.675 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "GND" (at 198.755 64.135 0)
@@ -3190,9 +2998,6 @@
     (pin "1" (uuid 9c5c1587-e07c-4acd-9522-18a59319c90c))
     (instances
       (project "hubble"
-        (path "/f6dd3a30-118f-450f-a0e1-e755e60c59b2"
-          (reference "#PWR?") (unit 1)
-        )
         (path "/f6dd3a30-118f-450f-a0e1-e755e60c59b2/21c90f29-fa7e-445f-bce5-bb77fe6ab990"
           (reference "#PWR01312") (unit 1)
         )
@@ -3203,7 +3008,7 @@
   (symbol (lib_id "power:GND") (at 35.56 78.74 270) (mirror x) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid c9fe4f56-9c5e-4ee2-8610-e1b019185a7f)
-    (property "Reference" "#PWR?" (at 29.21 78.74 0)
+    (property "Reference" "#PWR01401" (at 29.21 78.74 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "GND" (at 31.75 78.74 0)
@@ -3218,9 +3023,6 @@
     (pin "1" (uuid a5999587-0f53-4bef-86a8-c49e91971ef0))
     (instances
       (project "hubble"
-        (path "/f6dd3a30-118f-450f-a0e1-e755e60c59b2"
-          (reference "#PWR?") (unit 1)
-        )
         (path "/f6dd3a30-118f-450f-a0e1-e755e60c59b2/21c90f29-fa7e-445f-bce5-bb77fe6ab990"
           (reference "#PWR01401") (unit 1)
         )
@@ -3231,7 +3033,7 @@
   (symbol (lib_id "power:GND") (at 169.545 60.325 0) (mirror y) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid d3cba805-5444-4868-8f73-e5ce852fdfe3)
-    (property "Reference" "#PWR?" (at 169.545 66.675 0)
+    (property "Reference" "#PWR01307" (at 169.545 66.675 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "GND" (at 169.545 64.135 0)
@@ -3246,9 +3048,6 @@
     (pin "1" (uuid 7d1a65cf-3724-4932-a129-f67dbec3ac10))
     (instances
       (project "hubble"
-        (path "/f6dd3a30-118f-450f-a0e1-e755e60c59b2"
-          (reference "#PWR?") (unit 1)
-        )
         (path "/f6dd3a30-118f-450f-a0e1-e755e60c59b2/21c90f29-fa7e-445f-bce5-bb77fe6ab990"
           (reference "#PWR01307") (unit 1)
         )
@@ -3259,7 +3058,7 @@
   (symbol (lib_id "power:GND") (at 48.26 127 0) (mirror y) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid dd8609c9-20b2-49d0-8bfe-5933ca4ae86e)
-    (property "Reference" "#PWR?" (at 48.26 133.35 0)
+    (property "Reference" "#PWR01452" (at 48.26 133.35 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "GND" (at 48.26 130.81 0)
@@ -3274,9 +3073,6 @@
     (pin "1" (uuid 9f85947a-a374-423d-a426-e3daa692c35c))
     (instances
       (project "hubble"
-        (path "/f6dd3a30-118f-450f-a0e1-e755e60c59b2"
-          (reference "#PWR?") (unit 1)
-        )
         (path "/f6dd3a30-118f-450f-a0e1-e755e60c59b2/21c90f29-fa7e-445f-bce5-bb77fe6ab990"
           (reference "#PWR01452") (unit 1)
         )
@@ -3287,7 +3083,7 @@
   (symbol (lib_id "Mechanical:MountingHole_Pad") (at 147.32 172.72 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid e02fd4e7-e372-4edc-a169-80fd28f2021f)
-    (property "Reference" "H?" (at 149.86 171.4754 0)
+    (property "Reference" "H1404" (at 149.86 171.4754 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
     (property "Value" "M3" (at 149.86 173.7868 0)
@@ -3302,9 +3098,6 @@
     (pin "1" (uuid da2de167-0dd7-41e2-a11b-decdae4347ee))
     (instances
       (project "hubble"
-        (path "/f6dd3a30-118f-450f-a0e1-e755e60c59b2/00000000-0000-0000-0000-000060711259"
-          (reference "H?") (unit 1)
-        )
         (path "/f6dd3a30-118f-450f-a0e1-e755e60c59b2/21c90f29-fa7e-445f-bce5-bb77fe6ab990"
           (reference "H1404") (unit 1)
         )
@@ -3315,7 +3108,7 @@
   (symbol (lib_id "power:GND") (at 48.26 93.98 90) (mirror x) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid e3644c9b-fae7-48a7-8e5b-d4a3bd746f8f)
-    (property "Reference" "#PWR?" (at 54.61 93.98 0)
+    (property "Reference" "#PWR01426" (at 54.61 93.98 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "GND" (at 52.07 93.98 0)
@@ -3330,9 +3123,6 @@
     (pin "1" (uuid 66973d85-6ab0-4a5c-8cdc-f0b2a1d5969a))
     (instances
       (project "hubble"
-        (path "/f6dd3a30-118f-450f-a0e1-e755e60c59b2"
-          (reference "#PWR?") (unit 1)
-        )
         (path "/f6dd3a30-118f-450f-a0e1-e755e60c59b2/21c90f29-fa7e-445f-bce5-bb77fe6ab990"
           (reference "#PWR01426") (unit 1)
         )
@@ -3375,9 +3165,6 @@
         )
       )
       (project "hubble"
-        (path "/f6dd3a30-118f-450f-a0e1-e755e60c59b2/00000000-0000-0000-0000-000060711259"
-          (reference "J202") (unit 1)
-        )
         (path "/f6dd3a30-118f-450f-a0e1-e755e60c59b2/21c90f29-fa7e-445f-bce5-bb77fe6ab990"
           (reference "J1307") (unit 1)
         )
@@ -3420,9 +3207,6 @@
         )
       )
       (project "hubble"
-        (path "/f6dd3a30-118f-450f-a0e1-e755e60c59b2/00000000-0000-0000-0000-000060711259"
-          (reference "J202") (unit 1)
-        )
         (path "/f6dd3a30-118f-450f-a0e1-e755e60c59b2/21c90f29-fa7e-445f-bce5-bb77fe6ab990"
           (reference "J1301") (unit 1)
         )
@@ -3433,7 +3217,7 @@
   (symbol (lib_id "power:GND") (at 35.56 101.6 270) (mirror x) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid e58949d1-50a5-4efe-a6ca-3e578b76a56d)
-    (property "Reference" "#PWR?" (at 29.21 101.6 0)
+    (property "Reference" "#PWR01432" (at 29.21 101.6 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "GND" (at 31.75 101.6 0)
@@ -3448,9 +3232,6 @@
     (pin "1" (uuid c19e921c-be6c-4bb0-9c1c-3ca77373774b))
     (instances
       (project "hubble"
-        (path "/f6dd3a30-118f-450f-a0e1-e755e60c59b2"
-          (reference "#PWR?") (unit 1)
-        )
         (path "/f6dd3a30-118f-450f-a0e1-e755e60c59b2/21c90f29-fa7e-445f-bce5-bb77fe6ab990"
           (reference "#PWR01432") (unit 1)
         )
@@ -3493,9 +3274,6 @@
         )
       )
       (project "hubble"
-        (path "/f6dd3a30-118f-450f-a0e1-e755e60c59b2/00000000-0000-0000-0000-000060711259"
-          (reference "J202") (unit 1)
-        )
         (path "/f6dd3a30-118f-450f-a0e1-e755e60c59b2/21c90f29-fa7e-445f-bce5-bb77fe6ab990"
           (reference "J1302") (unit 1)
         )
@@ -3506,7 +3284,7 @@
   (symbol (lib_id "power:GND") (at 83.185 111.76 270) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid e9415cef-02ea-496a-93ad-576ea2330407)
-    (property "Reference" "#PWR?" (at 76.835 111.76 0)
+    (property "Reference" "#PWR01442" (at 76.835 111.76 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "GND" (at 79.375 111.76 0)
@@ -3521,9 +3299,6 @@
     (pin "1" (uuid 250cb3fb-4c8f-4f2a-9465-9dca1cbd6755))
     (instances
       (project "hubble"
-        (path "/f6dd3a30-118f-450f-a0e1-e755e60c59b2"
-          (reference "#PWR?") (unit 1)
-        )
         (path "/f6dd3a30-118f-450f-a0e1-e755e60c59b2/21c90f29-fa7e-445f-bce5-bb77fe6ab990"
           (reference "#PWR01442") (unit 1)
         )
@@ -3534,7 +3309,7 @@
   (symbol (lib_id "power:GND") (at 206.375 60.325 0) (mirror y) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid f73da9ae-657e-4bd8-912a-1591d301f06c)
-    (property "Reference" "#PWR?" (at 206.375 66.675 0)
+    (property "Reference" "#PWR01313" (at 206.375 66.675 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "GND" (at 206.375 64.135 0)
@@ -3549,9 +3324,6 @@
     (pin "1" (uuid d24e508b-9b1c-4f0b-b73f-316a4ba4484b))
     (instances
       (project "hubble"
-        (path "/f6dd3a30-118f-450f-a0e1-e755e60c59b2"
-          (reference "#PWR?") (unit 1)
-        )
         (path "/f6dd3a30-118f-450f-a0e1-e755e60c59b2/21c90f29-fa7e-445f-bce5-bb77fe6ab990"
           (reference "#PWR01313") (unit 1)
         )

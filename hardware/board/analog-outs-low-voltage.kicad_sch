@@ -1109,15 +1109,6 @@
         )
       )
       (project "hubble"
-        (path "/f6dd3a30-118f-450f-a0e1-e755e60c59b2/abac3710-ba67-4227-b2fa-84e679d7c9dd"
-          (reference "C?") (unit 1)
-        )
-        (path "/f6dd3a30-118f-450f-a0e1-e755e60c59b2/4d293cb3-7a1f-4029-b03f-2f38e95c7d81"
-          (reference "C?") (unit 1)
-        )
-        (path "/f6dd3a30-118f-450f-a0e1-e755e60c59b2/2e54f933-b3de-4465-a95b-cdf6f21a0c9a"
-          (reference "C?") (unit 1)
-        )
         (path "/f6dd3a30-118f-450f-a0e1-e755e60c59b2/cbffbcce-3555-4620-a841-ae7794000e91"
           (reference "C1205") (unit 1)
         )
@@ -1148,9 +1139,6 @@
         )
       )
       (project "hubble"
-        (path "/f6dd3a30-118f-450f-a0e1-e755e60c59b2/00000000-0000-0000-0000-000060711259"
-          (reference "#PWR0214") (unit 1)
-        )
         (path "/f6dd3a30-118f-450f-a0e1-e755e60c59b2/cbffbcce-3555-4620-a841-ae7794000e91"
           (reference "#PWR01201") (unit 1)
         )
@@ -1204,15 +1192,6 @@
         )
       )
       (project "hubble"
-        (path "/f6dd3a30-118f-450f-a0e1-e755e60c59b2/abac3710-ba67-4227-b2fa-84e679d7c9dd"
-          (reference "C911") (unit 1)
-        )
-        (path "/f6dd3a30-118f-450f-a0e1-e755e60c59b2/4d293cb3-7a1f-4029-b03f-2f38e95c7d81"
-          (reference "C1011") (unit 1)
-        )
-        (path "/f6dd3a30-118f-450f-a0e1-e755e60c59b2/2e54f933-b3de-4465-a95b-cdf6f21a0c9a"
-          (reference "C1111") (unit 1)
-        )
         (path "/f6dd3a30-118f-450f-a0e1-e755e60c59b2/cbffbcce-3555-4620-a841-ae7794000e91"
           (reference "C1206") (unit 1)
         )
@@ -1223,7 +1202,7 @@
   (symbol (lib_id "winterbloom:AD5686RxRUZ") (at 133.35 109.855 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 2ab94ce4-d54d-4409-bb54-a9d70b8476cc)
-    (property "Reference" "U?" (at 135.5441 124.1481 0)
+    (property "Reference" "U1202" (at 135.5441 124.1481 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
     (property "Value" "AD5685RxRUZ" (at 135.5441 126.5723 0)
@@ -1256,15 +1235,6 @@
     (pin "9" (uuid 56cf1b84-a886-49bd-bd5a-4b0b9984f377))
     (instances
       (project "hubble"
-        (path "/f6dd3a30-118f-450f-a0e1-e755e60c59b2/abac3710-ba67-4227-b2fa-84e679d7c9dd"
-          (reference "U?") (unit 1)
-        )
-        (path "/f6dd3a30-118f-450f-a0e1-e755e60c59b2/4d293cb3-7a1f-4029-b03f-2f38e95c7d81"
-          (reference "U?") (unit 1)
-        )
-        (path "/f6dd3a30-118f-450f-a0e1-e755e60c59b2/2e54f933-b3de-4465-a95b-cdf6f21a0c9a"
-          (reference "U?") (unit 1)
-        )
         (path "/f6dd3a30-118f-450f-a0e1-e755e60c59b2/cbffbcce-3555-4620-a841-ae7794000e91"
           (reference "U1202") (unit 1)
         )
@@ -1275,7 +1245,7 @@
   (symbol (lib_id "Connector:TestPoint_Small") (at 151.765 114.935 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 44e38480-4910-4f66-9fa8-8d68d9207f0f)
-    (property "Reference" "TP?" (at 152.908 113.7229 0)
+    (property "Reference" "TP1201" (at 152.908 113.7229 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
     (property "Value" "VREF" (at 152.908 116.1471 0)
@@ -1290,15 +1260,6 @@
     (pin "1" (uuid 642fabca-d8f7-4db8-b3fb-a0c6dde605f7))
     (instances
       (project "hubble"
-        (path "/f6dd3a30-118f-450f-a0e1-e755e60c59b2/abac3710-ba67-4227-b2fa-84e679d7c9dd"
-          (reference "TP?") (unit 1)
-        )
-        (path "/f6dd3a30-118f-450f-a0e1-e755e60c59b2/4d293cb3-7a1f-4029-b03f-2f38e95c7d81"
-          (reference "TP?") (unit 1)
-        )
-        (path "/f6dd3a30-118f-450f-a0e1-e755e60c59b2/2e54f933-b3de-4465-a95b-cdf6f21a0c9a"
-          (reference "TP?") (unit 1)
-        )
         (path "/f6dd3a30-118f-450f-a0e1-e755e60c59b2/cbffbcce-3555-4620-a841-ae7794000e91"
           (reference "TP1201") (unit 1)
         )
@@ -1309,7 +1270,7 @@
   (symbol (lib_id "power:+3V3") (at 97.155 112.395 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 57c9faf0-85d0-493e-8930-e258ee48579f)
-    (property "Reference" "#PWR?" (at 97.155 116.205 0)
+    (property "Reference" "#PWR01204" (at 97.155 116.205 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "+3V3" (at 97.155 108.2619 0)
@@ -1324,15 +1285,6 @@
     (pin "1" (uuid 8e10f98e-4fa3-453d-a194-ee76fc3c0bc0))
     (instances
       (project "hubble"
-        (path "/f6dd3a30-118f-450f-a0e1-e755e60c59b2/abac3710-ba67-4227-b2fa-84e679d7c9dd"
-          (reference "#PWR?") (unit 1)
-        )
-        (path "/f6dd3a30-118f-450f-a0e1-e755e60c59b2/4d293cb3-7a1f-4029-b03f-2f38e95c7d81"
-          (reference "#PWR?") (unit 1)
-        )
-        (path "/f6dd3a30-118f-450f-a0e1-e755e60c59b2/2e54f933-b3de-4465-a95b-cdf6f21a0c9a"
-          (reference "#PWR?") (unit 1)
-        )
         (path "/f6dd3a30-118f-450f-a0e1-e755e60c59b2/cbffbcce-3555-4620-a841-ae7794000e91"
           (reference "#PWR01204") (unit 1)
         )
@@ -1386,15 +1338,6 @@
         )
       )
       (project "hubble"
-        (path "/f6dd3a30-118f-450f-a0e1-e755e60c59b2/abac3710-ba67-4227-b2fa-84e679d7c9dd"
-          (reference "C?") (unit 1)
-        )
-        (path "/f6dd3a30-118f-450f-a0e1-e755e60c59b2/4d293cb3-7a1f-4029-b03f-2f38e95c7d81"
-          (reference "C?") (unit 1)
-        )
-        (path "/f6dd3a30-118f-450f-a0e1-e755e60c59b2/2e54f933-b3de-4465-a95b-cdf6f21a0c9a"
-          (reference "C?") (unit 1)
-        )
         (path "/f6dd3a30-118f-450f-a0e1-e755e60c59b2/cbffbcce-3555-4620-a841-ae7794000e91"
           (reference "C1203") (unit 1)
         )
@@ -1440,15 +1383,6 @@
         )
       )
       (project "hubble"
-        (path "/f6dd3a30-118f-450f-a0e1-e755e60c59b2/abac3710-ba67-4227-b2fa-84e679d7c9dd"
-          (reference "C?") (unit 1)
-        )
-        (path "/f6dd3a30-118f-450f-a0e1-e755e60c59b2/4d293cb3-7a1f-4029-b03f-2f38e95c7d81"
-          (reference "C?") (unit 1)
-        )
-        (path "/f6dd3a30-118f-450f-a0e1-e755e60c59b2/2e54f933-b3de-4465-a95b-cdf6f21a0c9a"
-          (reference "C?") (unit 1)
-        )
         (path "/f6dd3a30-118f-450f-a0e1-e755e60c59b2/cbffbcce-3555-4620-a841-ae7794000e91"
           (reference "C1202") (unit 1)
         )
@@ -1459,7 +1393,7 @@
   (symbol (lib_id "power:GND") (at 133.35 132.08 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 6ae37bea-ca93-419a-b6fd-1d184929e65a)
-    (property "Reference" "#PWR?" (at 133.35 138.43 0)
+    (property "Reference" "#PWR01205" (at 133.35 138.43 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "GND" (at 133.35 135.89 0)
@@ -1474,15 +1408,6 @@
     (pin "1" (uuid 5de27433-55ce-4830-b75c-897270cba84f))
     (instances
       (project "hubble"
-        (path "/f6dd3a30-118f-450f-a0e1-e755e60c59b2/abac3710-ba67-4227-b2fa-84e679d7c9dd"
-          (reference "#PWR?") (unit 1)
-        )
-        (path "/f6dd3a30-118f-450f-a0e1-e755e60c59b2/4d293cb3-7a1f-4029-b03f-2f38e95c7d81"
-          (reference "#PWR?") (unit 1)
-        )
-        (path "/f6dd3a30-118f-450f-a0e1-e755e60c59b2/2e54f933-b3de-4465-a95b-cdf6f21a0c9a"
-          (reference "#PWR?") (unit 1)
-        )
         (path "/f6dd3a30-118f-450f-a0e1-e755e60c59b2/cbffbcce-3555-4620-a841-ae7794000e91"
           (reference "#PWR01205") (unit 1)
         )
@@ -1493,7 +1418,7 @@
   (symbol (lib_id "power:PWR_FLAG") (at 134.62 66.675 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 78b7f26f-bf44-40e7-9acc-b3b531cbb436)
-    (property "Reference" "#FLG0901" (at 134.62 64.77 0)
+    (property "Reference" "#FLG01201" (at 134.62 64.77 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "PWR_FLAG" (at 134.62 62.5419 0)
@@ -1517,15 +1442,6 @@
     (pin "1" (uuid 30fa92d6-e1f5-4f2b-ae1a-16af088ab06a))
     (instances
       (project "hubble"
-        (path "/f6dd3a30-118f-450f-a0e1-e755e60c59b2/abac3710-ba67-4227-b2fa-84e679d7c9dd"
-          (reference "#FLG0901") (unit 1)
-        )
-        (path "/f6dd3a30-118f-450f-a0e1-e755e60c59b2/4d293cb3-7a1f-4029-b03f-2f38e95c7d81"
-          (reference "#FLG01001") (unit 1)
-        )
-        (path "/f6dd3a30-118f-450f-a0e1-e755e60c59b2/2e54f933-b3de-4465-a95b-cdf6f21a0c9a"
-          (reference "#FLG01101") (unit 1)
-        )
         (path "/f6dd3a30-118f-450f-a0e1-e755e60c59b2/cbffbcce-3555-4620-a841-ae7794000e91"
           (reference "#FLG01201") (unit 1)
         )
@@ -1556,15 +1472,6 @@
         )
       )
       (project "hubble"
-        (path "/f6dd3a30-118f-450f-a0e1-e755e60c59b2/abac3710-ba67-4227-b2fa-84e679d7c9dd"
-          (reference "#PWR0914") (unit 1)
-        )
-        (path "/f6dd3a30-118f-450f-a0e1-e755e60c59b2/4d293cb3-7a1f-4029-b03f-2f38e95c7d81"
-          (reference "#PWR01014") (unit 1)
-        )
-        (path "/f6dd3a30-118f-450f-a0e1-e755e60c59b2/2e54f933-b3de-4465-a95b-cdf6f21a0c9a"
-          (reference "#PWR01114") (unit 1)
-        )
         (path "/f6dd3a30-118f-450f-a0e1-e755e60c59b2/cbffbcce-3555-4620-a841-ae7794000e91"
           (reference "#PWR01208") (unit 1)
         )
@@ -1620,15 +1527,6 @@
         )
       )
       (project "hubble"
-        (path "/f6dd3a30-118f-450f-a0e1-e755e60c59b2/abac3710-ba67-4227-b2fa-84e679d7c9dd"
-          (reference "U?") (unit 1)
-        )
-        (path "/f6dd3a30-118f-450f-a0e1-e755e60c59b2/4d293cb3-7a1f-4029-b03f-2f38e95c7d81"
-          (reference "U?") (unit 1)
-        )
-        (path "/f6dd3a30-118f-450f-a0e1-e755e60c59b2/2e54f933-b3de-4465-a95b-cdf6f21a0c9a"
-          (reference "U?") (unit 1)
-        )
         (path "/f6dd3a30-118f-450f-a0e1-e755e60c59b2/cbffbcce-3555-4620-a841-ae7794000e91"
           (reference "U1201") (unit 4)
         )
@@ -1639,7 +1537,7 @@
   (symbol (lib_id "power:+3V3") (at 132.08 84.455 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid 823a044f-1e24-4c5f-8c96-0348d949a544)
-    (property "Reference" "#PWR?" (at 132.08 88.265 0)
+    (property "Reference" "#PWR01203" (at 132.08 88.265 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "+3V3" (at 131.445 80.645 0)
@@ -1654,15 +1552,6 @@
     (pin "1" (uuid 3238c4cf-667f-49cc-b36b-682bd38ab464))
     (instances
       (project "hubble"
-        (path "/f6dd3a30-118f-450f-a0e1-e755e60c59b2/abac3710-ba67-4227-b2fa-84e679d7c9dd"
-          (reference "#PWR?") (unit 1)
-        )
-        (path "/f6dd3a30-118f-450f-a0e1-e755e60c59b2/4d293cb3-7a1f-4029-b03f-2f38e95c7d81"
-          (reference "#PWR?") (unit 1)
-        )
-        (path "/f6dd3a30-118f-450f-a0e1-e755e60c59b2/2e54f933-b3de-4465-a95b-cdf6f21a0c9a"
-          (reference "#PWR?") (unit 1)
-        )
         (path "/f6dd3a30-118f-450f-a0e1-e755e60c59b2/cbffbcce-3555-4620-a841-ae7794000e91"
           (reference "#PWR01203") (unit 1)
         )
@@ -1706,15 +1595,6 @@
         )
       )
       (project "hubble"
-        (path "/f6dd3a30-118f-450f-a0e1-e755e60c59b2/abac3710-ba67-4227-b2fa-84e679d7c9dd"
-          (reference "C?") (unit 1)
-        )
-        (path "/f6dd3a30-118f-450f-a0e1-e755e60c59b2/4d293cb3-7a1f-4029-b03f-2f38e95c7d81"
-          (reference "C?") (unit 1)
-        )
-        (path "/f6dd3a30-118f-450f-a0e1-e755e60c59b2/2e54f933-b3de-4465-a95b-cdf6f21a0c9a"
-          (reference "C?") (unit 1)
-        )
         (path "/f6dd3a30-118f-450f-a0e1-e755e60c59b2/cbffbcce-3555-4620-a841-ae7794000e91"
           (reference "C1204") (unit 1)
         )
@@ -1725,7 +1605,7 @@
   (symbol (lib_id "power:+12V") (at 40.005 158.115 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 97980cf2-9124-48ef-85d4-eb58e958dca0)
-    (property "Reference" "#PWR0911" (at 40.005 161.925 0)
+    (property "Reference" "#PWR01206" (at 40.005 161.925 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "+12V" (at 40.005 153.9819 0)
@@ -1749,15 +1629,6 @@
     (pin "1" (uuid da16bdf5-a447-4bb7-bce6-b49644ae5996))
     (instances
       (project "hubble"
-        (path "/f6dd3a30-118f-450f-a0e1-e755e60c59b2/abac3710-ba67-4227-b2fa-84e679d7c9dd"
-          (reference "#PWR0911") (unit 1)
-        )
-        (path "/f6dd3a30-118f-450f-a0e1-e755e60c59b2/4d293cb3-7a1f-4029-b03f-2f38e95c7d81"
-          (reference "#PWR01011") (unit 1)
-        )
-        (path "/f6dd3a30-118f-450f-a0e1-e755e60c59b2/2e54f933-b3de-4465-a95b-cdf6f21a0c9a"
-          (reference "#PWR01111") (unit 1)
-        )
         (path "/f6dd3a30-118f-450f-a0e1-e755e60c59b2/cbffbcce-3555-4620-a841-ae7794000e91"
           (reference "#PWR01206") (unit 1)
         )
@@ -1768,7 +1639,7 @@
   (symbol (lib_id "power:GND") (at 125.73 90.805 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 99453f1e-8338-42a8-81f4-a24dfad03a6c)
-    (property "Reference" "#PWR0915" (at 125.73 97.155 0)
+    (property "Reference" "#PWR01209" (at 125.73 97.155 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "GND" (at 125.73 94.615 0)
@@ -1783,15 +1654,6 @@
     (pin "1" (uuid 23251377-e072-48f1-a9bb-858958bdf900))
     (instances
       (project "hubble"
-        (path "/f6dd3a30-118f-450f-a0e1-e755e60c59b2/abac3710-ba67-4227-b2fa-84e679d7c9dd"
-          (reference "#PWR0915") (unit 1)
-        )
-        (path "/f6dd3a30-118f-450f-a0e1-e755e60c59b2/4d293cb3-7a1f-4029-b03f-2f38e95c7d81"
-          (reference "#PWR01015") (unit 1)
-        )
-        (path "/f6dd3a30-118f-450f-a0e1-e755e60c59b2/2e54f933-b3de-4465-a95b-cdf6f21a0c9a"
-          (reference "#PWR01115") (unit 1)
-        )
         (path "/f6dd3a30-118f-450f-a0e1-e755e60c59b2/cbffbcce-3555-4620-a841-ae7794000e91"
           (reference "#PWR01209") (unit 1)
         )
@@ -1837,15 +1699,6 @@
         )
       )
       (project "hubble"
-        (path "/f6dd3a30-118f-450f-a0e1-e755e60c59b2/abac3710-ba67-4227-b2fa-84e679d7c9dd"
-          (reference "FB?") (unit 1)
-        )
-        (path "/f6dd3a30-118f-450f-a0e1-e755e60c59b2/4d293cb3-7a1f-4029-b03f-2f38e95c7d81"
-          (reference "FB?") (unit 1)
-        )
-        (path "/f6dd3a30-118f-450f-a0e1-e755e60c59b2/2e54f933-b3de-4465-a95b-cdf6f21a0c9a"
-          (reference "FB?") (unit 1)
-        )
         (path "/f6dd3a30-118f-450f-a0e1-e755e60c59b2/cbffbcce-3555-4620-a841-ae7794000e91"
           (reference "FB1201") (unit 1)
         )
@@ -1901,15 +1754,6 @@
         )
       )
       (project "hubble"
-        (path "/f6dd3a30-118f-450f-a0e1-e755e60c59b2/abac3710-ba67-4227-b2fa-84e679d7c9dd"
-          (reference "U?") (unit 1)
-        )
-        (path "/f6dd3a30-118f-450f-a0e1-e755e60c59b2/4d293cb3-7a1f-4029-b03f-2f38e95c7d81"
-          (reference "U?") (unit 1)
-        )
-        (path "/f6dd3a30-118f-450f-a0e1-e755e60c59b2/2e54f933-b3de-4465-a95b-cdf6f21a0c9a"
-          (reference "U?") (unit 1)
-        )
         (path "/f6dd3a30-118f-450f-a0e1-e755e60c59b2/cbffbcce-3555-4620-a841-ae7794000e91"
           (reference "U1201") (unit 3)
         )
@@ -1943,15 +1787,6 @@
         )
       )
       (project "hubble"
-        (path "/f6dd3a30-118f-450f-a0e1-e755e60c59b2/abac3710-ba67-4227-b2fa-84e679d7c9dd"
-          (reference "#PWR?") (unit 1)
-        )
-        (path "/f6dd3a30-118f-450f-a0e1-e755e60c59b2/4d293cb3-7a1f-4029-b03f-2f38e95c7d81"
-          (reference "#PWR?") (unit 1)
-        )
-        (path "/f6dd3a30-118f-450f-a0e1-e755e60c59b2/2e54f933-b3de-4465-a95b-cdf6f21a0c9a"
-          (reference "#PWR?") (unit 1)
-        )
         (path "/f6dd3a30-118f-450f-a0e1-e755e60c59b2/cbffbcce-3555-4620-a841-ae7794000e91"
           (reference "#PWR01207") (unit 1)
         )
@@ -2005,15 +1840,6 @@
         )
       )
       (project "hubble"
-        (path "/f6dd3a30-118f-450f-a0e1-e755e60c59b2/abac3710-ba67-4227-b2fa-84e679d7c9dd"
-          (reference "C?") (unit 1)
-        )
-        (path "/f6dd3a30-118f-450f-a0e1-e755e60c59b2/4d293cb3-7a1f-4029-b03f-2f38e95c7d81"
-          (reference "C?") (unit 1)
-        )
-        (path "/f6dd3a30-118f-450f-a0e1-e755e60c59b2/2e54f933-b3de-4465-a95b-cdf6f21a0c9a"
-          (reference "C?") (unit 1)
-        )
         (path "/f6dd3a30-118f-450f-a0e1-e755e60c59b2/cbffbcce-3555-4620-a841-ae7794000e91"
           (reference "C1201") (unit 1)
         )
@@ -2069,15 +1895,6 @@
         )
       )
       (project "hubble"
-        (path "/f6dd3a30-118f-450f-a0e1-e755e60c59b2/abac3710-ba67-4227-b2fa-84e679d7c9dd"
-          (reference "U?") (unit 5)
-        )
-        (path "/f6dd3a30-118f-450f-a0e1-e755e60c59b2/4d293cb3-7a1f-4029-b03f-2f38e95c7d81"
-          (reference "U?") (unit 5)
-        )
-        (path "/f6dd3a30-118f-450f-a0e1-e755e60c59b2/2e54f933-b3de-4465-a95b-cdf6f21a0c9a"
-          (reference "U?") (unit 5)
-        )
         (path "/f6dd3a30-118f-450f-a0e1-e755e60c59b2/cbffbcce-3555-4620-a841-ae7794000e91"
           (reference "U1201") (unit 5)
         )
@@ -2133,15 +1950,6 @@
         )
       )
       (project "hubble"
-        (path "/f6dd3a30-118f-450f-a0e1-e755e60c59b2/abac3710-ba67-4227-b2fa-84e679d7c9dd"
-          (reference "U?") (unit 1)
-        )
-        (path "/f6dd3a30-118f-450f-a0e1-e755e60c59b2/4d293cb3-7a1f-4029-b03f-2f38e95c7d81"
-          (reference "U?") (unit 1)
-        )
-        (path "/f6dd3a30-118f-450f-a0e1-e755e60c59b2/2e54f933-b3de-4465-a95b-cdf6f21a0c9a"
-          (reference "U?") (unit 1)
-        )
         (path "/f6dd3a30-118f-450f-a0e1-e755e60c59b2/cbffbcce-3555-4620-a841-ae7794000e91"
           (reference "U1201") (unit 2)
         )
@@ -2197,15 +2005,6 @@
         )
       )
       (project "hubble"
-        (path "/f6dd3a30-118f-450f-a0e1-e755e60c59b2/abac3710-ba67-4227-b2fa-84e679d7c9dd"
-          (reference "U?") (unit 1)
-        )
-        (path "/f6dd3a30-118f-450f-a0e1-e755e60c59b2/4d293cb3-7a1f-4029-b03f-2f38e95c7d81"
-          (reference "U?") (unit 1)
-        )
-        (path "/f6dd3a30-118f-450f-a0e1-e755e60c59b2/2e54f933-b3de-4465-a95b-cdf6f21a0c9a"
-          (reference "U?") (unit 1)
-        )
         (path "/f6dd3a30-118f-450f-a0e1-e755e60c59b2/cbffbcce-3555-4620-a841-ae7794000e91"
           (reference "U1201") (unit 1)
         )
@@ -2216,7 +2015,7 @@
   (symbol (lib_id "power:GND") (at 83.185 78.74 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid fc3addff-5ac8-4cc3-862a-8f55ef5334c5)
-    (property "Reference" "#PWR?" (at 83.185 85.09 0)
+    (property "Reference" "#PWR01202" (at 83.185 85.09 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "GND" (at 83.185 82.55 0)
@@ -2231,15 +2030,6 @@
     (pin "1" (uuid 35e279b1-b91a-4996-8123-77fab4b1f574))
     (instances
       (project "hubble"
-        (path "/f6dd3a30-118f-450f-a0e1-e755e60c59b2/abac3710-ba67-4227-b2fa-84e679d7c9dd"
-          (reference "#PWR?") (unit 1)
-        )
-        (path "/f6dd3a30-118f-450f-a0e1-e755e60c59b2/4d293cb3-7a1f-4029-b03f-2f38e95c7d81"
-          (reference "#PWR?") (unit 1)
-        )
-        (path "/f6dd3a30-118f-450f-a0e1-e755e60c59b2/2e54f933-b3de-4465-a95b-cdf6f21a0c9a"
-          (reference "#PWR?") (unit 1)
-        )
         (path "/f6dd3a30-118f-450f-a0e1-e755e60c59b2/cbffbcce-3555-4620-a841-ae7794000e91"
           (reference "#PWR01202") (unit 1)
         )

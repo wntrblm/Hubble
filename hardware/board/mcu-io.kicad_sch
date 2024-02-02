@@ -1971,9 +1971,6 @@
         )
       )
       (project "hubble"
-        (path "/f6dd3a30-118f-450f-a0e1-e755e60c59b2/71bf9ab0-e551-404a-917e-332d930db30a"
-          (reference "D?") (unit 1)
-        )
         (path "/f6dd3a30-118f-450f-a0e1-e755e60c59b2/4cfa6c62-1aa5-4834-9db1-98f2025fe359"
           (reference "D408") (unit 1)
         )
@@ -2054,9 +2051,6 @@
         )
       )
       (project "hubble"
-        (path "/f6dd3a30-118f-450f-a0e1-e755e60c59b2/71bf9ab0-e551-404a-917e-332d930db30a"
-          (reference "D?") (unit 1)
-        )
         (path "/f6dd3a30-118f-450f-a0e1-e755e60c59b2/4cfa6c62-1aa5-4834-9db1-98f2025fe359"
           (reference "D401") (unit 1)
         )
@@ -2087,9 +2081,6 @@
         )
       )
       (project "hubble"
-        (path "/f6dd3a30-118f-450f-a0e1-e755e60c59b2/71bf9ab0-e551-404a-917e-332d930db30a"
-          (reference "#PWR?") (unit 1)
-        )
         (path "/f6dd3a30-118f-450f-a0e1-e755e60c59b2/4cfa6c62-1aa5-4834-9db1-98f2025fe359"
           (reference "#PWR0401") (unit 1)
         )
@@ -2124,9 +2115,6 @@
         )
       )
       (project "hubble"
-        (path "/f6dd3a30-118f-450f-a0e1-e755e60c59b2/71bf9ab0-e551-404a-917e-332d930db30a"
-          (reference "J?") (unit 1)
-        )
         (path "/f6dd3a30-118f-450f-a0e1-e755e60c59b2/4cfa6c62-1aa5-4834-9db1-98f2025fe359"
           (reference "J401") (unit 1)
         )
@@ -2161,9 +2149,6 @@
         )
       )
       (project "hubble"
-        (path "/f6dd3a30-118f-450f-a0e1-e755e60c59b2/71bf9ab0-e551-404a-917e-332d930db30a"
-          (reference "C?") (unit 1)
-        )
         (path "/f6dd3a30-118f-450f-a0e1-e755e60c59b2/4cfa6c62-1aa5-4834-9db1-98f2025fe359"
           (reference "C402") (unit 1)
         )
@@ -2194,9 +2179,6 @@
         )
       )
       (project "hubble"
-        (path "/f6dd3a30-118f-450f-a0e1-e755e60c59b2/71bf9ab0-e551-404a-917e-332d930db30a"
-          (reference "#PWR?") (unit 1)
-        )
         (path "/f6dd3a30-118f-450f-a0e1-e755e60c59b2/4cfa6c62-1aa5-4834-9db1-98f2025fe359"
           (reference "#PWR0403") (unit 1)
         )
@@ -2280,12 +2262,6 @@
         )
       )
       (project "hubble"
-        (path "/f6dd3a30-118f-450f-a0e1-e755e60c59b2/abac3710-ba67-4227-b2fa-84e679d7c9dd"
-          (reference "R?") (unit 1)
-        )
-        (path "/f6dd3a30-118f-450f-a0e1-e755e60c59b2/71bf9ab0-e551-404a-917e-332d930db30a"
-          (reference "R?") (unit 1)
-        )
         (path "/f6dd3a30-118f-450f-a0e1-e755e60c59b2/4cfa6c62-1aa5-4834-9db1-98f2025fe359"
           (reference "R403") (unit 1)
         )
@@ -2320,9 +2296,6 @@
         )
       )
       (project "hubble"
-        (path "/f6dd3a30-118f-450f-a0e1-e755e60c59b2/71bf9ab0-e551-404a-917e-332d930db30a"
-          (reference "R?") (unit 1)
-        )
         (path "/f6dd3a30-118f-450f-a0e1-e755e60c59b2/4cfa6c62-1aa5-4834-9db1-98f2025fe359"
           (reference "R404") (unit 1)
         )
@@ -2363,9 +2336,6 @@
         )
       )
       (project "hubble"
-        (path "/f6dd3a30-118f-450f-a0e1-e755e60c59b2/71bf9ab0-e551-404a-917e-332d930db30a"
-          (reference "FB?") (unit 1)
-        )
         (path "/f6dd3a30-118f-450f-a0e1-e755e60c59b2/4cfa6c62-1aa5-4834-9db1-98f2025fe359"
           (reference "FB402") (unit 1)
         )
@@ -2406,9 +2376,6 @@
         )
       )
       (project "hubble"
-        (path "/f6dd3a30-118f-450f-a0e1-e755e60c59b2/71bf9ab0-e551-404a-917e-332d930db30a"
-          (reference "FB?") (unit 1)
-        )
         (path "/f6dd3a30-118f-450f-a0e1-e755e60c59b2/4cfa6c62-1aa5-4834-9db1-98f2025fe359"
           (reference "FB403") (unit 1)
         )
@@ -2487,9 +2454,6 @@
         )
       )
       (project "hubble"
-        (path "/f6dd3a30-118f-450f-a0e1-e755e60c59b2/71bf9ab0-e551-404a-917e-332d930db30a"
-          (reference "D?") (unit 1)
-        )
         (path "/f6dd3a30-118f-450f-a0e1-e755e60c59b2/4cfa6c62-1aa5-4834-9db1-98f2025fe359"
           (reference "D404") (unit 1)
         )
@@ -2524,9 +2488,6 @@
         )
       )
       (project "hubble"
-        (path "/f6dd3a30-118f-450f-a0e1-e755e60c59b2/71bf9ab0-e551-404a-917e-332d930db30a"
-          (reference "D?") (unit 1)
-        )
         (path "/f6dd3a30-118f-450f-a0e1-e755e60c59b2/4cfa6c62-1aa5-4834-9db1-98f2025fe359"
           (reference "D402") (unit 1)
         )
@@ -2601,9 +2562,6 @@
         )
       )
       (project "hubble"
-        (path "/f6dd3a30-118f-450f-a0e1-e755e60c59b2/71bf9ab0-e551-404a-917e-332d930db30a"
-          (reference "D?") (unit 1)
-        )
         (path "/f6dd3a30-118f-450f-a0e1-e755e60c59b2/4cfa6c62-1aa5-4834-9db1-98f2025fe359"
           (reference "D409") (unit 1)
         )
@@ -2674,9 +2632,6 @@
         )
       )
       (project "hubble"
-        (path "/f6dd3a30-118f-450f-a0e1-e755e60c59b2/71bf9ab0-e551-404a-917e-332d930db30a"
-          (reference "#PWR?") (unit 1)
-        )
         (path "/f6dd3a30-118f-450f-a0e1-e755e60c59b2/4cfa6c62-1aa5-4834-9db1-98f2025fe359"
           (reference "#PWR0410") (unit 1)
         )
@@ -2711,9 +2666,6 @@
         )
       )
       (project "hubble"
-        (path "/f6dd3a30-118f-450f-a0e1-e755e60c59b2/71bf9ab0-e551-404a-917e-332d930db30a"
-          (reference "J?") (unit 1)
-        )
         (path "/f6dd3a30-118f-450f-a0e1-e755e60c59b2/4cfa6c62-1aa5-4834-9db1-98f2025fe359"
           (reference "J403") (unit 1)
         )
@@ -2757,9 +2709,6 @@
         )
       )
       (project "hubble"
-        (path "/f6dd3a30-118f-450f-a0e1-e755e60c59b2/71bf9ab0-e551-404a-917e-332d930db30a"
-          (reference "J?") (unit 1)
-        )
         (path "/f6dd3a30-118f-450f-a0e1-e755e60c59b2/4cfa6c62-1aa5-4834-9db1-98f2025fe359"
           (reference "J402") (unit 1)
         )
@@ -2790,9 +2739,6 @@
         )
       )
       (project "hubble"
-        (path "/f6dd3a30-118f-450f-a0e1-e755e60c59b2/71bf9ab0-e551-404a-917e-332d930db30a"
-          (reference "#PWR?") (unit 1)
-        )
         (path "/f6dd3a30-118f-450f-a0e1-e755e60c59b2/4cfa6c62-1aa5-4834-9db1-98f2025fe359"
           (reference "#PWR0404") (unit 1)
         )
@@ -2803,7 +2749,7 @@
   (symbol (lib_id "Jumper:SolderJumper_2_Bridged") (at 33.655 73.025 270) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 7e9ccbbc-1860-44dc-b9cf-595dffc922c3)
-    (property "Reference" "JP?" (at 32.0041 71.8129 90)
+    (property "Reference" "JP401" (at 32.0041 71.8129 90)
       (effects (font (size 1.27 1.27)) (justify right))
     )
     (property "Value" "Shield" (at 32.0041 74.2371 90)
@@ -2819,9 +2765,6 @@
     (pin "1" (uuid 021ef3f5-49ee-434d-bd41-c0c934b364ac))
     (instances
       (project "hubble"
-        (path "/f6dd3a30-118f-450f-a0e1-e755e60c59b2/71bf9ab0-e551-404a-917e-332d930db30a"
-          (reference "JP?") (unit 1)
-        )
         (path "/f6dd3a30-118f-450f-a0e1-e755e60c59b2/4cfa6c62-1aa5-4834-9db1-98f2025fe359"
           (reference "JP401") (unit 1)
         )
@@ -2832,7 +2775,7 @@
   (symbol (lib_id "winterbloom:Conn_SWD") (at 25.4 115.57 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 7ea98ddb-a97d-4bbb-a2d2-b1413827f8a6)
-    (property "Reference" "J?" (at 25.4 102.5357 0)
+    (property "Reference" "J404" (at 25.4 102.5357 0)
       (effects (font (size 1.27 1.27)))
     )
     (property "Value" "Conn_SWD" (at 25.4 104.9599 0)
@@ -2856,9 +2799,6 @@
     (pin "10" (uuid eb3d5371-600f-4079-87ac-40cb0b90c639))
     (instances
       (project "hubble"
-        (path "/f6dd3a30-118f-450f-a0e1-e755e60c59b2/71bf9ab0-e551-404a-917e-332d930db30a"
-          (reference "J?") (unit 1)
-        )
         (path "/f6dd3a30-118f-450f-a0e1-e755e60c59b2/4cfa6c62-1aa5-4834-9db1-98f2025fe359"
           (reference "J404") (unit 1)
         )
@@ -2899,9 +2839,6 @@
         )
       )
       (project "hubble"
-        (path "/f6dd3a30-118f-450f-a0e1-e755e60c59b2/71bf9ab0-e551-404a-917e-332d930db30a"
-          (reference "FB?") (unit 1)
-        )
         (path "/f6dd3a30-118f-450f-a0e1-e755e60c59b2/4cfa6c62-1aa5-4834-9db1-98f2025fe359"
           (reference "FB401") (unit 1)
         )
@@ -2932,9 +2869,6 @@
         )
       )
       (project "hubble"
-        (path "/f6dd3a30-118f-450f-a0e1-e755e60c59b2/00000000-0000-0000-0000-000060711259"
-          (reference "#PWR?") (unit 1)
-        )
         (path "/f6dd3a30-118f-450f-a0e1-e755e60c59b2/4cfa6c62-1aa5-4834-9db1-98f2025fe359"
           (reference "#PWR0409") (unit 1)
         )
@@ -3005,9 +2939,6 @@
         )
       )
       (project "hubble"
-        (path "/f6dd3a30-118f-450f-a0e1-e755e60c59b2/00000000-0000-0000-0000-000060711259"
-          (reference "#PWR?") (unit 1)
-        )
         (path "/f6dd3a30-118f-450f-a0e1-e755e60c59b2/4cfa6c62-1aa5-4834-9db1-98f2025fe359"
           (reference "#PWR0405") (unit 1)
         )
@@ -3042,9 +2973,6 @@
         )
       )
       (project "hubble"
-        (path "/f6dd3a30-118f-450f-a0e1-e755e60c59b2/71bf9ab0-e551-404a-917e-332d930db30a"
-          (reference "D?") (unit 1)
-        )
         (path "/f6dd3a30-118f-450f-a0e1-e755e60c59b2/4cfa6c62-1aa5-4834-9db1-98f2025fe359"
           (reference "D403") (unit 1)
         )
@@ -3119,9 +3047,6 @@
         )
       )
       (project "hubble"
-        (path "/f6dd3a30-118f-450f-a0e1-e755e60c59b2/71bf9ab0-e551-404a-917e-332d930db30a"
-          (reference "D?") (unit 1)
-        )
         (path "/f6dd3a30-118f-450f-a0e1-e755e60c59b2/4cfa6c62-1aa5-4834-9db1-98f2025fe359"
           (reference "D406") (unit 1)
         )
@@ -3156,9 +3081,6 @@
         )
       )
       (project "hubble"
-        (path "/f6dd3a30-118f-450f-a0e1-e755e60c59b2/71bf9ab0-e551-404a-917e-332d930db30a"
-          (reference "D?") (unit 1)
-        )
         (path "/f6dd3a30-118f-450f-a0e1-e755e60c59b2/4cfa6c62-1aa5-4834-9db1-98f2025fe359"
           (reference "D405") (unit 1)
         )
@@ -3169,7 +3091,7 @@
   (symbol (lib_id "power:+3V3") (at 45.72 99.06 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid c4774cfc-bf7c-4548-aa3f-995e415fca32)
-    (property "Reference" "#PWR?" (at 45.72 102.87 0)
+    (property "Reference" "#PWR0406" (at 45.72 102.87 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "+3V3" (at 45.72 94.9269 0)
@@ -3184,9 +3106,6 @@
     (pin "1" (uuid 568f39d6-804f-4d39-adfd-8df8e1ad718e))
     (instances
       (project "hubble"
-        (path "/f6dd3a30-118f-450f-a0e1-e755e60c59b2/71bf9ab0-e551-404a-917e-332d930db30a"
-          (reference "#PWR?") (unit 1)
-        )
         (path "/f6dd3a30-118f-450f-a0e1-e755e60c59b2/4cfa6c62-1aa5-4834-9db1-98f2025fe359"
           (reference "#PWR0406") (unit 1)
         )
@@ -3230,12 +3149,6 @@
         )
       )
       (project "hubble"
-        (path "/f6dd3a30-118f-450f-a0e1-e755e60c59b2/abac3710-ba67-4227-b2fa-84e679d7c9dd"
-          (reference "R?") (unit 1)
-        )
-        (path "/f6dd3a30-118f-450f-a0e1-e755e60c59b2/71bf9ab0-e551-404a-917e-332d930db30a"
-          (reference "R?") (unit 1)
-        )
         (path "/f6dd3a30-118f-450f-a0e1-e755e60c59b2/4cfa6c62-1aa5-4834-9db1-98f2025fe359"
           (reference "R405") (unit 1)
         )
@@ -3266,9 +3179,6 @@
         )
       )
       (project "hubble"
-        (path "/f6dd3a30-118f-450f-a0e1-e755e60c59b2/71bf9ab0-e551-404a-917e-332d930db30a"
-          (reference "#PWR?") (unit 1)
-        )
         (path "/f6dd3a30-118f-450f-a0e1-e755e60c59b2/4cfa6c62-1aa5-4834-9db1-98f2025fe359"
           (reference "#PWR0408") (unit 1)
         )
@@ -3299,9 +3209,6 @@
         )
       )
       (project "hubble"
-        (path "/f6dd3a30-118f-450f-a0e1-e755e60c59b2/00000000-0000-0000-0000-000060711259"
-          (reference "#PWR?") (unit 1)
-        )
         (path "/f6dd3a30-118f-450f-a0e1-e755e60c59b2/4cfa6c62-1aa5-4834-9db1-98f2025fe359"
           (reference "#PWR0402") (unit 1)
         )
@@ -3336,9 +3243,6 @@
         )
       )
       (project "hubble"
-        (path "/f6dd3a30-118f-450f-a0e1-e755e60c59b2/71bf9ab0-e551-404a-917e-332d930db30a"
-          (reference "J?") (unit 1)
-        )
         (path "/f6dd3a30-118f-450f-a0e1-e755e60c59b2/4cfa6c62-1aa5-4834-9db1-98f2025fe359"
           (reference "J405") (unit 1)
         )
@@ -3374,9 +3278,6 @@
         )
       )
       (project "hubble"
-        (path "/f6dd3a30-118f-450f-a0e1-e755e60c59b2/71bf9ab0-e551-404a-917e-332d930db30a"
-          (reference "U?") (unit 1)
-        )
         (path "/f6dd3a30-118f-450f-a0e1-e755e60c59b2/4cfa6c62-1aa5-4834-9db1-98f2025fe359"
           (reference "U401") (unit 1)
         )
@@ -3387,7 +3288,7 @@
   (symbol (lib_id "power:GND") (at 35.56 121.92 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid f4636ac8-4f6a-4f81-8f93-52ce5acc7209)
-    (property "Reference" "#PWR?" (at 35.56 128.27 0)
+    (property "Reference" "#PWR0407" (at 35.56 128.27 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "GND" (at 35.56 125.73 0)
@@ -3402,9 +3303,6 @@
     (pin "1" (uuid 778c7d16-1a33-4ac4-b708-f7d122a183a9))
     (instances
       (project "hubble"
-        (path "/f6dd3a30-118f-450f-a0e1-e755e60c59b2/71bf9ab0-e551-404a-917e-332d930db30a"
-          (reference "#PWR?") (unit 1)
-        )
         (path "/f6dd3a30-118f-450f-a0e1-e755e60c59b2/4cfa6c62-1aa5-4834-9db1-98f2025fe359"
           (reference "#PWR0407") (unit 1)
         )
