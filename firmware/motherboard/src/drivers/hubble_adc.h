@@ -8,7 +8,7 @@
 
 /* Routines for interacting with the SAM D51 analog-to-digital converter. */
 
-#include "sam.h"
+#include "wntr_gpio.h"
 #include <stdbool.h>
 #include <stddef.h>
 #include <stdint.h>
@@ -20,13 +20,17 @@
 struct HubbleADCInput {
     /* Which ADC this pin uses. */
     Adc* adc;
-    /* IO port for the input */
-    uint8_t port;
-    /* Pin number for the input */
-    uint32_t pin;
+    /* Physical pin*/
+    struct WntrGPIOPin pin;
     /* AIN number for the input */
     uint32_t ain;
 };
+
+#define HUBBLE_ADC_INPUT(adc_, ain_, port_, pin_, alt_)                                                                \
+    ((struct HubbleADCInput){                                                                                          \
+        .adc = adc_,                                                                                                   \
+        .ain = ADC_INPUTCTRL_MUXPOS_AIN##ain_,                                                                         \
+        .pin = {.port = WNTR_PORT_##port_, .pin = pin_, .alt = WNTR_PMUX_##alt_}})
 
 void hubble_adc_init();
 

@@ -77,7 +77,7 @@ static struct WntrVoltageCalibrationTable* calibration_tables[] = {
 int main(void);
 static void init();
 static void init_calibrations();
-static void init_dacs_and_muxes();
+static void init_dacs();
 static void loop();
 static void register_sysex_commands();
 
@@ -113,8 +113,8 @@ static void init() {
     SystemInit();
 
     /* Turn on the "alive" LED */
-    WntrGPIOPin_set_as_output(GPIO_23_LED);
-    WntrGPIOPin_set(GPIO_23_LED, true);
+    WntrGPIOPin_set_as_output(PIN_STATUS_LED);
+    WntrGPIOPin_set(PIN_STATUS_LED, true);
 
     /* Setup USB as soon as possible */
     wntr_usb_init();
@@ -123,25 +123,18 @@ static void init() {
     hubble_dotstar_init(20);
 
     hubble_adc_init();
-    hubble_adc_init_input(&ADC_A1);
-    hubble_adc_init_input(&ADC_A2);
-    hubble_adc_init_input(&ADC_A3);
-    hubble_adc_init_input(&ADC_A4);
+    // hubble_adc_init_input(&ADC_A1);
 
     /* SPI bus & external DAC */
-    WntrSERCOMSPI_init(&SPI);
-    hubble_ad5685_init(&SPI);
+    WntrSERCOMSPI_init(&AD5685_SPI);
+    hubble_ad5685_init(&AD5685_SPI);
     hubble_ad5685_soft_reset();
-
-    /* Multiplexers */
-    hubble_mux50x_init(DAC_MUX);
-    hubble_mux50x_init(ADC_MUX);
 
     /* Calibrations */
     init_calibrations();
 
     /* Set initial values for dacs and muxes */
-    init_dacs_and_muxes();
+    init_dacs();
 
     /* Sysex commands */
     register_sysex_commands();
@@ -160,7 +153,7 @@ static void init_calibrations() {
     }
 }
 
-static void init_dacs_and_muxes() {
+static void init_dacs() {
     // Yes, slightly above zero, since MCU inputs tend to be
     // more forgiving of a very small positive voltage than any negative
     // voltage.
@@ -169,16 +162,14 @@ static void init_dacs_and_muxes() {
     hubble_ad5685_write_channel(1, zero_code_point, true);
     hubble_ad5685_write_channel(2, zero_code_point, true);
     hubble_ad5685_write_channel(3, zero_code_point, true);
-    hubble_mux50x_set(DAC_MUX, 0);
-    hubble_mux50x_set(ADC_MUX, 0);
 }
 
 static void loop() {
     /* Blink the LED */
     if ((wntr_ticks() / 100) % 2 == 0) {
-        WntrGPIOPin_set(GPIO_23_LED, true);
+        WntrGPIOPin_set(PIN_STATUS_LED, true);
     } else {
-        WntrGPIOPin_set(GPIO_23_LED, false);
+        WntrGPIOPin_set(PIN_STATUS_LED, false);
     }
 
     /* Dotstar update */
@@ -278,8 +269,9 @@ WNTR_SYSEX_COMMAND_DECL(0x05, read_adc) {
     uint8_t channel = request_data[0];
     uint8_t mux = request_data[1];
 
-    hubble_mux50x_set(ADC_MUX, mux);
-    uint16_t result = hubble_adc_read_sync(&ADC_CHANNELS[channel]);
+    // TODO
+    // uint16_t result = hubble_adc_read_sync(&ADC_CHANNELS[channel]);
+    uint16_t result = 0;
 
     WNTR_SYSEX_PREPARE_RESPONSE(0x05, TEETH_ENCODED_LENGTH(2));
 
@@ -298,8 +290,9 @@ WNTR_SYSEX_COMMAND_DECL(0x06, read_adc_voltage) {
     uint8_t channel = request_data[0];
     uint8_t mux = request_data[1];
 
-    hubble_mux50x_set(ADC_MUX, mux);
-    uint16_t code_points = hubble_adc_read_sync(&ADC_CHANNELS[channel]);
+    // TODO
+    // uint16_t code_points = hubble_adc_read_sync(&ADC_CHANNELS[channel]);
+    uint16_t code_points = 0;
 
     float result = wntr_code_points_to_volts(code_points, WNTR_RESOLUTION_12_BIT, -8.0f, 8.0f, true);
 
@@ -330,7 +323,6 @@ WNTR_SYSEX_COMMAND_DECL(0x07, set_dac) {
     uint8_t mux = request[1];
     uint16_t value = WNTR_UNPACK_16(request, 2);
 
-    hubble_mux50x_set(DAC_MUX, mux);
     hubble_ad5685_write_channel(channel, value, true);
 
     WNTR_SYSEX_RESPONSE_NULLARY();
@@ -356,7 +348,6 @@ WNTR_SYSEX_COMMAND_DECL(0x08, set_dac_voltage) {
 
     uint32_t code_point = wntr_volts_to_code_points(value, WNTR_RESOLUTION_16_BIT, -8.0f, 8.0f, true);
 
-    hubble_mux50x_set(DAC_MUX, mux);
     hubble_ad5685_write_channel(channel, code_point, true);
 
     WNTR_SYSEX_RESPONSE_NULLARY();

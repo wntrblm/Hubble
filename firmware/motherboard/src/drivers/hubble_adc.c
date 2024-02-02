@@ -63,8 +63,8 @@ void hubble_adc_init() {
 }
 
 void hubble_adc_init_input(const struct HubbleADCInput* input) {
-    wntr_gpio_set_as_input(input->port, input->pin, false);
-    wntr_gpio_configure_alt(input->port, input->pin, WNTR_PMUX_B);
+    WntrGPIOPin_set_as_input(input->pin, false);
+    WntrGPIOPin_configure_alt(input->pin);
 }
 
 uint16_t hubble_adc_read_sync(const struct HubbleADCInput* input) {

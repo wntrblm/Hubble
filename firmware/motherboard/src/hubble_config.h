@@ -54,50 +54,41 @@
 #define HUBBLE_ADC_AVERAGE_ADJRES 0x4
 
 /*
-    Pin assignments
+    Special purpose pins
 */
-#define GPIO_1 (WNTR_GPIO_PIN(A, 27))
-#define GPIO_2 (WNTR_GPIO_PIN(B, 23))
-#define GPIO_3 (WNTR_GPIO_PIN(B, 22))
-#define GPIO_4 (WNTR_GPIO_PIN(A, 21))
-#define GPIO_5 (WNTR_GPIO_PIN(A, 20))
-#define GPIO_6 (WNTR_GPIO_PIN(A, 12))
-#define GPIO_7 (WNTR_GPIO_PIN(B, 11))
-#define GPIO_8 (WNTR_GPIO_PIN(B, 10))
-#define GPIO_9 (WNTR_GPIO_PIN(A, 11))
-#define GPIO_9_ADC_0_11 ((const struct HubbleADCInput){ADC0, WNTR_PORT_A, 11, ADC_INPUTCTRL_MUXPOS_AIN11})
-#define GPIO_10 (WNTR_GPIO_PIN(A, 10))
-#define GPIO_10_ADC_0_10 ((const struct HubbleADCInput){ADC0, WNTR_PORT_A, 10, ADC_INPUTCTRL_MUXPOS_AIN10})
-#define GPIO_11 (WNTR_GPIO_PIN(A, 9))
-#define GPIO_11_ADC_0_9 ((const struct HubbleADCInput){ADC0, WNTR_PORT_A, 9, ADC_INPUTCTRL_MUXPOS_AIN9})
-#define GPIO_11_ADC_1_3 ((const struct HubbleADCInput){ADC1, WNTR_PORT_A, 9, ADC_INPUTCTRL_MUXPOS_AIN3})
-#define GPIO_12 (WNTR_GPIO_PIN(A, 8))
-#define GPIO_12_ADC_0_8 ((const struct HubbleADCInput){ADC0, WNTR_PORT_A, 8, ADC_INPUTCTRL_MUXPOS_AIN8})
-#define GPIO_12_ADC_1_2 ((const struct HubbleADCInput){ADC1, WNTR_PORT_A, 8, ADC_INPUTCTRL_MUXPOS_AIN2})
-#define GPIO_13 (WNTR_GPIO_PIN(A, 7))
-#define GPIO_13_ADC_0_7 ((const struct HubbleADCInput){ADC0, WNTR_PORT_A, 7, ADC_INPUTCTRL_MUXPOS_AIN7})
-#define GPIO_14 (WNTR_GPIO_PIN(A, 6))
-#define GPIO_14_ADC_0_6 ((const struct HubbleADCInput){ADC0, WNTR_PORT_A, 6, ADC_INPUTCTRL_MUXPOS_AIN6})
-#define GPIO_15 (WNTR_GPIO_PIN(A, 5))
-#define GPIO_15_ADC_0_5_DAC_1 ((const struct HubbleADCInput){ADC0, WNTR_PORT_A, 5, ADC_INPUTCTRL_MUXPOS_AIN5})
-#define GPIO_16 (WNTR_GPIO_PIN(A, 4))
-#define GPIO_16_ADC_0_4 ((const struct HubbleADCInput){ADC0, WNTR_PORT_A, 4, ADC_INPUTCTRL_MUXPOS_AIN4})
-#define GPIO_17 (WNTR_GPIO_PIN(B, 7))
-#define GPIO_17_ADC_1_9 ((const struct HubbleADCInput){ADC1, WNTR_PORT_B, 7, ADC_INPUTCTRL_MUXPOS_AIN9})
-#define GPIO_18 (WNTR_GPIO_PIN(B, 6))
-#define GPIO_18_ADC_1_8 ((const struct HubbleADCInput){ADC1, WNTR_PORT_B, 8, ADC_INPUTCTRL_MUXPOS_AIN8})
-#define GPIO_19 (WNTR_GPIO_PIN(A, 2))
-#define GPIO_19_ADC_0_0 ((const struct HubbleADCInput){ADC0, WNTR_PORT_A, 2, ADC_INPUTCTRL_MUXPOS_AIN0})
-#define GPIO_20 (WNTR_GPIO_PIN(B, 1))
-#define GPIO_20_ADC_0_13 ((const struct HubbleADCInput){ADC0, WNTR_PORT_B, 1, ADC_INPUTCTRL_MUXPOS_AIN13})
-#define GPIO_21 (WNTR_GPIO_PIN(B, 0))
-#define GPIO_21_ADC_0_12 ((const struct HubbleADCInput){ADC0, WNTR_PORT_B, 0, ADC_INPUTCTRL_MUXPOS_AIN12})
-#define GPIO_22 (WNTR_GPIO_PIN(B, 31))
-#define GPIO_23 (WNTR_GPIO_PIN(B, 30))
-#define GPIO_23_LED (WNTR_GPIO_PIN(B, 30))
+#define PIN_STATUS_LED (WNTR_GPIO_PIN(A, 27))
+#define PIN_DS_POWER_EN (WNTR_GPIO_PIN(C, 1))
+#define PIN_SDO (WNTR_GPIO_PIN(B, 30))
 
 /*
-    Array of all GPIO pin defs above (not including analog aliases)
+    GPIO exclusive pins
+*/
+#define GPIO_1 (WNTR_GPIO_PIN(D, 20))
+#define GPIO_2 (WNTR_GPIO_PIN(C, 23))
+#define GPIO_3 (WNTR_GPIO_PIN(C, 22))
+#define GPIO_4 (WNTR_GPIO_PIN(C, 21))
+#define GPIO_5 (WNTR_GPIO_PIN(C, 20))
+#define GPIO_6 (WNTR_GPIO_PIN(C, 19))
+#define GPIO_7 (WNTR_GPIO_PIN(C, 12))
+#define GPIO_8 (WNTR_GPIO_PIN(C, 11))
+#define GPIO_9 (WNTR_GPIO_PIN(C, 10))
+#define GPIO_10 (WNTR_GPIO_PIN(D, 12))
+#define GPIO_11 (WNTR_GPIO_PIN(D, 11))
+#define GPIO_12 (WNTR_GPIO_PIN(D, 10))
+#define GPIO_13 (WNTR_GPIO_PIN(D, 9))
+#define GPIO_14 (WNTR_GPIO_PIN(D, 8))
+#define GPIO_15 (WNTR_GPIO_PIN(B, 15))
+#define GPIO_16 (WNTR_GPIO_PIN(B, 14))
+#define GPIO_17 (WNTR_GPIO_PIN(B, 12))
+#define GPIO_18 (WNTR_GPIO_PIN(B, 11))
+#define GPIO_19 (WNTR_GPIO_PIN(A, 10))
+#define GPIO_20 (WNTR_GPIO_PIN(C, 7))
+#define GPIO_21 (WNTR_GPIO_PIN(C, 6))
+#define GPIO_22 (WNTR_GPIO_PIN(C, 5))
+#define GPIO_23 (WNTR_GPIO_PIN(C, 4))
+
+/*
+    Array of all GPIO pins
 */
 static const struct WntrGPIOPin GPIO[] = {
     GPIO_1,  GPIO_2,  GPIO_3,  GPIO_4,  GPIO_5,  GPIO_6,  GPIO_7,  GPIO_8,  GPIO_9,  GPIO_10, GPIO_11, GPIO_12,
@@ -105,49 +96,86 @@ static const struct WntrGPIOPin GPIO[] = {
 };
 
 /*
-    Multiplexers
+    ADC exclusive pins with buffers
 */
+#define AIN_VREFA (HUBBLE_ADC_INPUT(ADC0, 1, A, 3, B_ANALOG))
+#define AIN_1 (HUBBLE_ADC_INPUT(ADC1, 5, C, 3, B_ANALOG))
+#define AIN_2 (HUBBLE_ADC_INPUT(ADC1, 6, B, 4, B_ANALOG))
+#define AIN_3 (HUBBLE_ADC_INPUT(ADC1, 7, B, 5, B_ANALOG))
+#define AIN_4 (HUBBLE_ADC_INPUT(ADC1, 14, D, 0, B_ANALOG))
+#define AIN_5 (HUBBLE_ADC_INPUT(ADC1, 15, D, 1, B_ANALOG))
+#define AIN_6 (HUBBLE_ADC_INPUT(ADC1, 8, B, 6, B_ANALOG))
+#define AIN_7 (HUBBLE_ADC_INPUT(ADC1, 9, B, 7, B_ANALOG))
+#define AIN_8 (HUBBLE_ADC_INPUT(ADC0, 2, B, 8, B_ANALOG))
+#define AIN_9 (HUBBLE_ADC_INPUT(ADC0, 3, B, 9, B_ANALOG))
+#define AIN_10 (HUBBLE_ADC_INPUT(ADC0, 4, A, 4, B_ANALOG))
+#define AIN_11 (HUBBLE_ADC_INPUT(ADC0, 6, A, 6, B_ANALOG))
+#define AIN_12 (HUBBLE_ADC_INPUT(ADC0, 7, A, 7, B_ANALOG))
+#define AIN_13 (HUBBLE_ADC_INPUT(ADC0, 8, A, 8, B_ANALOG))
+#define AIN_14 (HUBBLE_ADC_INPUT(ADC0, 9, A, 9, B_ANALOG))
+#define AIN_15 (HUBBLE_ADC_INPUT(ADC0, 10, A, 10, B_ANALOG))
+#define AIN_16 (HUBBLE_ADC_INPUT(ADC0, 11, A, 11, B_ANALOG))
 
-#define GPIO_DAC_MUX_A0 (WNTR_GPIO_PIN(B, 16))
-#define GPIO_DAC_MUX_A1 (WNTR_GPIO_PIN(B, 17))
-#define GPIO_ADC_MUX_A0 (WNTR_GPIO_PIN(B, 2))
-#define GPIO_ADC_MUX_A1 (WNTR_GPIO_PIN(B, 3))
-
-static const struct HubbleMUX50x DAC_MUX = {.a0 = GPIO_DAC_MUX_A0, .a1 = GPIO_DAC_MUX_A1};
-
-static const struct HubbleMUX50x ADC_MUX = {.a0 = GPIO_ADC_MUX_A0, .a1 = GPIO_ADC_MUX_A1};
+static const struct HubbleADCInput AIN[] = {
+    AIN_1,
+    AIN_2,
+    AIN_3,
+    AIN_4,
+    AIN_5,
+    AIN_6,
+    AIN_7,
+    AIN_8,
+    AIN_9,
+    AIN_10,
+    AIN_11,
+    AIN_12,
+    AIN_13,
+    AIN_14,
+    AIN_15,
+    AIN_16,
+};
 
 /*
-    Exclusive ADC pins (w/ buffers)
+    Serial exclusive pins
 */
-#define GPIO_AREF0 (WNTR_GPIO_PIN(A, 3))
-#define GPIO_A1 (WNTR_GPIO_PIN(B, 5))
-#define ADC_A1 ((const struct HubbleADCInput){ADC1, WNTR_PORT_B, 5, ADC_INPUTCTRL_MUXPOS_AIN6})
-#define GPIO_A2 (WNTR_GPIO_PIN(B, 9))
-#define ADC_A2 ((const struct HubbleADCInput){ADC1, WNTR_PORT_B, 9, ADC_INPUTCTRL_MUXPOS_AIN1})
-#define GPIO_A3 (WNTR_GPIO_PIN(B, 8))
-#define ADC_A3 ((const struct HubbleADCInput){ADC1, WNTR_PORT_B, 8, ADC_INPUTCTRL_MUXPOS_AIN0})
-#define GPIO_A4 (WNTR_GPIO_PIN(B, 4))
-#define ADC_A4 ((const struct HubbleADCInput){ADC1, WNTR_PORT_B, 4, ADC_INPUTCTRL_MUXPOS_AIN7})
+#define SER_1_0 (WNTR_GPIO_PIN_ALT(A, 16, C_SERCOM))
+#define SER_1_1 (WNTR_GPIO_PIN_ALT(A, 17, C_SERCOM))
+#define SER_1_2 (WNTR_GPIO_PIN_ALT(A, 18, C_SERCOM))
+#define SER_1_3 (WNTR_GPIO_PIN_ALT(A, 19, C_SERCOM))
 
-static const struct HubbleADCInput ADC_CHANNELS[] = {
-    ADC_A1,
-    ADC_A2,
-    ADC_A3,
-    ADC_A4,
+#define SER_2_0 (WNTR_GPIO_PIN_ALT(A, 12, C_SERCOM))
+#define SER_2_1 (WNTR_GPIO_PIN_ALT(A, 13, C_SERCOM))
+#define SER_2_2 (WNTR_GPIO_PIN_ALT(A, 14, C_SERCOM))
+#define SER_2_3 (WNTR_GPIO_PIN_ALT(A, 15, C_SERCOM))
+
+/*
+    SPI configuration for Dotstars
+*/
+static const struct WntrSERCOMSPI DOTSTAR_SPI = {
+    .sercom = &SERCOM3->SPI,
+    .dopo = SERCOM_SPI_DOPO_SDO_0_SCK_1_CS_2,
+    .sdo = WNTR_GPIO_PIN_ALT(A, 22, C_SERCOM),
+    .sck = WNTR_GPIO_PIN_ALT(A, 23, C_SERCOM),
+    // No CS pin, so this is just an unused pin
+    .cs = WNTR_GPIO_PIN_ALT(A, 21, NONE),
+    .polarity = 0,
+    .phase = 1,
 };
 
 /*
     SPI configuration for the external DAC (AD5685)
 */
-
-static const struct WntrSERCOMSPI SPI = {
-    .sercom = &SERCOM2->SPI,
-    .dopo = SERCOM_SPI_DOPO_SDO_3_SCK_1_CS_2,
-    .sdo = WNTR_GPIO_PIN_ALT(A, 15, C_SERCOM),
-    .sck = WNTR_GPIO_PIN_ALT(A, 13, C_SERCOM),
+static const struct WntrSERCOMSPI AD5685_SPI = {
+    .sercom = &SERCOM6->SPI,
+    .dopo = SERCOM_SPI_DOPO_SDO_0_SCK_1_CS_2,
+    .sdo = WNTR_GPIO_PIN_ALT(C, 16, C_SERCOM),
+    .sck = WNTR_GPIO_PIN_ALT(C, 17, C_SERCOM),
     // NONE = Don't use hardware CS, since the AD5685 expects 24 bits instead of just 8.
-    .cs = WNTR_GPIO_PIN_ALT(A, 14, NONE),
+    .cs = WNTR_GPIO_PIN_ALT(C, 18, NONE),
     .polarity = 0,
     .phase = 1,
 };
+
+/*
+    TODO: I2C configuration for QWIIC
+*/
