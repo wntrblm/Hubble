@@ -38,6 +38,7 @@ void hubble_adc_init();
 void hubble_adc_enable_error_correction(uint16_t gain, uint16_t offset);
 
 /* Configure a given input channel for ADC reading. */
-void hubble_adc_init_input(const struct HubbleADCInput* const input);
+void hubble_adc_init_input(const struct HubbleADCInput input);
+void hubble_adc_init_inputs(const struct HubbleADCInput* inputs, size_t count);
 
-uint16_t hubble_adc_read_sync(const struct HubbleADCInput* input);
+uint16_t hubble_adc_read_sync(const struct HubbleADCInput input);

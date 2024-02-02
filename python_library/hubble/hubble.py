@@ -58,10 +58,9 @@ class AnalogIn:
 
 
 class VoltageOut:
-    def __init__(self, device, channel, mux):
+    def __init__(self, device, channel):
         self._device = device
         self._channel = channel
-        self._mux = mux
         self._voltage = 0
         self._value = 0
 
@@ -72,7 +71,7 @@ class VoltageOut:
     @value.setter
     def value(self, value):
         self._value = value
-        return self._device.set_dac(self._channel, self._mux, value)
+        return self._device.set_dac(self._channel, value)
 
     @property
     def voltage(self):
@@ -81,22 +80,21 @@ class VoltageOut:
     @voltage.setter
     def voltage(self, voltage):
         self._voltage = voltage
-        return self._device.set_dac_voltage(self._channel, self._mux, voltage)
+        return self._device.set_dac_voltage(self._channel, voltage)
 
 
 class VoltageIn:
-    def __init__(self, device, channel, mux):
+    def __init__(self, device, channel):
         self._device = device
         self._channel = channel
-        self._mux = mux
 
     @property
     def value(self):
-        return self._device.read_adc(self._channel, self._mux)
+        return self._device.read_adc(self._channel)
 
     @property
     def voltage(self):
-        return self._device.read_adc_voltage(self._channel, self._mux)
+        return self._device.read_adc_voltage(self._channel)
 
 
 class _SysExCommands(enum.IntEnum):
@@ -113,20 +111,6 @@ class _SysExCommands(enum.IntEnum):
     SAVE_CALIBRATION_TABLE = 0x52
 
 
-class _DACChannels(enum.IntEnum):
-    D1 = 0
-    D2 = 3
-    D3 = 2
-    D4 = 1
-
-
-class _DACMUX(enum.IntEnum):
-    MUX_A = 0
-    MUX_B = 1
-    MUX_C = 2
-    MUX_D = 3
-
-
 class Hubble(midi.MIDIDevice):
     MIDI_PORT_NAME = "Hubble"
     SYSEX_MARKER = 0x77
@@ -140,75 +124,74 @@ class Hubble(midi.MIDIDevice):
     IO7 = _IODescriptor(DigitalIO, 6)
     IO8 = _IODescriptor(DigitalIO, 7)
     IO9 = _IODescriptor(DigitalIO, 8)
-    A9 = _IODescriptor(AnalogIn, 8)
     IO10 = _IODescriptor(DigitalIO, 9)
-    A10 = _IODescriptor(AnalogIn, 9)
     IO11 = _IODescriptor(DigitalIO, 10)
-    A11 = _IODescriptor(AnalogIn, 10)
     IO12 = _IODescriptor(DigitalIO, 11)
-    A12 = _IODescriptor(AnalogIn, 11)
     IO13 = _IODescriptor(DigitalIO, 12)
-    A13 = _IODescriptor(AnalogIn, 12)
     IO14 = _IODescriptor(DigitalIO, 13)
-    A14 = _IODescriptor(AnalogIn, 13)
     IO15 = _IODescriptor(DigitalIO, 14)
-    A15 = _IODescriptor(AnalogIn, 14)
     IO16 = _IODescriptor(DigitalIO, 15)
-    A16 = _IODescriptor(AnalogIn, 15)
     IO17 = _IODescriptor(DigitalIO, 16)
-    A17 = _IODescriptor(AnalogIn, 16)
     IO18 = _IODescriptor(DigitalIO, 17)
-    A18 = _IODescriptor(AnalogIn, 17)
     IO19 = _IODescriptor(DigitalIO, 18)
-    A19 = _IODescriptor(AnalogIn, 18)
     IO20 = _IODescriptor(DigitalIO, 19)
-    A20 = _IODescriptor(AnalogIn, 19)
     IO21 = _IODescriptor(DigitalIO, 20)
-    A21 = _IODescriptor(AnalogIn, 20)
     IO22 = _IODescriptor(DigitalIO, 21)
     IO23 = _IODescriptor(DigitalIO, 22)
-    LED = _IODescriptor(DigitalIO, 22)
 
-    VIN1A = _IODescriptor(VoltageIn, 0, 0)
-    VIN1B = _IODescriptor(VoltageIn, 0, 1)
-    VIN1C = _IODescriptor(VoltageIn, 0, 2)
-    VIN1D = _IODescriptor(VoltageIn, 0, 3)
-    VIN2A = _IODescriptor(VoltageIn, 1, 0)
-    VIN2B = _IODescriptor(VoltageIn, 1, 1)
-    VIN2C = _IODescriptor(VoltageIn, 1, 2)
-    VIN2D = _IODescriptor(VoltageIn, 1, 3)
-    VIN3A = _IODescriptor(VoltageIn, 2, 0)
-    VIN3B = _IODescriptor(VoltageIn, 2, 1)
-    VIN3C = _IODescriptor(VoltageIn, 2, 2)
-    VIN3D = _IODescriptor(VoltageIn, 2, 3)
-    VIN4A = _IODescriptor(VoltageIn, 3, 0)
-    VIN4B = _IODescriptor(VoltageIn, 3, 1)
-    VIN4C = _IODescriptor(VoltageIn, 3, 2)
-    VIN4D = _IODescriptor(VoltageIn, 3, 3)
+    SER1_0 = _IODescriptor(DigitalIO, 23)
+    SER1_1 = _IODescriptor(DigitalIO, 24)
+    SER1_2 = _IODescriptor(DigitalIO, 25)
+    SER1_3 = _IODescriptor(DigitalIO, 26)
+    SER2_0 = _IODescriptor(DigitalIO, 27)
+    SER2_1 = _IODescriptor(DigitalIO, 28)
+    SER2_2 = _IODescriptor(DigitalIO, 29)
+    SER2_3 = _IODescriptor(DigitalIO, 30)
 
-    VOUT1A = _IODescriptor(VoltageOut, 0, 0)
-    VOUT1B = _IODescriptor(VoltageOut, 0, 1)
-    VOUT1C = _IODescriptor(VoltageOut, 0, 2)
-    VOUT1D = _IODescriptor(VoltageOut, 0, 3)
-    VOUT2A = _IODescriptor(VoltageOut, 3, 0)
-    VOUT2B = _IODescriptor(VoltageOut, 3, 1)
-    VOUT2C = _IODescriptor(VoltageOut, 3, 2)
-    VOUT2D = _IODescriptor(VoltageOut, 3, 3)
-    VOUT3A = _IODescriptor(VoltageOut, 2, 0)
-    VOUT3B = _IODescriptor(VoltageOut, 2, 1)
-    VOUT3C = _IODescriptor(VoltageOut, 2, 2)
-    VOUT3D = _IODescriptor(VoltageOut, 2, 3)
-    VOUT4A = _IODescriptor(VoltageOut, 1, 0)
-    VOUT4B = _IODescriptor(VoltageOut, 1, 1)
-    VOUT4C = _IODescriptor(VoltageOut, 1, 2)
-    VOUT4D = _IODescriptor(VoltageOut, 1, 3)
+    LED = _IODescriptor(DigitalIO, 31)
+    DS_POWER = _IODescriptor(DigitalIO, 32)
+
+    VIN1 = _IODescriptor(VoltageIn, 0)
+    VIN2 = _IODescriptor(VoltageIn, 1)
+    VIN3 = _IODescriptor(VoltageIn, 2)
+    VIN4 = _IODescriptor(VoltageIn, 3)
+    VIN5 = _IODescriptor(VoltageIn, 4)
+    VIN6 = _IODescriptor(VoltageIn, 5)
+    VIN7 = _IODescriptor(VoltageIn, 6)
+    VIN8 = _IODescriptor(VoltageIn, 7)
+    VIN9 = _IODescriptor(VoltageIn, 8)
+    VIN10 = _IODescriptor(VoltageIn, 9)
+    VIN11 = _IODescriptor(VoltageIn, 10)
+    VIN12 = _IODescriptor(VoltageIn, 11)
+    AIN1 = _IODescriptor(VoltageIn, 12)
+    AIN2 = _IODescriptor(VoltageIn, 13)
+    AIN3 = _IODescriptor(VoltageIn, 14)
+    AIN4 = _IODescriptor(VoltageIn, 15)
+
+    VOUT1 = _IODescriptor(VoltageOut, 0)
+    VOUT2 = _IODescriptor(VoltageOut, 1)
+    VOUT3 = _IODescriptor(VoltageOut, 2)
+    VOUT4 = _IODescriptor(VoltageOut, 3)
+    VOUT5 = _IODescriptor(VoltageOut, 4)
+    VOUT6 = _IODescriptor(VoltageOut, 5)
+    VOUT7 = _IODescriptor(VoltageOut, 6)
+    VOUT8 = _IODescriptor(VoltageOut, 7)
+    VOUT9 = _IODescriptor(VoltageOut, 8)
+    VOUT10 = _IODescriptor(VoltageOut,9 )
+    VOUT11 = _IODescriptor(VoltageOut, 10)
+    VOUT12 = _IODescriptor(VoltageOut, 11)
+    AOUT1 = _IODescriptor(VoltageOut, 12)
+    AOUT2 = _IODescriptor(VoltageOut, 13)
+    AOUT3 = _IODescriptor(VoltageOut, 14)
+    AOUT4 = _IODescriptor(VoltageOut, 15)
+
     RED_LED = property(lambda self: self._front_panel.RED_LED)
     BLUE_LED = property(lambda self: self._front_panel.BLUE_LED)
     GREEN_LED = property(lambda self: self._front_panel.GREEN_LED)
 
     def __init__(self):
         super().__init__()
-        self._front_panel = FrontPanel()
+        # self._front_panel = FrontPanel()
 
     def get_firmware_version(self):
         resp = self.sysex(_SysExCommands.HELLO, response=True)
@@ -228,17 +211,17 @@ class Hubble(midi.MIDIDevice):
         )
         return
 
-    def read_adc(self, channel, mux):
+    def read_adc(self, channel):
         resp = self.sysex(
-            _SysExCommands.READ_ADC, data=[channel, mux], response=True, decode=True
+            _SysExCommands.READ_ADC, data=[channel], response=True, decode=True
         )
         (val,) = struct.unpack(">H", resp)
         return val
 
-    def read_adc_voltage(self, channel, mux):
+    def read_adc_voltage(self, channel):
         resp = self.sysex(
             _SysExCommands.READ_ADC_VOLTAGE,
-            data=[channel, mux],
+            data=[channel],
             response=True,
             decode=True,
         )
@@ -246,21 +229,20 @@ class Hubble(midi.MIDIDevice):
         return val
 
     def scan_adc(self):
-        return [self.read_adc(channel, mux) for channel in range(4) for mux in range(4)]
+        return [self.read_adc(channel) for channel in range(16)]
 
     def scan_adc_volts(self):
         return [
-            self.read_adc_voltage(channel, mux)
-            for channel in range(4)
-            for mux in range(4)
+            self.read_adc_voltage(channel)
+            for channel in range(16)
         ]
 
-    def set_dac(self, channel, mux, value):
-        data = struct.pack(">BBH", channel, mux, value)
+    def set_dac(self, channel, value):
+        data = struct.pack(">BH", channel, value)
         self.sysex(_SysExCommands.SET_DAC, data=data, encode=True, response=True)
 
-    def set_dac_voltage(self, channel, mux, value):
-        data = struct.pack(">BBf", channel, mux, value)
+    def set_dac_voltage(self, channel, value):
+        data = struct.pack(">Bf", channel, value)
         self.sysex(
             _SysExCommands.SET_DAC_VOLTAGE, data=data, encode=True, response=True
         )

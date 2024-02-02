@@ -76,7 +76,7 @@ static void init() {
 
     /* ADC */
     hubble_adc_init();
-    // hubble_adc_init_input(&ADC_A1);
+    hubble_adc_init_inputs(AIN, WNTR_ARRAY_LEN(AIN));
 
     /* SPI bus & external DAC */
     WntrSERCOMSPI_init(&AD5685_SPI);
@@ -221,9 +221,7 @@ WNTR_SYSEX_COMMAND_DECL(0x05, read_adc) {
         channel = WNTR_ARRAY_LEN(AIN) - 1;
     }
 
-    // TODO
-    // uint16_t result = hubble_adc_read_sync(&ADC_CHANNELS[channel]);
-    uint16_t result = 0;
+    uint16_t result = hubble_adc_read_sync(AIN[channel]);
 
     WNTR_SYSEX_PREPARE_RESPONSE(0x05, TEETH_ENCODED_LENGTH(2));
 
@@ -245,9 +243,7 @@ WNTR_SYSEX_COMMAND_DECL(0x06, read_adc_voltage) {
         channel = WNTR_ARRAY_LEN(AIN) - 1;
     }
 
-    // TODO
-    // uint16_t code_points = hubble_adc_read_sync(&ADC_CHANNELS[channel]);
-    uint16_t code_points = 0;
+    uint16_t code_points = hubble_adc_read_sync(AIN[channel]);
 
     float result = wntr_code_points_to_volts(code_points, WNTR_RESOLUTION_12_BIT, -8.0f, 8.0f, true);
 

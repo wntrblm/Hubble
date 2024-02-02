@@ -62,39 +62,47 @@ void hubble_adc_init() {
     */
 }
 
-void hubble_adc_init_input(const struct HubbleADCInput* input) {
-    WntrGPIOPin_set_as_input(input->pin, false);
-    WntrGPIOPin_configure_alt(input->pin);
+void hubble_adc_init_input(const struct HubbleADCInput input) {
+    WntrGPIOPin_set_as_input(input.pin, false);
+    WntrGPIOPin_configure_alt(input.pin);
 }
 
-uint16_t hubble_adc_read_sync(const struct HubbleADCInput* input) {
+void hubble_adc_init_inputs(const struct HubbleADCInput* inputs, size_t count) {
+    for (size_t i = 0; i < count; i++) {
+        const struct HubbleADCInput input = inputs[i];
+        WntrGPIOPin_set_as_input(input.pin, false);
+        WntrGPIOPin_configure_alt(input.pin);
+    }
+}
+
+uint16_t hubble_adc_read_sync(const struct HubbleADCInput input) {
     /* Flush the ADC - if there's a conversion in process it'll be cancelled. */
-    input->adc->SWTRIG.reg = ADC_SWTRIG_FLUSH;
-    while (input->adc->SWTRIG.bit.FLUSH) {};
+    input.adc->SWTRIG.reg = ADC_SWTRIG_FLUSH;
+    while (input.adc->SWTRIG.bit.FLUSH) {};
 
     /* Set the positive mux to the input pin */
-    input->adc->INPUTCTRL.bit.MUXPOS = input->ain;
-    while (input->adc->SYNCBUSY.bit.INPUTCTRL) {};
+    input.adc->INPUTCTRL.bit.MUXPOS = input.ain;
+    while (input.adc->SYNCBUSY.bit.INPUTCTRL) {};
 
     /* Start the ADC using a software trigger. */
-    input->adc->SWTRIG.bit.START = 1;
+    input.adc->SWTRIG.bit.START = 1;
 
     /* Wait for the result ready flag to be set. */
-    while (input->adc->INTFLAG.bit.RESRDY == 0) {};
+    while (input.adc->INTFLAG.bit.RESRDY == 0) {};
 
     /* Clear the flag. */
-    input->adc->INTFLAG.reg = ADC_INTFLAG_RESRDY;
+    input.adc->INTFLAG.reg = ADC_INTFLAG_RESRDY;
 
     /*
         Throw away the first result and measure again - the datasheet
         recommends doing that since the first conversion for a new
         configuration will be incorrect.
     */
-    input->adc->SWTRIG.bit.START = 1;
-    while (input->adc->INTFLAG.bit.RESRDY == 0) {};
-    input->adc->INTFLAG.reg = ADC_INTFLAG_RESRDY;
+    input.adc->SWTRIG.bit.START = 1;
+    while (input.adc->INTFLAG.bit.RESRDY == 0) {};
+    input.adc->INTFLAG.reg = ADC_INTFLAG_RESRDY;
 
-    return input->adc->RESULT.reg;
+    return input.adc->RESULT.reg;
 }
 
 /* Private functions */
