@@ -18,7 +18,7 @@ AlwaysBreakAfterReturnType: None
 AlwaysBreakBeforeMultilineStrings: true
 BinPackArguments: false
 BinPackParameters: false
-BraceWrapping:   
+BraceWrapping:
   AfterClass:      false
   AfterControlStatement: false
   AfterEnum:       false
@@ -70,6 +70,4 @@ SpacesInParentheses: false
 SpacesInSquareBrackets: false
 TabWidth:        4
 UseTab:          Never
-MacroBlockBegin: "^IF_WAGGLED$"
-MacroBlockEnd: "^IF_WAGGLED_END$"
 ...

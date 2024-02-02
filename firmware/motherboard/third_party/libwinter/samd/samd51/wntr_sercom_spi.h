@@ -19,12 +19,8 @@ struct WntrSERCOMSPI {
     uint8_t phase : 1;
     uint8_t polarity : 1;
     struct WntrGPIOPin sdo;
-    uint8_t sdo_alt;
     struct WntrGPIOPin sck;
-    uint8_t sck_alt;
     struct WntrGPIOPin cs;
-    /* Leave zero to disable hardware CS */
-    uint8_t cs_alt;
 };
 
 void WntrSERCOMSPI_init(const struct WntrSERCOMSPI* inst);

@@ -13,10 +13,10 @@ static uint16_t brightness_ = 0;
 static uint8_t pixels_[DOTSTART_COUNT * 3];
 static const uint8_t start_frame_[4] = {0x00, 0x00, 0x00, 0x00};
 
-/* Use bitband SPI for the dotstar since it's not connected to a real SERCOM. */
+/* Use bitbang SPI for the dotstar since it's not connected to a real SERCOM. */
 static struct WntrBitBangSPI spi_ = {
-    .sdo = WNTR_GPIO_PIN(WNTR_PORT_A, 22),
-    .sck = WNTR_GPIO_PIN(WNTR_PORT_A, 23),
+    .sdo = WNTR_GPIO_PIN(A, 22),
+    .sck = WNTR_GPIO_PIN(A, 23),
     .clock_polarity = 0,
     .clock_phase = 0,
 };

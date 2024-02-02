@@ -36,15 +36,15 @@ void WntrSERCOMSPI_init(const struct WntrSERCOMSPI* inst) {
 
     /* Configure pins for the correct function. */
     WntrGPIOPin_set_as_output(inst->sdo);
-    WntrGPIOPin_configure_alt(inst->sdo, inst->sdo_alt);
+    WntrGPIOPin_configure_alt(inst->sdo);
     WntrGPIOPin_set_as_output(inst->sck);
-    WntrGPIOPin_configure_alt(inst->sck, inst->sck_alt);
+    WntrGPIOPin_configure_alt(inst->sck);
 
     if (!(inst->cs.port == 0 && inst->cs.pin == 0)) {
         WntrGPIOPin_set_as_output(inst->cs);
         WntrGPIOPin_set(inst->cs, true);
-        if (inst->cs_alt != 0) {
-            WntrGPIOPin_configure_alt(inst->cs, inst->cs_alt);
+        if (inst->cs.alt != 0) {
+            WntrGPIOPin_configure_alt(inst->cs);
             inst->sercom->CTRLB.bit.MSSEN = 1;
             while (inst->sercom->SYNCBUSY.bit.CTRLB) {};
         }

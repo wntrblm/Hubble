@@ -25,17 +25,17 @@ static const struct WntrSERCOMSPI* spi_;
 /* Private functions */
 
 inline static void send_command(uint8_t command, uint8_t data1, uint8_t data2) {
-    WntrGPIOPin_set(HUBBLE_AD5685_CS, false);
+    WntrGPIOPin_set(spi_->cs, false);
     WntrSERCOMSPI_write(spi_, (const uint8_t[]){command, data1, data2}, 3);
-    WntrGPIOPin_set(HUBBLE_AD5685_CS, true);
+    WntrGPIOPin_set(spi_->cs, true);
 }
 
 /* Public functions */
 
 void hubble_ad5685_init(const struct WntrSERCOMSPI* spi) {
     spi_ = spi;
-    WntrGPIOPin_set_as_output(HUBBLE_AD5685_CS);
-    WntrGPIOPin_set(HUBBLE_AD5685_CS, true);
+    WntrGPIOPin_set_as_output(spi_->cs);
+    WntrGPIOPin_set(spi_->cs, true);
 }
 
 void hubble_ad5685_soft_reset() { send_command(CMD_SOFT_RESET, 0x0, 0x0); }

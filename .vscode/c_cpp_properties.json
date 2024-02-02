@@ -3,18 +3,18 @@
         {
             "name": "ARM Cortex M",
             "includePath": [
-                "${workspaceRoot}/firmware/src",
-                "${workspaceRoot}/firmware/src/hw",
-                "${workspaceRoot}/firmware/src/drivers",
-                "${workspaceRoot}/firmware/third_party/cmsis/include",
-                "${workspaceRoot}/firmware/third_party/rtt",
-                "${workspaceRoot}/firmware/third_party/samd51a/include",
-                "${workspaceFolder}/firmware/third_party/tinyusb/src",
-                "${workspaceFolder}/firmware/third_party/printf",
-                "${workspaceFolder}/firmware/src/lib",
-                "${workspaceFolder}/firmware/third_party/libwinter",
-                "${workspaceFolder}/firmware/third_party/libwinter/samd",
-                "${workspaceFolder}/firmware/third_party/libwinter/samd/samd51"
+                "${workspaceRoot}/firmware/motherboard/src",
+                "${workspaceRoot}/firmware/motherboard/src/lib",
+                "${workspaceRoot}/firmware/motherboard/src/drivers",
+                "${workspaceRoot}/firmware/motherboard/third_party/cmsis/include",
+                "${workspaceRoot}/firmware/motherboard/third_party/rtt",
+                "${workspaceRoot}/firmware/motherboard/third_party/samd51a/include",
+                "${workspaceFolder}/firmware/motherboard/third_party/tinyusb/src",
+                "${workspaceFolder}/firmware/motherboard/third_party/printf",
+                "${workspaceFolder}/firmware/motherboard/src/lib",
+                "${workspaceFolder}/firmware/motherboard/third_party/libwinter",
+                "${workspaceFolder}/firmware/motherboard/third_party/libwinter/samd",
+                "${workspaceFolder}/firmware/motherboard/third_party/libwinter/samd/samd51"
             ],
             "defines": [
                 "DEBUG=1",
@@ -27,7 +27,7 @@
                 "WNTR_SYSTEM_CLOCKS_USE_32K_CRYSTAL=1"
             ],
             "intelliSenseMode": "gcc-arm",
-            "compilerPath": "/Users/stargirl/.local/gcc-arm-none-eabi-10.3-2021.07/bin/arm-none-eabi-gcc",
+            "compilerPath": "/Users/stargirl/.local/gcc-arm/bin/arm-none-eabi-gcc",
             "compilerArgs": [
                 "-mcpu=cortex-m4",
                 "-mthumb"

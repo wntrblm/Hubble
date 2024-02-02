@@ -5,7 +5,10 @@
 */
 
 #include "wntr_assert.h"
-#include "wntr_mtb.h"
+
+#ifdef WNTR_ENABLE_MTB
+    #include "wntr_mtb.h"
+#endif
 
 #ifdef __arm__
 #include "printf.h"
@@ -21,7 +24,9 @@ void _wntr_assert(const char* file, int line) {
         Disable the micro trace buffer so that the following operations don't
         pollute the MTB.
     */
+#ifdef WNTR_ENABLE_MTB
     wntr_mtb_disable();
+#endif
 
     /* Nothing should interrupt this. */
     __disable_irq();
