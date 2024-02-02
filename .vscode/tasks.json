@@ -9,11 +9,11 @@
             "command": "ninja",
             "args": [],
             "options": {
-                "cwd": "${workspaceFolder}/firmware",
+                "cwd": "${workspaceFolder}/firmware/motherboard",
             },
             "problemMatcher": {
                 "base": "$gcc",
-                "fileLocation": ["relative", "${workspaceRoot}/firmware"]
+                "fileLocation": ["relative", "${workspaceRoot}/firmware/motherboard"]
             },
             "group": {
                 "kind": "build",

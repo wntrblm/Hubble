@@ -6,26 +6,42 @@
     "configurations": [
         {
             "name": "Cortex Debug",
-            "cwd": "${workspaceRoot}/firmware",
+            "cwd": "${workspaceRoot}/firmware/motherboard",
             "executable": "./build/hubble-firmware.elf",
             "request": "launch",
             "type": "cortex-debug",
             "servertype": "jlink",
-            "device": "ATSAMD51J20A",
-            "svdFile": "${workspaceRoot}/firmware/third_party/samd51a/svd/ATSAMD51J20A.svd",
+            "device": "ATSAMD51P20A",
+            "svdFile": "${workspaceRoot}/firmware/motherboard/third_party/samd51a/svd/ATSAMD51P20A.svd",
             "preLaunchTask": "build project",
-            "gdbPath": "arm-none-eabi-gdb",
-            "runToMain": true,
             "preRestartCommands": [
-                "-exec-interrupt",
+                "load",
+                "enable breakpoint",
+                "monitor reset"
             ],
-            "postRestartCommands": [
-                "monitor halt",
-                "-target-download",
-                "monitor reset",
-                "-break-insert -t --function main",
-                "-exec-continue",
-            ],
+            "gdbPath": "arm-none-eabi-gdb",
+            "runToEntryPoint": "main",
+            "rttConfig": {
+                "enabled": true,
+                "address": "auto",
+                "decoders": [
+                    {
+                        "label": "",
+                        "port": 0,
+                        "type": "console"
+                    }
+                ]
+            },
+            // "preRestartCommands": [
+            //     "-exec-interrupt",
+            // ],
+            // "postRestartCommands": [
+            //     "monitor halt",
+            //     "-target-download",
+            //     "monitor reset",
+            //     "-break-insert -t --function main",
+            //     "-exec-continue",
+            // ],
         }
     ]
 }

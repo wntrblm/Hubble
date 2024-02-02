@@ -4,6 +4,7 @@
     Full text available at: https://opensource.org/licenses/MIT
 */
 
+#include "wntr_assert.h"
 #include "wntr_sercom.h"
 #include <stddef.h>
 
@@ -35,7 +36,20 @@ void wntr_sercom_init_clock(Sercom* inst, uint32_t gclk) {
             MCLK->APBDMASK.reg |= MCLK_APBDMASK_SERCOM5;
             gclk_id = SERCOM5_GCLK_ID_CORE;
             break;
+#ifdef SERCOM6
+        case (intptr_t)SERCOM6:
+            MCLK->APBDMASK.reg |= MCLK_APBDMASK_SERCOM6;
+            gclk_id = SERCOM6_GCLK_ID_CORE;
+            break;
+#endif
+#ifdef SERCOM7
+        case (intptr_t)SERCOM7:
+            MCLK->APBDMASK.reg |= MCLK_APBDMASK_SERCOM7;
+            gclk_id = SERCOM6_GCLK_ID_CORE;
+            break;
+#endif
         default:
+            WNTR_ASSERT(0);
             break;
     }
 
