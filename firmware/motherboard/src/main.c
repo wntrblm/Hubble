@@ -179,6 +179,10 @@ WNTR_SYSEX_COMMAND_DECL(0x03, read_gpio) {
 
     uint8_t pin = request_data[0];
 
+    if (pin > WNTR_ARRAY_LEN(GPIO) - 1) {
+        pin = WNTR_ARRAY_LEN(GPIO) - 1;
+    }
+
     WntrGPIOPin_set_as_input(GPIO[pin], false);
 
     uint8_t result = WntrGPIOPin_get(GPIO[pin]);
@@ -195,6 +199,10 @@ WNTR_SYSEX_COMMAND_DECL(0x04, set_gpio) {
     uint8_t pin = request_data[0];
     uint8_t value = request_data[1];
 
+    if (pin > WNTR_ARRAY_LEN(GPIO) - 1) {
+        pin = WNTR_ARRAY_LEN(GPIO) - 1;
+    }
+
     WntrGPIOPin_set_as_output(GPIO[pin]);
     WntrGPIOPin_set(GPIO[pin], value ? true : false);
 
@@ -204,11 +212,14 @@ WNTR_SYSEX_COMMAND_DECL(0x04, set_gpio) {
 }
 
 WNTR_SYSEX_COMMAND_DECL(0x05, read_adc) {
-    /* Request: CHANNEL(1) MUX(1) */
+    /* Request: CHANNEL(1) */
     /* Response (teeth): VALUE(2) */
 
     uint8_t channel = request_data[0];
-    uint8_t mux = request_data[1];
+
+    if (channel > WNTR_ARRAY_LEN(AIN) - 1) {
+        channel = WNTR_ARRAY_LEN(AIN) - 1;
+    }
 
     // TODO
     // uint16_t result = hubble_adc_read_sync(&ADC_CHANNELS[channel]);
@@ -222,14 +233,17 @@ WNTR_SYSEX_COMMAND_DECL(0x05, read_adc) {
 
     WNTR_SYSEX_SEND_RESPONSE();
 
-    printf("SysEx 0x05: Read ADC %u:%u, result %u\n", mux, channel, result);
+    printf("SysEx 0x05: Read AIN %u, result %u\n", channel, result);
 }
 
 WNTR_SYSEX_COMMAND_DECL(0x06, read_adc_voltage) {
-    /* Request: CHANNEL(1) MUX(1) */
+    /* Request: CHANNEL(1) */
     /* Response (teeth): VALUE(4) */
     uint8_t channel = request_data[0];
-    uint8_t mux = request_data[1];
+
+    if (channel > WNTR_ARRAY_LEN(AIN) - 1) {
+        channel = WNTR_ARRAY_LEN(AIN) - 1;
+    }
 
     // TODO
     // uint16_t code_points = hubble_adc_read_sync(&ADC_CHANNELS[channel]);
@@ -251,35 +265,41 @@ WNTR_SYSEX_COMMAND_DECL(0x06, read_adc_voltage) {
 
     WNTR_SYSEX_SEND_RESPONSE();
 
-    printf("SysEx 0x06: Read ADC voltage %u:%u is %0.3f\n", mux, channel, (double)(result));
+    printf("SysEx 0x06: Read ADC voltage %u is %0.3f\n", channel, (double)(result));
 }
 
 WNTR_SYSEX_COMMAND_DECL(0x07, set_dac) {
-    /* Request (teeth): CHANNEL(1) MUX(1) VALUE(2) */
+    /* Request (teeth): CHANNEL(1) VALUE(2) */
     /* Response: ACK */
 
-    WNTR_SYSEX_DECODE_TEETH_REQUEST(4);
+    WNTR_SYSEX_DECODE_TEETH_REQUEST(3);
 
     uint8_t channel = request[0];
-    uint8_t mux = request[1];
-    uint16_t value = WNTR_UNPACK_16(request, 2);
+    uint16_t value = WNTR_UNPACK_16(request, 1);
+
+    if (channel > 15) {
+        channel = 15;
+    }
 
     hubble_ad5685_write_channel(channel, value, true);
 
     WNTR_SYSEX_RESPONSE_NULLARY();
 
-    printf("SysEx 0x07: Set DAC %u:%u to %u\n", mux, channel, value);
+    printf("SysEx 0x07: Set DAC %u to %u\n", channel, value);
 }
 
 WNTR_SYSEX_COMMAND_DECL(0x08, set_dac_voltage) {
-    /* Request (teeth): CHANNEL(1) MUX(1) VALUE(4) */
+    /* Request (teeth): CHANNEL(1) VALUE(4) */
     /* Response: ACK */
 
-    WNTR_SYSEX_DECODE_TEETH_REQUEST(6);
+    WNTR_SYSEX_DECODE_TEETH_REQUEST(5);
 
     uint8_t channel = request[0];
-    uint8_t mux = request[1];
-    float value = WNTR_UNPACK_FLOAT(request, 2);
+    float value = WNTR_UNPACK_FLOAT(request, 1);
+
+    if (channel > 15) {
+        channel = 15;
+    }
 
     if (calibration_enabled) {
         value = WntrVoltageCalibrationTable_lookup(value, *hubble_dac_calibration_tables[channel]);
@@ -293,7 +313,7 @@ WNTR_SYSEX_COMMAND_DECL(0x08, set_dac_voltage) {
 
     WNTR_SYSEX_RESPONSE_NULLARY();
 
-    printf("SysEx 0x08: Set DAC voltage %u:%u to %0.3f\n", mux, channel, (double)(value));
+    printf("SysEx 0x08: Set DAC voltage %u to %0.3f\n", channel, (double)(value));
 }
 
 WNTR_SYSEX_COMMAND_DECL(0x50, set_calibration_enabled) {

@@ -61,6 +61,19 @@
 #define PIN_SDO (WNTR_GPIO_PIN_ALT(B, 30, H))
 
 /*
+    Serial exclusive pins, can also be used as GPIO
+*/
+#define SER_1_0 (WNTR_GPIO_PIN_ALT(A, 16, C_SERCOM))
+#define SER_1_1 (WNTR_GPIO_PIN_ALT(A, 17, C_SERCOM))
+#define SER_1_2 (WNTR_GPIO_PIN_ALT(A, 18, C_SERCOM))
+#define SER_1_3 (WNTR_GPIO_PIN_ALT(A, 19, C_SERCOM))
+
+#define SER_2_0 (WNTR_GPIO_PIN_ALT(A, 12, C_SERCOM))
+#define SER_2_1 (WNTR_GPIO_PIN_ALT(A, 13, C_SERCOM))
+#define SER_2_2 (WNTR_GPIO_PIN_ALT(A, 14, C_SERCOM))
+#define SER_2_3 (WNTR_GPIO_PIN_ALT(A, 15, C_SERCOM))
+
+/*
     GPIO exclusive pins
 */
 #define GPIO_1 (WNTR_GPIO_PIN(D, 20))
@@ -81,7 +94,7 @@
 #define GPIO_16 (WNTR_GPIO_PIN(B, 14))
 #define GPIO_17 (WNTR_GPIO_PIN(B, 12))
 #define GPIO_18 (WNTR_GPIO_PIN(B, 11))
-#define GPIO_19 (WNTR_GPIO_PIN(A, 10))
+#define GPIO_19 (WNTR_GPIO_PIN(B, 10))
 #define GPIO_20 (WNTR_GPIO_PIN(C, 7))
 #define GPIO_21 (WNTR_GPIO_PIN(C, 6))
 #define GPIO_22 (WNTR_GPIO_PIN(C, 5))
@@ -91,62 +104,50 @@
     Array of all GPIO pins
 */
 static const struct WntrGPIOPin GPIO[] = {
-    GPIO_1,  GPIO_2,  GPIO_3,  GPIO_4,  GPIO_5,  GPIO_6,  GPIO_7,  GPIO_8,  GPIO_9,  GPIO_10, GPIO_11, GPIO_12,
-    GPIO_13, GPIO_14, GPIO_15, GPIO_16, GPIO_17, GPIO_18, GPIO_19, GPIO_20, GPIO_21, GPIO_22, GPIO_23,
+    GPIO_1,  GPIO_2,  GPIO_3,  GPIO_4,  GPIO_5,  GPIO_6,  GPIO_7,  GPIO_8,  GPIO_9,  GPIO_10,        GPIO_11,
+    GPIO_12, GPIO_13, GPIO_14, GPIO_15, GPIO_16, GPIO_17, GPIO_18, GPIO_19, GPIO_20, GPIO_21,        GPIO_22,
+    GPIO_23, SER_1_0, SER_1_1, SER_1_2, SER_1_3, SER_2_0, SER_2_1, SER_2_2, SER_2_3, PIN_STATUS_LED, PIN_DS_POWER_EN,
 };
 
 /*
     ADC exclusive pins with buffers
 */
 #define AIN_VREFA (HUBBLE_ADC_INPUT(ADC0, 1, A, 3))
-#define AIN_1 (HUBBLE_ADC_INPUT(ADC1, 5, C, 3))
-#define AIN_2 (HUBBLE_ADC_INPUT(ADC1, 6, B, 4))
-#define AIN_3 (HUBBLE_ADC_INPUT(ADC1, 7, B, 5))
-#define AIN_4 (HUBBLE_ADC_INPUT(ADC1, 14, D, 0))
-#define AIN_5 (HUBBLE_ADC_INPUT(ADC1, 15, D, 1))
-#define AIN_6 (HUBBLE_ADC_INPUT(ADC1, 8, B, 6))
-#define AIN_7 (HUBBLE_ADC_INPUT(ADC1, 9, B, 7))
-#define AIN_8 (HUBBLE_ADC_INPUT(ADC0, 2, B, 8))
-#define AIN_9 (HUBBLE_ADC_INPUT(ADC0, 3, B, 9))
-#define AIN_10 (HUBBLE_ADC_INPUT(ADC0, 4, A, 4))
-#define AIN_11 (HUBBLE_ADC_INPUT(ADC0, 6, A, 6))
-#define AIN_12 (HUBBLE_ADC_INPUT(ADC0, 7, A, 7))
-#define AIN_13 (HUBBLE_ADC_INPUT(ADC0, 8, A, 8))
-#define AIN_14 (HUBBLE_ADC_INPUT(ADC0, 9, A, 9))
-#define AIN_15 (HUBBLE_ADC_INPUT(ADC0, 10, A, 10))
-#define AIN_16 (HUBBLE_ADC_INPUT(ADC0, 11, A, 11))
+#define VIN_1 (HUBBLE_ADC_INPUT(ADC1, 5, C, 3))
+#define VIN_2 (HUBBLE_ADC_INPUT(ADC1, 6, B, 4))
+#define VIN_3 (HUBBLE_ADC_INPUT(ADC1, 7, B, 5))
+#define VIN_4 (HUBBLE_ADC_INPUT(ADC1, 14, D, 0))
+#define VIN_5 (HUBBLE_ADC_INPUT(ADC1, 15, D, 1))
+#define VIN_6 (HUBBLE_ADC_INPUT(ADC1, 8, B, 6))
+#define VIN_7 (HUBBLE_ADC_INPUT(ADC1, 9, B, 7))
+#define VIN_8 (HUBBLE_ADC_INPUT(ADC0, 2, B, 8))
+#define VIN_9 (HUBBLE_ADC_INPUT(ADC0, 3, B, 9))
+#define VIN_10 (HUBBLE_ADC_INPUT(ADC0, 4, A, 4))
+#define VIN_11 (HUBBLE_ADC_INPUT(ADC0, 6, A, 6))
+#define VIN_12 (HUBBLE_ADC_INPUT(ADC0, 7, A, 7))
+#define AIN_1 (HUBBLE_ADC_INPUT(ADC0, 8, A, 8))
+#define AIN_2 (HUBBLE_ADC_INPUT(ADC0, 9, A, 9))
+#define AIN_3 (HUBBLE_ADC_INPUT(ADC0, 10, A, 10))
+#define AIN_4 (HUBBLE_ADC_INPUT(ADC0, 11, A, 11))
 
 static const struct HubbleADCInput AIN[] = {
+    VIN_1,
+    VIN_2,
+    VIN_3,
+    VIN_4,
+    VIN_5,
+    VIN_6,
+    VIN_7,
+    VIN_8,
+    VIN_9,
+    VIN_10,
+    VIN_11,
+    VIN_12,
     AIN_1,
     AIN_2,
     AIN_3,
     AIN_4,
-    AIN_5,
-    AIN_6,
-    AIN_7,
-    AIN_8,
-    AIN_9,
-    AIN_10,
-    AIN_11,
-    AIN_12,
-    AIN_13,
-    AIN_14,
-    AIN_15,
-    AIN_16,
 };
-
-/*
-    Serial exclusive pins
-*/
-#define SER_1_0 (WNTR_GPIO_PIN_ALT(A, 16, C_SERCOM))
-#define SER_1_1 (WNTR_GPIO_PIN_ALT(A, 17, C_SERCOM))
-#define SER_1_2 (WNTR_GPIO_PIN_ALT(A, 18, C_SERCOM))
-#define SER_1_3 (WNTR_GPIO_PIN_ALT(A, 19, C_SERCOM))
-
-#define SER_2_0 (WNTR_GPIO_PIN_ALT(A, 12, C_SERCOM))
-#define SER_2_1 (WNTR_GPIO_PIN_ALT(A, 13, C_SERCOM))
-#define SER_2_2 (WNTR_GPIO_PIN_ALT(A, 14, C_SERCOM))
-#define SER_2_3 (WNTR_GPIO_PIN_ALT(A, 15, C_SERCOM))
 
 /*
     SPI configuration for Dotstars
