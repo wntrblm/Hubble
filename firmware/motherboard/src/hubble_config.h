@@ -159,7 +159,7 @@ static const struct WntrSERCOMSPI DOTSTAR_SPI = {
     // No CS pin, so this is just an unused pin
     .cs = WNTR_GPIO_PIN_ALT(A, 21, NONE),
     .polarity = 0,
-    .phase = 1,
+    .phase = 0,
 };
 
 /*

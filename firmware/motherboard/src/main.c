@@ -119,9 +119,11 @@ static void init() {
     /* Setup USB as soon as possible */
     wntr_usb_init();
 
-    /* Configure peripherals */
-    hubble_dotstar_init(20);
+    /* Dotstars */
+    WntrSERCOMSPI_init(&DOTSTAR_SPI);
+    hubble_dotstar_init(&DOTSTAR_SPI, 20);
 
+    /* ADC */
     hubble_adc_init();
     // hubble_adc_init_input(&ADC_A1);
 
