@@ -17,8 +17,8 @@ buildgen.ensure_directory()
 
 
 # The MCU has a few variants, called "devices" in the CMSIS headers. Each one
-# has its own header file and linker script. Hubble uses the SAMD51J20A.
-MCU = "SAMD51J20A"
+# has its own header file and linker script. Hubble uses the SAMD51P20A.
+MCU = "SAMD51P20A"
 
 # Size of the MCU variant's memories. These are all specified in the datasheet
 # for the SAMD51
